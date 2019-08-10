@@ -74,7 +74,7 @@ default akbar = unit(
     )
 ```
 
-As you might have noticed, there is no indicator if "Akbar" is friendly or enemy. That's because everybody in the game starts as natural but they have the capability to fight if necessary. for example if you try to steal something from him and he notices, he will cut your hand off, or at least try to.
+As you might have noticed, there is no indicator if "Akbar" is friendly or enemy. That's because everybody in the game starts as neutral but they have the capability to fight if necessary. for example if you try to steal something from him and he notices, he will cut your hand off, or at least try to.
 
 it would be a good practice to specify your inputs:
 
