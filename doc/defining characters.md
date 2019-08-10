@@ -1,6 +1,6 @@
 Defining a character can be as easy as a name and directory.
 
-```
+```python
 default abdul = unit(
     "Abdul", # Name
     "0001", # Asset directory
@@ -24,7 +24,7 @@ The amount of money this character is carrying, if killed, all of the cash is lo
 A list of items that this character possess, these items can be bought or looted.
 the items need to be a list of stacks:
 
-```
+```python
     items = [
         stack(wood, 20),
         stack(snake_bite_remedy, 2),
@@ -49,7 +49,7 @@ The character's archetype, it effects how the points for this character are spen
 ## The big example
 Now let's make a shop keeper named "Akbar" and give him some items to sell.
 
-```
+```python
 default akbar = unit(
     "Akbar",
     "char/akbar",
@@ -78,7 +78,7 @@ As you might have noticed, there is no indicator if "Akbar" is friendly or enemy
 
 it would be a good practice to specify your inputs:
 
-```
+```python
 default akbar = unit(
     "Akbar",
     "char/akbar",
@@ -102,9 +102,9 @@ default akbar = unit(
     type = "Peasant",
     )
 ```
-it makes it more readable and prevents accidental miss assignment, plus in some cases you don't need to enter everything ad skipping some inputs would be a time saver:
+it makes it more readable and prevents accidental miss assignment, plus in some cases you don't need to enter everything and skipping some inputs would be a time saver:
 
-```
+```python
 default dog = unit(
     "Wild Dog",
     "char/dog",
