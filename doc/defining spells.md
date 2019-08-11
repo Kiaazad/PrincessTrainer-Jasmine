@@ -1,4 +1,4 @@
-Defining a new spell is easy, it only needs a name and description. Everything else is optional.
+Defining a new spell only needs a name and description. Everything else is optional.
 
 ```python
 default stink_eye = spell(
