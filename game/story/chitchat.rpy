@@ -1,0 +1,167 @@
+﻿label chitchat_1:
+    me "Jafar, where you smart when you was a child?"
+    jaf "I don't think so, I was an ordinary kid, my dad was smart enough to educate me."
+    me "so if my dad was smart I would be smart as well?"
+    jaf "smart is simply educated, there's not that much of different between people at birth."
+    jaf "feed a child well and the child grows big and strong. feed them knowledge and they become smart."
+    me "I spent years of my childhood in Maktab, why didn't I became educated."
+    jaf "you where forced to learn, and I bet you hated every moment of it."
+    me "I did."
+    jaf "my father taught me how to learn, he installed in me a love of learning."
+    jaf "and I never stopped seeking knowledge."
+    me "a good man."
+    jaf "yeah, he was."
+    return
+
+label chitchat_2:
+    me "Jafar, my first wish was about the lamp, how come you can disappear too?"
+    jaf "I guess I'm a part of the lamp as well, any wish effecting the lamp effects me as well."
+    jaf "I am new to this whole Genie in the lamp concept. there's many things even I don't know yet."
+    me "would a wish effect me as well if I'm in the lamp?"
+    jaf "that's a good question, I'll have to test that at some point."
+    me "spear me Jafar, that sounds dangerous."
+    jaf "you're no fun Abdul, but your hear works my friend."
+    return
+
+label chitchat_3:
+    me "did you get sucked into the lamp like Aladdin says?"
+    jaf "yes, though the smaller hole."
+    me "how did it feel?"
+    ""
+    return
+
+label chitchat_4:
+    me "how come I'm right when and where I entered the lamp when I exit, no mater how much time I've been in it?"
+    jaf "I made your visits to the lamp shorter than an instant."
+    jaf "this way if you enter the lamp when people are looking at you, they wouldn't notice anything out of ordinary."
+    jaf ""
+    return
+
+label chitchat_5:
+    me "how far can I wonder in this darkness?"
+    jaf "you can run in any direction for thousands of thousands years and still see nothing but darkness."
+    jaf "but beyond that is a whole world, unlike ours. filled with wonders you can't even imagine."
+    jaf "I think it's made of people's dreams outside of lamp. that's the only explanation I can come up with."
+
+    jaf "somewhere between those stars is a like this, with seas, lands and cities thousands of times bigger than Agrabah."
+    jaf "crawling with people, "
+    jaf "tools of extreme complexity. "
+    return
+
+label chitchat_6:
+    me "Jafar, where did the rules of lamp came from?"
+    jaf "I don't know, they seem arbitrary."
+    jaf "either someone made them up and others accepted and they became rules."
+    jaf "or there was a process of addition and elimination at some point."
+    return
+
+label chitchat_7:
+    me "Why do you write books Jafar?"
+    jaf "Because that's the purpose of life."
+    me "Writing books?"
+    jaf "Not writing books per se, Passing information to the next generations."
+    jaf "Writing books is just a mean of fulfilling that."
+    me "Don't you mean it the purpose if YOUR life?"
+    jaf "No, I mean all life, big and small."
+    me "But animals can't write books!"
+    jaf "Alkh... alright, let me educate you."
+    jaf "How long a dog lives around here?"
+    me "five, maybe seven years?"
+    jaf "They don't live forever do they?"
+    me "No."
+    jaf "How come there still dogs around? we have lived longer than seven years."
+    me "Dogs breed Jafar. Those are new dogs."
+    jaf "Are they? They look like the same dogs I've seen when I was a kid."
+    me "Most dogs look like their parents when they grow up."
+    jaf "Exactly!"
+    jaf "The number of legs, the color of fur, the size and many other attributes are passed on from one generation to the next."
+    jaf "And not just from the mother, they look like their fathers too."
+    jaf "I can only assume when the dogs fuck, some instruction of the males attributes are transferred to the females womb."
+    jaf "And that's how the new dogs are made."
+    me "But..."
+    jaf "Can't you see? All they are doing is transferring the information that made them, to their offsprings."
+    jaf "And isn't that the ultimate purpose of life?"
+    jaf "Preserving the information that makes us in the cycles of birth and death?"
+    me "But what does that have to do with writhing books?"
+    jaf "Patience my friend. I'm not finished yet."
+    jaf "Where you born a fish vendor?"
+    me "No I learned it from my father... um maybe?"
+    jaf "I know it's not the best example since most of us inherit our fathers businesses."
+    jaf "Carpenter from carpenter, farmer from farmer and sultan from sultan. But..."
+    jaf "But we know: Trained in another profession, a child become something unlike the parents."
+    jaf "The information we learn after birth are transferer to our offsprings through teaching."
+    jaf "A book is simply another mean of transferring our experiences to the next generations."
+    jaf "I'm not sure if I ever can have children, but anybody who reads my books, inherits some of me."
+    me "..."
+    jaf "What's the matter?"
+    me "Nothing, I just don't know how to feel about it?"
+    jaf "Feel however you want, but do it somewhere else, I'm not interested in your feelings."
+    return
+
+label chitchat_8:
+    me "What do you think about xxx."
+    jaf "xxx is a big sack of shit."
+    me "xxx can't help it, xxx gains weight even if xxx drinks water."
+    jaf "That's a lie."
+    me "How do you know?"
+    jaf "Imagine a sack of shit."
+    me "What?"
+    jaf "Just imagine."
+    jaf "A sack of shit with a hole at the bottom."
+    me "That's crude."
+    jaf "..."
+    jaf "If you start stuffing it from the top, more than comes out from the hole, it gets bigger."
+    jaf "If you pour water in it, the shit soaks up some of the water, but eventually it becomes saturated."
+    jaf "The exes water starts to drip from every nook and cranny."
+    me "xxx looks like xxx 's filled with liquid."
+    jaf "Indeed. but I doubt it can be pure water. there most be lots of shit mixed in xxx"
+    me "So the only way to lose weight is shitting more than we eat?"
+    jaf "I don't think so, I did some experiments weighing what I eat and what I shit."
+    jaf "It doesn't seem we shit anything close to how much as we eat."
+    jaf "Shit, piss, sweat and breath. those are the only things that come out of humans."
+    jaf "I can only assume: whatever we eat becomes a part of those to come out."
+    me "But we breath out the same air we breath in, that can't have food in it."
+    jaf "To the contrary, that's my main suspect. but I need to do some experiments to make sure."
+    me "Leave me out of your weird experiments will you?"
+    jaf "Sure, sure..."
+    return
+
+label chitchat_9:
+    me "Jafar, what did you mean when you said you're not sure about heave?"
+    me "I've been good. Did all of my prays. I should go to heaven right?"
+    jaf "It's a scam, Give up your positions and you'll be rewarded when you're dead."
+    jaf "Don't be stupid, follow the money. See who is benefiting from this."
+    me "Malik and Hosein?"
+    jaf "Exactly, have you seen either of them work?"
+    me "Not really."
+    jaf "Yet they can afford marvelous houses, expensive clothing and food. Who's money are they spending?"
+    me "emmm..."
+    jaf "Yours you dummy. They are spending peoples charity money."
+    jaf "They're not feeding the hungry. They're not helping the poor. They're filling their pockets."
+    me "they're abusing people's beliefs. They'll go to hell."
+    jaf "Yeah that one doesn't exist either."
+    me "But they should pay for their sins."
+    jaf "I agree..."
+    me "How is that fair if they don't suffer in hell?"
+    jaf "The world doesn't care about fairness, we do."
+    jaf "If you want fairness you'll have to create it yourself."
+    me "I'll do it, I'll do it myself then."
+    return
+
+label chitchat_10:
+    me "Jafar, How did Aladdin find his lamp?"
+    jaf "He snatched it from my hands."
+    jaf "I've spent years looking for it, and I was ready to pay any price."
+    jaf "Even killing a human."
+    me "Huh..."
+    jaf "What's the matter?"
+    me "It feels wierd hearing you talk about killing people."
+    me "I never seen you at any execution when you where vizier."
+    jaf "Yeah, I always avoided killing as much as I could. I had many chances to kill Aladdin but I always hesitated."
+    jaf "The situation I'm in now is all the result of my subconscious hesitation."
+    me "I figured you're not the killing type. It's not hard to hire one of Asasiyyun to kill him."
+    jaf "Yeah I had plenty of time thinking about that, but I don't think that is necessary."
+    return
+
+label chitchat_11:
+    "(jafar's golden rule: reciprocity)"
