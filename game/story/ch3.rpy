@@ -68,7 +68,7 @@
             jaf "Of course."
             me "Jafar's Economy for Sultans?, Jafar's Etiquettes of Palace?, Jafar's guide to...{w=.5} Tapdance?"
             jaf "Not one of my best, I have to admit."
-            me "Are all of these books written you you, Jafar?."
+            me "Are all of these books written by you, Jafar?."
             jaf "Yes, I need to transfer my knowledge to the next generation somehow."
             jaf "You should borrow a few of them at some point."
             jaf "In fact...{w=.5} You need to read them all, they'll help you with your quest."
