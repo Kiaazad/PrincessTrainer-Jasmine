@@ -25,9 +25,9 @@ label chitchat_2:
 
 label chitchat_3:
     me "Were you sucked into the lamp like Aladdin says?"
-    jaf "Yes, though the smaller hole."
+    jaf "Yes, through the smaller hole."
     me "how did it feel?"
-    jaf "As if my whole being was compressed into a tiny dot, then expanded once I was here.
+    jaf "As if my whole being was compressed into a tiny dot, then expanded once I was here."
     me "Must've been one of the worst things in the world. "
     jaf "Yes. That's why you are helping me with my revenge. I'll make him experience every single suffering he caused me tenfold."
     return

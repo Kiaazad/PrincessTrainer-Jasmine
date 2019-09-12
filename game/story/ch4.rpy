@@ -16,7 +16,7 @@ label ch4:
     me "Can you stop talking about me in third person, Jafar? I'm standing right here. And I think I should feel insulted."
     me "Hmmm, I guess a commoner in the palace will be harder than I thought."
     me "Do you mean me?"
-    jaf Yes, of course. It will be hard, but I'm sure I can pull it off. You'll be fine."
+    jaf "Yes, of course. It will be hard, but I'm sure I can pull it off. You'll be fine."
     jaf "More than fine, in fact. You might find pleasure in it."
     me "Heheheh, pleasure is good. I'm listening."
     jaf "Ah yes. Pleasure"

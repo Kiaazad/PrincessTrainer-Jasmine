@@ -80,7 +80,7 @@
                     jaf "Now, let's find a sword and teach you how to fight."
                     jaf "But first, I'm going to need one of your wishes."
                     $ qlog.got(master_swordsman)
-                    jump ch2
+                    jump ch2_1
         "I have one, It is Agrabah after all.":
             jaf "Excellent! Can you fight or it's just for show?"
             menu:
@@ -173,6 +173,7 @@ label ch2_1:
     me "Jafar?"
     jaf "I didn't go anywhere."
     show jaf nrm at right
+    me "Ow,{w=.3} Jafar."
     me "I'm a bit confused. What happened here? Where did the lamp go?"
     jaf "The lamp is still here, I just hid it from everybody."
     jaf "We don't want it to be seen by somebody else, do we?"
@@ -187,6 +188,7 @@ label ch2_1:
     me "Your freedom?"
     jaf "If it was that simple, or if I wanted to, I would have already done it."
     jaf "It wouldn't be that hard to trick you either, you're pretty gullible."
+    me "I...{w=.5} you're right. sorry for doubting you."
     me "So what's inside?"
     jaf "Let's go and see."
     jump ch3

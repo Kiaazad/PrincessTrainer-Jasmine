@@ -31,7 +31,7 @@
             me "No. I'm afraid I'll fall into a hole in this darkness."
             jaf "Hmph, you'll be fine."
             jaf "Just don't wander too far away from the bright spots."
-            jaf "They will guarantee that you won't be lost around here."
+            jaf "It's not that easy to find your way back in the darkness."
             me "Okay..."
             # save
             show bg sav
