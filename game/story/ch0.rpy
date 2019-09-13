@@ -1,8 +1,8 @@
 ﻿label ch0:
     # default skip_next = "skip_to_ch1"
-    call desert_0
+    # call desert_0
     show bg bg1
-    show screen skips
+    # show screen skips
     show me tired at left with dissolve
     me "Phew..."
     me "Not even a tumbleweed!"
