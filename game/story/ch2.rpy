@@ -1,5 +1,5 @@
 ﻿label ch2:
-    $ skip_next = "skip_to_ch3"
+    # $ skip_next = "skip_to_ch3"
     scene black
     show bg bg3 with Dissolve(2)
     show me nrm at left
@@ -19,8 +19,8 @@
     jaf "Those sleazy bastards."
     jaf "For years, I've kept the sultan and the city shielded from their extreme ideology."
     jaf "We need to pay both a visit at some point."
-    $ qlog.got(visit_malik)
-    $ qlog.got(visit_hosein)
+    # $ qlog.got(visit_malik)
+    # $ qlog.got(visit_hosein)
     jaf "Abdul!"
     jaf "How are you with swords?"
     menu:
@@ -44,7 +44,7 @@
                             jaf "Do you really want to try your luck?"
                             menu:
                                 "No Jafar, Forgive my moment of stupidity.":
-                                    $ qlog.got(master_swordsman)
+                                    # $ qlog.got(master_swordsman)
                                     jaf "Good.{w=.5} You've escaped a sticky situation, Abdul."
                                     jaf "Let's not waste any more time on this nonsense and let us start putting those wishes to good use."
                                     jump ch2_1
@@ -52,7 +52,7 @@
                                     "So be it!"
                                     jump wishes
                         "No, no, no, I just forgot.":
-                            $ qlog.got(master_swordsman)
+                            # $ qlog.got(master_swordsman)
                             jaf "Get your head in the game, Abdul. I'm not going to hold your hand all the time."
                             jaf "Let me take one of those wishes from your hands before you forget again."
                             jump ch2_1
@@ -70,7 +70,7 @@
                     me "Do I have any other choice?"
                     jaf "No."
                     me "Fine!{w=.5} what now Jafar?"
-                    $ qlog.got(master_swordsman)
+                    # $ qlog.got(master_swordsman)
                     jaf "It's your lucky day, we're going to use one of your wishes."
                     me "You mean you're..."
                     jaf "Yes..."
@@ -79,14 +79,14 @@
                     jaf "Yes, I am always right. Never forget that."
                     jaf "Now, let's find a sword and teach you how to fight."
                     jaf "But first, I'm going to need one of your wishes."
-                    $ qlog.got(master_swordsman)
+                    # $ qlog.got(master_swordsman)
                     jump ch2_1
         "I have one, It is Agrabah after all.":
             jaf "Excellent! Can you fight or it's just for show?"
             menu:
                 "Just for show!":
                     jaf "I'll have to come up with a way to train you, then."
-                    $ qlog.got(master_swordsman)
+                    # $ qlog.got(master_swordsman)
                     jaf "Shouldn't be too hard."
                     me "Jafar, I'm not a young man anymore."
                     me "I will get hurt, and at my age, I'll never recover."
@@ -98,7 +98,7 @@
                 "I can defend myself if I have to.":
                     jaf "You'll have to, sooner that you think."
                     jaf "Hopefully you kept that sword sharp."
-                    $ qlog.got(master_swordsman)
+                    # $ qlog.got(master_swordsman)
                     jaf "I will put your skills and sword to test today."
                     jaf "After some preparation of course."
                     jaf "Let's start with a wish."
@@ -109,7 +109,7 @@
             jaf "I know, I know, I'm not against some bloodshed to get something important done."
             jaf "But cutting hands is just stupid."
             jaf "However, your sick mind is exactly what I need right now. But better...{w=.5} Much better."
-            $ qlog.got(master_swordsman)
+            # $ qlog.got(master_swordsman)
             jaf "I'll need your mind and your wishes. Let's use them so you can satisfy your bloodlust."
             me "I'm not the bloodthirsty monster you think I am."
             jaf "Yeah, keep telling that to yourself."

@@ -1,5 +1,5 @@
 ﻿label ch1:
-    $ skip_next = "skip_to_ch2"
+    # $ skip_next = "skip_to_ch2"
     scene black
     show bg bg2 with Dissolve(2)
     show me normal at left

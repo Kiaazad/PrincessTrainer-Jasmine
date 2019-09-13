@@ -1,5 +1,5 @@
 ﻿label ch3:
-    $ skip_next = "skip_to_ch4"
+    # $ skip_next = "skip_to_ch4"
     scene black
     show bg black
     show me nrm at left
@@ -42,13 +42,13 @@
             me "Wait, what!?"
             jaf "Focus, Abdul!"
             jaf "Here, take this."
-            $ msg.msg("Received a bag.")
+            # $ msg.msg("Received a bag.")
             me "..."
-            $ msg.msg("...of sand?")
+            # $ msg.msg("...of sand?")
             me "A bag of sand?"
             jaf "These are the Sands of Time."
             jaf "Grab a handful, put in one of these jars and the 'you' from that moment will remain there."
-            $ msg.msg("Right, Received sands of time, a dozen handfuls.")
+            # $ msg.msg("Right, Received sands of time, a dozen handfuls.")
             jaf "That 'you' can be recovered if something...{w=.5} grim happens to you."
             me "You can resurrect me?"
             jaf "Not exactly."
@@ -199,7 +199,7 @@ label ch3_set:
     jump ch3_1
 label ch3_fight(j=False):
     window hide
-    call fights([player], [enemy1])
+    # call fights([player], [enemy1])
     if j:
         return
     else:

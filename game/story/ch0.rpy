@@ -1,5 +1,5 @@
 ﻿label ch0:
-    default skip_next = "skip_to_ch1"
+    # default skip_next = "skip_to_ch1"
     call desert_0
     show bg bg1
     show screen skips
@@ -17,12 +17,12 @@
     hide me
     hide ev 01
     show bg cg1
-    $ abdul.got(black_lamp,1,002)
+    # $ abdul.got(black_lamp,1,002)
     with dissolve
     me "An oil lamp?"
     me "Looks new."
     me "Hah, my lucky day! I can sell this and eat a full meal tonight."
-    $ qlog.got(sell_lamp)
+    # $ qlog.got(sell_lamp)
     show bg bg1
     show me confused at left
     with dissolve
@@ -40,7 +40,7 @@
             with dissolve
             jaf "{size=45}Aren't you glad to be naive?"
             show me afraid at left
-            $ msg.msg("You dropped CamelThorns and the lamp")
+            # $ msg.msg("You dropped CamelThorns and the lamp")
             me "{size=45}Woah! {w=.6}whoa. {w=.4}wha {w=.2}wh..."
             jaf "{size=45}Where are you running to?"
             me "{size=40}Please don't steal my soul."
@@ -57,7 +57,7 @@
             show me alert at left
             me "{size=25}Sorry."
             show me bent at left
-            $ msg.msg("You got the Black lamp.")
+            # $ msg.msg("You got the Black lamp.")
             show jaf thinking at right
             jaf "Abdul? {w=.8}Is that you?"
             show me confused at left
@@ -199,10 +199,10 @@
                 jaf "No time to explain. {w=.5}What do you say? {w=.5}Do we have a deal?"
                 "Sure..!?":
                     jaf "Excellent! Now let us head back to Agrabah."
-                    $ qlog.got(jafars_revenge)
-                    $ qlog.cancel(sell_lamp)
+                    # $ qlog.got(jafars_revenge)
+                    # $ qlog.cancel(sell_lamp)
                     jaf "Bring the thorns. {w=.5}We need any money we can get our hands on."
-                    $ msg.msg("You got CamelThorns")
+                    # $ msg.msg("You got CamelThorns")
                     jump ch1
                 "No! I want my wishes":
                     show me normal at left
@@ -214,8 +214,8 @@
                             jump wishes
                         "Alright, alright, I yield, don't screw me up.":
                             jaf "Good, let us haste! {w=.5}Time's a-wastin'."
-                            $ qlog.got(jafars_revenge)
-                            $ qlog.cancel(sell_lamp)
+                            # $ qlog.got(jafars_revenge)
+                            # $ qlog.cancel(sell_lamp)
                             show me confused at left
                             me "What?"
                             jaf "Something I've heard- {w=.5}you know what, never mind."

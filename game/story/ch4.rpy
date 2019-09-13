@@ -1,6 +1,6 @@
 ﻿
 label ch4:
-    $ skip_next = "skip_to_main"
+    # $ skip_next = "skip_to_main"
     scene bg lib
     show me nrm at left
     with dissolve
@@ -49,7 +49,7 @@ label ch4:
     jaf "You're a part of it, that makes it our plan."
     jaf "Anyways, you need a way back into the lamp, let me see."
     jaf "To enter the lamp, look up and do this with your hand. that should do the trick."
-    $ quick_menu = True
+    # $ quick_menu = True
     jaf "Now try it."
     "There will be a check to see if you have gone into the menu."
     jaf "Excellent, only you can see or feel the lamp, it should be safe hanging from your waist."
