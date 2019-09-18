@@ -2,41 +2,65 @@
     # $ skip_next = "skip_to_ch3"
     scene black
     show bg bg3 with Dissolve(2)
-    show me nrm at left
+    show me normal at left
     with dissolve
-    show jaf nrm at right
+    show jaf normal at right
     with dissolve
+    show jaf smile at right
     jaf "Welcome to your new home, my friend."
+    show me confused at left
     me "..."
+    show jaf normal at right
     jaf "Alright, it's a dump. But look at that marvelous view!"
+    show me tired at left
     me "I guess I must start to clean up."
     jaf "Don't bother, we won't spend much time here."
+    show me normal at left
     jaf "Now tell me, who runs the city?"
+    show me alert at left
     me "Malik and Hosein,{w=.5} Bin Salam's brothers."
+    show jaf annoyed at right
     jaf "Those two cockroaches are in the city again?"
     me "Yes, The sultan invited them to his daughter's wedding, and they never left."
+    show me confused at left
     me "Now they created two opposing sects and both demand taxes from people."
+    show me normal at left
+    show jaf angry at right
     jaf "Those sleazy bastards."
     jaf "For years, I've kept the sultan and the city shielded from their extreme ideology."
+    show jaf normal at right
     jaf "We need to pay both a visit at some point."
     # $ qlog.got(visit_malik)
     # $ qlog.got(visit_hosein)
     jaf "Abdul!"
+    show me alert at left
     jaf "How are you with swords?"
     menu:
         "Never used one.":
+            me "I never used one."
+            show jaf disappointed at right
             jaf "My fucking luck, I'll have to come up with a way to teach you."
+            show me confused at left
             me "Why?"
-            jaf "As a Genie I can't kill anyone, at least Not fast and efficiently. You'll have to do it for me."
+            show jaf normal at right
+            jaf "As a Genie I can't kill anyone, at least Not fast and efficient. You'll have to do it for me."
+            show me alert at left
             me "But...{w=.5} I'm not a murderer, Jafar."
+            show jaf annoyed at right
             jaf "Stop whining. You have the opportunity to rescue your city!"
             jaf "Man up and fight for it!"
+            show jaf normal at right
             jaf "Or... Maybe you'd rather sit here and do nothing?"
             menu:
                 "Well, I do have 3 wishes.":
+                    show me confused at left
+                    me "Well, I do have 3 wishes."
+                    show jaf angry at right
                     jaf "Are you going back on our deal, Abdul?"
                     menu:
-                        "I mean, I can fix...":
+                        "I mean, I can fix everything with my wishes now.":
+                            me "I mean, I can fix..."
+                            show jaf angry at right
                             jaf "Is that so? You and your tiny brain trying to fix all problems. What can go wrong?"
                             jaf "Didn't I warn you what would happen?"
                             jaf "I can't afford to wait for the next person, Abdul. Don't ruin this for both of us."
