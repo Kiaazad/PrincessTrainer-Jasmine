@@ -21,7 +21,7 @@ image me confused = "char/abdul/confused.png"
 image me alert = "char/abdul/alert.png"
 image me embarrassed = "char/abdul/embarrassed.png"
 image me smug = "char/abdul/smug.png"
-
+image me hesitant = "char/abdul/hesitant.png"
 
 # Jafar
 image jaf normal = ConditionSwitch(
