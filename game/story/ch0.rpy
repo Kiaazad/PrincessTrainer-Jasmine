@@ -11,7 +11,7 @@
     show ev 01
     show me back at left with dissolve
     me "{size=45}Huh!?"
-    me "That isn't... a mirage."
+    me "That isn't...{w=.4} a mirage."
     me "..."
     me "There's something shiny in the sand."
     hide me
@@ -39,7 +39,7 @@
             show jaf genie at right
             with dissolve
             jaf "{size=45}Aren't you glad to be naive?"
-            show me afraid at left
+            show me scared at left
             # $ msg.msg("You dropped CamelThorns and the lamp")
             me "{size=45}Woah! {w=.6}whoa. {w=.4}wha {w=.2}wh..."
             jaf "{size=45}Where are you running to?"
@@ -49,7 +49,7 @@
             jaf "Is it that obvious? {w=.5}let me..."
             show jaf normal at right with dissolve
             jaf "Ah that's better."
-            show me confused at left
+            show me afraid at left
             me "Wait! {w=.8}Jafar?"
             jaf "In the flesh, {w=.5}or smoke. {w=.8}Fire to be precise."
             jaf "Yes,{w=.3} yes, {w=.3}Genies are make of fire."

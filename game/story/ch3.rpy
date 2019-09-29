@@ -2,34 +2,54 @@
     # $ skip_next = "skip_to_ch4"
     scene black
     show bg black
-    show me nrm at left
+    show me concerned at left
     with dissolve
-    show jaf nrm at right
+    show jaf normal at right
     with dissolve
     me "Are we inside the lamp now?"
     jaf "Yes."
     me "And I'm still alive?"
     jaf "Yes."
+    show me normal at left
+    me "..."
+    show me smug at left
     me "Looks much larger than the outside."
     jaf "..."
     me "You have some leg room in here."
     jaf "..."
     me "Doesn't smell like farts either."
+    show jaf annoyed at right
     jaf "Stop with your wisecracks, we have work to do."
+    show me alert at left
+    show jaf normal at right
     jaf "You need to learn how to navigate this place when I'm not around."
+    show me concerned at left
     me "First question, how do I come inside in the first place."
+    show jaf thinking at right
     jaf "Excellent question, I just think of it and it happens, but you need a spell or something."
+    show me normal at left
     jaf "I'll come up with something."
+    show jaf normal at right
     jaf "But first, let me show you the different places in here."
     menu:
         "I can find my way around, let's get to something more exciting.":
+            show me smug at left
+            me "I can find my way around, let's get to something more exciting."
+            show jaf thinking at right
             jaf "Eager to draw your sword, aren't you?"
+            show me normal at left
+            show jaf normal at right
             jaf "Have a look around then meet me in my library."
             jump ch3_1
         "Yes, please. This place looks like the desert night.":
+            show me concerned at left
+            me "Yes, please. This place looks like the desert night."
             jaf "Are you afraid of dark?"
             me "No. I'm afraid I'll fall into a hole in this darkness."
-            jaf "Hmph, you'll be fine."
+            show jaf thinking at right
+            jaf "Hmph, a valid concern, but you'll be fine."
+            show me alert at left
+            show jaf normal at right
             jaf "Just don't wander too far away from the bright spots."
             jaf "It's not that easy to find your way back in the darkness."
             me "Okay..."

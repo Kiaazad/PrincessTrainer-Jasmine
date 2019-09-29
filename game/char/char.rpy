@@ -9,7 +9,7 @@ define lag = Character("Lago")
 # Abdul images
 image me normal = ConditionSwitch(
     "_last_say_who == 'me'", "char/abdul/normal.png",
-    "not _last_say_who == 'me'", im.Grayscale("char/abdul/normal.png"))
+    "not _last_say_who == 'me'", "char/abdul/normal.png")
 
 image me back = "char/abdul/back.png"
 
@@ -21,7 +21,8 @@ image me confused = "char/abdul/confused.png"
 image me alert = "char/abdul/alert.png"
 image me embarrassed = "char/abdul/embarrassed.png"
 image me smug = "char/abdul/smug.png"
-image me hesitant = "char/abdul/hesitant.png"
+image me scared = "char/abdul/scared.png"
+# image me concerned = "char/abdul/concerned.png"
 
 # Jafar
 image jaf normal = ConditionSwitch(
@@ -35,7 +36,7 @@ image jaf magic = "char/jafar/magic.png"
 image jaf angry = "char/jafar/angry.png"
 # image jaf smile = "char/jafar/smile.png"
 # image jaf annoyed = "char/jafar/annoyed.png"
-
+# image jaf probing = "char/jafar/probing.png"
 image jaf looking:
     "char/jafar/looking1.png"
     pause 2
