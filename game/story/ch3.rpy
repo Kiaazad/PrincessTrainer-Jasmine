@@ -2,98 +2,98 @@
     # $ skip_next = "skip_to_ch4"
     scene black
     show bg black
-    show me concerned at left
+    show abd concerned at left
     with dissolve
     show jaf normal at right
     with dissolve
-    me "Are we inside the lamp now?"
+    abd "Are we inside the lamp now?"
     jaf "Yes."
-    me "And I'm still alive?"
+    abd "And I'm still alive?"
     jaf "Yes."
-    show me normal at left
-    me "..."
-    show me smug at left
-    me "Looks much larger than the outside."
+    show abd normal at left
+    abd "..."
+    show abd smug at left
+    abd "Looks much larger than the outside."
     jaf "..."
-    me "You have some leg room in here."
+    abd "You have some leg room in here."
     jaf "..."
-    me "Doesn't smell like farts either."
+    abd "Doesn't smell like farts either."
     show jaf annoyed at right
     jaf "Stop with your wisecracks, we have work to do."
-    show me alert at left
+    show abd alert at left
     show jaf normal at right
     jaf "You need to learn how to navigate this place when I'm not around."
-    show me concerned at left
-    me "First question, how do I come inside in the first place."
+    show abd concerned at left
+    abd "First question, how do I come inside in the first place."
     show jaf thinking at right
     jaf "Excellent question, I just think of it and it happens, but you need a spell or something."
-    show me normal at left
+    show abd normal at left
     jaf "I'll come up with something."
     show jaf normal at right
     jaf "But first, let me show you the different places in here."
     menu:
         "I can find my way around, let's get to something more exciting.":
-            show me smug at left
-            me "I can find my way around, let's get to something more exciting."
+            show abd smug at left
+            abd "I can find my way around, let's get to something more exciting."
             show jaf thinking at right
             jaf "Eager to draw your sword, aren't you?"
-            show me normal at left
+            show abd normal at left
             show jaf normal at right
             jaf "Have a look around then meet me in my library."
             jump ch3_1
         "Yes, please. This place looks like the desert night.":
-            show me concerned at left
-            me "Yes, please. This place looks like the desert night."
+            show abd concerned at left
+            abd "Yes, please. This place looks like the desert night."
             jaf "Are you afraid of dark?"
-            me "No. I'm afraid I'll fall into a hole in this darkness."
+            abd "No. I'm afraid I'll fall into a hole in this darkness."
             show jaf thinking at right
             jaf "Hmph, a valid concern, but you'll be fine."
-            show me alert at left
+            show abd alert at left
             show jaf normal at right
             jaf "Just don't wander too far away from the bright spots."
             jaf "It's not that easy to find your way back in the darkness."
-            me "Okay..."
+            abd "Okay..."
             # save
             # show bg sav
-            show me normal at left
-            me "Empty jars?"
-            show me smug at left
-            me "Are they an obsession of yours?"
-            show me concerned at left
-            me "Where are they hanging from? I can't see the ceiling."
+            show abd normal at left
+            abd "Empty jars?"
+            show abd smug at left
+            abd "Are they an obsession of yours?"
+            show abd concerned at left
+            abd "Where are they hanging from? I can't see the ceiling."
             jaf "There's no ceiling here, no walls and the thing you're walking on isn't a floor."
-            show me scared at left
-            me "Wait, what!?"
+            show abd scared at left
+            abd "Wait, what!?"
             show jaf angry at right
             jaf "Focus, Abdul!"
             show jaf normal at right
-            show me alert at left
+            show abd alert at left
             jaf "Here, take this."
             # $ msg.msg("Received a bag.")
-            show me normal at left
-            me "..."
+            show abd normal at left
+            abd "..."
             # $ msg.msg("...of sand?")
-            show me confused at left
-            me "A bag of sand?"
+            show abd confused at left
+            abd "A bag of sand?"
             jaf "These are the Sands of Time."
             jaf "Grab a handful, put in one of these jars and the 'you' from that moment will remain there."
-            show me alert at left
+            show abd alert at left
             # $ msg.msg("Right, Received sands of time, a dozen handfuls.")
             jaf "That 'you' can be recovered if something...{w=.5} grim happens to you."
-            me "You can resurrect me?"
+            abd "You can resurrect me?"
             show jaf thinking at right
             jaf "Not exactly."
-            show me concerned at left
+            show abd concerned at left
             show jaf normal at right
             jaf "You'll have to wish for it. But it's pretty difficult to wish when you're dead!"
             jaf "This is my way to walk around that problem."
             jaf "Just don't overdo it, you don't have much sand and it's not easy to obtain more of it."
-            show me alert at left
-            me "Alright."
+            show abd alert at left
+            abd "Alright."
             # set
             show bg sett
-            show me normal at left
-            me "What's this one?"
+            show abd normal at left
+            abd "What's this one?"
             show jaf thinking at right
             jaf "I'm not entirely sure, those seems to have some effect on the outside world."
             show jaf normal at right
@@ -101,14 +101,14 @@
             jaf "You'll have to try them by yourself, I'm afraid."
             # lib
             show bg lib
-            me "You have a library in here?"
+            abd "You have a library in here?"
             jaf "Of course."
-            show me confused at left
-            me "Jafar's Economy for Sultans?, Jafar's Etiquettes of Palace?, Jafar's guide to...{w=.5} Tapdance?"
+            show abd confused at left
+            abd "Jafar's Economy for Sultans?, Jafar's Etiquettes of Palace?, Jafar's guide to...{w=.5} Tapdance?"
             show jaf disappointed at right
             jaf "Not one of my best, I have to admit."
 
-            me "Are all of these books written by you, Jafar?."
+            abd "Are all of these books written by you, Jafar?."
             jaf "Yes, I need to transfer my knowledge to the next generation somehow."
             jaf "You should borrow a few of them at some point."
             jaf "In fact...{w=.5} You need to read them all, they'll help you with your quest."
@@ -117,36 +117,36 @@
             # quest
             show bg quest
             jaf "Here."
-            me "A mirror?"
+            abd "A mirror?"
             jaf "Through this mirror I can watch you outside of the lamp. Guide you and give you information."
-            me "You can see me all the time?"
+            abd "You can see me all the time?"
             jaf "What's the matter?"
-            me "What about my privacy?"
+            abd "What about my privacy?"
             jaf "Get over yourself, I don't have time to watch you all the time. I have books to write."
             jaf "And I don't have any interest in watching you jerk off."
             jaf "I have a harem for myself."
-            me "A harem? Let's go see it!"
+            abd "A harem? Let's go see it!"
             # fight
             show bg fight
-            me "Not this.{nw}"
+            abd "Not this.{nw}"
             # gallery
             show bg gall
-            me "Not this.{nw}"
+            abd "Not this.{nw}"
             # harem
             show bg harem
-            me "Ah yeeesss, you have three slave girls in here?"
+            abd "Ah yeeesss, you have three slave girls in here?"
             jaf "They aren't slaves, they're free."
-            me "Wifes?"
+            abd "Wifes?"
             jaf "No, they're just trapped in here for some reason."
             jaf "And they seem to be happy keeping me company."
-            me "ummm..."
-            me "Can I? ummm... I mean... May I?"
+            abd "ummm..."
+            abd "Can I? ummm... I mean... May I?"
             jaf "Fuck them? I'm not the one you should ask."
             jaf "Ask them, it's up to them to decide."
             jaf "The communication might be a problem though, I'm not sure if they can speak."
             jaf "Never heard a pip out of them."
             jaf "You might want to take a shower first, we're keeping it clean in here."
-            me "A shower...? Hey, are those?"
+            abd "A shower...? Hey, are those?"
             jaf "Yes, statues of me peeing.{w=.5} It seemed like a good idea at the time."
             jaf "The girls seem to like them, and I wasn't expecting any guests in here for a long time."
             jaf "Now, let's go back and visit the places we skipped."
@@ -162,7 +162,7 @@
                         "Yes":
                             jaf "Alright, here we go."
                             call ch3_fight(True)
-                            show me nrm at left
+                            show abd nrm at left
                             with dissolve
                             show jaf nrm at right
                             with dissolve
