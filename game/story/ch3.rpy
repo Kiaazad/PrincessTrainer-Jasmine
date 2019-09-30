@@ -54,40 +54,60 @@
             jaf "It's not that easy to find your way back in the darkness."
             me "Okay..."
             # save
-            show bg sav
-            me "What about those empty jars?"
+            # show bg sav
+            show me normal at left
+            me "Empty jars?"
+            show me smug at left
             me "Are they an obsession of yours?"
+            show me concerned at left
             me "Where are they hanging from? I can't see the ceiling."
             jaf "There's no ceiling here, no walls and the thing you're walking on isn't a floor."
+            show me scared at left
             me "Wait, what!?"
+            show jaf angry at right
             jaf "Focus, Abdul!"
+            show jaf normal at right
+            show me alert at left
             jaf "Here, take this."
             # $ msg.msg("Received a bag.")
+            show me normal at left
             me "..."
             # $ msg.msg("...of sand?")
+            show me confused at left
             me "A bag of sand?"
             jaf "These are the Sands of Time."
             jaf "Grab a handful, put in one of these jars and the 'you' from that moment will remain there."
+            show me alert at left
             # $ msg.msg("Right, Received sands of time, a dozen handfuls.")
             jaf "That 'you' can be recovered if something...{w=.5} grim happens to you."
             me "You can resurrect me?"
+            show jaf thinking at right
             jaf "Not exactly."
+            show me concerned at left
+            show jaf normal at right
             jaf "You'll have to wish for it. But it's pretty difficult to wish when you're dead!"
             jaf "This is my way to walk around that problem."
             jaf "Just don't overdo it, you don't have much sand and it's not easy to obtain more of it."
+            show me alert at left
             me "Alright."
             # set
             show bg sett
+            show me normal at left
             me "What's this one?"
+            show jaf thinking at right
             jaf "I'm not entirely sure, those seems to have some effect on the outside world."
+            show jaf normal at right
             jaf "I don't have any use for them."
             jaf "You'll have to try them by yourself, I'm afraid."
             # lib
             show bg lib
             me "You have a library in here?"
             jaf "Of course."
+            show me confused at left
             me "Jafar's Economy for Sultans?, Jafar's Etiquettes of Palace?, Jafar's guide to...{w=.5} Tapdance?"
+            show jaf disappointed at right
             jaf "Not one of my best, I have to admit."
+
             me "Are all of these books written by you, Jafar?."
             jaf "Yes, I need to transfer my knowledge to the next generation somehow."
             jaf "You should borrow a few of them at some point."
