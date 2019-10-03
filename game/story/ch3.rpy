@@ -101,17 +101,24 @@
             jaf "You'll have to try them by yourself, I'm afraid."
             # lib
             show bg lib
+            # this part can use a revamp
             abd "You have a library in here?"
             jaf "Of course."
             show abd confused at left
             abd "Jafar's Economy for Sultans?, Jafar's Etiquettes of Palace?, Jafar's guide to...{w=.5} Tapdance?"
             show jaf disappointed at right
             jaf "Not one of my best, I have to admit."
-
+            show jaf normal at right
+            show abd smug at left
             abd "Are all of these books written by you, Jafar?."
+            show abd concerned at left
             jaf "Yes, I need to transfer my knowledge to the next generation somehow."
+            show jaf thinking at right
+            show abd alert at left
             jaf "You should borrow a few of them at some point."
+            show jaf normal at right
             jaf "In fact...{w=.5} You need to read them all, they'll help you with your quest."
+            show abd normal at left
             jaf "Speaking of."
             jaf "I'll keep track of your process...{nw}"
             # quest
@@ -119,12 +126,16 @@
             jaf "Here."
             abd "A mirror?"
             jaf "Through this mirror I can watch you outside of the lamp. Guide you and give you information."
+            show abd concerned at left
             abd "You can see me all the time?"
+            show jaf probing at right
             jaf "What's the matter?"
             abd "What about my privacy?"
+            show jaf normal at right
             jaf "Get over yourself, I don't have time to watch you all the time. I have books to write."
             jaf "And I don't have any interest in watching you jerk off."
             jaf "I have a harem for myself."
+            show abd excited at left
             abd "A harem? Let's go see it!"
             # fight
             show bg fight
@@ -136,22 +147,36 @@
             show bg harem
             abd "Ah yeeesss, you have three slave girls in here?"
             jaf "They aren't slaves, they're free."
+            show abd confused at left
             abd "Wifes?"
             jaf "No, they're just trapped in here for some reason."
             jaf "And they seem to be happy keeping me company."
+            show abd embarrassed at left
             abd "ummm..."
             abd "Can I? ummm... I mean... May I?"
-            jaf "Fuck them? I'm not the one you should ask."
+            show jaf probing at right
+            jaf "Fuck them?"
+            show abd alert at left
+            show jaf normal at right
+            jaf "I'm not the one you should ask."
+            show abd normal at left
             jaf "Ask them, it's up to them to decide."
+            show jaf thinking at right
             jaf "The communication might be a problem though, I'm not sure if they can speak."
             jaf "Never heard a pip out of them."
+            show jaf normal at right
             jaf "You might want to take a shower first, we're keeping it clean in here."
+            show abd alert at left
             abd "A shower...? Hey, are those?"
+            show jaf disappointed at right
             jaf "Yes, statues of me peeing.{w=.5} It seemed like a good idea at the time."
             jaf "The girls seem to like them, and I wasn't expecting any guests in here for a long time."
+            show jaf normal at right
             jaf "Now, let's go back and visit the places we skipped."
             menu:
                 "Sure, I can come back later.":
+                    show abd normal at left
+                    abd "Sure, I can come back later."
                     # fight
                     show bg fight
                     jaf "Alright here is my throne. You'll be fighting the creatures I conjure in here."
@@ -160,11 +185,13 @@
                     jaf "Do you want to give it a try?"
                     menu:
                         "Yes":
+                            show abd alert at left
+                            abd "Yes"
                             jaf "Alright, here we go."
-                            call ch3_fight(True)
-                            show abd nrm at left
+                            # call ch3_fight(True)
+                            show abd normal at left
                             with dissolve
-                            show jaf nrm at right
+                            show jaf normal at right
                             with dissolve
                             jaf "Not bad."
                             jaf "At least, you didn't die."
@@ -174,14 +201,22 @@
                             hide jaf with dissolve
                             jump ch3_1
                         "Maybe later.":
+                            show abd normal at left
+                            show jaf normal at right
+                            abd "Maybe later."
                             jaf "Alright. Next is the Hall of Memories."
+                            # hall of memories
                             jaf "You can revisit your proudest moments in here."
                             jaf "And that's it. I have some thinking to do. Feel free to roam around while I'm busy."
                             jaf "Meet me at my library when you're done."
                             hide jaf with dissolve
                             jump ch3_1
                 "I think I'm going to take that shower you've suggested now.":
+                    show abd embarrassed at left
+                    abd "I think I'm going to take that shower you've suggested now."
+                    show jaf disappointed at right
                     jaf "alright, you don't seem to be capable of thinking straight, come to me when you relieved yourself."
+                    show jaf normal at right
                     jaf "I'll think of a plan in the mean time."
                     hide jaf with dissolve
                     menu:

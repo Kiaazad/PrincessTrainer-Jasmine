@@ -174,3 +174,17 @@ label chitchat_10:
 
 label chitchat_11:
     "(jafar's golden rule: reciprocity)"
+
+
+
+
+
+
+
+
+
+
+label chitchat_11:
+    abd "Jafar, are you a cat person or a dog person?"
+
+

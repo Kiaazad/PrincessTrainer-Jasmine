@@ -23,7 +23,7 @@ image abd embarrassed = "char/abdul/embarrassed.png"
 image abd smug = "char/abdul/smug.png"
 image abd scared = "char/abdul/scared.png"
 # image abd concerned = "char/abdul/concerned.png"
-
+# image abd excited = "char/abdul/excited.png"
 
 
 # Jafar
