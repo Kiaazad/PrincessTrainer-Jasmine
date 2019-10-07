@@ -248,7 +248,7 @@ label ch2_1:
             jaf "I can't stop it now, Your...{w=.5} Your wish is granted...{w=.5} MASTER!."
 
             # add hard mode
-            scene "#000"
+            scene image("#000")
             "THe hard mode haven't been added yet, please start again and try to comply with Jafar this time."
             "I'll return you to an earlier point."
             jump ch2_1
