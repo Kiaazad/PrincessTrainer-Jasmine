@@ -104,7 +104,7 @@
                     show abd alert at left
                     show jaf normal at right
                     jaf "Unless... you want to go to heaven now?"
-                    show abd afraid at lef
+                    show abd afraid at left
                     abd "No... I don't...{w=.5} I don't want to die."
                     jaf "Nobody does."
                     abd "Would you stop threatening my life please?"
@@ -246,7 +246,13 @@ label ch2_1:
             jaf "What have you done Abdul?"
             jaf "You bastard, I should've known not to trust you."
             jaf "I can't stop it now, Your...{w=.5} Your wish is granted...{w=.5} MASTER!."
-            jump hard_mode
+
+            # add hard mode
+            scene "#000"
+            "THe hard mode haven't been added yet, please start again and try to comply with Jafar this time."
+            "I'll return you to an earlier point."
+            jump ch2_1
+            # jump hard_mode
         "I wish for Jafar to have full control on who can interact with his lamp and how.":
             show abd alert at left
             abd "I wish for Jafar to have full control on who can interact with his lamp and how."
