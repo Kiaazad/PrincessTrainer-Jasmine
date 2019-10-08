@@ -1,6 +1,6 @@
 ﻿label ch0:
     # default skip_next = "skip_to_ch1"
-    # call desert_0
+    call desert_0
     show bg bg1
     # show screen skips
     show abd tired at left with dissolve
