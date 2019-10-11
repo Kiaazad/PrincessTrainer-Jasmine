@@ -52,7 +52,7 @@
             show abd afraid at left
             abd "Wait! {w=.8}Jafar?"
             jaf "In the flesh, {w=.5}or smoke. {w=.8}Fire to be precise."
-            jaf "Yes,{w=.3} yes, {w=.3}Genies are make of fire."
+            jaf "Yes,{w=.3} yes, {w=.3}Genies are made of fire."
             jaf "Pick up my lamp would you?"
             show abd alert at left
             abd "{size=25}Sorry."
@@ -132,7 +132,7 @@
             jaf "You haven't gone crazy, have you?"
             abd "No!"
             show abd confused at left
-            jaf "Good, {w=.5}nobody does that. {w=.5}Anywhere you saw somebody talking to himself, {w=.5}it's totally fake."
+            jaf "Good, {w=.5}nobody does that. {w=.5}Anywhere you saw somebody talking to himself, {w=.5}he's faking, {w=.5}or crazy."
             show abd embarrassed at left
             jaf "As I was saying: {w=.5}You wish for something and I'll try to twist your words against you."
             show abd alert at left
@@ -198,6 +198,7 @@
             menu:
                 jaf "No time to explain. {w=.5}What do you say? {w=.5}Do we have a deal?"
                 "Sure..!?":
+                    abd "Sure..!?"
                     jaf "Excellent! Now let us head back to Agrabah."
                     # $ qlog.got(jafars_revenge)
                     # $ qlog.cancel(sell_lamp)
@@ -206,13 +207,16 @@
                     jump ch1
                 "No! I want my wishes":
                     show abd normal at left
+                    abd "No! I want my wishes"
                     jaf "Are you sure? {w=.5}This doesn't end that well for you my friend."
                     menu:
                         jaf "Last chance, Abdul! Don't throw away this opportunity."
                         "I want my wishes Jafar.":
+                            abd "I want my wishes Jafar."
                             jaf "So be it."
                             jump wishes
-                        "Alright, alright, I yield, don't screw me up.":
+                        "Alright, I yield.":
+                            abd "Alright, alright, I yield, don't screw me up."
                             jaf "Good, let us haste! {w=.5}Time's a-wastin'."
                             # $ qlog.got(jafars_revenge)
                             # $ qlog.cancel(sell_lamp)

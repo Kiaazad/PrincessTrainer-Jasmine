@@ -1,4 +1,8 @@
-﻿define abd = Character("Abdul", color="#44f", namebox_align=(.1, .95))
+﻿transform char_not_speaking:
+    linear .2 alpha .5
+
+
+define abd = Character("Abdul", color="#44f", namebox_align=(.1, .95))
 define jas = Character("Jasmine", color="#4ff", what_text_color="#dff", namebox_align=(.9, .95))
 define jaf = Character("Jafar", color="#f44", what_text_color="#fdd", namebox_align=(.9, .95))
 
@@ -17,13 +21,13 @@ image abd tired = "char/abdul/tired.png"
 image abd sad = "char/abdul/sad.png"
 image abd afraid = "char/abdul/afraid.png"
 image abd confused = "char/abdul/confused.png"
-# image abd bent = "char/abdul/bent.png"
+image abd bent = "char/abdul/bent.png"
 image abd alert = "char/abdul/alert.png"
 image abd embarrassed = "char/abdul/embarrassed.png"
 image abd smug = "char/abdul/smug.png"
 image abd scared = "char/abdul/scared.png"
-# image abd concerned = "char/abdul/concerned.png"
-# image abd excited = "char/abdul/excited.png"
+image abd concerned = "char/abdul/concerned.png"
+image abd excited = "char/abdul/excited.png"
 
 
 # Jafar
@@ -36,9 +40,9 @@ image jaf thinking = "char/jafar/thinking.png"
 image jaf disappointed = "char/jafar/disappointed.png"
 image jaf magic = "char/jafar/magic.png"
 image jaf angry = "char/jafar/angry.png"
-# image jaf smile = "char/jafar/smile.png"
-# image jaf annoyed = "char/jafar/annoyed.png"
-# image jaf probing = "char/jafar/probing.png"
+image jaf smile = "char/jafar/smile.png"
+image jaf annoyed = "char/jafar/annoyed.png"
+image jaf probing = "char/jafar/probing.png"
 image jaf looking:
     "char/jafar/looking1.png"
     pause 2
