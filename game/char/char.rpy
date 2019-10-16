@@ -1,7 +1,4 @@
-﻿transform char_not_speaking:
-    linear .2 alpha .5
-
-
+﻿
 define abd = Character("Abdul", color="#44f", namebox_align=(.1, .95))
 define jas = Character("Jasmine", color="#4ff", what_text_color="#dff", namebox_align=(.9, .95))
 define jaf = Character("Jafar", color="#f44", what_text_color="#fdd", namebox_align=(.9, .95))

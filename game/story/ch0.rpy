@@ -17,12 +17,12 @@
     hide abd
     hide ev 01
     show bg cg1
-    # $ abdul.got(black_lamp,1,002)
+    $ abdul.got(black_lamp,1,002)
     with dissolve
     abd "An oil lamp?"
     abd "Looks new."
     abd "Hah, my lucky day! I can sell this and eat a full meal tonight."
-    # $ qlog.got(sell_lamp)
+    $ qlog.got(sell_lamp)
     show bg bg1
     show abd confused at left
     with dissolve
@@ -40,7 +40,7 @@
             with dissolve
             jaf "{size=45}Aren't you glad to be naive?"
             show abd scared at left
-            # $ msg.msg("You dropped CamelThorns and the lamp")
+            $ msg.msg("You dropped CamelThorns and the lamp")
             abd "{size=45}Woah! {w=.6}whoa. {w=.4}wha {w=.2}wh..."
             jaf "{size=45}Where are you running to?"
             abd "{size=40}Please don't steal my soul."
@@ -57,7 +57,7 @@
             show abd alert at left
             abd "{size=25}Sorry."
             show abd bent at left
-            # $ msg.msg("You got the Black lamp.")
+            $ msg.msg("You got the Black lamp.")
             show jaf thinking at right
             jaf "Abdul? {w=.8}Is that you?"
             show abd confused at left
@@ -200,10 +200,10 @@
                 "Sure..!?":
                     abd "Sure..!?"
                     jaf "Excellent! Now let us head back to Agrabah."
-                    # $ qlog.got(jafars_revenge)
-                    # $ qlog.cancel(sell_lamp)
+                    $ qlog.got(jafars_revenge)
+                    $ qlog.cancel(sell_lamp)
                     jaf "Bring the thorns. {w=.5}We need any money we can get our hands on."
-                    # $ msg.msg("You got CamelThorns")
+                    $ msg.msg("You got CamelThorns")
                     jump ch1
                 "No! I want my wishes":
                     show abd normal at left
@@ -218,8 +218,8 @@
                         "Alright, I yield.":
                             abd "Alright, alright, I yield, don't screw me up."
                             jaf "Good, let us haste! {w=.5}Time's a-wastin'."
-                            # $ qlog.got(jafars_revenge)
-                            # $ qlog.cancel(sell_lamp)
+                            $ qlog.got(jafars_revenge)
+                            $ qlog.cancel(sell_lamp)
                             show abd confused at left
                             abd "What?"
                             jaf "Something I've heard- {w=.5}you know what, never mind."
