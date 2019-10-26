@@ -289,6 +289,8 @@ label wish_for_everlasting_lavash:
     jaf "Well?"
     abd "It's chewy..."
     jaf "It's a special kind of pure gluten made by my friend Adam."
+    abd "What's... a... gullytoon?"
+    jaf "Not important."
     abd "Doesn't seem to break apart."
     jaf "It doesn't spouse to. Just swallow."
     abd "..."
