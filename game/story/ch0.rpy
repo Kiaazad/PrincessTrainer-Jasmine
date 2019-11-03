@@ -16,14 +16,14 @@
     abd "There's something shiny in the sand."
     hide abd
     hide ev 01
-    show bg cg1
+    show cg cg1
     $ abdul.got(black_lamp,1,002)
     with dissolve
     abd "An oil lamp?"
     abd "Looks new."
     abd "Hah, my lucky day! I can sell this and eat a full meal tonight."
     $ qlog.got(sell_lamp)
-    show bg bg1
+    hide cg
     show abd confused at left
     with dissolve
     abd "They say Aladdin found his Genie in one of these, and he wished for all the things he desired."
@@ -31,9 +31,9 @@
     menu:
         "rub the lamp!":
             hide abd
-            show bg cg2 with Dissolve(2)
+            show cg cg2 with Dissolve(2)
             abd "{size=45}What the fuck?"
-            show bg bg1
+            hide cg
             show abd alert at left
             with dissolve
             show jaf genie at right

@@ -8,6 +8,6 @@
             fight.__init__(self, lvl, type)
             self.name = name
             self.dir = dir
-            self.wishes = []
+            self.wishes = 3
             self.sand = 0
             self.bottles = 0

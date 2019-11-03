@@ -6,6 +6,7 @@
         [1,0,0,0,_("Save"),ShowMenu("save")],
         [0,0,0,1,_("Load"),ShowMenu("load")],
         [0,0,0,1,_("Settings"),ShowMenu("preferences")],
+        [0,0,0,1,_("Credits"),ShowMenu("credits")],
         [1,0,0,1,_("Main Menu"),MainMenu()],
         [0,0,1,1,_("Quit"),Quit(confirm=not main_menu)],
         ]

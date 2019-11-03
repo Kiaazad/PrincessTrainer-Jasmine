@@ -89,8 +89,12 @@ label wishes:
 
 
 
-
-
+    $ abdul.wishes -= 1
+    if abdul.wishes:
+        jaf "Now you're down to [abdul.wishes] wishes."
+    else:
+        jaf "That was your last wish, and you've got what you deserved."
+        jaf "Unfortunate for both of us."
 
 
 # to be
@@ -104,6 +108,11 @@ label wish_to_be_god:
     jaf "so you want to be something that doesn't exist?"
     me "huh?"
     jaf "as you wish then!"
+    me "But God exist!"
+    jaf "Yeah, yeah. There will be people believing you exist as well."
+    me "But...{nw}"
+    jaf "Too late for buts Abdul, You are done for now, it was your last mistake!"
+    # we should erase all save slots at this point to troll the player
     return
 
 label wish_to_be_immortal:

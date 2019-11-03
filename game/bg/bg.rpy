@@ -1,5 +1,5 @@
-﻿image bg cg1 = "bg/cg/01.jpg"
-image bg cg2 = "bg/cg/02.jpg"
+﻿image cg cg1 = "bg/cg/01.jpg"
+image cg cg2 = "bg/cg/02.jpg"
 # image bg cg3 = "bg/cg/03.jpg"
 # image bg cg4 = "bg/cg/04.jpg"
 
