@@ -62,14 +62,15 @@
             show abd bent at left
             $ msg.msg("You got the Black Lamp.")
             show jaf thinking at right
-            jaf "Abdul? {w=.8}Is that you?"
+            jaf "Abdul? {w=.3}Abdul the fishmonger? {w=.8}Is that you?"
+            jaf "I used to buy fish from you..."
             show abd confused at left
-            jaf "Where's your belly? {w=.5}I didn't recognize you without it."
+            jaf "Where's your belly? {w=.5}It's hard to recognize you without it."
             jaf "What are you doing in the middle of desert this time of day?"
             jaf "Shouldn't you be selling fish in the bazaar?"
             show jaf normal at right
             show abd sad at left
-            abd "Well... {w=.6}I can't do that anymore."
+            abd "I don't do that any more."
             abd "Aladdin destroyed my fish stand in one of his fights."
             abd "Every other day he would drag some problem into the bazaar and mess the place up."
             abd "Breaking my fish barrels every single time... {w=.5}Those cost lots of money."
