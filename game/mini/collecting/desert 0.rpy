@@ -18,6 +18,7 @@ default des_0_col = col_game("Roc pass", None,
 label desert_0:
     scene black
     show bg bg1
+    "Collect the tumbleweed!"
     show screen collect(abdul, des_0_col, True, False)
     with dissolve
     show screen tut_timer(t=10, tut= "tut_1")
