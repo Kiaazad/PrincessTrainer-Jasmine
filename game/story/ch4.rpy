@@ -11,12 +11,13 @@ label ch4:
     show abd alert at left
     abd "..."
     show jaf normal at right
-    jaf "Alright, I've devised a fool proof plan. "
-    jaf "The fool would be you, of course."
+    jaf "Alright, I've devised a fool-proof plan. "
+    jaf "And just to be clear, the fool whose inevitable mistakes this plan is proof against is you."
     jaf "After some education, he will infiltrate the palace and push the enemy to desperation."
-    jaf "He will expose the rotten core of their rulers, bare for everyone to see."
+    jaf "He will expose the rotten core of Agrabah's current rulers for everyone to see."
     show abd confused at left
-    jaf "Then, he will deliver the ultimate humiliation."
+    show jaf smile at right
+    jaf "And then...{w=.25} he will deliver the ultimate humiliation."
     abd "Can you stop talking about me in third person, Jafar? I'm standing right here. And I think I should feel insulted."
     show jaf thinking at right
     jaf "Hmmm, I guess a commoner in the palace will be harder than I thought."
@@ -27,33 +28,38 @@ label ch4:
     jaf "More than fine, in fact. You might find pleasure in it."
     show abd smile at left
     abd "Heheheh, pleasure is good. I'm listening."
-    jaf "Ah yes. Pleasure"
+    jaf "Ah yes. Pleasure."
     show jaf thinking at right
     jaf "The ultimate goal. The driving force of nature. Better than all the wealth in the world."
     show abd confused at left
     abd "I don't think any pleasure can top all the wealth in the world, Jafar."
     show jaf normal at right
     jaf "It would, you just don't understand it yet."
+    jaf "But you will."
     show abd normal at left
     show jaf thinking at right
     jaf "I'll have to write a book on that as well."
     show jaf normal at right
-    jaf "Anyways, you need to make some money to buy clothing."
+    jaf "Anyways, to have any chance in the palance, you're going to have to look the part."
+    jaf "First, you need to make some money to buy clothing."
     show abd confused at left
-    abd "Can't you give me some money or the clothing with magic?"
-    jaf "Of course I can, I have the absolute power! The universe is mine to command and all of that jazz."
+    abd "Can't you give me some money or the clothing with magic? I thought Genies could use all sorts of little magic to help out."
+    jaf "Of course I can, I have absolute power! The universe is mine to command and all of that jazz."
     show abd normal at left
-    jaf "But that might count as your wish. I don't want risking something that valuable."
-    abd "Good point, I would never think that ahead. No wonder you became a Vizier."
+    jaf "But that might count as your wish. Like I said, I screwed up last time, and this time I want to do it right."
+    jaf "I don't want to take risks on things that aren't important until I have a better sense of how these cosmic bureaucrats have set things up."
+    abd "Good point, I would never think that far ahead. No wonder you became a Vizier."
+    show jaf smile at right
     jaf "Yes, yes, I'm amazing. Now listen to me."
+    show jaf normal at right
     show abd alert at left
     jaf "You need to establish yourself as a wise man, solving people's problems."
     jaf "Once you're known for holding the solution to every problem, you can easily enter the palace."
     show abd normal at left
-    jaf "In my absence, you will have no problem establishing yourself as a person of importance."
+    jaf "In my absence, and with my help, you will have no problem establishing yourself as a person of importance."
     abd "Like Malik and Hosein?"
     show jaf thinking at right
-    jaf "I almost forgot about those two rats. They can interrupt our plan, we need to get rid of them too."
+    jaf "I almost forgot about those two rats. They are an obstacle. We'll need to get rid of them too."
     show jaf normal at right
     jaf "So I guess that's everything: Your mission, wealth, your attire and combat training. Did I miss anything?"
     show abd concerned at left
@@ -77,7 +83,7 @@ label ch4:
     jaf "Now try it."
     # "There will be a check to see if you have gone into the menu."
     show abd normal at left
-    jaf "Excellent, only you can see or feel the lamp, it should be safe hanging from your waist."
+    jaf "Excellent. Only you can see or feel the lamp, so it should be safe hanging from your waist."
     jaf "Just don't hold or rub it in public. You'll look crazy doing that."
     jaf "And try to not speak to me in front of people either."
     show abd alert at left
