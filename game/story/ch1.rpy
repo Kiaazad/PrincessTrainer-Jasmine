@@ -9,7 +9,7 @@
     show jaf smile at right
     jaf "Ah, my beloved Agrabah."
     show jaf normal at right
-    jaf "What's this smell? Crazy Hakim get a new batch of the good stuff?"
+    jaf "What's this smell? Crazy Hakim get a fresh batch of manure?"
     show abd alert at left
     abd "No, it's from all the garbage in the alleys."
     show abd normal at left
@@ -21,7 +21,7 @@
     jaf "What else do they say about me?"
     abd "That they destroyed you by destroying your lamp."
     show jaf normal at right
-    jaf "Ah, of course. They tried, but turns out it's a little harder than that."
+    jaf "Ah, of course. They tried, but turns out Genies can't die."
     show jaf annoyed at right
     jaf "After a... {w=0.2}painful... {w=0.2}little while, my lamp appeared where you found me."
     jaf "Where the Cave of Wonders was."
@@ -39,8 +39,7 @@
     jaf "Is the Sultan still alive?"
     show jaf normal at right
     abd "Yes, but he retired and gave the throne to Aladdin and Jasmine."
-    abd "Everyone sees him flying his carpet in and out of the city."
-    abd "Jasmine is running the city day-to-day. And, well, you can smell how well that's going."
+    abd "As far as anyone can tell, they spend all their time either lounging in the palace or flying out of the city on that carpet."
     show jaf annoyed at right
     jaf "That girl never had any idea how to rule. I knew it."
     jaf "We'll get to her eventually. But right now we have a bigger fish to catch."

@@ -45,7 +45,8 @@
             show abd concerned at left
             abd "Yes, please. This place looks like the desert night."
             jaf "Are you afraid of the dark?"
-            abd "No. I'm afraid of what could be in this darkness. How do I know I won't fall into a hole? What are we standing on, anyway?"
+            abd "No. I'm afraid of what might be hiding in the darkness. How do I know I won't fall into a hole?"
+            abd "What are we standing on, anyway?"
             show jaf thinking at right
             jaf "Quantum foam."
             abd "What?"
@@ -168,12 +169,12 @@
             show jaf normal at right
             jaf "I'm not the one you should ask."
             show abd normal at left
-            jaf "Ask them. They're adults, they can consent. It's up to them to decide."
+            jaf "Ask them. They're adults, it's up to them to decide."
             show jaf thinking at right
             jaf "Communication might be a problem though. I'm not sure if they can speak."
             jaf "Never heard a word out of them myself."
             show jaf normal at right
-            jaf "You might want to take advantage of the statues and take a shower first, we're keeping it clean in here."
+            jaf "You might want to take advantage of the running water and take a shower first. We're trying to keep it clean in here."
             show abd alert at left
             abd "A shower...? Hey, are those?"
             show jaf disappointed at right

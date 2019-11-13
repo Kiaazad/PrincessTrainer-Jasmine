@@ -12,8 +12,8 @@ label ch4:
     abd "..."
     show jaf normal at right
     jaf "Alright, I've devised a fool-proof plan. "
-    jaf "And just to be clear, the fool whose inevitable mistakes this plan is proof against is you."
-    jaf "After some education, he will infiltrate the palace and push the enemy to desperation."
+    jaf "And just to be clear, by \"fool\" I mean you."
+    jaf "After some education, the fool will infiltrate the palace and push the enemy to desperation."
     jaf "He will expose the rotten core of Agrabah's current rulers for everyone to see."
     show abd confused at left
     show jaf smile at right

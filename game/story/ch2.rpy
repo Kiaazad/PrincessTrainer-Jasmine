@@ -23,12 +23,12 @@
     jaf "Those two cockroaches are back in the city?"
     abd "Yes. The Sultan invited them to his daughter's wedding, and they never left."
     show abd confused at left
-    abd "They've created two opposing 'administrations,' both of which demand taxes from people."
+    abd "They've set up two opposing shrines in town, and tax everyone double to pay for them."
     show abd normal at left
     show jaf angry at right
-    jaf "Those sleazy bastards."
+    jaf "Those sleazy bastards. Parasitic cult leaders who never give anything back."
     jaf "For years, I kept both the Sultan and the city shielded from them."
-    jaf "If they've entrenched themselves, we might have a problem..."
+    jaf "They can be very persuasive to the weak-minded. If they've entrenched themselves with the populace, we might have a problem..."
     show jaf normal at right
     jaf "We'll need to pay both a visit, eventually."
     # $ qlog.got(visit_malik)
@@ -44,9 +44,7 @@
             show abd confused at left
             abd "Why?"
             show jaf normal at right
-            jaf "As a Genie, I can't kill anyone."
-            jaf "Well, to be precise, I can't kill anyone who hasn't made their third wish."
-            jaf "And even those deaths can't be quick or efficient."
+            jaf "As a Genie, I can't directly kill anyone."
             jaf "So you're going to have to do that for me."
             show abd alert at left
             abd "But...{w=.2} I'm not a murderer, Jafar."
@@ -174,8 +172,8 @@
             jaf "You're a sick man, Abdul. Finding pleasure in such a barbaric act."
             abd "It is the law."
             show jaf normal at right
-            jaf "I know, I know, I'm not against some bloodshed to get something important done."
-            jaf "But cutting hands is just stupid. Rehabilitation is pretty hard when you are missing a hand and can't work."
+            jaf "I know, I know, I'm not against some bloodshed to get something important done. I just don't resort to violence unless I must."
+            jaf "Cutting off hands is just stupid. Rehabilitation is pretty hard when you are missing a hand and can't work."
             show abd alert at left
             jaf "That being said, your enthusiasm for violence is exactly what I need right now."
             # $ qlog.got(master_swordsman)
@@ -198,7 +196,7 @@ label ch2_1:
     menu:
         "I wish that Jafar can use the lamp as he wishes.":
             show abd alert at left
-            abd "I wish that has Jafar can use the lamp as he wishes."
+            abd "I wish that Jafar can use the lamp as he wishes."
             show jaf looking at right
             jaf "..."
             abd "..."
@@ -293,7 +291,7 @@ label ch2_1:
     abd "No, I guess we don't."
     show abd concerned at left
     abd "Does this mean I still have two wishes?"
-    jaf "More like one. Remember our deal? I have to use the last wish so you don't die."
+    jaf "More like one. Remember our deal? I get to use one other wish."
     show abd alert at left
     abd "Yes, of course."
     jaf "Believe me, one wish is more than enough."
