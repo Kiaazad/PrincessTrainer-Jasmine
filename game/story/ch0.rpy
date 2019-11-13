@@ -62,10 +62,9 @@
             show abd bent at left
             $ msg.msg("You got the Black Lamp.")
             show jaf thinking at right
-            jaf "Abdul? {w=.3}Abdul the fishmonger? {w=.8}Is that you?"
-            jaf "I used to buy fish from you..."
+            jaf "Abdul? {w=.3}Is that you?"
             show abd confused at left
-            jaf "Where's your belly? {w=.5}It's hard to recognize you without it."
+            jaf "Where's your belly you fat fuck? {w=.5}I didn't recognize you without it."
             jaf "What are you doing in the middle of desert this time of day?"
             jaf "Shouldn't you be selling fish in the bazaar?"
             show jaf normal at right
