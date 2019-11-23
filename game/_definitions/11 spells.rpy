@@ -1,0 +1,106 @@
+﻿# moves skills and spells
+# here are the moves you can perform while fighting.
+default kick = spell(
+    _("Kick"),                                  # name
+    _("A kick aimed for the ass area."),        # description
+    "spells/kick.png",                          # icon
+    hp = -2,                                    # Health damage or heal
+    stmc = 25,                                  # Stamina cost
+    pdbm = [30, 40, 10, 30],                    # chance to [parry, dodge, block, miss]
+    )
+
+default punch = spell(
+    _("Punch"),
+    _("A punch to the face."),
+    "spells/punch.png",
+    hp = -35,
+    stmc = 10,
+    effect = [[nose_bleed, 5]],
+    pdbm = [20, 50, 10, 20],
+    )
+
+default slash = spell(
+    _("Slash"),
+    _("The slash of blade to cut the skin."),
+    "spells/slash.png",
+    hp = -21,
+    stmc = 40,
+    effect = [[bleed, 80]],
+    pdbm = [40, 10, 40, 10],
+    )
+
+default pierce = spell(
+    _("Pierce"),
+    _("The slash of blade to cut the skin."),
+    "spells/pierce.png",
+    hp = -40,
+    stmc = 45,
+    effect = [[bleed, 60]],
+    pdbm = [10, 30, 30, 30],
+    )
+
+default slap = spell(
+    _("Slap"),
+    _("A good slap across the face. Such a princess move."),
+    "spells/pierce.png",
+    hp = -5,
+    stmc = 15,
+    effect = [[nose_bleed, 10]],
+    pdbm = [10, 30, 30, 60],
+    )
+
+default bite = spell(
+    _("Bite"),
+    _("Nasty, isn't it?"),
+    "spells/pierce.png",
+    hp = -5,
+    stmc = 15,
+    effect = [[bleed, 10]],
+    pdbm = [10, 30, 30, 60],
+    )
+
+default maul = spell(
+    _("Maul"),
+    _("."),
+    "spells/pierce.png",
+    hp = -5,
+    stmc = 15,
+    effect = [[bleed, 5]],
+    pdbm = [10, 30, 30, 60],
+    )
+
+default stab = spell(
+    _("Stab"),
+    _("Preferably in the back."),
+    "spells/pierce.png",
+    hp = -5,
+    stmc = 15,
+    effect = [[bleed, 90]],
+    pdbm = [10, 30, 30, 60],
+    )
+
+default eye_poke = spell(
+    _("Eye poke"),
+    _("Hard to pull but do it twice and your opponent will be blind, permanently."),
+    "spells/pierce.png",
+    hp = -5,
+    stmc = 15,
+    effect = [[bleed, 90]],
+    pdbm = [10, 30, 30, 80],
+    )
+
+default growl = spell(
+    _("Growl"),
+    _("Intermediating isn't it?"),
+    "spells/pierce.png",
+    mp = -10,
+    stmc = 5,
+    pdbm = [10, 30, 30, 50],
+    )
+
+
+default list_of_spells = [
+    kick, punch, slash, pierce, slap,
+]
+
+

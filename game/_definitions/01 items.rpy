@@ -1,129 +1,149 @@
-﻿# ingredient
+﻿# Ingredient
 default thorns = item(
-    "Tumbleweed",
-    10,
-    "items/thorns.png",
-    ""
+    name = _("Tumbleweed"),         # Name
+    inf = _(""),                    # Description [optional]
+    icon = "items/thorns.png",      # Icon [optional]
+    val = 10,                       # Value [optional] [Default = 0]
+    type = None,                    # Type [optional] [default = None]
+    use_event = None,               # Event happening when used [optional] [default = None]
     )
 
 default wood = item(
-    "Wood",
-    40,
+    _("Wood"),
+    _(""),
     "items/wood.png",
-    ""
+    40,
     )
 
 default feather = item(
-    "Feather",
-    1,
+    _("Feather"),
+    _(""),
     "items/feather.png",
-    ""
+    1,
     )
 
 default stick = item(
-    "Stick",
-    1,
+    _("Stick"),
+    _("Behold the mighty stick!"),
     "items/stick.png",
-    "Behold the mighty stick!"
+    1,
     )
 
 default string = item(
-    "String",
-    1,
+    _("String"),
+    _(""),
     "items/string.png",
-    ""
+    1,
     )
 
 default arrowhead = item(
-    "Arrowhead",
-    5,
+    _("Arrowhead"),
+    _(""),
     "items/arrowhead.png",
-    ""
-    )
-
-default sand_bottle = item(
-    "A bottle on a rope",
-    500,
-    "items/sand_bottle.png",
-    "Now let's go hang it in the lamp.",
+    5,
     )
 
 default bottle = item(
-    "Empty bottle",
-    400,
+    _("Empty bottle"),
+    _("There's so many uses for an empty bottle."),
     "items/bottle.png",
-    "There's so many uses for an empty bottle.",
+    400,
     )
 
 default rope = item(
-    "Rope",
-    90,
+    _("Rope"),
+    _("A good sturdy rope."),
     "items/rope.png",
-    "A good sturdy rope.",
+    90,
     )
 
 default cork = item(
-    "Cork",
-    10,
+    _("Cork"),
+    _("A normal cork."),
     "items/cork.png",
-    "A normal cork.",
+    10,
     )
 
-
+default list_of_ingredients = [
+    thorns, wood, feather, stick, string, arrowhead, bottle, rope, cork,
+]
 
 
 # Books
 default book1 = item(
-    "Red book",
-    3100,
+    _("Red book"),
+    _("It's a red book."),
     "items/book1.png",
-    "It's a red book."
+    3100,
     )
 
 default book2 = item(
-    "Book of Err",
-    5300,
+    _("Book of Err"),
+    _("The facetting tale of Err."),
     "items/book2.png",
-    "The facetting tale of Err."
+    5300,
     )
 
 default book3 = item(
-    "Book of Eep",
-    6500,
+    _("Book of Eep"),
+    _("The most amazing book about Eep and it's miraculous effect."),
     "items/book3.png",
-    "The most amazing book about Eep and it's miraculous effect."
+    6500,
     )
 
 default book4 = item(
-    "An old book",
-    2200,
+    _("An old book"),
+    _("This book looks old."),
     "items/book4.png",
-    "This book looks old."
+    2200,
     )
+
+default list_of_books = [
+    book1, book2, book3, book4,
+]
+
 
 # sex
 default coconut_oil = item(
-    "Coconut  oil",
-    942,
+    _("Coconut  oil"),
+    _("There's no domain that can't be conquered with a bit of spit. But in the dry desert, Hakim's coconut  oil saves you from an embarrassing situation when you're too thirsty to spit."),
     "items/_frm.png",
-    "There's no domain that can't be conquered with a bit of spit. But in the dry desert, Hakim's coconut  oil saves you from an embarrassing situation when you're too thirsty to spit."
+    942,
     )
 
 default nuru_gel = item(
-    "Nuru gel",
-    1956,
+    _("Nuru gel"),
+    _("From the far east, slippery, sticky, stringy lubrication. It's used in full body massage."),
     "items/_frm.png",
-    "From the far east, slippery, sticky, stringy lubrication. It's used in full body massage."
+    1956,
     )
 
-# Other
+default list_of_sex_items = [
+    coconut_oil, nuru_gel, 
+]
+
+# Lamp
 default black_lamp = item(
-    "Black lamp",
-    2100,
+    _("Black lamp"),
+    _("An oil lamp used for illumination."),
     "items/bracers_of_agility.png",
-    "An oil lamp used for illumination."
+    2100,
     )
 
+default sand_bottle = item(
+    _("A bottle on a rope"),
+    _("Now let's go hang it in the lamp."),
+    "items/sand_bottle.png",
+    500,
+    )
 
+default magic_ring = item(
+    _("Magic ring"),
+    _("A ring with a Genie in it."),
+    "items/sand_bottle.png",
+    500,
+    )
 
-
+default list_of_lamp_items = [
+    black_lamp, sand_bottle, magic_ring,
+]

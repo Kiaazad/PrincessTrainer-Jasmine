@@ -46,3 +46,7 @@ image jaf looking:
     "char/jafar/looking2.png"
     pause 2
     repeat
+
+
+# Jasmine
+# image jas normal = "char/jasmine/normal.png"

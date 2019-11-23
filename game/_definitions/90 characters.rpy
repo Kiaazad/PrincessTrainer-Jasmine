@@ -19,6 +19,7 @@ default jafar = unit(
     lvl = 650,
     type = "Wizard"
     )
+
 default harem_girl_1 = unit(
     "Harem Girl",
     "char/harem_girl_1",
@@ -65,13 +66,91 @@ default akbar = unit(
     "Peasant",
     )
 
-# -------- teams
 default snake_dancer = unit(
     "Snake",
     "char/snake",
 
+    lvl = 100,
+    type = "Dancer"
+    )
+
+
+default snake_dancing_girl_1 = unit(
+    "Snake Dancer",
+    "char/snake_dancing_girl_1",
+
+    lvl = 8,
+    type = "Dancer"
+    )
+
+default scorpion_mistress = unit(
+    "Snake Dancer",
+    "char/scorpion_mistress",
+
     lvl = 2,
     type = "Dancer"
     )
+
+default orphans_and_monkeys = unit(
+    "Orphan",
+    "char/orphans_and_monkeys",
+
+    lvl = 2,
+    type = "Peasant"
+    )
+
+default rasoul = unit(
+    "Rasoul",
+    "char/rasoul",
+
+    lvl = 3,
+    type = "Warrior"
+    )
+
+default warrior_man = unit(
+    "Desert warrior",
+    "char/warrior_man",
+
+    lvl = 12,
+    type = "Warrior"
+    )
+
+default warrior_woman = unit(
+    "Desert warrior",
+    "char/warrior_woman",
+
+    lvl = 11,
+    type = "Warrior"
+    )
+
+default undead_guard = unit(
+    "Ancient undead guard",
+    "char/undead_guard",
+
+    lvl = 18,
+    type = "Warrior"
+    )
+
+default skeleton_rogue = unit(
+    "Skeleton rogue",
+    "char/skeleton_rogue",
+
+    lvl = 18,
+    type = "Rogue"
+    )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
