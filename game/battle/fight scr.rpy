@@ -69,6 +69,6 @@ screen btl_scr(f, e):
         action ToggleScreen("btl_team", t = f)
 
     use stats(f, e)
-    if caster:
-        use fine_tune(caster)
+    # if caster:
+    #     use fine_tune(caster)
 
