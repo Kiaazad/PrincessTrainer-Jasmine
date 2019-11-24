@@ -5,33 +5,31 @@
     # show screen skips
     show abd tired at left with dissolve
     abd "Phew..."
-    abd "There's nothing here but sand."
+    abd "There's nothing left here but sand."
     abd "Not even a single tumbleweed!"
-    abd "I need to find another area to collect firewood."
+    abd "I need to find another place to collect firewood."
     show ev 01
     show abd back at left with dissolve
     abd "{size=45}Huh!?"
-    abd "That isn't a mirage."
+    abd "That isn't...{w=.4} a mirage."
     abd "..."
-    abd "There's something shining in the sand over there!"
+    abd "There's something shiny in the sand."
     hide abd
     hide ev 01
     show cg cg1
     $ abdul.got(black_lamp,1,002)
     with dissolve
     abd "An oil lamp?"
-    abd "It's in good shape for being buried out here..."
+    abd "Looks new."
     abd "Hah, this is my lucky day! I can sell this and eat a full meal tonight."
     $ qlog.got(sell_lamp)
     hide cg
     show abd confused at left
     with dissolve
     abd "Hmmm. They say Aladdin found his Genie in a lamp like this and the Genie made all his wishes come true."
-    abd "What a bunch of crap."
     abd "I {b}wish{/b} these rumours were believable."
-    abd "Still, it might be worth a shot to rub it... even if it would be a a naive thing to do."
     menu:
-        "Who cares if it's naive? Rub the lamp!":
+        "Rub the lamp!":
             hide abd
             show cg cg2 with Dissolve(2)
             abd "{size=45}What the fuck?"
@@ -43,7 +41,7 @@
             jaf "{size=45}Sometimes it's good to be a little naive, don't you think?"
             show abd scared at left
             $ msg.msg("You dropped the Black Lamp")
-            abd "{size=45}Woah! {w=.6}Whoa. {w=.4}wha... {w=.2}wh..."
+            abd "{size=45}Woah! {w=.6}whoa. {w=.4}wha {w=.2}wh..."
             jaf "{size=45}Where are you running to?"
             abd "{size=40}Please don't steal my soul."
             jaf "{size=40}Calm down, I'm not interested in your soul."
@@ -53,28 +51,32 @@
             show jaf normal at right with dissolve
             jaf "Ah that's better."
             show abd afraid at left
-            abd "Wait! {w=.8}Jafar?"
+            abd "Wait! {w=.3}Jafar?"
             jaf "In the flesh, {w=.5}or smoke. {w=.8}Fire to be precise."
             jaf "Yes,{w=.3} yes, {w=.3}Genies are made of fire."
             jaf "Pick up my lamp would you?"
             show abd alert at left
             abd "{size=25}Sorry."
             show abd bent at left
-            $ msg.msg("You got the Black Lamp.")
+            $ msg.msg("You got the Black lamp.")
             show jaf thinking at right
-            jaf "Abdul? {w=.3}Is that you?"
+            jaf "Abdul? {w=.8}Is that you?"
             show abd confused at left
             jaf "Where's your belly you fat fuck? {w=.5}I didn't recognize you without it."
             jaf "What are you doing in the middle of desert this time of day?"
             jaf "Shouldn't you be selling fish in the bazaar?"
             show jaf normal at right
             show abd sad at left
-            abd "I don't do that any more."
+            abd "Well... {w=.6}I can't do that anymore."
             abd "Aladdin destroyed my fish stand in one of his fights."
             abd "Every other day he would drag some problem into the bazaar and mess the place up."
             abd "Breaking my fish barrels every single time... {w=.5}Those cost lots of money."
-            abd "I went to the palace to ask for compensation, but they said Aladdin had to do it for national security reasons and was \"indemnified.\""
             abd "They blamed it on you returning to Agrabah."
+            jaf "Did you get compensated for the damages?"
+            abd "After your death there's nobody to go to in the palace."
+            jaf "I'm still alive Abdul."
+            show abd alert at left
+            abd "I meant after you left."
             abd "I can't take my fish to the bazaar without barrels."
             abd "No fish to sell means no money to buy barrels, {w=.4} which means no money to buy fish food, {w=.4}and now no money to buy bread."
             show jaf thinking at right
@@ -86,13 +88,13 @@
             jaf "I warned the Sultan about wasting too much of our limited drinkable water for fountains and his garden."
             jaf "He never listened."
             jaf "Or maybe he just never cared."
-            jaf "Either way he's to blame. {w=.4}That old cracker-eating piece of shit."
+            jaf "Either way he's to blame. {w=.4}That motherfucking old piece of shit."
             abd "..."
             show jaf thinking at right
             jaf "Hey, {w=.4}hows your mother?"
             show abd sad at left
             abd "She died."
-            jaf "Damn, how long have I been away? {w=.5}I thought she still had a solid ten years or so."
+            jaf "Damn, {w=.8}how long I was gone for? {w=.5}That old hag still had a solid ten years or so."
             abd "Roughly a year."
             jaf "Is that so?"
             abd "Yes, my mother died few months ago, after I lost my business."
@@ -105,28 +107,28 @@
                 jaf "Ah, {w=.5}sorry Abdul, {w=.5}I got distracted. Anyways."
             else:
                 abd "She tried to help me by working..."
-                jaf "Oh? {w=.8}You'll have to tell me about it later."
+                jaf "Aha? {w=.8}Tell me about it later."
                 show abd confused at left
             show jaf thinking at right
             jaf "But hey, you know what this means don't you?"
             show abd confused at left
             abd "What?"
             jaf "It means you're the hero of the story now!"
-            abd "What story? And why am I the hero?"
+            abd "The hero?"
             show jaf normal at right
-            jaf "Look at the facts, my friend. {w=.5}You're down on your luck. {w=.5}Your mother recently died. {w=.5}But you've just received a new opportunity!"
+            jaf "Yes my friend, {w=.5}down on the luck, {w=.5}dead mother and facing an unbelievable opportunity."
             jaf "Those are the telltale signs of a story being written."
-            jaf "This time, you're the main character!"
-            jaf "Abdul, my friend... {w=.5}Your life is about to change."
+            jaf "This time, yours!"
+            jaf "Abdul my friend... {w=.5}Your life is about to change. A new opportunity fell right into your lap!"
             if not persistent.theme_change:
                 show jaf looking at right
-                jaf "So...?"
+                jaf "So..."
                 show jaf normal at right
             abd "Opportunity?"
             show jaf disappointed at right
             jaf "Okay, okay. I'll spell it out for you."
             show jaf normal at right
-            jaf "I'm a Genie. And you rubbed my lamp... {w=.4}hehe..."
+            jaf "I'm a Genie. And you rubbed me out... {w=.4}hehe..."
             jaf "And now I shall grant you three wishes."
             abd "Really?"
             jaf "Yep! Those are the Rules!"
@@ -144,15 +146,8 @@
             show abd alert at left
             abd "Against me? {w=.5}But why?"
             show jaf thinking at right
-            jaf "It's in the Rules."
-            show abd confused at left
-            abd "Rules? What rules?"
-            show jaf normal at right
-            jaf "The Genie Rules. Turns out there are quite a few of them. Bureaucratic bastard universe mongers..."
-            show abd alert at left
-            jaf "Ahem. Excuse me."
-            jaf "The point is, I have to try to twist your words. I suppose it's something about teaching you a lesson."
-            jaf "The {b}value of contentment{/b} or something stupid like that."
+            jaf "I suppose it's something about teaching you a lesson."
+            jaf "The value of Contentment or something stupid like that."
             show jaf normal at right
             jaf "HOWEVER!"
             jaf "I have a deal to propose."
@@ -162,7 +157,7 @@
                 show jaf normal at right
                 show abd confused at left
                 abd "What ugliness?"
-                jaf "Oh yeah. You can't see it."
+                jaf "Ah, {w=.5}Right! You can't see it."
                 jaf "Let me show you."
                 show jaf magic at right
                 show abd alert at left
@@ -184,38 +179,43 @@
                 abd "I do, {w=.5}but..."
                 jaf "So they are pointing out the truth, {w=.5}why should that bother me?"
                 abd "But it's hateful talk."
-                jaf "It's just a way for them to perceive us. {w=.5}Humans do that for everything."
+                jaf "It's just a way for them to perceive us. {w=.5}We humans do that for everything."
                 jaf "Even if it's hate, {w=.5}I choose spoken hate over hateful acts any day."
                 show abd confused at left
                 abd "You're right, Jafar. {w=.5}So, You mentioned a deal?"
-                jaf "Ah, yes!"
+                jaf "Ah, {w=.5}yes!"
             else:
                 abd "A deal?"
                 jaf "Yes."
-            jaf "Rules, even Genie Rules, can always be... {w=.5}managed."
-            jaf "If you promise to help me get my revenge on the three idiots who trapped me in this lamp..."
-            jaf "I'll help you make your wishes."
-            jaf "And most importantly, I'll tell you how to avoid being screwed with your last wish."
+            jaf "If you promise to help me get my revenge from those three idiots..."
+            jaf "The bastards who trapped me in this thing...."
+            jaf "I'll let give your first wish... {w=.5}and second wish..."
+            jaf "Then I'll tell you how to avoid being screwed for your last wish."
             show abd confused at left
             abd "What do you mean by 'screwed?'"
-            jaf "Well, under normal circumstances... {w=.5}I'd have to kill you with your own wish."
+            jaf "Well, under normal circumstances... {w=.5}I'd kill you with your own wish."
             show abd alert at left
             abd "Wait, I've heard that Genies can't kill..."
-            jaf "Not directly we can't, {w=.5}but we can certainly place you in a deadly situation."
-            jaf "And it's remarkably easy to let people die on their own."
+            jaf "Not directly we can't, {w=.5}but you'll be surprised to know..."
+            abd "What you can live through?"
+            jaf "You've heard that one huh?"
+            show abd confused at left
+            jaf "No! That was the old me..."
+            jaf "I was about to say: {w=.5}How easy is it to let people die on their own."
+            abd "What do you mean?"
             menu:
-                jaf "So, what do you say? {w=.5}Do we have a deal?"
-                "Sure.":
-                    abd "Sure."
+                jaf "No time to explain. {w=.5}What do you say? {w=.5}Do we have a deal?"
+                "Sure..!?":
+                    abd "Sure..!?"
                     jaf "Excellent! Now let us head back to Agrabah."
                     $ qlog.got(jafars_revenge)
                     $ qlog.cancel(sell_lamp)
-                    jaf "Bring whatever you've collected so far. {w=.5}We need any money we can get our hands on."
+                    jaf "Bring the thorns. {w=.5}We need any money we can get our hands on."
                     $ msg.msg("You got CamelThorns")
                     jump ch1
-                "No! I want control over my wishes!":
+                "No! I want my wishes":
                     show abd normal at left
-                    abd "No! I want control over my wishes!"
+                    abd "No! I want my wishes Jafar!"
                     jaf "Are you sure? {w=.5}This doesn't end well for you my friend."
                     menu:
                         jaf "Last chance, Abdul! Don't throw away this opportunity."
@@ -225,7 +225,6 @@
                             jump wishes
                         "Okay, okay. I yield.":
                             abd "Okay, okay. I yield. Don't screw me up."
-                            abd "I'm still better off than I was this morning."
                             jaf "Good, let us haste! {w=.5}Time's a-wastin'."
                             $ qlog.got(jafars_revenge)
                             $ qlog.cancel(sell_lamp)
