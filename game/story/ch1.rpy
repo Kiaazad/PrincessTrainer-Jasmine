@@ -9,7 +9,7 @@
     show jaf smile at right
     jaf "Ah, my beloved Agrabah."
     show jaf normal at right
-    jaf "What's this smell? Crazy Hakim get a fresh batch of manure?"
+    jaf "What's this smell? Did Crazy Hakim get a fresh batch of manure?"
     show abd alert at left
     abd "No, it's from all the garbage in the alleys."
     show abd normal at left
@@ -33,16 +33,17 @@
     abd "Well, I saw the other Genie pick up the palace and put it on the hilltop."
     abd "They said you commanded him."
     abd "All the important things happen inside the palace walls when nobody is around."
+    abd "It's suspiciously empty for a palace."
     abd "But I've heard a few things from the palace guards here and there."
     show jaf thinking at right
-    jaf "Interesting. You should tell me those stories at some point."
+    jaf "Interesting. you should tell me those stories at some point."
     jaf "Is the Sultan still alive?"
     show jaf normal at right
     abd "Yes, but he retired and gave the throne to Aladdin and Jasmine."
-    abd "As far as anyone can tell, they spend all their time either lounging in the palace or flying out of the city on that carpet."
+    abd "He's the new sultan that is always out of the city flying his carpet."
     show jaf annoyed at right
-    jaf "That girl never had any idea how to rule. I knew it."
-    jaf "We'll get to her eventually. But right now we have a bigger fish to catch."
+    jaf "And Jasmine have no clue how to rule. I knew it."
+    jaf "I'll deal with this later, for now we have a bigger fish to catch."
     show jaf normal at right
     show abd sad at left
     abd "..."
@@ -56,14 +57,18 @@
     jaf "Let's go to your house.{w=.5} If I remember correctly, it's this way, right?"
     show abd sad at left
     abd "No."
-    jaf "Oh? You don't live near the bazaar anymore?"
+    jaf "Oh? Didn't you live near bazaar? This way?"
     abd "No."
+    show jaf annoyed at right
+    jaf "Which way then?"
+    abd "..."
     show jaf disappointed at right
     jaf "You've lost your house too?"
     abd "Yes, I've been living on the streets."
     show jaf normal at right
-    jaf "How unfortunate. Lucky for you, I know a place, and I'm sure it's vacant too."
+    jaf "How unfortunate."
+    jaf "Lucky for you, I know a place, and I'm sure it's vacant too."
     show abd confused at left
-    jaf "Its resident upgraded."
+    jaf "Its resident moved to a bigger place."
     jaf "Follow me."
     jump ch2
