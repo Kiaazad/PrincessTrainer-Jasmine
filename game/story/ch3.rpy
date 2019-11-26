@@ -124,10 +124,19 @@
             show abd smug at left
             abd "Even...?"
             show jaf annoyed at right
-            jaf "Yes, even \"Tapdance.\" Particularly that one."
-            show abd normal at left
+            jaf "...{nw}"
+            show jaf magic at right
+            show abd afraid at left
+            abd "Whah..."
+            jaf "There... It never existed."
+            show jaf annoyed at right
+            jaf "Happy now?"
+            abd "Sorry, sorry, it was just a joke."
+            abd "Did you have to burn it right in my hand?"
+            jaf "Now you now better not to annoy a powerful Genie."
             show jaf normal at right
-            jaf "Speaking of your quest..."
+            jaf "Where were we? Ah yes, speaking of quest."
+            show abd normal at left
             jaf "I'll keep track of your progress...{nw}"
             # quest
             show bg quest
