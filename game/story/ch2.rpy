@@ -16,19 +16,18 @@
     abd "There's a lot of cleaning up to do..."
     jaf "Don't bother, we won't spend much time here."
     show abd alert at left
-    jaf "To business. Given Jasmine's abysmal leadership skills, someone else must be actually running the city. Who?"
+    jaf "Now tell me, who runs the city?"
     show abd alert at left
     abd "Malik and Hosein,{w=.2} Bin Salam's brothers."
     show jaf annoyed at right
     jaf "Those two cockroaches are back in the city?"
     abd "Yes. The Sultan invited them to his daughter's wedding, and they never left."
     show abd confused at left
-    abd "They've set up two opposing shrines in town, and tax everyone double to pay for them."
+    abd "Now they created two opposing sects in town, and both demand taxes from people."
     show abd normal at left
     show jaf angry at right
-    jaf "Those sleazy bastards. Parasitic cult leaders who never give anything back."
-    jaf "For years, I kept both the Sultan and the city shielded from them."
-    jaf "They can be very persuasive to the weak-minded. If they've entrenched themselves with the populace, we might have a problem..."
+    jaf "Those sleazy bastards."
+    jaf "For years, I've kept the sultan and the city shielded from their extreme ideology."
     show jaf normal at right
     jaf "We'll need to pay both a visit, eventually."
     # $ qlog.got(visit_malik)
