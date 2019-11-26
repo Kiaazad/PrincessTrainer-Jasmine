@@ -36,7 +36,7 @@
             show abd smug at left
             abd "I can find my way around, let's get to something more exciting."
             show jaf thinking at right
-            jaf "Eager to get going, aren't you?"
+            jaf "Eager to draw your sword, aren't you?"
             show abd normal at left
             show jaf normal at right
             jaf "Have a look around then meet me in my library."
@@ -46,11 +46,7 @@
             abd "Yes, please. This place looks like the desert night."
             jaf "Are you afraid of the dark?"
             abd "No. I'm afraid of what might be hiding in the darkness. How do I know I won't fall into a hole?"
-            abd "What are we standing on, anyway?"
             show jaf thinking at right
-            jaf "Quantum foam."
-            abd "What?"
-            jaf "Look, just, don't worry about it. You're safe in here."
             show abd alert at left
             show jaf normal at right
             jaf "Just don't wander too far away from the bright spots."
@@ -59,13 +55,16 @@
             # save
             # show bg sav
             show abd normal at left
-            abd "Wow... that's a lot of... empty jars?"
+            abd "Empty jars?"
             show abd smug at left
             abd "Are they an obsession of yours?"
             show abd concerned at left
             abd "Where are they hanging from? I can't see the ceiling."
-            jaf "Quantum foam."
-            abd "..."
+            jaf "There's no ceiling here, no walls and the thing you're walking on isn't a floor."
+            show abd scared at left
+            abd "Wait, what!?"
+            show jaf angry at right
+            jaf "Focus, Abdul!"
             show jaf normal at right
             show abd alert at left
             jaf "Here, take this."
@@ -97,7 +96,7 @@
             show jaf thinking at right
             jaf "To be honest, I'm not entirely sure. These devices seem to have some minor effects on the outside world."
             show jaf normal at right
-            jaf "Since I've been trapped in here, I haven't have any use for them."
+            jaf "I don't have any use for them."
             jaf "You'll have to try them by yourself, I'm afraid."
             # lib
             show bg lib
