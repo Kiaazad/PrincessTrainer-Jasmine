@@ -47,7 +47,8 @@ label ch4:
     jaf "Of course I can, I have absolute power! The universe is mine to command and all of that jazz."
     show abd normal at left
     jaf "But that might count as your wish. Like I said, I screwed up last time, and this time I want to do it right."
-    jaf "I don't want to take risks on things that aren't important until I have a better sense of how these cosmic bureaucrats have set things up."
+    jaf "The rules seem arbitrary."
+    jaf "I don't want to take risks on things that aren't important until I have a better sense of how these cosmic pencil pushers have set things up."
     abd "Good point, I would never think that far ahead. No wonder you became a Vizier."
     show jaf smile at right
     jaf "Yes, yes, I'm amazing. Now listen to me."
