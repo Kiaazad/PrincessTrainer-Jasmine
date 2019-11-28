@@ -100,7 +100,7 @@ label wishes:
 # to be
 label wish_to_be_sultan:
     abd "I wish to be the Sultan."
-    jaf "Then so be it"
+    jaf "Then so be it."
     return
 
 label wish_to_be_god:
@@ -118,6 +118,8 @@ label wish_to_be_god:
 label wish_to_be_immortal:
     abd "I wish to be immortal."
     jaf "All right, you'll never die then, no matter how old or sick you'll become in the future."
+    jaf "Who knows what will happen to you after you get married and grow old."
+    jaf "Hope you make lots of friends."
     return
 
 label wish_to_be_indestructible:
@@ -135,61 +137,74 @@ label wish_to_be_indestructible:
                     menu:
                         jaf "Then what?"
                         "a statue!":
-                            jaf "a statue you will be then!"
+                            jaf "Then a statue you will be!"
                         "a tree!":
-                            jaf "a tree you will be then!"
+                            jaf "Then a tree you will be!"
                         "the hercules!":
-                            jaf "a myth you will be then!"
+                            jaf "Then a myth you will be!"
                         "the God!!":
-                            jaf "a lie you will be then!"
+                            jaf "Then a lie you will be!"
     return
 
 label wish_to_be_the_strongest_man_ever:
     abd "I wish to be the strongest man ever."
-    jaf "the strongest man ever is long dead, if that's what you wished for, and you'll be stronger then anyone else."
+    jaf "The strongest man ever is long dead, if that's what you wished for, and you'll be stronger then anyone else."
     return
 
 label wish_to_be_rich:
     abd "I wish to be rich."
-    jaf "noney."
+    jaf "Here are you, now don't spend too much. It'll be gone before you know it."
     return
 
 label wish_to_be_healthy:
     abd "I wish to be healthy."
-    jaf "noney."
+    jaf "Okay, you'll only be healthy for a little while. You will get sick later on."
+    abd "What?! But I wanted to be healthy forever!"
+    jaf "Well, you should be more specific on your wish then."
+    jaf "Good luck on living for the rest of your life. Hope you don't get sick after this."
     return
 
 label wish_to_be_clever:
     abd "I wish to be clever."
-    jaf "noney."
+    jaf "Okay, you are smart and all but it's not a guarantee that you'll become a successful business owner again."
+    jaf "Also, your cleverness will get some haters because you'll make people feel even more dumb about themselves." 
+    jaf "Good luck."
     return
 
 label wish_to_be_brave:
     abd "I wish to be brave."
-    jaf "noney."
+    jaf "Okay, good luck trying to be brave enough to fall over into the sea and survive."
+    abd "Why would I want to do that?"
+    jaf "It's for entertainment, you idiot. You make money out of it."
+    jaf "You'll be brave enough to take risks, but what if that risk cost you to lose your life?"
+    jaf "Well, good luck. You'll need it."
     return
 
 label wish_to_be_dancer:
     abd "I wish to be a dancer."
-    jaf "noney."
+    jaf "All right, good luck with the auditions though."
+    jaf "I heard a lot of dancers failed because professionals say they weren't good enough'."
+    jaf "You better start practicing now because you're about to get old soon."
+    jaf "And you know what happens when you're old and out of shape?"
+    jaf "Good luck. You'll need it.
     return
 
 label wish_to_be_the_best_chess_player:
     abd "I wish to be the best chess player."
+    jaf "There you go."
     jaf "Now go find an opponent to play with."
     return
 
 label wish_to_be_the_best_kisser:
     abd "I wish to be the best kisser."
-    jaf "Now go find somebody to kiss."
+    jaf "Okay, now go find somebody to kiss."
+    jaf "Hope you don't have to deal with love drama after this." 
     return
-
-
 
 # to have
 label wish_to_have_my_fish_business_back:
     abd "I wish to have my fish business back."
-    jaf "noney."
+    jaf "Let's see how long it lasts again then."
     return
 
 label wish_to_have_a_lifetime_supply_of_baghlava:
@@ -257,14 +272,16 @@ label wish_i_can_breath_under_water:
 # to not
 label wish_to_not_pay_taxes:
     abd "I wish to not pay taxes."
-    jaf "."
+    jaf "All right, you'll be able to save some money, but it's not my fault if you go to jail soon."
     return
 
 
 # for
 label wish_for_a_golden_fish:
     abd "I wish for a golden fish."
-    jaf "."
+    jaf "Here are you, now you better give it some water already. I think it's dying from the desert heat already."
+    abd "What?! You could have given me a cup of water or something for my pet!"
+    jaf "You could have wished for that in the first place."
     return
 
 label wish_for_a_flying_carpet:
@@ -279,12 +296,17 @@ label wish_for_a_stallion:
 
 label wish_for_a_slave:
     abd "I wish for a slave."
-    jaf "."
+    jaf "Here you are, let's see how long he'll be able to serve you. He might escape by now."
     return
 
 label wish_for_everlasting_dinar:
     abd "I wish for everlasting dinner."
-    jaf "."
+    jaf "Sure." 
+    abd "Finally! I get to eat gourmet food!"
+    jaf "Enjoy yourself, you'll be eating the same everlasting dinner forever.
+    abd "What?! I can't eat the same thing every day!"
+    jaf "Well, you could have asked for a different dinner."
+    jaf "What's done is done. I hope your diet is good from now on."
     return
 
 label wish_for_everlasting_lavash:
@@ -301,10 +323,10 @@ label wish_for_everlasting_lavash:
     abd "What's... a... gullytoon?"
     jaf "It's not important."
     abd "Doesn't seem to break apart."
-    jaf "It doesn't spouse to. Just swallow."
+    jaf "It's not suppose to. Just swallow."
     abd "..."
-    abd "Hey, it's smaller, it spoused to last forever."
-    jaf "It will, provided you're willing to fish it out after it passed through you."
+    abd "Hey, it's smaller! It supposed to last forever."
+    jaf "It will, are you willing to fish it out after it passed through you."
     abd "What?"
     jaf "Yep, it can't be digested. It'll last in your stomach forever."
     abd "You tricked me?"
