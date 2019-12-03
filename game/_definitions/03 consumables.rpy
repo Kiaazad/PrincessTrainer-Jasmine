@@ -31,7 +31,7 @@ default opium = item(
 
 default hashish = item(
     _("Hashish"),
-    _(""),
+    _("Good for smoking pipes. Careful not to get attached to this."),
     "items/opium.png",
     200,
     )
@@ -44,7 +44,7 @@ default list_of_drugs = [
 # food
 default bread = item(
     _("Naan bread"),
-    _(""),
+    _("A delicious Middle Eastern bread."),
     "items/bread.png",
     50,
     )
