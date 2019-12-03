@@ -21,7 +21,7 @@ default punch = spell(
 
 default slash = spell(
     _("Slash"),
-    _("The slash of blade to cut the skin."),
+    _("A slash that can cut through the skin. Causing the enemy to bleed."),
     "spells/slash.png",
     hp = -21,
     stmc = 40,
@@ -31,7 +31,7 @@ default slash = spell(
 
 default pierce = spell(
     _("Pierce"),
-    _("The slash of blade to cut the skin."),
+    _("Can stab through the the enemy's skin. Causing them to bleed."),
     "spells/pierce.png",
     hp = -40,
     stmc = 45,
@@ -41,7 +41,7 @@ default pierce = spell(
 
 default slap = spell(
     _("Slap"),
-    _("A good slap across the face. Such a princess move."),
+    _("A good slap across the face. Such a princess move. Can cause to give your enemy a nose bleed."),
     "spells/pierce.png",
     hp = -5,
     stmc = 15,
@@ -61,7 +61,7 @@ default bite = spell(
 
 default maul = spell(
     _("Maul"),
-    _("."),
+    _("Can tear through the enemy's skin, causing them to bleed."),
     "spells/pierce.png",
     hp = -5,
     stmc = 15,
@@ -71,7 +71,7 @@ default maul = spell(
 
 default stab = spell(
     _("Stab"),
-    _("Preferably in the back."),
+    _("Preferably in the back, but the front is okay I guess."),
     "spells/pierce.png",
     hp = -5,
     stmc = 15,
@@ -91,7 +91,7 @@ default eye_poke = spell(
 
 default growl = spell(
     _("Growl"),
-    _("Intermediating isn't it?"),
+    _("Intimidating, isn't it? Can decrease... "),
     "spells/pierce.png",
     mp = -10,
     stmc = 5,
