@@ -71,7 +71,7 @@ default maul = spell(
 
 default stab = spell(
     _("Stab"),
-    _("Preferably in the back, but the front is okay I guess."),
+    _("Preferably in the back, but the front is okay I guess. Can cause the enemy to bleed."),
     "spells/pierce.png",
     hp = -5,
     stmc = 15,
