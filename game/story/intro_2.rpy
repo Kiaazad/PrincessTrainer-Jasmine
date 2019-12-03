@@ -23,7 +23,7 @@
     jaf "Those two cockroaches are back in the city?"
     abd "Yes. The Sultan invited them to his daughter's wedding, and they never left."
     show abd confused at left
-    abd "Now they created two opposing sections in town, and both demand taxes from people."
+    abd "Now they created two opposing sects in town, and both demand taxes from people."
     show abd normal at left
     show jaf angry at right
     jaf "Those sleazy bastards."
@@ -142,7 +142,7 @@
                     jaf "Shouldn't be too hard."
                     show abd concerned at left
                     abd "Jafar, I'm not a young man anymore."
-                    abd "I will get hurt, even at this age already, I'll never recover."
+                    abd "I will get hurt, at this age, I'll never recover."
                     show jaf normal at right
                     jaf "Don't worry my friend, you'll be fine."
                     jaf "I'll be able to keep you relatively safe... at least when you practice."
@@ -171,14 +171,14 @@
             jaf "You're a sick man, Abdul. Finding pleasure in such a barbaric act."
             abd "It is the law."
             show jaf normal at right
-            jaf "I know, I know, I'm not against in some bloodshed to get something important done. I just don't resort to violence unless I must."
+            jaf "I know, I know, I'm not against some bloodshed to get something important done. I just don't resort to violence unless I must."
             jaf "Cutting off hands is just stupid. Rehabilitation is pretty hard when you are missing a hand and can't work."
             show abd alert at left
             jaf "That being said, your enthusiasm for violence is exactly what I need right now."
             # $ qlog.got(master_swordsman)
             jaf "But that attitude isn't enough on its own. We need your wishes, too. Let's use them so you can satisfy your bloodlust."
             show abd concerned at left
-            abd "I'm not a bloodthirsty monster then you think I am."
+            abd "I'm not a bloodthirsty monster that you think I am."
             jaf "Yeah, keep telling that to yourself."
             show abd alert at left
             jaf "I can see it in your eyes."
@@ -303,7 +303,7 @@ label ch2_1:
     show abd alert at left
     abd "Your freedom?"
     show jaf normal at right
-    jaf "If it was that simple, or even if I wanted to, I would have already done it already."
+    jaf "If it was that simple, or even if I wanted to, I would have done it already."
     jaf "It wouldn't be that hard to trick you either, you're pretty gullible."
     show abd embarrassed at left
     abd "I...{w=.5} you're right. Sorry for doubting you."

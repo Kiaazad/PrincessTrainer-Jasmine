@@ -30,7 +30,7 @@
     abd "Cave of Wonders?"
     jaf "You don't know much about what happened, do you?"
     show abd normal at left
-    abd "Well, I saw the other Genie pick up a palace and put it on the hilltop."
+    abd "Well, I saw the other Genie pick up the palace and put it on the hilltop."
     abd "They said you commanded him."
     abd "All the important things happen inside the palace walls when nobody is around."
     abd "It's suspiciously empty for a palace."
@@ -40,7 +40,7 @@
     jaf "Is the Sultan still alive?"
     show jaf normal at right
     abd "Yes, but he retired and gave the throne to Aladdin and Jasmine."
-    abd "He's the new sultan that is always out of the city flying his carpet everywhere."
+    abd "He's the new sultan that is always out of the city flying his carpet."
     show jaf annoyed at right
     jaf "And Jasmine have no clue how to rule. I knew it."
     jaf "I'll deal with this later, for now we have a bigger fish to catch."
@@ -57,7 +57,7 @@
     jaf "Let's go to your house.{w=.5} If I remember correctly, it's this way, right?"
     show abd sad at left
     abd "No."
-    jaf "Oh? Didn't you live near the bazaar? Such as this way?"
+    jaf "Oh? Didn't you live near the bazaar?{w=.3} That way then?"
     abd "No."
     show jaf annoyed at right
     jaf "Which way then?"
@@ -67,7 +67,7 @@
     abd "Yes, I've been living on the streets."
     show jaf normal at right
     jaf "How unfortunate."
-    jaf "Luckily for you, I know just the a place, and I'm sure it's vacant too."
+    jaf "Luckily for you, I know just the place, and I'm sure it's vacant too."
     show abd confused at left
     jaf "Its resident moved to a bigger place."
     jaf "Follow me."

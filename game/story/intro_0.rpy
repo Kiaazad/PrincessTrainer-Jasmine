@@ -69,7 +69,7 @@
             show abd sad at left
             abd "Well... {w=.6}I can't do that anymore."
             abd "Aladdin destroyed my fish stand in one of his fights."
-            abd "Every other day, he would drag me to one problem after another into the bazaar and mess the place up."
+            abd "Every other day, he would drag a fight into the bazaar and mess the place up."
             abd "Breaking my fish barrels every single time... {w=.5}Those cost lots of money."
             abd "They blamed it on you returning to Agrabah."
             jaf "Did you get compensated you for the damages?"
@@ -78,7 +78,7 @@
             show abd alert at left
             abd "I meant after you left."
             abd "I can't take my fish to the bazaar without barrels."
-            abd "No fish to sell means no money to buy barrels, {w=.4} which means no money to buy food, {w=.4}and now no money to buy bread."
+            abd "No fish to sell means no money to buy barrels, {w=.4} which means no money to feed the fish, {w=.4}and now no money to buy bread."
             show jaf thinking at right
             jaf "That explains the missing belly."
             abd "And my fish pond dried up, Jafar. {w=.5}All of my fish died. {w=.8}I'm a wood collector now."
@@ -189,7 +189,7 @@
                 jaf "Yes."
             jaf "If you promise to help me get my revenge from those three idiots..."
             jaf "The bastards who trapped me in this thing...."
-            jaf "I'll give you your first wish... {w=.5}and second wish..."
+            jaf "I'll let you give me your first wish... {w=.5}and second wish..."
             jaf "Then I'll tell you how to avoid being screwed for your last wish."
             show abd confused at left
             abd "What do you mean by 'screwed?'"

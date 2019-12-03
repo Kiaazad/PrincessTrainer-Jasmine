@@ -68,16 +68,16 @@
             show jaf normal at right
             show abd alert at left
             jaf "Here, take this."
-            # $ msg.msg("Received bag.")
+            $ msg.msg("Received a bag?")
             show abd normal at left
             abd "..."
-            # $ msg.msg("...of sand?")
+            $ msg.msg("...of sand?")
             show abd confused at left
             abd "A bag of sand?"
             jaf "These are the Sands of Time."
-            jaf "Grab a handful, put it in one of these jars and the 'you' from that moment will remain here."
+            jaf "Grab a handful, put it in one of these jars and the 'you' from that moment will remain in it."
             show abd alert at left
-            # $ msg.msg("Right, Received sands of time, a dozen handfuls.")
+            $ msg.msg("Right, Received sands of time, a dozen handfuls.")
             jaf "That 'you' can be recovered if something...{w=.5} unfortunate happens to you."
             abd "You can resurrect me?"
             show jaf thinking at right
@@ -132,10 +132,10 @@
             show jaf annoyed at right
             jaf "Happy now?"
             abd "Sorry, sorry, it was just a joke."
-            abd "Did you have to burn it right at my hand?"
-            jaf "Now you now better not annoy a powerful Genie."
+            abd "Did you have to burn it right in my hand?"
+            jaf "Now you know better to not annoy a powerful Genie."
             show jaf normal at right
-            jaf "Now where were we? Ah yes, speaking of that quest."
+            jaf "Now where were we? Ah yes, speaking of quests."
             show abd normal at left
             jaf "I'll keep track of your progress...{nw}"
             # quest
