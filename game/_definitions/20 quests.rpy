@@ -26,7 +26,7 @@ default master_swordsman = quest(
     )
 
 default the_penis_mightier_than_the_sword = quest(
-    _("The penis is mightier than a sword"),
+    _("The penis mightier than a sword"),
     _("Find the guy named \"Satnine\" and start a \"swordfight\" with him."),
     )
 
