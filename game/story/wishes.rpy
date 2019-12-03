@@ -106,11 +106,11 @@ label wish_to_be_sultan:
 label wish_to_be_god:
     abd "I wish to be a God."
     jaf "so you want to be something that doesn't exist?"
-    me "Huh?"
+    abd "Huh?"
     jaf "As you wish then!"
-    me "But God does exist!"
+    abd "But God does exist!"
     jaf "Yeah, yeah. There will be people believing you exist as well."
-    me "But...{nw}"
+    abd "But...{nw}"
     jaf "Too late for buts Abdul. You are done for now, this was your last mistake!"
     # we should erase all save slots at this point to troll the player
     return
@@ -186,7 +186,7 @@ label wish_to_be_dancer:
     jaf "I heard a lot of dancers failed because professionals say they weren't good enough'."
     jaf "You better start practicing now because you're about to get old soon."
     jaf "And you know what happens when you're old and out of shape?"
-    jaf "Good luck. You'll need it.
+    jaf "Good luck. You'll need it."
     return
 
 label wish_to_be_the_best_chess_player:
@@ -260,12 +260,12 @@ label wish_i_can_breath_under_water:
             jaf "Let me send you under then."
         "I don't feel any different":
             jaf "That's because you already wished for something you already have."
-            me "I did?"
+            abd "I did?"
             jaf "Yes of course, you can breathe anywhere."
             jaf "The reason people drown is the lack of breathable air under water, it's not their inability to breath there."
-            me "Then I get my wish back?"
+            abd "Then I get my wish back?"
             jaf "No!"
-            me "Why not? You didn't give me anything!"
+            abd "Why not? You didn't give me anything!"
             jaf "You wished for something you already have. and I granted it. Your mistake, not my problem."
     return
 
@@ -303,7 +303,7 @@ label wish_for_everlasting_dinar:
     abd "I wish for everlasting dinner."
     jaf "Sure." 
     abd "Finally! I get to eat gourmet food!"
-    jaf "Enjoy yourself, you'll be eating the same everlasting dinner forever.
+    jaf "Enjoy yourself, you'll be eating the same everlasting dinner forever."
     abd "What?! I can't eat the same thing every day!"
     jaf "Well, you could have asked for a different dinner."
     jaf "What's done is done. I hope your diet is good from now on."

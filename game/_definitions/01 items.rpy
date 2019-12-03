@@ -1,7 +1,7 @@
 ﻿# Ingredient
 default thorns = item(
     name = _("Tumbleweed"),         # Name
-    inf = _("A round-shaped plant that are wrapped by dead plants.") #Descriptions optional
+    inf = _("A round-shaped plant that are wrapped by dead plants."), #Descriptions optional
     icon = "items/thorns.png",      # Icon [optional]
     val = 10,                       # Value [optional] [Default = 0]
     type = None,                    # Type [optional] [default = None]
