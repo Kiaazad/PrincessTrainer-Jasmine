@@ -12,12 +12,12 @@ default jafars_revenge = quest(
 
 default visit_malik = quest(
     _("Visit Malik"),
-    _("Visit Malik to find something you can use against him."),
+    _("Visit Malik and find something you can use against him."),
     )
 
 default visit_hosein = quest(
     _("Visit Hosein"),
-    _("Visit Hosein to find something you can use against him."),
+    _("Visit Hosein and find something you can use against him."),
     )
 
 default master_swordsman = quest(
@@ -26,7 +26,7 @@ default master_swordsman = quest(
     )
 
 default the_penis_mightier_than_the_sword = quest(
-    _("The penis mightier than the sword"),
+    _("The penis is mightier than a sword"),
     _("Find the guy named \"Satnine\" and start a \"swordfight\" with him."),
     )
 
