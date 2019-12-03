@@ -27,9 +27,9 @@
                 if len(self.bags):
                     self.bags[0].add(x, q)
                     self.uniqueID.append(u)
-                    msg.msg("You have got {} of {}".format(q, x.name))
+                    msg.msg("You have got {} {}".format(q, x.name))
 
         def drop(self, x, q):
             if len(self.bags):
                 self.bags[0].rem(x, q)
-                msg.msg("You have dropped {} of {}".format(q, x.name))
+                msg.msg("You have dropped {} {}".format(q, x.name))
