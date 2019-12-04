@@ -365,21 +365,52 @@ label wish_for_a_moneychanger_store:
 
 label wish_for_a_cup_of_water:
     abd "I wish for a cup of water."
+    show jaf disappointed at right
+    jaf "Really? Just that?"
+    show abd normal at left
+    abd "Yes, that's exactly what I want. Now get to it!"
+    hide jaf disappointed 
+    show jaf normal at right
+    jaf "As you wish."
+    hide jaf normal
+    show jaf magic at right
+    jaf "Ajjjj, mjjj, ahhhh."
+    hide jaf magic
+    show jar normal at right
     jaf "Here you are."
+    show abd excited at left
+    hide abd normal
     abd "Oh! Finally! Fresh water, here I come!"
+    hide abd excited
     show abd scared at left
     abd "Blech! This is not fresh water! Why is it all black?!"
     show jaf smile at right
     jaf "Oh, so the water is completely black? Well, you didn't wish for a FRESH water. You asked for a CUP of water, so I did as you wished for."
+    hide abd scared
     show abd alert at left
     abd "Where can I find fresh water now?"
     jaf "Beats me. Search everywhere if you need to. It's none of my fucking business anyway."
     return
 
-# to move
+ # to move
 label wish_to_move_to_oasis:
     abd "I wish to move to the oasis."
-    jaf "Here you are, hopefully you can afford something in there."
+    show jaf magic at right
+    jaf "All right, ajji, majji, aaaahhh."
+    show jar normal at right
+    jaf "Here we are."
+    show abd excited at left
+    abd "Whoa! Now I can finally live near the waters!"
+    abd "Can I swim in it?"
+    hide abd excited
+    jaf "Sure, be my guest. I bet you can't watch out for-"
+    abd "Ahhhh!!! A desert crocodile! Jafar! Help me!"
+    show jaf thinking at right
+    jaf "Ooooh... right in the leg and now it bites his ass."
+    hide jaf thinking 
+    show jaf smile at right
+    jaf "Yeah... I wouldn't go in there if I were you, Abdul."
+    jaf "It sucks to be you too."
     return
 
 
