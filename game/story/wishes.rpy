@@ -3,11 +3,11 @@
 
 
 label wishes:
-    jaf "Alright what's your wish?"
+    jaf "Alright what is your wish?"
     menu:
         "I wish to be...":
             menu:
-                "I wish to be the Sultan.":
+                "I wish to be a Sultan.":
                     jump wish_to_be_sultan
                 "I wish to be a God.":
                     jump wish_to_be_god
@@ -99,7 +99,7 @@ label wishes:
 
 # to be
 label wish_to_be_sultan:
-    abd "I wish to be the Sultan."
+    abd "I wish to be a Sultan."
     jaf "Then so be it."
     return
 
@@ -353,9 +353,16 @@ label wish_for_a_moneychanger_store:
 
 label wish_for_a_cup_of_water:
     abd "I wish for a cup of water."
-    jaf "Here you are, hopefully you can afford another one."
+    jaf "Here you are."
+    abd "Oh! Finally! Fresh water, here I come!"
+    show abd scared at left
+    abd "Blech! This is not fresh water! Why is it all black?!"
+    show jaf smile at right
+    jaf "Oh, so the water is completely black? Well, you didn't wish for a FRESH water. You asked for a CUP of water, so I did as you wished for."
+    show abd alert at left
+    abd "Where can I find fresh water now?"
+    jaf "Beats me. Search everywhere if you need to. It's none of my fucking business anyway."
     return
-
 
 # to move
 label wish_to_move_to_oasis:
