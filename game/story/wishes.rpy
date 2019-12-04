@@ -344,6 +344,18 @@ label wish_for_a_jar_of_vine_that_never_gets_empty:
 label wish_for_a_jewelry_store:
     abd "I wish for a jewelry store."
     jaf "Here you are, hopefully you can afford something in there."
+    show abd excited at left
+    abd "Whoa! Look at all the jewelries I can sell for profit!" 
+    abd "Imagine that! A warm bed to sleep on, eating delicous meals three times a day, and I can make my own private harem too!"
+    show jaf smile at right
+    jaf "Yeah... good luck with that. You know that all of them are fake anyway."
+    show abd confused at left
+    abd "Wait, what?"
+    show jaf normal at right
+    jaf "Well, yeah. If you choose to sell them, then you'll get some pocket money back."
+    abd "You tricked me?"
+    jaf "No, you asked for a jewelry store and you got it. You didn't ask me to give you a jewelry store that sells REAL JEWELS."
+    jaf "You should be specific on your wishes, my good sir."
     return
 
 label wish_for_a_moneychanger_store:
