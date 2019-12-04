@@ -343,14 +343,22 @@ label wish_for_a_jar_of_vine_that_never_gets_empty:
 
 label wish_for_a_jewelry_store:
     abd "I wish for a jewelry store."
-    jaf "Here you are, hopefully you can afford something in there."
+    jaf "As you wish..."
+    show jaf magic at right
+    jaf "Ajjj, ahhhh."
+    hide jaf magic
+    show jaf normal at right
+    jaf "Here you are."
     show abd excited at left
     abd "Whoa! Look at all the jewelries I can sell for profit!" 
     abd "Imagine that! A warm bed to sleep on, eating delicous meals three times a day, and I can make my own private harem too!"
+    hide jaf normal
     show jaf smile at right
     jaf "Yeah... good luck with that. You know that all of them are fake anyway."
+    hide abd excited
     show abd confused at left
     abd "Wait, what?"
+    hide jaf smile
     show jaf normal at right
     jaf "Well, yeah. If you choose to sell them, then you'll get some pocket money back."
     abd "You tricked me?"
@@ -397,6 +405,7 @@ label wish_to_move_to_oasis:
     abd "I wish to move to the oasis."
     show jaf magic at right
     jaf "All right, ajji, majji, aaaahhh."
+    hide jaf magic
     show jar normal at right
     jaf "Here we are."
     show abd excited at left
@@ -405,6 +414,7 @@ label wish_to_move_to_oasis:
     hide abd excited
     jaf "Sure, be my guest. I bet you can't watch out for-"
     abd "Ahhhh!!! A desert crocodile! Jafar! Help me!"
+    hide jaf normal
     show jaf thinking at right
     jaf "Ooooh... right in the leg and now it bites his ass."
     hide jaf thinking 
