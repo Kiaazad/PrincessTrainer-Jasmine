@@ -62,7 +62,7 @@ label wishes:
                     jump wish_to_not_pay_taxes
         "I wish for...":
             menu:
-                "I wish for a gold fish.":
+                "I wish for a goldfish.":
                     jump wish_for_a_gold_fish
                 "I wish for a flying carpet.":
                     jump wish_for_a_flying_carpet
@@ -278,10 +278,20 @@ label wish_to_not_pay_taxes:
 
 # for
 label wish_for_a_gold_fish:
-    abd "I wish for a gold fish."
-    jaf "Here are you, now you better give it some water already. I think it's dying from the desert heat already."
-    abd "What?! You could have given me a cup of water or something for my pet!"
-    jaf "You could have wished for that in the first place."
+   abd "I wish for a goldfish."
+    jaf "Here you are."
+    show abd excited at left
+    abd "Oh boy! My very own-"
+    hide abd excited
+    show abd confused at left
+    abd "..."
+    jaf "What?"
+    abd "It's a fish pendent."
+    hide abd confused
+    show abd sad at left
+    abd "And it's colored in gold."
+    show jaf smile at right
+    jaf "You will look ravishing from now on."
     return
 
 label wish_for_a_flying_carpet:
