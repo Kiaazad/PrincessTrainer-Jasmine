@@ -477,7 +477,7 @@ label wish_for_a_cup_of_water:
     abd "I wish for a cup of water."
     show jaf disappointed at right
     jaf "Really? Just that?"
-    show abd normal at left
+    show abd smug at left
     abd "Yes, that's exactly what I want. Now get to it!"
     hide jaf disappointed 
     show jaf normal at right
@@ -486,43 +486,74 @@ label wish_for_a_cup_of_water:
     show jaf magic at right
     jaf "Ajjjj, mjjj, ahhhh."
     hide jaf magic
-    show jar normal at right
+    show jaf normal at right
     jaf "Here you are."
+    hide abd smug
     show abd excited at left
-    hide abd normal
     abd "Oh! Finally! Fresh water, here I come!"
-    hide abd excited
+    abd "Gulp, gulp, gulp..."
     show abd scared at left
-    abd "Blech! This is not fresh water! Why is it all black?!"
+    abd "Ahhhhhhh!!!!"
+    abd "What the fuck?!" 
+    abd "Since when did the cup get all black?!"
+    abd "It wasn't like that before!"
     show jaf smile at right
-    jaf "Oh, so the water is completely black? Well, you didn't wish for a FRESH water. You asked for a CUP of water, so I did as you wished for."
+    jaf "Oh, so the cup is completely black already?" 
+    jaf "Well, you didn't wish for a FRESH cup of water. You asked for a CUP of water, ."
     hide abd scared
     show abd alert at left
-    abd "Where can I find fresh water now?"
-    jaf "Beats me. Search everywhere if you need to. It's none of my fucking business anyway."
+    abd "If it's all black, then that means..."
+    hide abd alert
+    abd "*Cough!* *Hack!* *Wheeze!*"
+    hide jaf smile
+    show jaf probing at right
+    jaf "Yep, black water is not safe to drink."
     return
 
  # to move
 label wish_to_move_to_oasis:
     abd "I wish to move to the oasis."
+    jaf "All right." 
     show jaf magic at right
-    jaf "All right, ajji, majji, aaaahhh."
+    jaf "ajji, majji, aaaahhh."
     hide jaf magic
-    show jar normal at right
+    show jaf normal at right
     jaf "Here we are."
-    show abd excited at left
+    show abd back at left
     abd "Whoa! Now I can finally live near the waters!"
-    abd "Can I swim in it?"
+    hide abd back
+    show abd excited at left
+    abd "I wonder if I can swim in it?"
+    jaf "Go ahead! You only have ONE life, so do it!"
+    jaf "You're actually going to be the first person to try it out anyway!"
+    abd "Really?!"
+    jaf "Yeah."
+    jaf "But I'm going to cover my eyes for a bit because I don't want to see that... body of yours."
     hide abd excited
-    jaf "Sure, be my guest. I bet you can't watch out for-"
-    abd "Ahhhh!!! A desert crocodile! Jafar! Help me!"
+    abd "Suit yourself!"
     hide jaf normal
+    show jaf disappointed at right
+    abd "Woohoo! Yeah! The water feels great!"
+    abd "I can even drink out of it too!" 
+    abd "Ahhh! So fresh!" 
+    abd "Hey! Now here's an idea! I can make another business out of this!"
+    jaf "Another business, huh?"
+    abd "That's right! Abdul's Oasis! Sounds pretty catchy, right?"
+    jaf "Right..."
+    abd "Ahhhh!!! Something bit my ass!" 
+    abd "What the fuck?!"
+    abd "A desert crocodile! Ahhhhh!!!!"
+    abd "Jafar! Help me!"
+    show jaf smile at right
+    jaf "Well it's about time, my hand was already cramping for shutting my eyes earlier."
+    hide jaf smile
     show jaf thinking at right
-    jaf "Ooooh... right in the leg and now it bites his ass."
+    jaf "Ooooh... right in the leg and now it bites his ass again."
     hide jaf thinking 
     show jaf smile at right
-    jaf "Yeah... I wouldn't go in there if I were you, Abdul."
-    jaf "It sucks to be you too."
+    jaf "Yeah... I wouldn't go in there if I were you, Abdul!"
+    jaf "Perhaps I probably should have said that earlier."
+    jaf "Whoopies daisies."
     return
 
 
