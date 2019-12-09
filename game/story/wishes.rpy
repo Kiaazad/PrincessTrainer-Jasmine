@@ -293,7 +293,7 @@ label wish_for_a_stallion:
     show abd smug at left  
     abd "I wish for a stallion."
     show jaf normal at right
-    jaf "A stallion? Alright then..."
+    jaf "A stallion? Sure..."
     hide jaf normal
     show jaf magic at right
     jaf "ajji, maji, ahhhhh..."
@@ -301,22 +301,23 @@ label wish_for_a_stallion:
     show jaf normal at right
     show abd excited at left
     abd "Whoa!"
-    abd "A real live horse! I've always wanted to see the real one for years!"
-    jaf "I even put the equipment on for it. Wanna ride it?"
-    abd "Heck yeah I do!"
-    jaf "It should the same as riding a camel, so it should be easy."
+    abd "A real live horse! I've always wanted one for years!"
+    abd "You even put the equipments on too!"
+    jaf "You wanna ride it?"
+    abd "You know what? Heck yeah, I'm going to ride it!"
+    abd "Ah! It should the same as riding a camel, so it should be easy!"
     hide abd excited
     show abd normal at left
-    abd "Hmm... I never ride a camel before, but I'm sure I'll be fine."
+    abd "Hmm... But I never ride a camel before, but I'm sure I'll be fine."
     abd "Hut hut hut!"
     show abd confused at left
     "..."
     hide jaf normal 
     show jaf disappointed at right 
-    jaf "That's for camels, you blubbering idiot. You have to either say "giddy up!" or "hi-yah!""
+    jaf "That's for camels. You have to either say "giddy up!" or "hi-yah!""
     hide abd confused
     show abd excited at left
-    abd "Oh, got it! Giddy up!"
+    abd "Oh, right! Giddy up!"
     "Neighhhhhh!!!"
     hide abd excited
     abd "Whoa! I'm falling!"
@@ -327,9 +328,8 @@ label wish_for_a_stallion:
     abd "Wait! Don't move! Ahhhhhhhh!!!!"
     abd "Ahhhhhh!!!!"
     abd "Jafar, help me!"
-    jaf "Ouch , now that's gotta hurt. He's being dragged around by a really fast horse that can't seem to stop without a command."
-    jaf "Must be painful for him." 
-    jaf "Could have gotten some training in horseback riding earlier."
+    jaf "So, how does it feel to be dragged around by a horse?!"
+    jaf "It would help if you knew how to ride one of those animals in the first place!"
     return
 
 label wish_for_a_slave:
