@@ -491,48 +491,23 @@ label wish_for_a_cup_of_water:
  # to move
 label wish_to_move_to_oasis:
     abd "I wish to move to the oasis."
-    jaf "All right." 
+    jaf "Sure."
     show jaf magic at right
-    jaf "ajji, majji, aaaahhh."
+    jaf "Ajji, majji..."
     hide jaf magic
     show jaf normal at right
-    jaf "Here we are."
-    show abd back at left
-    abd "Whoa! Now I can finally live near the waters!"
-    hide abd back
     show abd excited at left
-    abd "I wonder if I can swim in it?"
-    jaf "Go ahead! You only have ONE life, so do it!"
-    jaf "You're actually going to be the first person to try it out anyway!"
-    abd "Really?!"
-    jaf "Yeah."
-    jaf "But I'm going to cover my eyes for a bit because I don't want to see that... body of yours."
+    abd "Whoa! The Oasis..."
     hide abd excited
-    abd "Suit yourself!"
+    show abd alert at left
+    abd "Wait, what the fuck?"
+    hide abd alert
+    show abd confused at left
+    abd "It's just a background art?" #Or a white background
     hide jaf normal
-    show jaf disappointed at right
-    abd "Woohoo! Yeah! The water feels great!"
-    abd "I can even drink out of it too!" 
-    abd "Ahhh! So fresh!" 
-    abd "Hey! Now here's an idea! I can make another business out of this!"
-    jaf "Another business, huh?"
-    abd "That's right! Abdul's Oasis! Sounds pretty catchy, right?"
-    jaf "Right..."
-    abd "Ahhhh!!! Something bit my ass!" 
-    abd "What the fuck?!"
-    abd "A desert crocodile! Ahhhhh!!!!"
-    abd "Jafar! Help me!"
     show jaf smile at right
-    jaf "Well it's about time, my hand was already cramping for shutting my eyes earlier."
-    hide jaf smile
-    show jaf thinking at right
-    jaf "Ooooh... right in the leg and now it bites his ass again."
-    hide jaf thinking 
-    show jaf smile at right
-    jaf "Yeah... I wouldn't go in there if I were you, Abdul!"
-    jaf "Perhaps I probably should have said that earlier."
-    jaf "Whoopies daisies."
-    return
+    jaf "Looks lovely, isn't it?"
+    jaf "Now you can imagine how it's like to be in the oasis."
 
 
 
