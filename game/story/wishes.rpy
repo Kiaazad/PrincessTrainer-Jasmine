@@ -327,7 +327,6 @@ label wish_for_a_stallion:
     abd "Wait! Don't move! Ahhhhhhhh!!!!"
     abd "Ahhhhhh!!!!"
     abd "Jafar, help me!"
-    show jaf looking2 at right
     jaf "Ouch , now that's gotta hurt. He's being dragged around by a really fast horse that can't seem to stop without a command."
     jaf "Must be painful for him." 
     jaf "Could have gotten some training in horseback riding earlier."
