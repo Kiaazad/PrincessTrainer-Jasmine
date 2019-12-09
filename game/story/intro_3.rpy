@@ -205,7 +205,7 @@
                             show abd alert at left
                             abd "Yes."
                             jaf "Alright, here we go."
-                            # call ch3_fight(True)
+                            call lamp_fight_1 from _call_lamp_fight_1
                             show abd normal at left
                             with dissolve
                             show jaf normal at right
@@ -240,14 +240,14 @@
                     hide jaf with dissolve
                     menu:
                         "Go talk to the girls.":
-                            call harem_girls
+                            call harem_girls from _call_harem_girls
                             jump ch3_1
                         "Jump right into the water.":
                             show bg cg_abdul_bathing
                             "the bathing scene is not ready"
                             menu:
                                 "Go talk to the girls.":
-                                    call harem_girls
+                                    call harem_girls from _call_harem_girls_1
                                     jump ch3_1
                                 "Go back to Jafar.":
                                     jump ch4
@@ -264,21 +264,21 @@ label ch3_1:
         "Go to Room of Settings.":
             jump ch3_set
         "Go Fight.":
-            call ch3_fight
+            call ch3_fight from _call_ch3_fight
         "Go to the Mirror Room.":
             jump ch3_mirror
 label ch3_harem:
     scene bg harem
     menu:
         "Go talk to the girls.":
-            call harem_girls
+            call harem_girls from _call_harem_girls_2
             jump ch3_1
         "Jump right into the water.":
             show bg cg_abdul_bathing
             "the bathing scene is not ready"
             menu:
                 "Go talk to the girls.":
-                    call harem_girls
+                    call harem_girls from _call_harem_girls_3
                     jump ch3_1
                 "Go back to Jafar.":
                     jump ch4
@@ -293,7 +293,7 @@ label ch3_set:
     jump ch3_1
 label ch3_fight(j=False):
     window hide
-    # call fights([player], [enemy1])
+    call lamp_fight_1 from _call_lamp_fight_1_1
     if j:
         return
     else:

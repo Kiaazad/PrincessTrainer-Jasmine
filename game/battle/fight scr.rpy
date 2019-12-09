@@ -62,12 +62,15 @@ screen btl_scr(f, e):
                         tooltip i
                         action SetScreenVariable("spell", i)
 
+    hbox:
+        align 0.0,0.0 offset 200,200
+        button:
+            text "Manage"
+            action ToggleScreen("btl_team", t = f)
 
-    button:
-        align 0.0,0.0 margin 200,200
-        text "Manage"
-        action ToggleScreen("btl_team", t = f)
-
+        button:
+            text "Skip"
+            action Hide("btl_scr")
     use stats(f, e)
     # if caster:
     #     use fine_tune(caster)
