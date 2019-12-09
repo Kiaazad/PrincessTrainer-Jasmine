@@ -338,59 +338,19 @@ label wish_for_a_slave:
     return
 
 label wish_for_everlasting_dinar:
-    abd "I wish for an everlasting dinner."
-    show abd smug at left
-    show jaf normal at right
-    jaf "That's it? That's what you want?
-    hide abd smug
-    show abd tired at left
-    hide jaf normal
-    show jaf looking2
-    abd "Yes, I haven't had a full meal in weeks! I'm always tired of eating nothing but plain bread and water!"
-    abd "Sometimes I don't eat, so I'm always hungry all the time!" 
-    hide abd tired
-    show abd normal at left
-    abd "Are you listening?"
-    hide jaf looking2
-    show jaf normal at left
-    jaf "Huh? I thought I saw something, so I had to keep looking at it."
-    jaf "Anyways, an everlasting dinner shall it be!"
-    hide jaf normal
-    show jaf magic at left
-    jaf "Ajjji, majji, lajji..."
-    jaf "Here you are!"
-    hide jaf magic
-    show jaf normal at right
+  abd "I wish for everlasting dinner."
+    jaf "Sure." 
     show abd excited at left
-    abd "Whoa!" 
-    abd "Finally! A full meal to myself!"
-    abd "Look at all that meat! Chicken, beef, and there's a lamb kabob too!" 
-    hide jaf normal
-    show jaf smile at right
-    jaf "Well, what are you waiting for? Dig in!"
-    hide abd excited
+    abd "Finally! I get to eat some gourmet food!"
+    hide abd 
     show abd alert at left
-    abd "Oh right! I should eat them before it gets cold!"
-    hide alert
-    show abd excited at left
-    abd "Now what should I start first?
-    #fade in screen
-    abd "Now that's delicious! Oh man! Eating it with that fresh pita bread makes it even more delicious too!"
-    abd "Gom, nom, nom, gom!"
-    jaf "Your belly is getting bigger now..." 
-    abd "More! More! I need more! 
-    jaf "There are plenty more..."
-    #fade out screen
-    show jaf smile at right
-    jaf "Awwww... just look at him, sleeping like a baby. He ate so much his belly has gotten a LOT bigger than before."
-    hide jaf smile
-    show jaf looking2 at right
-    jaf "Oh look, some vultures have arrived. They're waiting for him to just die already."
-    jaf "Patiences is key, everyone! He won't be dead for a little while now."
-    hide jaf looking2
-    show jaf smile at right
-    jaf "I put a sleeping spell on all of his food, so it'll make him sleep forever."
-    jaf "Oh look, a snake is coming towards him. I wonder what will happen if I poke it a bunch of times?"
+    abd "Wait a minute..."
+    hide abd alert
+    show abd concerned at left
+    abd "It's all nothing but stone!"
+    show jaf smile at right 
+    jaf "Craved to be an everlasting dinner to be more specific."
+    jaf "Now enjoy this fine art of your... 'full meal tonight'."
     return
 
 label wish_for_everlasting_lavash:
