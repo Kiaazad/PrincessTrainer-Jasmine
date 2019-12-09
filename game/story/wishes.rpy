@@ -62,8 +62,8 @@ label wishes:
                     jump wish_to_not_pay_taxes
         "I wish for...":
             menu:
-                "I wish for a golden fish.":
-                    jump wish_for_a_golden_fish
+                "I wish for a gold fish.":
+                    jump wish_for_a_gold_fish
                 "I wish for a flying carpet.":
                     jump wish_for_a_flying_carpet
                 "I wish for a stallion.":
@@ -277,8 +277,8 @@ label wish_to_not_pay_taxes:
 
 
 # for
-label wish_for_a_golden_fish:
-    abd "I wish for a golden fish."
+label wish_for_a_gold_fish:
+    abd "I wish for a gold fish."
     jaf "Here are you, now you better give it some water already. I think it's dying from the desert heat already."
     abd "What?! You could have given me a cup of water or something for my pet!"
     jaf "You could have wished for that in the first place."
@@ -474,39 +474,18 @@ label wish_for_a_moneychanger_store:
 
 label wish_for_a_cup_of_water:
     abd "I wish for a cup of water."
-    show jaf disappointed at right
-    jaf "Really? Just that?"
-    show abd smug at left
-    abd "Yes, that's exactly what I want. Now get to it!"
-    hide jaf disappointed 
-    show jaf normal at right
     jaf "As you wish."
-    hide jaf normal
-    show jaf magic at right
-    jaf "Ajjjj, mjjj, ahhhh."
-    hide jaf magic
-    show jaf normal at right
-    jaf "Here you are."
-    hide abd smug
-    show abd excited at left
-    abd "Oh! Finally! Fresh water, here I come!"
-    abd "Gulp, gulp, gulp..."
     show abd scared at left
-    abd "Ahhhhhhh!!!!"
-    abd "What the fuck?!" 
-    abd "Since when did the cup get all black?!"
-    abd "It wasn't like that before!"
-    show jaf smile at right
-    jaf "Oh, so the cup is completely black already?" 
-    jaf "Well, you didn't wish for a FRESH cup of water. You asked for a CUP of water, ."
+    abd "What the-"
     hide abd scared
-    show abd alert at left
-    abd "If it's all black, then that means..."
-    hide abd alert
-    abd "*Cough!* *Hack!* *Wheeze!*"
-    hide jaf smile
-    show jaf probing at right
-    jaf "Yep, black water is not safe to drink."
+    show abd confused at left
+    abd "Did something splashed at my face?"
+    show jaf smile at right
+    jaf "That was your water. It was around a cup."
+    hide abd confused
+    show abd sad at left
+    abd "..."
+    jaf "You wish it. I grant it."
     return
 
  # to move
