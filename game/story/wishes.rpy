@@ -278,7 +278,7 @@ label wish_to_not_pay_taxes:
 
 # for
 label wish_for_a_gold_fish:
-   abd "I wish for a goldfish."
+    abd "I wish for a goldfish."
     jaf "Here you are."
     show abd excited at left
     abd "Oh boy! My very own-"
@@ -324,7 +324,7 @@ label wish_for_a_stallion:
     "..."
     hide jaf normal 
     show jaf disappointed at right 
-    jaf "That's for camels. You have to either say "giddy up!" or "hi-yah!""
+    jaf "That's for camels. You have to either say \"giddy up!\" or \"hi-yah!\""
     hide abd confused
     show abd excited at left
     abd "Oh, right! Giddy up!"
@@ -348,7 +348,7 @@ label wish_for_a_slave:
     return
 
 label wish_for_everlasting_dinar:
-  abd "I wish for everlasting dinner."
+    abd "I wish for everlasting dinner."
     jaf "Sure." 
     show abd excited at left
     abd "Finally! I get to eat some gourmet food!"
