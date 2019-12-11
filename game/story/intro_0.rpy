@@ -38,7 +38,7 @@
             with dissolve
             show jaf genie at right
             with dissolve
-            jaf "{size=45}Sometimes it's good to be a little naive, don't you think?"
+            jaf "{size=45}Don't you think there's benefit to naivete?"
             show abd scared at left
             $ msg.msg("You dropped the Black Lamp")
             abd "{size=45}Woah! {w=.6}whoa. {w=.4}wha {w=.2}wh..."
@@ -146,6 +146,7 @@
             show abd alert at left
             abd "Against me? {w=.5}But why?"
             show jaf thinking at right
+            jaf "Genies are known to use poorly phrased wishes in... interesting ways."
             jaf "I suppose it's something about teaching you a lesson."
             jaf "The value of Contentment or something stupid like that."
             show jaf normal at right
@@ -232,5 +233,11 @@
                             abd "What?"
                             jaf "Something I heard- {w=.5}you know what, never mind."
                             jump ch1
-        "Don't be naive, let's go back to the city.":
+        "Don't be naive, search for more firewood.":
+            $ msg.msg("You hang the lap on your bundle.")
+            abd "Unusually hot today."
+            abd "..."
+            call desert_1
+            
+
             jump endless_grind

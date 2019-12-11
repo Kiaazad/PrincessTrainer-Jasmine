@@ -10,6 +10,17 @@
             self.markup = markup
 
             self.uniqueID = []
+        def has(self, x):
+            if not isinstance(x, list):
+                x = [x]
+            for t in x:
+                for i in self.bags:
+                    for ii in i.items:
+                        if ii is not None:
+                            if ii.item == t:
+                                return True
+            else:
+                return False
 
         def gotcash(self, a, u):
             if u and u in self.uniqueID:
@@ -26,7 +37,8 @@
             else:
                 if len(self.bags):
                     self.bags[0].add(x, q)
-                    self.uniqueID.append(u)
+                    if u is not None:
+                        self.uniqueID.append(u)
                     msg.msg("You have got {} {}".format(q, x.name))
 
         def drop(self, x, q):

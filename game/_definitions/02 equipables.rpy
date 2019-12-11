@@ -121,7 +121,7 @@ default list_of_accessories = [
 default axe = item(
     _("Axe"),
     _("A simple wood cutting axe."),
-    "items/bracers_of_agility.png",
+    "items/axe.png",
     1400,
     type = "tools"
     )

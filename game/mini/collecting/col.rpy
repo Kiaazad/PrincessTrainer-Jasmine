@@ -16,12 +16,12 @@
             self.act = None
 
         def clicked(self, o, p):
-            if o.tools and not any(i in o.tools for i in p.tools):
+            if o.tools and not p.has(o.tools):
                 msg.msg("You don't have the right tools ({}) for this.".format(' or '.join(i.name for i in o.tools)))
             else:
                 if o.hits > 1:
                     o.hits -= 1
-                    msg.msg("{}".format(o.hits))
+                    msg3("{}".format(o.hits))
                 else:
                     if o.items:
                         for i in o.items:

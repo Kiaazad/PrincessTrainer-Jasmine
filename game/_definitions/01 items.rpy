@@ -126,7 +126,7 @@ default list_of_sex_items = [
 default black_lamp = item(
     _("Black lamp"),
     _("An oil lamp used for illumination."),
-    "items/bracers_of_agility.png",
+    "items/black_lamp.png",
     2100,
     )
 

@@ -103,7 +103,7 @@
         developer = [ 'K_F9', 'alt_shift_K_d' ],
         full_inspector = [ 'alt_shift_K_i' ],
         inspector = [ 'I' ],
-        reload_game = [ 'R', 'alt_shift_K_r' ],
+        reload_game = [ 'K_F5', 'alt_shift_K_r' ],
         launch_editor = [ 'E' ],
         choose_renderer = [ 'G', 'alt_shift_K_g' ],
         progress_screen = [ 'alt_shift_K_p', 'meta_shift_K_p', 'K_F2' ],

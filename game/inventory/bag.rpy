@@ -20,7 +20,7 @@ init python:
     def return_mouse_pos():
         return renpy.get_mouse_pos()
 
-screen show_bag(s = test_bag, p = abdul):
+screen show_bag(s = abdul.bags[0], p = abdul):
     default mode = "stack"
 
     drag:
