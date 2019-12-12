@@ -118,8 +118,6 @@ label wish_to_be_god:
 label wish_to_be_immortal:
     abd "I wish to be immortal."
     jaf "All right, you'll never die then, no matter how old or sick you'll become in the future."
-    jaf "Who knows what will happen to you after you get married and grow old."
-    jaf "Hope you make lots of friends."
     return
 
 label wish_to_be_indestructible:
@@ -153,7 +151,21 @@ label wish_to_be_the_strongest_man_ever:
 
 label wish_to_be_rich:
     abd "I wish to be rich."
-    jaf "Here are you, now don't spend too much. It'll be gone before you know it."
+    jaf "As you wish."
+    jaf "Ajjj.... majjji..."
+    abd "Whoa!" 
+    abd "Is that money coming out of the sky?" 
+    abd "Then that means..."
+    abd "I'm rich! I'm finally rich!"
+    abd "Whoopie!"
+    abd "Imagine what I can spend it on! A soft bed, a warm meal, and delicious alcohols..."
+    abd "..."
+    jaf "What?"
+    abd "These coins have your faces on it. Even the bills have your faces too. That's not right." 
+    abd "Then that means..."
+    abd "It's fake?"
+    jaf "You asked to be rich, so I granted your wish. If you're lucky, you might get a few cents from all of these."
+    abd "..."
     return
 
 label wish_to_be_healthy:
