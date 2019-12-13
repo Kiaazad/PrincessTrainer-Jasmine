@@ -14,23 +14,75 @@
 init offset = -1
 
 ## Navigation screen ###########################################################
-
+transform lampoff(x,y):
+    parallel:
+        alpha 0 offset (0,0)
+        ease .2 offset (x,y) alpha 1
+    parallel:
+        on idle:
+            easein .2 alpha .6
+        on hover:
+            easein .2 alpha 1.0
+        # on selected_idle:
+        #     easein .2 additive .2
+        # on selected_hover:
+        #     easein .2 additive .3
+        on insensitive:
+            easein .2 alpha .2
 screen navigation(ii=0):
     style_prefix "nav"
-    
-    frame:
-        align(.5,1.0)
-        hbox:
-            for i in menuz:
-                if (main_menu and i[0]) or (not main_menu and i[1]) or (not renpy.variant("pc") and i[2]):
-                    pass
-                else:
-                    $ ii=ii+1
-                    button:
-                        at btn
-                        text i[4]
-                        action i[5]
+    tag menu
+    button: 
+        add "bg/lamp/back.png"
+        action Return()
+    button:
+        at lampoff(-350, 150)
+        add "bg/lamp/fight.png"
+        action Return()
+    button:
+        at lampoff(350, 150)
+        add "bg/lamp/harem.png"
+        action Return()
+    button:
+        at lampoff(0, 260)
+        add "bg/lamp/library.png"
+        action Return()
+    button:
+        at lampoff(350, -150)
+        add "bg/lamp/quest.png"
+        action Return()
+    button:
+        at lampoff(-350, -150)
+        add "bg/lamp/replay.png"
+        action Return()
+    button:
+        at lampoff(0, -260)
+        add "bg/lamp/save.png"
+        action ShowMenu("save")
+    button:
+        at lampoff(-600, 0)
+        add "bg/lamp/settings.png"
+        action ShowMenu("preferences")
+    button:
+        at lampoff(600, 0)
+        add "bg/lamp/settings.png"
+        action MainMenu()
 
+
+    # frame:
+    #     align(.5,1.0)
+    #     hbox:
+    #         for i in menuz:
+    #             if (main_menu and i[0]) or (not main_menu and i[1]) or (not renpy.variant("pc") and i[2]):
+    #                 pass
+    #             else:
+    #                 $ ii=ii+1
+    #                 button:
+    #                     at btn
+    #                     text i[4]
+    #                     action i[5]
+style nav_button:
+    background None
 
 ## Main Menu screen ############################################################
 

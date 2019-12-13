@@ -26,7 +26,27 @@ default des_1_col = col_game("Roc pass", "mini/collecting/1/bg.png",
 
 label desert_1:
     scene black
-    show screen collect(abdul, des_1_col)
+    show screen collect(abdul, des_1_col, e = False)
+    show screen mirage_1
     pause
-
+    scene black with dissolve
+    hide screen collect
+    hide screen mirage_1
+    show jas normal at center with Dissolve(3)
+    jas "Abdul..."
+    abd "Yes?"
+    jas "Come to me Abdul."
+    abd "Yes your highness."
+    jas "Come Abdul, I need your help."
+    abd "What can I do for you my princess?"
+    jas "Agrabah is in trouble."
+    abd "I'll give my life for my city."
+    jas "I need your seed Abdul."
+    abd "My seed?"
+    jas "I need you to honor me with a heir."
+    abd "With...?"
+    jas "Impregnate me Abdul. Right here, Right now."
+    abd "If you insist your highness."
+    "The dream sex scene happens here."
+    "After this abdul returns to agrabah."
     return

@@ -234,7 +234,10 @@
                             jaf "Something I heard- {w=.5}you know what, never mind."
                             jump ch1
         "Don't be naive, search for more firewood.":
+            show abd alert at left
+            abd "Back to work then."
             $ msg.msg("You hang the lap on your bundle.")
+            show abd tired at left
             abd "Unusually hot today."
             abd "..."
             call desert_1

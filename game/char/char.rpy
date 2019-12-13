@@ -49,4 +49,4 @@ image jaf looking:
 
 
 # Jasmine
-# image jas normal = "char/jasmine/normal.png"
+image jas normal = "char/jasmine/normal.png"
