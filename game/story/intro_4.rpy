@@ -90,4 +90,4 @@ label ch4:
     show abd alert at left
     abd "I'll try."
     jaf "Well then, off you go. I'll be in the lamp if you need me."
-    jump main
+    jump agrabah
