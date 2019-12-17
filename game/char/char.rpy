@@ -2,6 +2,7 @@
 define abd = Character("Abdul", color="#44f", namebox_align=(.1, .95))
 define jas = Character("Jasmine", color="#4ff", what_text_color="#dff", namebox_align=(.9, .95))
 define jaf = Character("Jafar", color="#f44", what_text_color="#fdd", namebox_align=(.9, .95))
+define ras = Character("Rasoul", color="#f44", what_text_color="#fdd", namebox_align=(.9, .95))
 
 define lag = Character("Lago")
 
@@ -50,3 +51,7 @@ image jaf looking:
 
 # Jasmine
 image jas normal = "char/jasmine/normal.png"
+
+
+# Rasoul the head of guards
+image ras normal = "char/rasoul/normal.png"
