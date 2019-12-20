@@ -22,13 +22,6 @@ label bazaar:
     show screen map(bazaar_map)
     pause
 
-label akbars_shop:
-    "Ah, Abdul. what can I help you with?"
-    abd "Do you need firewood today?"
-    "Maybe tomorrow."
-    abd "Alright."
-    jump bazaar
-
 label fruit_shack:
     "Dates?"
     abd "Not today."

@@ -43,7 +43,7 @@
     abd "He's the new sultan that is always out of the city flying his carpet."
     show jaf annoyed at right
     jaf "And Jasmine have no clue how to rule. I knew it."
-    jaf "I'll deal with this later, for now we have a bigger fish to catch."
+    jaf "I'll deal with this later, for now we have a bigger fish to fry."
     show jaf normal at right
     show abd sad at left
     abd "..."
