@@ -4,7 +4,6 @@
 
 screen say(who, what):
     style_prefix "say"
-
     if not persistent.theme_change:
         window:
             id "window"
@@ -21,20 +20,28 @@ screen say(who, what):
     else:
         window:
             id "window"
-            yalign 1.0
-            xysize (1020,205)
-            background "0gui/say.png"
-            label what id "what" xsize 900 background None text_size 30
+            yalign 0.0
+            xsize 920
+            yminimum 101
+            padding 30,10
+            background Frame("0gui/say.png", 0, 20, 0, 30)
+            label what id "what" background None text_size 30 yoffset -10
 
         if who is not None:
             window:
-                id "namebox"
-                text who id "who"
+                xsize 510 padding 0,0 id "namebox" background None align (1.0, 0.0)
+                frame:
+                    id "namebox1"
+                    background Frame("0gui/namebox.png", 0, 25, 0, 70)
+                    padding 30,5,50,5 xalign 0.0
+                    ysize 87
+                    text who id "who"
     if not renpy.variant("small"):
         add SideImage() xalign 0.0 yalign 1.0
 
 init python:
     config.character_id_prefixes.append('namebox')
+    config.character_id_prefixes.append('namebox1')
 
 ## Choice screen ###############################################################
 define menu_shuffle = 0
@@ -72,7 +79,7 @@ screen quick_menu():
     if not persistent.theme_change:
         add "0gui/abdul_frm.png"
     else:
-        add "0gui/frm.png"
+        add "0gui/frm.png" yalign 0.0
         if quick_menu:
             hbox:
                 style_prefix "q"

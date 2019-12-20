@@ -1,8 +1,8 @@
 ﻿
-define abd = Character("Abdul", color="#44f", namebox_align=(.1, .95))
-define jas = Character("Jasmine", color="#4ff", what_text_color="#dff", namebox_align=(.9, .95))
-define jaf = Character("Jafar", color="#f44", what_text_color="#fdd", namebox_align=(.9, .95))
-define ras = Character("Rasoul", color="#f44", what_text_color="#fdd", namebox_align=(.9, .95))
+define abd = Character("Abdul", color="#226", namebox_align=(0.0, 0.0), namebox1_xalign = 1.0, namebox1_background = Frame("0gui/namebox1.png", 0, 70, 0, 25), namebox1_padding = (50,5,30,5))
+define jas = Character("Jasmine", color="#4ff", what_text_color="#dff")
+define jaf = Character("Jafar", color="#622", what_text_color="#fdd")
+define ras = Character("Rasoul", color="#f44", what_text_color="#fdd", namebox_align=(1.0, 0.0))
 
 define lag = Character("Lago")
 
