@@ -32,6 +32,7 @@ transform lampoff(x,y):
 screen navigation(ii=0):
     style_prefix "nav"
     tag menu
+    add "#000"
     button: 
         add "bg/lamp/back.png"
         action Return()
@@ -65,22 +66,11 @@ screen navigation(ii=0):
         action ShowMenu("preferences")
     button:
         at lampoff(600, 0)
-        add "bg/lamp/settings.png"
+        add "bg/lamp/mm.png"
         action MainMenu()
 
-
-    # frame:
-    #     align(.5,1.0)
-    #     hbox:
-    #         for i in menuz:
-    #             if (main_menu and i[0]) or (not main_menu and i[1]) or (not renpy.variant("pc") and i[2]):
-    #                 pass
-    #             else:
-    #                 $ ii=ii+1
-    #                 button:
-    #                     at btn
-    #                     text i[4]
-    #                     action i[5]
+init python:
+     config.game_menu_action = [  ShowMenu("navigation")]
 style nav_button:
     background None
 
@@ -126,10 +116,14 @@ screen game_menu(title):
     style_prefix "gm"
     add bgs[1]
     transclude
+    vbox:
+        align(1.0,0.0)
+        label title at btn
+        button:
+            at btn
+            text "Return"
+            action ShowMenu("navigation")
 
-    use navigation
-
-    label title margin(40,40) align(1.0,0.0) at btn
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
 
