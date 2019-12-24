@@ -81,7 +81,7 @@ screen main_menu(ii=0):
     tag menu
 #    add bgs[0]
     if not persistent.theme_change:
-        add "bg/01.jpg"
+        add "bg/01.png"
         add "0gui/abdul_frm.png"
         vbox:
             yoffset 100 spacing -30
