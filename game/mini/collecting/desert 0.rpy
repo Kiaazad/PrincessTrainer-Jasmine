@@ -11,7 +11,7 @@ default des_0_4 = col_obj("mini/collecting/1/04.png",
     [[thorns, 1]],
     )
 
-default des_0_col = col_game("Roc pass", None,
+default des_0_col = col_game("Roc pass",
     [des_0_2, des_0_3, des_0_4]
     )
 

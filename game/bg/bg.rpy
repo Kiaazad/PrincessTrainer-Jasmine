@@ -3,6 +3,7 @@ image cg cg2 = "bg/cg/02.jpg"
 # image bg cg3 = "bg/cg/03.jpg"
 # image bg cg4 = "bg/cg/04.jpg"
 
+image bg rock_pass = "bg/roc_pass.png"
 image bg bg1 = "bg/01.png"
 image bg bg2 = "bg/02.png"
 image bg bg3 = "bg/03.jpg"

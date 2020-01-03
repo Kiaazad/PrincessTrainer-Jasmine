@@ -11,7 +11,7 @@ screen mirage_1:
     default alph = 0
     default intervals = 1
     if intervals < 20:
-        timer 4 repeat True action SetScreenVariable("alph", .1), SetScreenVariable("intervals", intervals+1)
+        timer 2 repeat True action SetScreenVariable("alph", .1), SetScreenVariable("intervals", intervals+1)
         timer intervals*.1 repeat True action SetScreenVariable("alph", 0)
     else:
         timer .01 action Return()

@@ -294,20 +294,15 @@ label ch2_1:
     show abd alert at left
     abd "Yes, of course."
     jaf "Believe me, one wish is more than enough."
-    jaf "Now that the lamp is safe, let us go inside it."
-    show abd concerned at left
-    abd "Inside?"
-    abd "Is this a trick to imprison me inside the lamp, Jafar?"
-    show jaf probing at right
-    jaf "And how would I benefit from that?"
-    show abd alert at left
-    abd "Your freedom?"
-    show jaf normal at right
-    jaf "If it was that simple, or even if I wanted to, I would have done it already."
-    jaf "It wouldn't be that hard to trick you either, you're pretty gullible."
-    show abd embarrassed at left
-    abd "I...{w=.5} you're right. Sorry for doubting you."
-    show abd concerned at left
-    abd "So what's inside?"
-    jaf "Let's go and see."
-    jump ch3
+    jaf "Now that the lamp is safe, go get something to eat and rest a little."
+    jaf "I can hear you stomach rumbling."
+    abd "..."
+    jaf "Once yore ready, rub the lamp, we have more to do."
+    abd "But you took it away."
+    show screen lamp_get
+    jaf "Here"
+    jaf "Since nobody but you can see it now, it should be safe hanging on your waist."
+    jaf "Don't lose it Abdul."
+    jaf "Now go, before the shops in bazaar close."
+    abd "Oh, right!"
+    jump agrabah

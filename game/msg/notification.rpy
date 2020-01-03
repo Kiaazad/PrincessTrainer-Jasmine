@@ -45,9 +45,10 @@ screen notif:
     if len(msg.list):
         timer .2 repeat True action Function(msg.rem)
     vbox:
-        yalign 0.0 yoffset 40
+        align 0.0,1.0 offset 10,-10 box_reverse True
         for i in msg.list:
             frame:
+                xalign 0.0
                 at notif_t(msg.delay)
                 text "{}".format(i[1])
     # test button, remove

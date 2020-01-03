@@ -9,7 +9,7 @@
             self.tools = tools
 
     class col_game:
-        def __init__(self, name, bg = None, lst = []):
+        def __init__(self, name, lst = [], bg = None):
             self.name = name
             self.lst = lst
             self.bg = bg

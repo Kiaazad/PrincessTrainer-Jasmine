@@ -49,6 +49,13 @@ screen quests(q = qlog):
                                     color colors["Canceled"]
                                 elif q.slc.stat == "Failed":
                                     color colors["Failed"]
+
+    button:
+        align 0.0,0.0 margin 100,100
+        text "Return"
+        action Hide("quests"), Return()
+
+
     # drag:
     #     align(0.848, 0.522)
     #     frame:

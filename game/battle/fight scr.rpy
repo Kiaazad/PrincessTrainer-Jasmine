@@ -1,12 +1,5 @@
 ﻿        
 
-label fight_test:
-    scene image "#333"
-    show image "bg/fight.png"
-    window hide
-    show screen btl_scr(me_team, en_team)
-    pause
-    return
 
 screen btl_scr(f, e):
     modal True
@@ -70,7 +63,7 @@ screen btl_scr(f, e):
 
         button:
             text "Skip"
-            action Hide("btl_scr")
+            action Hide("btl_scr"), Return()
     use stats(f, e)
     # if caster:
     #     use fine_tune(caster)

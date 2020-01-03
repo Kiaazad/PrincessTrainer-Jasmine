@@ -1,15 +1,33 @@
-﻿label ch3:
-    # $ skip_next = "skip_to_ch4"
+﻿label lamp_visit:
     scene black
+    hide screen map
+    hide screen lamp_get
     show bg black
     show abd concerned at left
     with dissolve
+    abd "Woaaaaah. What?"
+    jaf "Welcome to my humble lamp Abdul."
     show jaf normal at right
     with dissolve
-    abd "Are we inside the lamp now?"
+    abd "Jafar? Did you bring me inside your lamp?"
     jaf "Yes."
-    abd "And I'm still alive?"
-    jaf "Yes."
+    abd "I knew it!"
+    jaf "You knew what?"
+    abd "Did you bring me here to trap me inside the lamp?"
+    show jaf probing at right
+    jaf "Why would I want to do that?"
+    show abd alert at left
+    abd "Your freedom?"
+    show jaf normal at right
+    jaf "If it was that simple, or even if I wanted to, I would have done it already."
+    jaf "It wouldn't be that hard to trick you either, you're pretty gullible."
+    show abd embarrassed at left
+    abd "I...{w=.5} you're right. Sorry for doubting you."
+    show abd concerned at left
+    abd "So why did you bring me here?"
+    jaf "Abdul my friend, we're working together."
+    jaf "I want to show you my home."
+    abd "This darkness is your home?"
     show abd normal at left
     abd "..."
     show abd smug at left
@@ -24,11 +42,16 @@
     show jaf normal at right
     jaf "You need to learn how to navigate this place when I'm not around."
     show abd concerned at left
-    abd "First question, how do I get inside on my own?"
+    abd "First question, how do I get in and out on my own?"
     show jaf thinking at right
-    jaf "Excellent question, I brought us here just by thinking about it, but you're going to need a kind of spell to do that."
+    jaf "Excellent question, to get in just rub the lamp."
     show abd normal at left
-    jaf "I'll come up with something."
+    abd "And rub it again to go out?"
+    jaf "Nope, you can't bring the lamp inside itself."
+    abd "Hey, it's gone..."
+    jaf "Didn't you hear what I said?"
+    abd "Oh!"
+    jaf "I'll come up with something. We can worry about that later."
     show jaf normal at right
     jaf "But first, let me show you around."
     menu:
@@ -40,6 +63,7 @@
             show abd normal at left
             show jaf normal at right
             jaf "Have a look around then meet me in my library."
+            hide jaf with dissolve
             jump ch3_1
         "Yes, please. This place looks like the desert night.":
             show abd concerned at left
@@ -240,57 +264,106 @@
                     hide jaf with dissolve
                     menu:
                         "Go talk to the girls.":
-                            call harem_girls from _call_harem_girls
+                            # jump harem_girls
+                            "This scene is not ready yet."
                             jump ch3_1
+
                         "Jump right into the water.":
-                            show bg cg_abdul_bathing
+                            # show bg cg_abdul_bathing
                             "the bathing scene is not ready"
+                            jump ch3_1
                             menu:
                                 "Go talk to the girls.":
-                                    call harem_girls from _call_harem_girls_1
+                                    # jump harem_girls
+                                    "This scene is not ready yet."
                                     jump ch3_1
                                 "Go back to Jafar.":
                                     jump ch4
 
 label ch3_1:
-    menu:
-        "This part will be replaced by a proper screen, but for now have a menu."
-        "Go to library.":
-            jump ch4
-        "Go to Harem.":
-            jump ch3_harem
-        "Go to hall of... Sands of Time.":
-            jump ch3_sav
-        "Go to Room of Settings.":
-            jump ch3_set
-        "Go Fight.":
-            call ch3_fight from _call_ch3_fight
-        "Go to the Mirror Room.":
-            jump ch3_mirror
+    scene black
+    show screen lamp_visit_menu
+    pause
+
+
+
+screen lamp_visit_menu:
+    style_prefix "nav"
+    modal True
+    button:
+        at lampoff(-350, 150)
+        add "bg/lamp/fight.png"
+        action Hide("lamp_visit_menu"), Call("ch3_fight")
+    button:
+        at lampoff(350, 150)
+        add "bg/lamp/harem.png"
+        action Hide("lamp_visit_menu"), Jump("ch3_harem")
+    button:
+        at lampoff(0, 260)
+        add "bg/lamp/library.png"
+        action Hide("lamp_visit_menu"), Jump("ch4")
+    button:
+        at lampoff(350, -150)
+        add "bg/lamp/quest.png"
+        action Hide("lamp_visit_menu"), Jump("ch3_mirror")
+    button:
+        at lampoff(-350, -150)
+        add "bg/lamp/replay.png"
+        action Hide("lamp_visit_menu"), Jump("ch3_replay")
+    button:
+        at lampoff(0, -260)
+        add "bg/lamp/save.png"
+        action Hide("lamp_visit_menu"), Jump("ch3_sav")
+    button:
+        at lampoff(-600, 0)
+        add "bg/lamp/settings.png"
+        action Hide("lamp_visit_menu"), Jump("ch3_set")
+    button:
+        at lampoff(600, 0)
+        add "bg/lamp/mm.png"
+        action Hide("lamp_visit_menu"), Jump("ch3_mm")
+
+
 label ch3_harem:
     scene bg harem
     menu:
         "Go talk to the girls.":
-            call harem_girls from _call_harem_girls_2
+            "This scene is not ready yet."
             jump ch3_1
         "Jump right into the water.":
-            show bg cg_abdul_bathing
+            # show bg cg_abdul_bathing
             "the bathing scene is not ready"
             menu:
                 "Go talk to the girls.":
-                    call harem_girls from _call_harem_girls_3
+                    "This scene is not ready yet."
                     jump ch3_1
                 "Go back to Jafar.":
                     jump ch4
     jump ch3_1
+
+label ch3_mm:
+    # scene bg sav
+    "Nothing to do here."
+    jump ch3_1
 label ch3_sav:
-    scene bg sav
+    # scene bg sav
     "Nothing to do here."
     jump ch3_1
 label ch3_set:
     scene bg sett
     "Nothing to do here."
     jump ch3_1
+label ch3_replay:
+    scene bg sett
+    "Nothing to do here."
+    jump ch3_1
+label ch3_mirror:
+    "the quest screen is not even designed, just a test to make sure it's functional."
+    show screen quests
+    pause
+    jump ch3_1
+
+
 label ch3_fight(j=False):
     window hide
     call lamp_fight_1 from _call_lamp_fight_1_1
@@ -298,8 +371,3 @@ label ch3_fight(j=False):
         return
     else:
         jump ch3_1
-label ch3_mirror:
-    "the quest screen is not even designed, just a test to make sure it's functional."
-    show screen quests
-    pause
-    jump ch3_1

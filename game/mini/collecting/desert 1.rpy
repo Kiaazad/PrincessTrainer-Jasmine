@@ -20,12 +20,13 @@ default des_1_5 = col_obj("mini/collecting/1/05.png",
     [[thorns, 1]],
     )
 
-default des_1_col = col_game("Roc pass", "mini/collecting/1/bg.png",
+default des_1_col = col_game("Roc pass",
     [des_1_1, des_1_2, des_1_3, des_1_4, des_1_5]
     )
 
 label desert_1:
     scene black
+    show bg rock_pass
     show screen collect(abdul, des_1_col, e = False)
     show screen mirage_1
     pause
@@ -49,4 +50,4 @@ label desert_1:
     abd "If you insist your highness."
     "The dream sex scene happens here."
     "After this abdul returns to agrabah."
-    return
+    jump street

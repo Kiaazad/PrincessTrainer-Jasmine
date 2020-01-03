@@ -1,4 +1,4 @@
-﻿label ch0:
+﻿label intro_0:
     # default skip_next = "skip_to_ch1"
     call desert_0 from _call_desert_0
     show bg bg1
