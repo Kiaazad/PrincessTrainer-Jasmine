@@ -240,7 +240,7 @@
             show abd tired at left
             abd "Unusually hot today."
             abd "..."
-            call desert_1
+            call desert_1 from _call_desert_1
             
 
             jump endless_grind
