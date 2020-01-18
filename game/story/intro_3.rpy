@@ -6,18 +6,18 @@
     show abd concerned at left
     with dissolve
     abd "Woaaaaah. What?"
-    jaf "Welcome to my humble lamp Abdul."
+    jaf "Welcome to my humble lamp, Abdul."
     show jaf normal at right
     with dissolve
-    abd "Jafar? Did you bring me inside your lamp?"
+    abd "Jafar? Did you transport me inside your lamp?"
     jaf "Yes."
     abd "I knew it!"
     jaf "You knew what?"
-    abd "Did you bring me here to trap me inside the lamp?"
+    abd "Did you bring me here to trap me inside your lamp?"
     show jaf probing at right
-    jaf "Why would I want to do that?"
+    jaf "Now why would I want to do that?"
     show abd alert at left
-    abd "Your freedom?"
+    abd "To gain your freedom?"
     show jaf normal at right
     jaf "If it was that simple, or even if I wanted to, I would have done it already."
     jaf "It wouldn't be that hard to trick you either, you're pretty gullible."
@@ -25,7 +25,7 @@
     abd "I...{w=.5} you're right. Sorry for doubting you."
     show abd concerned at left
     abd "So why did you bring me here?"
-    jaf "Abdul my friend, we're working together."
+    jaf "Abdul my friend, we are going to work together."
     jaf "I want to show you my home."
     abd "This darkness is your home?"
     show abd normal at left
@@ -33,7 +33,7 @@
     show abd smug at left
     abd "It's a lot bigger on the inside."
     jaf "..."
-    abd "You have quite the leg room in here."
+    abd "You have quite the leg room in here too."
     jaf "..."
     abd "Doesn't smell like farts either."
     show jaf annoyed at right
@@ -42,7 +42,7 @@
     show jaf normal at right
     jaf "You need to learn how to navigate this place when I'm not around."
     show abd concerned at left
-    abd "First question, how do I get in and out on my own?"
+    abd "First question, how do I get in and out on your own?"
     show jaf thinking at right
     jaf "Excellent question, to get in just rub the lamp."
     show abd normal at left
@@ -62,12 +62,12 @@
             jaf "Eager to draw your sword, aren't you?"
             show abd normal at left
             show jaf normal at right
-            jaf "Have a look around then meet me in my library."
+            jaf "All right, have a look around yourself then meet me in my library."
             hide jaf with dissolve
             jump ch3_1
-        "Yes, please. This place looks like the desert night.":
+        "Yes, please. This place looks like the desert at night.":
             show abd concerned at left
-            abd "Yes, please. This place looks like the desert night."
+            abd "Yes, please. This place looks like the desert at night."
             jaf "Are you afraid of the dark?"
             abd "No. I'm afraid of what might be hiding in the darkness. How do I know I won't fall in a hole?"
             show jaf thinking at right
@@ -84,7 +84,7 @@
             abd "Are they an obsession of yours?"
             show abd concerned at left
             abd "Where are they hanging from? I can't see the ceiling."
-            jaf "There's no ceiling here, no walls and the thing you're walking on isn't a floor."
+            jaf "There's no ceiling here, no walls and that thing you're walking on is not a floor."
             show abd scared at left
             abd "Wait, what!?"
             show jaf angry at right
@@ -108,7 +108,7 @@
             jaf "Not exactly."
             show abd concerned at left
             show jaf normal at right
-            jaf "You would have to wish for resurrection, and it wouldn't be a pretty sight. Plus, it's difficult to wish you dying right in front of me!"
+            jaf "You would have to wish for resurrection, and it wouldn't be a pretty sight. Plus, it's difficult to wish you dying right in front of me right now!"
             jaf "This is my way to manage around that problem."
             jaf "Just don't overdo it, you don't have much sand and it's not easy to obtain more of it."
             show abd alert at left
