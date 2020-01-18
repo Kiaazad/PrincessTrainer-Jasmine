@@ -6,14 +6,14 @@
     show abd tired at left with dissolve
     abd "Phew..."
     abd "There's nothing left here but sand."
-    abd "Not even a single tumbleweed!"
+    abd "And what's worse is that there's not even a single tumbleweed either!"
     abd "I need to find another place to collect some firewood."
     show ev 01
     show abd back at left with dissolve
     abd "{size=45}Huh!?"
     abd "That isn't...{w=.4} a mirage."
     abd "..."
-    abd "There's something shiny in the sand."
+    abd "There's something shiny around the sand."
     hide abd
     hide ev 01
     show cg cg1
@@ -21,7 +21,7 @@
     with dissolve
     abd "An oil lamp?"
     abd "Looks new."
-    abd "Hah, this is my lucky day! I can sell this and finally eat a full meal tonight."
+    abd "Hah, this is my lucky day! Maybe I can sell this and I can finally eat a full meal tonight."
     $ qlog.got(sell_lamp)
     hide cg
     show abd confused at left
@@ -52,7 +52,7 @@
             jaf "Ah, much better."
             show abd afraid at left
             abd "Wait! {w=.3}Jafar?"
-            jaf "In the flesh, {w=.5}or smoke. {w=.8}Fire to be precise."
+            jaf "In the flesh, {w=.5}or in the smoke. {w=.8}Fire to be precise."
             jaf "Yes,{w=.3} yes, {w=.3}Genies are made of fire."
             jaf "Pick up my lamp would you?"
             show abd alert at left
@@ -69,19 +69,19 @@
             show abd sad at left
             abd "Well... {w=.6}I can't do that anymore."
             abd "Aladdin destroyed my fish stand in one of his fights."
-            abd "Every other day, he would drag a fight into the bazaar and mess the place up."
+            abd "Every other day, he would drag himself to a fight into the bazaar and mess the place up."
             abd "Breaking my fish barrels every single time... {w=.5}Those cost lots of money."
             abd "They blamed it on you returning to Agrabah."
             jaf "Did you get compensated you for the damages?"
-            abd "After your sudden death, nobody to go to in that palace anymore."
+            abd "After your sudden death, nobody wanted to go in that palace anymore."
             jaf "I'm still alive, Abdul."
             show abd alert at left
             abd "I meant after you left."
-            abd "I can't take my fish to the bazaar without barrels."
+            abd "I can't take my fish to the bazaar without any barrels."
             abd "No fish to sell means no money to buy barrels, {w=.4} which means no money to feed the fish, {w=.4}and now no money to buy bread."
             show jaf thinking at right
             jaf "That explains the missing belly."
-            abd "And my fish pond dried up, Jafar. {w=.5}All of my fish died. {w=.8}I'm a wood collector now."
+            abd "And my fish pond is all dried up, Jafar. {w=.5}All of my fish died. {w=.8}I'm a wood collector now."
             show jaf normal at right
             jaf "Agrabah is an oasis, my friend. {w=.5}A drop of water in the middle of the scorching sand."
             show abd normal at left
@@ -118,8 +118,8 @@
             show jaf normal at right
             jaf "Yes my friend, {w=.5}down on the luck, {w=.5}dead mother and facing an unbelievable opportunity."
             jaf "Those are the telltale signs of a story being written."
-            jaf "This time, yours!"
-            jaf "Abdul my friend... {w=.5}Your life is about to change. A new opportunity fell right into your lap!"
+            jaf "This time, it's yours to take!"
+            jaf "Abdul, my friend... {w=.5}Your life is about to change forever. A new opportunity fell right onto your lap!"
             if not persistent.theme_change:
                 show jaf looking at right
                 jaf "So..."
@@ -134,7 +134,7 @@
             jaf "Yep! Those are the rules!"
             jaf "Aren't you glad you rubbed my lamp before selling it?"
             abd "How did you know that was my plan?"
-            jaf "You have to stop talking to yourself out loud my friend."
+            jaf "You have to stop talking to yourself out loud, my friend."
             show abd alert at left
             jaf "You haven't gone crazy, have you?"
             abd "No!"
@@ -217,7 +217,7 @@
                 "No! I want my wishes":
                     show abd normal at left
                     abd "No! I just want my wishes Jafar!"
-                    jaf "Are you sure? {w=.5}This will not end well for you my friend."
+                    jaf "Are you sure? {w=.5}This will not end well for you, my friend."
                     menu:
                         jaf "Last chance, Abdul! Don't throw away this opportunity."
                         "I really want my wishes Jafar.":
@@ -238,7 +238,7 @@
             abd "Back to work then."
             $ msg.msg("You hang the lap on your bundle.")
             show abd tired at left
-            abd "Unusually hot today."
+            abd "It's unusually hot today."
             abd "..."
             call desert_1 from _call_desert_1
             
