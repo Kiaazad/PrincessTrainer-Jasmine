@@ -9,7 +9,7 @@
     jaf "Welcome to my humble lamp, Abdul."
     show jaf normal at right
     with dissolve
-    abd "Jafar? Did you transport me inside your lamp?"
+    abd "Jafar? Did you bring me inside your lamp?"
     jaf "Yes."
     abd "I knew it!"
     jaf "You knew what?"
@@ -42,7 +42,7 @@
     show jaf normal at right
     jaf "You need to learn how to navigate this place when I'm not around."
     show abd concerned at left
-    abd "First question, how do I get in and out on your own?"
+    abd "First question, how do I get in and out on my own?"
     show jaf thinking at right
     jaf "Excellent question, to get in just rub the lamp."
     show abd normal at left
@@ -62,7 +62,7 @@
             jaf "Eager to draw your sword, aren't you?"
             show abd normal at left
             show jaf normal at right
-            jaf "All right, have a look around yourself then meet me in my library."
+            jaf "All right, have a look around by yourself then meet me in my library."
             hide jaf with dissolve
             jump ch3_1
         "Yes, please. This place looks like the desert at night.":
@@ -108,7 +108,7 @@
             jaf "Not exactly."
             show abd concerned at left
             show jaf normal at right
-            jaf "You would have to wish for resurrection, and it wouldn't be a pretty sight. Plus, it's difficult to wish you dying right in front of me right now!"
+            jaf "You would have to wish for resurrection, and it wouldn't be a pretty sight. Plus, it's difficult to wish When you're dead."
             jaf "This is my way to manage around that problem."
             jaf "Just don't overdo it, you don't have much sand and it's not easy to obtain more of it."
             show abd alert at left
