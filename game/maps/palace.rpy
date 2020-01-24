@@ -1,10 +1,10 @@
-﻿default jasmines_room_loc = place("Jasmine's room", (339, 573), Jump('jasmines_room'), "bg/palace/jasmines_room.png")
-default throne_room_loc = place("Throne room", (890, 700), Jump('throne_room'), "bg/palace/throne_room.png")
-default sultans_room_loc = place("Sultan's room", (1307, 509), Jump('sultans_room'), "bg/palace/sultans_room.png")
-default palace_yard_loc = place("The yard", (91, 847), Jump('palace_yard'), "bg/palace/palace_yard.png")
-default servants_quarter_loc = place("Servant's quarter", (1816, 727), Jump('servants_quarter'), "bg/palace/servants_quarter.png")
-default treasury_loc = place("Treasury", (908, 249), Jump('palace_treasury'), "bg/palace/treasury.png")
-default palace_street_loc = place("Back to the main street", (1157, 37), Jump('street'), "bg/palace/palace_back.png")
+﻿default jasmines_room_loc = place("Jasmine's room", (339, 573), Jump('jasmines_room'))
+default throne_room_loc = place("Throne room", (890, 700), Jump('throne_room'))
+default sultans_room_loc = place("Sultan's room", (1307, 509), Jump('sultans_room'))
+default palace_yard_loc = place("The yard", (91, 847), Jump('palace_yard'))
+default servants_quarter_loc = place("Servant's quarter", (1816, 727), Jump('servants_quarter'))
+default treasury_loc = place("Treasury", (908, 249), Jump('palace_treasury'))
+default palace_street_loc = place("Back to the main street", (1157, 37), Jump('street'))
 default palace_map = maps(
     "Palace",
     [

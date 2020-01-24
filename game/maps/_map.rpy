@@ -21,6 +21,18 @@ screen map(m):
         text m.name
     for i in m.p:
         button:
-            pos i.xy
-            text i.name
+            pos i.xy anchor 0.0,0.0
+            if i.icon:
+                padding 0,0 background None
+                add i.icon 
+            else:
+                text i.name
             action Hide("map"), i.act
+            at map_transform
+            focus_mask True
+
+transform map_transform:
+    on idle:
+        ease .2 additive 0.0
+    on hover:
+        ease .2 additive 0.5
