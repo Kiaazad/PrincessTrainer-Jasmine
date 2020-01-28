@@ -16,20 +16,27 @@
 screen map(m):
     modal True
     tag place
-    frame:
-        align 1.0,0.0 margin 100,100
-        text m.name
+    default hov = None
+
     for i in m.p:
         button:
             pos i.xy anchor 0.0,0.0
             if i.icon:
                 padding 0,0 background None
-                add i.icon 
+                add i.icon
             else:
                 text i.name
             action Hide("map"), i.act
             at map_transform
             focus_mask True
+            hovered SetScreenVariable("hov", i.name)
+    vbox:
+        align 1.0,0.0 offset -100,100
+        frame:
+            text m.name
+        if hov:
+            text hov
+
 
 transform map_transform:
     on idle:
