@@ -49,6 +49,18 @@ label desert_1:
     jas "I need you to impregnate me, Abdul. Right here, Right now."
     abd "Are you..."
     abd "If you insist, your highness."
-    "The dream sex scene happens here."
-    "After that, Abdul returns to agrabah."
+label desert_1_dream:
+    scene black with dissolve
+    show image "bg/cg/03.jpg" with dissolve
+    $ msg.msg("Hopefully this will be replaced with a fully animated scene.")
+    pause 4
+    show image "bg/cg/04.jpg" with dissolve:
+        subpixel True
+        yalign 0.0
+        pause 2
+        linear 3.0 yalign 1.0
+    pause 5
+    $ msg.msg("Real animation, not pan and scan though.")
+    pause 1
+    "After this, Abdul returns to agrabah."
     jump street
