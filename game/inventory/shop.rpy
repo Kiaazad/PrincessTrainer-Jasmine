@@ -11,7 +11,7 @@
         elif s.sum < c.sum:
             diff = c.sum - s.sum
             if s.cash < diff:
-                msg.msg("The shop keeper is shop on money.")
+                msg.msg("The shop keeper is short on money.")
             else:
                 itemswap_f(s,c)
                 s.cash -= diff
@@ -19,57 +19,109 @@
         else:
             itemswap_f(s,c)
     def itemswap_f(s,c):
-        s.items += c.togos
-        c.items += s.togos
-        del s.togos[:]
-        del c.togos[:]
-        s.sumit()
-        c.sumit()
+        s.togos, c.togos = c.togos, s.togos
+
 
 
 screen shop(s, c):
     modal True
-
     button:
-        text "Return"
+        yalign 1.0
+        text "Leave"
         action Hide("shop"), Return()
+
+    vbox:
+        hbox:
+            text "Buying:  {}".format(s.sumit())
+            add "inventory/coin.png"
+        hbox:
+            text "selling:  {}".format(c.sumit())
+            add "inventory/coin.png"
+        if s.sum < c.sum:
+            hbox:
+                text "Getting:  {}".format(c.sum-s.sum)
+                add "inventory/coin.png"
+        else:
+            hbox:
+                text "Paying:  {}".format(s.sum-c.sum)
+                add "inventory/coin.png"
+        button:
+            text "Finish the deal"
+            action Function(itemswap, s, c)
+
+    
     use shop_list(c, 0.0) 
     use shop_list(s, 1.0)
         
 screen shop_list(u,xa):
     default sb = u.bags[0]
-
-    hbox:
-        spacing 50 align xa,0.2
-        text "[u.name]"
-        for i in u.bags:
-            button:
-                text i.name
-                action SetScreenVariable("sb", i)
-        hbox:
-            add "items/_coin.png"
-            text "[u.cash]"
-    if sb:
-        frame:
-            ysize 740 align xa,1.0
-            vbox:
-                spacing 10 box_wrap True box_wrap_spacing 10
-                for ii,i in enumerate(sb.items):
-                    if i == None:
-                        button:
-                            xysize 128,128 padding 0,0
-                            # action Function(s.pick, ii, abdul)
-                    else:
-                        button:
-                            xysize 128,128 padding 0,0
-                            background i.item.icon
+    default mode = "single"
+    frame:
+        xsize 500 background None
+        vbox:
+            spacing 4 box_wrap True box_wrap_spacing 4 xalign xa
+            for ii,i in enumerate(u.togos.items):
+                if i == None:
+                    button:
+                        xysize 128,128 padding 0,0
+                        action Function(u.togos.pick, ii, u)
+                else:
+                    button:
+                        xysize 128,128 padding 0,0
+                        background i.item.icon
+                        if i.qtt > 1:
                             text "[i.qtt]" color "#fff" align(.9,.9)
-                            tooltip i
-                            # if mode == "stack":
-                            #     action Function(c.pick, ii, s)
-                            # elif mode == "single":
-                            #     action Function(c.pickOne, ii, s)
+                        tooltip i
+                        if mode == "stack":
+                            action Function(u.togos.pick, ii, u)
+                        elif mode == "single":
+                            action Function(u.togos.pickOne, ii, u)
 
+    drag:
+        align xa,1.0
+        frame:
+            padding 0,0 xsize 660
+            vbox:
+                hbox:
+                    text "[u.name]"
+                    for i in u.bags:
+                        button:
+                            text i.name
+                            action SetLocalVariable("sb", i)
+                    hbox:
+                        text "[u.cash]"
+                        add "inventory/coin.png"
+                        
+                if sb:
 
+                    hbox:
+                        spacing 4 box_wrap True box_wrap_spacing 4
+                        for ii,i in enumerate(sb.items):
+                            if i == None:
+                                button:
+                                    xysize 128,128 padding 0,0
+                                    action Function(sb.pick, ii, u)
+                            else:
+                                button:
+                                    xysize 128,128 padding 0,0
+                                    background i.item.icon
+                                    if i.qtt > 1:
+                                        text "[i.qtt]" color "#fff" align(.9,.9)
+                                    tooltip i
+                                    if mode == "stack":
+                                        action Function(sb.pick, ii, u)
+                                    elif mode == "single":
+                                        action Function(sb.pickOne, ii, u)
+
+    default mouse = (0,0)
+    if u.holding:
+        timer 0.02 repeat True action SetLocalVariable("mouse", renpy.get_mouse_pos())
+        fixed:
+            xysize 128,128
+            pos mouse
+            at holding_item_anim
+            add u.holding.item.icon
+            if u.holding.qtt > 1:
+                text "[u.holding.qtt]" color "#fff" align(.9,.9)
 
 

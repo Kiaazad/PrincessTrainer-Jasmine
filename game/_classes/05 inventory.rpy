@@ -2,7 +2,9 @@
     class inventory:
         def __init__(self, cash, items, markup):
             self.cash = cash
-            self.bags = [bag("All")]
+            self.bags = [bag("Bag", 15), bag("Person")]
+            self.togos = bag("To Go", 6)
+            self.sum = 0
             if items:
                 for i in items:
                     self.bags[0].add(i[0], i[1])
@@ -10,6 +12,18 @@
             self.markup = markup
 
             self.uniqueID = []
+            self.holding = None
+        def discard(self):
+            self.holding = None
+
+        def sumit(self):
+            s = 0
+            for i in self.togos.items:
+                if i is not None:
+                    s += i.item.val*i.qtt
+            self.sum = s
+            return s
+
         def has(self, x):
             if not isinstance(x, list):
                 x = [x]

@@ -8,9 +8,7 @@
             fight.__init__(self, lvl, type)
             self.name = name
             self.dir = dir
-            self.holding = None
+            
             self.wishes = 3
             self.sand = 0
             self.bottles = 0
-        def discard(self):
-            self.holding = None

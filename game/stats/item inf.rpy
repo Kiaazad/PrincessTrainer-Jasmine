@@ -12,8 +12,8 @@ screen item_inf:
                         text GetTooltip().item.name color "#ff0"
                         text GetTooltip().item.inf
                         hbox:
-                            text "{}".format(GetTooltip().item.val) color "#310"
-                            add "items/_coin.png"
+                            text "{}".format(GetTooltip().item.val)
+                            add "inventory/coin.png"
                 add GetTooltip().item.icon yalign 0.0
         elif type(GetTooltip()) is item:
             hbox:
@@ -24,8 +24,8 @@ screen item_inf:
                         text GetTooltip().name color "#ff0"
                         text GetTooltip().inf
                         hbox:
-                            text "{}".format(GetTooltip().val) color "#310"
-                            add "items/_coin.png"
+                            text "{}".format(GetTooltip().val)
+                            add "inventory/coin.png"
                 add GetTooltip().icon yalign 0.0
         elif type(GetTooltip()) is spell:
             hbox:

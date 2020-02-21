@@ -1,4 +1,80 @@
-﻿        
+﻿image abdul fight idle:
+    "char/abdul/fight/idle.png"
+    pause .1
+    "char/abdul/fight/idle_2.png"
+    pause .1
+    "char/abdul/fight/idle_3.png"
+    pause .1
+    "char/abdul/fight/idle_2.png"
+    pause .1
+    repeat
+image abdul fight attack:
+    "char/abdul/fight/attack.png"
+    pause .1
+    xpos 100
+    pause .1
+    xoffset 0
+
+
+image warrior_man fight idle:
+    "char/warrior_man/fight/idle.png"
+    pause .1
+    "char/warrior_man/fight/idle_2.png"
+    pause .1
+    "char/warrior_man/fight/idle_3.png"
+    pause .1
+    "char/warrior_man/fight/idle_2.png"
+    pause .1
+    repeat
+image warrior_man fight hit:
+    "char/warrior_man/fight/hit.png"
+
+
+init python:
+    def spell_cast(caster, spell, enemy):
+        # if spell.hpc:
+        #     caster.hp += spell.hpc
+        #     self.spell_calc(caster, spell)
+        if spell.mpc:
+            if caster.mp >= spell.mpc:
+                caster.mp -= spell.mpc
+                fight_cast(caster, spell, enemy)
+            else:
+                msg.msg("Not enough Mana.")
+        if spell.stmc:
+            if caster.stm >= spell.stmc:
+                caster.stm -= spell.stmc
+                fight_cast(caster, spell, enemy)
+            else:
+                msg.msg("Not enough Stamina.")
+
+    def fight_cast(caster, spell, enemy):
+        caster.ani = "attack"
+
+        chance = renpy.random.randint(1,100)
+        crit = renpy.random.randint(-30,10)
+        pdbm = renpy.random.randint(0, 3)
+
+        if chance > spell.pdbm[pdbm] + int((float(enemy.agl) / (float(enemy.agl) + float(100))) * 100)/2:
+            enemy.ani = "hit"
+            if spell.hp:
+                damage = (spell.hp + (caster.pwr * spell.hp)/100) + crit
+                enemy.hp += damage
+                msg3(damage)
+            if spell.mp:
+                burn = (spell.mp + (caster.pwr * spell.mp)/100) + crit
+                enemy.mp += burn
+                msg3(burn)
+            if spell.stm:
+                breath = (spell.stm + (caster.pwr * spell.stm)/100) + crit
+                enemy.stm += breath
+                msg3(breath)
+        else:
+            msg3("{}".format(["Parry", "Dodge", "Block", "Miss"][pdbm]))
+        if enemy.hp < 0:
+            enemy.hp = 0
+            enemy.ani = "dead"
+
 
 
 screen btl_scr(f, e):
@@ -22,7 +98,7 @@ screen btl_scr(f, e):
             bar value i.mp range i.mmp xysize(100,10) left_bar "#fff" right_bar "#fff5"
             button:
                 background None focus_mask True
-                add "{}/fight/{}.png".format(i.dir, i.ani) at flp
+                add "abdul fight {}".format(i.ani) at flp
                 action SetScreenVariable("caster", i)
     for ii, i in enumerate(e.team): # Enemy team
         vbox:
@@ -31,9 +107,9 @@ screen btl_scr(f, e):
             bar value i.mp range i.mmp xysize(100,10) left_bar "#fff" right_bar "#fff5"
             button:
                 background None focus_mask True
-                add "{}/fight/{}.png".format(i.dir, i.ani)
+                add "warrior_man fight {}".format(i.ani)
                 if caster is not None and spell is not None:
-                    action Function(i.spell_check, caster, spell)
+                    action Function(spell_cast, caster, spell, i)
 
     if caster: # Selected caster
         add "battle/spells.png" yalign 1.0

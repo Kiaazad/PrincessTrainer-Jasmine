@@ -23,7 +23,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "0.01"
+define config.version = "0.04"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -185,10 +185,10 @@ init python:
     build.classify('assets/**', None)
     build.classify('game/0GUI dev tools', None)
     ## To archive files, classify them as 'archive'.
-    build.archive("scripts", "all")
+    # build.archive("scripts", "all")
 
-    build.classify("game/**.rpy", "scripts")
-    build.classify("game/**.rpyc", "scripts")
+    # build.classify("game/**.rpy", "scripts")
+    # build.classify("game/**.rpyc", "scripts")
     # build.classify('game/**.png', 'archive')
     # build.classify('game/**.jpg', 'archive')
 
