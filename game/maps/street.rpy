@@ -1,7 +1,7 @@
 ﻿default street_desert_loc = place("Desert", (141, 742), Jump('desert'))
-default street_palace_loc = place("Palace", (1027, 402), Jump('palace'))
+default street_palace_loc = place("Palace", (711, 357), Jump('palace'), "bg/street/palace.png")
 default street_bazaar_loc = place("Bazaar", (1333, 610), Jump('bazaar'))
-default street_home_loc = place("Home", (1794, 562), Jump('agrabah'))
+default street_home_loc = place("Home", (1464, 200), Jump('agrabah'), "bg/street/home.png")
 default street_map = maps(
     "Main street",
     [
@@ -13,6 +13,6 @@ default street_map = maps(
     )
 
 label street:
-    scene image "bg/street.jpg"
+    scene image "bg/street.png"
     show screen map(street_map)
     pause
