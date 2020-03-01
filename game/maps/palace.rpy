@@ -19,7 +19,7 @@ default palace_map = maps(
     )
 
 label palace:
-    scene image "bg/palace.jpg"
+    scene image "bg/palace.png"
     show screen map(palace_map)
     pause
 
