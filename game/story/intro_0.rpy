@@ -72,8 +72,9 @@
             abd "Every other day, he would drag a fight into the bazaar and mess the place up."
             abd "Breaking my fish barrels every single time... {w=.5}Those cost lots of money."
             abd "They blamed it on you returning to Agrabah."
-            jaf "Did you get compensated you for the damages?"
-            abd "After your sudden death, nobody wanted to go in that palace anymore."
+            jaf "Did they compensated you for the damages?"
+            abd "No."
+            abd "After your sudden death, nobody tends to peoples requests."
             jaf "I'm still alive, Abdul."
             show abd alert at left
             abd "I meant after you left."

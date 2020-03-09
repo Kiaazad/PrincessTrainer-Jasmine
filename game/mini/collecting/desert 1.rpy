@@ -44,7 +44,7 @@ label desert_1:
     abd "I will give my life for my city. What do you need from me?"
     jas "I need your seed, Abdul."
     abd "My seed?"
-    jas "I need you to honor me with a heir."
+    jas "I need you to honor me with an heir."
     abd "With...?"
     jas "I need you to impregnate me, Abdul. Right here, Right now."
     abd "Are you..."

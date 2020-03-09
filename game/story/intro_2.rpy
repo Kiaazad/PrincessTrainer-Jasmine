@@ -295,14 +295,14 @@ label ch2_1:
     abd "Yes, of course."
     jaf "Believe me, one wish is more than enough."
     jaf "Now that the lamp is safe, go get something to eat and rest a little."
-    jaf "I can hear you stomach rumbling."
+    jaf "I can hear your stomach rumbling."
     abd "..."
-    jaf "Once yore ready, rub the lamp, we have more to do."
+    jaf "Once you're ready, rub the lamp, we have more to do."
     abd "But you took it away."
     show screen lamp_get
     jaf "Here"
     jaf "Since nobody but you can see it now, it should be safe hanging on your waist."
     jaf "Don't lose it Abdul."
-    jaf "Now go, before the shops in bazaar close."
+    jaf "Now go, before the shops in the bazaar close."
     abd "Oh, right!"
     jump agrabah

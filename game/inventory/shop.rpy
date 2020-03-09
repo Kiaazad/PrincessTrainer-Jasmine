@@ -20,7 +20,9 @@
             itemswap_f(s,c)
     def itemswap_f(s,c):
         s.togos, c.togos = c.togos, s.togos
-
+    def itemswap_exit(s, c):
+        s.togos_collect()
+        c.togos_collect()
 
 
 screen shop(s, c):
@@ -48,7 +50,9 @@ screen shop(s, c):
         button:
             text "Finish the deal"
             action Function(itemswap, s, c)
-
+        button:
+            text "Collect"
+            action Function(itemswap_exit, s, c)
     
     use shop_list(c, 0.0) 
     use shop_list(s, 1.0)

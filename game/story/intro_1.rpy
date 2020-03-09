@@ -13,7 +13,7 @@
     show abd alert at left
     abd "No, it's from the garbage in the alleys."
     show abd normal at left
-    abd "Nobody is collecting them."
+    abd "Nobody is collecting it."
     abd "You know, they say that you betrayed the Sultan. They also said you tried to kill him."
     abd "But, honestly, things were {b}better{/b} when you were in charge."
     abd "After you 'left,' everyone stopped doing their jobs."
@@ -42,7 +42,7 @@
     abd "Yes, but he retired and gave the throne to Aladdin and Jasmine."
     abd "He's the new sultan that is always out of the city flying his carpet."
     show jaf annoyed at right
-    jaf "And Jasmine have no clue how to rule. I knew it."
+    jaf "And Jasmine has no clue how to rule. I knew it."
     jaf "I'll deal with this later, for now we have a bigger fish to fry."
     show jaf normal at right
     show abd sad at left

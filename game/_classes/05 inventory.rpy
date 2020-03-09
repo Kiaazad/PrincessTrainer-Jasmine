@@ -2,8 +2,8 @@
     class inventory:
         def __init__(self, cash, items, markup):
             self.cash = cash
-            self.bags = [bag("Bag", 15), bag("Person")]
-            self.togos = bag("To Go", 6)
+            self.bags = [bag("Bag", 10), bag("Person", 5)]
+            self.togos = bag("To Go", 5)
             self.sum = 0
             if items:
                 for i in items:
@@ -17,12 +17,12 @@
             self.holding = None
 
         def sumit(self):
-            s = 0
+            sum = 0
             for i in self.togos.items:
                 if i is not None:
-                    s += i.item.val*i.qtt
-            self.sum = s
-            return s
+                    sum += i.item.val*i.qtt
+            self.sum = sum
+            return sum
 
         def has(self, x):
             if not isinstance(x, list):
@@ -41,19 +41,27 @@
                 pass
             else:
                 self.cash += a
-
         def paidcash(self, a):
             self.cash -= a
 
-        def got(self, x, q, u = None): # x = item, q = Quantity, u = Unique ID
-            if u and u in self.uniqueID:
+        def togos_collect(self):
+            for i in self.togos.items:
+                if i:
+                    self.got(i.item, i.qtt)
+            self.togos.clear()
+        def got(self, item, quantity, uniqueID = None):
+            if uniqueID and uniqueID in self.uniqueID:
                 pass
+            elif len(self.bags) == 0:
+                msg.msg("You have no bags.")
             else:
-                if len(self.bags):
-                    self.bags[0].add(x, q)
-                    if u is not None:
-                        self.uniqueID.append(u)
-                    msg.msg("You have got {} {}".format(q, x.name))
+                for i in self.bags:
+                    if i.add(item,quantity):
+                        msg.msg("You have got {} {}".format(quantity, item.name))
+                        self.uniqueID.append(uniqueID)
+                        break
+                else:
+                    msg.msg("Bags are full.")
 
         def drop(self, x, q):
             if len(self.bags):
