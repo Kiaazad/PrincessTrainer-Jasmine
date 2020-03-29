@@ -55,3 +55,9 @@ image jas normal = "char/jasmine/normal.png"
 
 # Rasoul the head of guards
 image ras normal = "char/rasoul/normal.png"
+
+
+#------------------------------------ Shops
+# Akbar
+define akb = Character("Akbar", color="#4ff", what_text_color="#dff")
+image akbar normal = "char/akbar/normal.png"
