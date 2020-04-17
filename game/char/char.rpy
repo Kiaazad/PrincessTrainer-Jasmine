@@ -6,6 +6,22 @@ define ras = Character("Rasoul", color="#f44", what_text_color="#fdd", namebox_a
 
 define lag = Character("Lago")
 
+define hal = Character("Halia", color="#4ff", what_text_color="#dff")
+define hur = Character("Huria", color="#4ff", what_text_color="#dff")
+define hul = Character("Hulu", color="#4ff", what_text_color="#dff")
+
+
+# Halia images
+image hal normal = "char/halia/normal.png"
+image hal scream = "char/halia/scream.png"
+
+# Hulu images
+image hul normal = "char/hulu/normal.png"
+image hul seducing = "char/hulu/seducing.png"
+
+# Huria images
+image hur normal = "char/huria/normal.png"
+image hur shocked = "char/huria/shocked.png"
 
 
 # Abdul images

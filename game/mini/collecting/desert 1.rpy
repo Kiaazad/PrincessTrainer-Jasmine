@@ -51,10 +51,10 @@ label desert_1:
     abd "If you insist, your highness."
 label desert_1_dream:
     scene black with dissolve
-    show image "bg/cg/03.jpg" with dissolve
+    show cg dream jasmine 01 with dissolve
     $ msg.msg("Hopefully this will be replaced with a fully animated scene.")
     pause 4
-    show image "bg/cg/04.jpg" with dissolve:
+    show cg dream jasmine 02 with dissolve:
         subpixel True
         yalign 0.0
         pause 2

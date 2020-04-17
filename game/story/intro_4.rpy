@@ -1,5 +1,5 @@
 ﻿
-label ch4:
+label lamp_visit_back_to_jafar:
     # $ skip_next = "skip_to_main"
     scene bg lib
     show abd normal at left
@@ -9,9 +9,12 @@ label ch4:
     show jaf probing at right
     jaf "Done already?"
     show abd alert at left
+    abd "Well..."
     abd "..."
     show jaf normal at right
-    jaf "Alright, I've devised a fool-proof plan. "
+    jaf "Alright, you don't want to tell and I don't want to know."
+    jaf "Let's move on."
+    jaf "I've devised a fool-proof plan. "
     jaf "And just to be clear, by \"fool\" I mean you."
     jaf "After some education, the fool will infiltrate the palace and push the enemy to desperation."
     jaf "He will expose the rotten core of Agrabah's current rulers for everyone to see."

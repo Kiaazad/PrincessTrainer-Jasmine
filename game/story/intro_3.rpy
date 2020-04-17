@@ -198,20 +198,18 @@
             show jaf probing at right
             jaf "Fuck them?"
             show abd alert at left
+            abd "No no, speak to them."
             show jaf normal at right
             jaf "I'm not the one you should ask."
             show abd normal at left
-            jaf "Ask them yourself. They're adults already. It's up to them to decide."
-            show jaf thinking at right
-            jaf "Communication might be a problem though. I'm not sure if they can speak."
-            jaf "Never heard a word out of them myself."
-            show jaf normal at right
-            jaf "You might want to take advantage of the running water and at least take a shower first. We're trying to keep it clean in here."
+            jaf "Who am I to say what they can and can't do?"
+            jaf "You might want to take advantage of the running water and at least take a shower first."
+            jaf "We're trying to keep it clean in here."
             show abd alert at left
             abd "A shower...? Hey, are those?"
             show jaf disappointed at right
             jaf "Yes, those statues look a lot like me peeing.{w=.5} It seemed like a good idea at that time."
-            jaf "The girls seem to like them, and I wasn't expecting any guests so soon too."
+            jaf "The girls seem to like them, and I wasn't expecting any guests in here anytime soon either."
             show jaf normal at right
             jaf "Now, let's go back and visit the places we skipped."
             menu:
@@ -262,23 +260,7 @@
                     jaf "I'll think of a plan in the mean time."
                     jaf "And we're going to have to work on your self-discipline."
                     hide jaf with dissolve
-                    menu:
-                        "Go talk to the girls.":
-                            # jump harem_girls
-                            "This scene is not ready yet."
-                            jump ch3_1
-
-                        "Jump right into the water.":
-                            # show bg cg_abdul_bathing
-                            "the bathing scene is not ready"
-                            jump ch3_1
-                            menu:
-                                "Go talk to the girls.":
-                                    # jump harem_girls
-                                    "This scene is not ready yet."
-                                    jump ch3_1
-                                "Go back to Jafar.":
-                                    jump ch4
+                    jump harem
 
 label ch3_1:
     scene black
@@ -297,11 +279,11 @@ screen lamp_visit_menu:
     button:
         at lampoff(350, 150)
         add "bg/lamp/harem.png"
-        action Hide("lamp_visit_menu"), Jump("ch3_harem")
+        action Hide("lamp_visit_menu"), Jump("harem")
     button:
         at lampoff(0, 260)
         add "bg/lamp/library.png"
-        action Hide("lamp_visit_menu"), Jump("ch4")
+        action Hide("lamp_visit_menu"), Jump("lamp_visit_back_to_jafar")
     button:
         at lampoff(350, -150)
         add "bg/lamp/quest.png"
