@@ -25,12 +25,67 @@ image hur shocked = "char/huria/shocked.png"
 
 
 # Abdul images
-image abd normal = ConditionSwitch(
-    "_last_say_who == 'abd'", "char/abdul/normal.png",
+# Normal
+image abd_normal_blink:
+    "char/abdul/normal_blink.png"
+    alpha 0
+    choice:
+        2
+    choice:
+        3
+
+    alpha 1
+    .1
+    repeat
+image abd_normal_mouth_moving:
+    "char/abdul/normal_bla.png"
+    .1
+    alpha 0
+    .2
+    alpha 1
+    repeat
+
+image abd_normal_mouth = ConditionSwitch(
+    "_last_say_who == 'abd'", "abd_normal_mouth_moving",
     "not _last_say_who == 'abd'", "char/abdul/normal.png")
 
+image abd normal = Composite((425, 833),
+    (0,0), "char/abdul/normal.png",
+    (0,0), "abd_normal_mouth",
+    (0,0), "abd_normal_blink",
+)
+
+# smile
+image abd_smile_blink:
+    "char/abdul/smile_blink.png"
+    alpha 0
+    choice:
+        2
+    choice:
+        3
+
+    alpha 1
+    .1
+    repeat
+image abd_smile_mouth_moving:
+    "char/abdul/smile_bla.png"
+    .1
+    alpha 0
+    .2
+    alpha 1
+    repeat
+
+image abd_smile_mouth = ConditionSwitch(
+    "_last_say_who == 'abd'", "abd_smile_mouth_moving",
+    "not _last_say_who == 'abd'", "char/abdul/smile.png")
+
+image abd smile = Composite((418, 833),
+    (0,0), "char/abdul/smile.png",
+    (0,0), "abd_smile_mouth",
+    (0,0), "abd_smile_blink",
+)
+
 image abd back = "char/abdul/back.png"
-image abd smile = "char/abdul/smile.png"
 image abd tired = "char/abdul/tired.png"
 image abd sad = "char/abdul/sad.png"
 image abd afraid = "char/abdul/afraid.png"
