@@ -53,7 +53,8 @@ label akbars_shop:
     abd "Do you need firewood today?"
     akb "Yes. How much are you selling."
     show screen shop(s = akbar, c = abdul)
-    abd "Alright."
+    pause
+
     jump bazaar
 
 label asghars_shop:

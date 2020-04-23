@@ -85,15 +85,103 @@ image abd smile = Composite((418, 833),
     (0,0), "abd_smile_blink",
 )
 
+# alert
+image abd_alert_blink:
+    "char/abdul/alert_blink.png"
+    alpha 0
+    choice:
+        2
+    choice:
+        3
+
+    alpha 1
+    .1
+    repeat
+image abd_alert_mouth_moving:
+    "char/abdul/alert_bla.png"
+    .1
+    alpha 0
+    .2
+    alpha 1
+    repeat
+
+image abd_alert_mouth = ConditionSwitch(
+    "_last_say_who == 'abd'", "abd_alert_mouth_moving",
+    "not _last_say_who == 'abd'", "char/abdul/alert.png")
+
+image abd alert = Composite((424, 835),
+    (0,0), "char/abdul/alert.png",
+    (0,0), "abd_alert_mouth",
+    (0,0), "abd_alert_blink",
+)
+
+# embarrassed
+image abd_embarrassed_blink:
+    "char/abdul/embarrassed_blink.png"
+    alpha 0
+    choice:
+        2
+    choice:
+        3
+
+    alpha 1
+    .1
+    repeat
+image abd_embarrassed_mouth_moving:
+    "char/abdul/embarrassed_bla.png"
+    .1
+    alpha 0
+    .2
+    alpha 1
+    repeat
+
+image abd_embarrassed_mouth = ConditionSwitch(
+    "_last_say_who == 'abd'", "abd_embarrassed_mouth_moving",
+    "not _last_say_who == 'abd'", "char/abdul/embarrassed.png")
+
+image abd embarrassed = Composite((424, 774),
+    (0,0), "char/abdul/embarrassed.png",
+    (0,0), "abd_embarrassed_mouth",
+    (0,0), "abd_embarrassed_blink",
+)
+
+# smug
+image abd_smug_blink:
+    "char/abdul/smug_blink.png"
+    alpha 0
+    choice:
+        2
+    choice:
+        3
+
+    alpha 1
+    .1
+    repeat
+image abd_smug_mouth_moving:
+    "char/abdul/smug_bla.png"
+    .1
+    alpha 0
+    .2
+    alpha 1
+    repeat
+
+image abd_smug_mouth = ConditionSwitch(
+    "_last_say_who == 'abd'", "abd_smug_mouth_moving",
+    "not _last_say_who == 'abd'", "char/abdul/smug.png")
+
+image abd smug = Composite((429, 895),
+    (0,0), "char/abdul/smug.png",
+    (0,0), "abd_smug_mouth",
+    (0,0), "abd_smug_blink",
+)
+
+
 image abd back = "char/abdul/back.png"
 image abd tired = "char/abdul/tired.png"
 image abd sad = "char/abdul/sad.png"
 image abd afraid = "char/abdul/afraid.png"
 image abd confused = "char/abdul/confused.png"
 image abd bent = "char/abdul/bent.png"
-image abd alert = "char/abdul/alert.png"
-image abd embarrassed = "char/abdul/embarrassed.png"
-image abd smug = "char/abdul/smug.png"
 image abd scared = "char/abdul/scared.png"
 image abd concerned = "char/abdul/concerned.png"
 image abd excited = "char/abdul/excited.png"
