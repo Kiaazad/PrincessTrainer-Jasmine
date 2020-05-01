@@ -27,4 +27,4 @@ screen mirage_1:
     frame:
         background None yalign 1.0 padding 0,0
         at delayed(1)
-        add "char/jasmine/normal.png" at mirage_t(alph) 
+        add "char/jasmine/seducing.png" at mirage_t(alph) 
