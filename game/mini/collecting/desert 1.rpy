@@ -33,7 +33,7 @@ label desert_1:
     scene black with dissolve
     hide screen collect
     hide screen mirage_1
-    show jas normal at center with Dissolve(3)
+    show jas seducing at center with Dissolve(3)
     jas "Abdul..."
     abd "Yes?"
     jas "Come to me, Abdul."
