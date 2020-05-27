@@ -36,7 +36,7 @@
             hide cg
             show abd alert at left
             with dissolve
-            show jaf genie at right
+            show jaf genie at rightend
             with dissolve
             jaf "{size=45}Don't you think there's benefit to naivete?"
             show abd scared at left
