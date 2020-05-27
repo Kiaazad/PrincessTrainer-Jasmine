@@ -307,7 +307,7 @@ image jaf thinking = Composite((783, 1097),
 )
 
 
-# image jaf genie = "char/jafar/genie.png"
+image jaf genie = "char/jafar/genie.png"
 image jaf disappointed = "char/jafar/disappointed.png"
 image jaf magic = "char/jafar/magic.png"
 image jaf angry = "char/jafar/angry.png"
