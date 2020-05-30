@@ -108,5 +108,7 @@ init -10:
     $ midleft= Position(yalign=1.0,xalign=0.2)
     $ midright= Position(yalign=1.0,xalign=0.8)
     $ center= Position(yalign=1.0,xalign=0.5)
+    $ leftend = Position(yalign=1.0,xalign=0.0)
+    $ rightend = Position(yalign=1.0,xalign=1.0)
 python:
     config.default_transform = center
