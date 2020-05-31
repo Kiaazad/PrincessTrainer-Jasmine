@@ -1,4 +1,8 @@
-﻿label intro_0:
+﻿image cg found_lamp = Movie(play="cg/found lamp/01.webm", size = (1920, 1080))
+
+
+
+label intro_0:
     # default skip_next = "skip_to_ch1"
     call desert_0 from _call_desert_0
     show bg bg1
@@ -14,31 +18,32 @@
     abd "That isn't...{w=.4} a mirage."
     abd "..."
     abd "There's something shiny in the sand."
-    hide abd
+    show abd confused at left with dissolve
     hide ev 01
-    show cg cg1
     $ abdul.got(black_lamp,1,002)
     with dissolve
     abd "An oil lamp?"
+    show abd smile at left with dissolve
     abd "Looks new."
     abd "Hah, this is my lucky day! I can sell this and finally eat a full meal tonight."
     $ qlog.got(sell_lamp)
-    hide cg
-    show abd confused at left
+    show abd alert at left
     with dissolve
     abd "Hmmm... They say Aladdin found his Genie in a lamp like this and the Genie made all his wishes come true."
     abd "I {b}wish{/b} these rumours were believable."
+    $ _last_say_who = None
     menu:
         "Rub the lamp!":
-            hide abd
-            show cg cg2 with Dissolve(2)
-            abd "{size=45}What the fuck?"
-            hide cg
-            show abd alert at left
-            with dissolve
-            show jaf genie at rightend
-            with dissolve
-            jaf "{size=45}Don't you think there's benefit to naivete?"
+            # hide abd
+            show cg found_lamp with Dissolve(2)
+            pause 6
+            hide cg with Dissolve(2)
+            
+            
+            jaf "{size=45}Muhahahaaaaaaaaaaaaaaaa{w=.5}{nw}"
+            abd "{size=45}What the fuck?{w=1}{nw}"
+            show jaf genie at rightend with dissolve
+            jaf "{size=45}Don't you think there's benefit to naivete?{w=1}{nw}"
             show abd scared at left
             $ msg.msg("You dropped the Black Lamp")
             abd "{size=45}Woah! {w=.6}whoa. {w=.4}wha {w=.2}wh..."
