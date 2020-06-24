@@ -79,7 +79,7 @@ style nav_button:
 screen main_menu(ii=0):
     style_prefix "mm"
     tag menu
-#    add bgs[0]
+
     if not persistent.theme_change:
         add "bg/01.png"
         add "0gui/abdul_frm.png"
@@ -96,20 +96,33 @@ screen main_menu(ii=0):
                 add "0gui/abdul_ex.png"
                 action Quit(confirm=not main_menu)
     else:
-        frame:
-            align(.5,1.0)
-            hbox:
-                for i in menuz:
-                    if (main_menu and i[0]) or (not main_menu and i[1]) or (not renpy.variant("pc") and i[2]):
-                        pass
-                    else:
-                        $ ii=ii+1
-                        button:
-                            at btn
-                            text i[4]
-                            action i[5]
+        add "0GUI/mm/bg.jpg"
 
+        fixed:
+            fit_first True
+            align (0.9, 0.0)
+            button:
+                add "0GUI/mm/start.png"
+                action Start()
+                at btn
+            button:
+                add "0GUI/mm/load.png"
+                action ShowMenu("load")
+                at btn
+            button:
+                add "0GUI/mm/settings.png"
+                action ShowMenu("preferences")
+                at btn
+            button:
+                add "0GUI/mm/quit.png"
+                action Quit(confirm=not main_menu)
+                at btn
+            add "0GUI/mm/logo.png"
 
+style mm_button:
+    background None
+    padding (0,0)
+    focus_mask True
 ## Game Menu screen ############################################################
 
 screen game_menu(title):
