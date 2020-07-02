@@ -334,3 +334,6 @@ image ras normal = "char/rasoul/normal.png"
 # Akbar
 define akb = Character("Akbar", color="#4ff", what_text_color="#dff")
 image akbar normal = "char/akbar/normal.png"
+# Money lender
+define mst = Character("Mostafa the money lender", color="#4ff", what_text_color="#dff")
+image mostafa normal = "char/money_lender/normal.png"
