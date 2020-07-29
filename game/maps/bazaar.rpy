@@ -62,7 +62,7 @@ label akbars_shop:
 label hakim:
     show hakim normal at right
     hak "Ah, Abdul, how are you today, are you feeling sick again?"
-    show abdul normal at left
+    show abd normal at left
     abd "Not today Hakim."
     hak "Have you came to buy a remedy?"
     abd "No, just came to say hello."
