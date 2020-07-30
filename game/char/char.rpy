@@ -308,6 +308,7 @@ image jaf thinking = Composite((783, 1097),
 
 
 image jaf genie = "char/jafar/genie.png"
+image jaf genie bent = "char/jafar/genie_bent.png"
 image jaf disappointed = "char/jafar/disappointed.png"
 image jaf magic = "char/jafar/magic.png"
 image jaf angry = "char/jafar/angry.png"
@@ -337,3 +338,19 @@ image akbar normal = "char/akbar/normal.png"
 # Money lender
 define mst = Character("Mostafa the money lender", color="#4ff", what_text_color="#dff")
 image mostafa normal = "char/money_lender/normal.png"
+# Jeweler
+define jew = Character("Jeweler", color="#4ff", what_text_color="#dff")
+image jeweler normal = "char/jeweler/normal.png"
+# hakim
+define hak = Character("Hakim", color="#4ff", what_text_color="#dff")
+image hakim normal = "char/hakim/normal.png"
+
+
+
+
+
+
+
+
+
+

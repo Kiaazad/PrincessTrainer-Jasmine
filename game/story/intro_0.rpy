@@ -39,15 +39,18 @@ label intro_0:
             pause 6
             hide cg with Dissolve(2)
             
-            
+            show jaf genie at rightend with dissolve
+            show abd scared at left
             jaf "{size=45}Muhahahaaaaaaaaaaaaaaaa{w=.5}{nw}"
             abd "{size=45}What the fuck?{w=1}{nw}"
-            show jaf genie at rightend with dissolve
+            show jaf genie bent at rightend with dissolve
             jaf "{size=45}Don't you think there's benefit to naivete?{w=1}{nw}"
-            show abd scared at left
             $ msg.msg("You dropped the Black Lamp")
-            abd "{size=45}Woah! {w=.6}whoa. {w=.4}wha {w=.2}wh..."
+            abd "{size=45}Woah! {w=.6}whoa. {w=.4}wha {w=.2}wh...{nw}"
+            hide abd with moveoutleft
             jaf "{size=45}Where are you running to?"
+            jaf "{size=45}COME BACK HERE!{nw}" with hpunch
+            show abd alert at left with moveinleft
             abd "{size=40}Please don't steal my soul!"
             jaf "{size=40}Calm down, I'm not interested in your soul."
             abd "{size=30}Are you a... {w=.5}a Genie?"
