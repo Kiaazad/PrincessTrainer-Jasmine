@@ -85,10 +85,10 @@ default book2 = item(
     )
 
 default book3 = item(
-    _("Book of Eep"),
-    _("The most amazing book about Eep and it's miraculous effect."),
+    _("Gold covered book"),
+    _("It seems to be written in code."),
     "items/book3.png",
-    6500,
+    9500,
     )
 
 default book4 = item(

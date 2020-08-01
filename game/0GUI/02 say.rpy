@@ -4,6 +4,9 @@
 
 screen say(who, what):
     style_prefix "say"
+    # button:
+    #     background None
+    #     action Return()
     if not persistent.theme_change:
         window:
             id "window"

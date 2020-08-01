@@ -17,27 +17,14 @@ transform tut_pointer(p):
         ease .3 yoffset 0
     ease 1 alpha 0
 
-screen tut_timer(t, tut):
-    timer t repeat True action Show(tut)
-
-screen tut_1:
-    if len(des_0_col.lst) == 3:
-        timer 4 action Hide("tut_1")
-        fixed:
-            xysize 100,100 pos(1702, 920)
-            add "0GUI/pointer/01.png" at tut_clicked(1)
-            add "0GUI/pointer/02.png" at tut_pointer(.3)
-        fixed:
-            xysize 100,100 pos(962, 639)
-            add "0GUI/pointer/01.png" at tut_clicked(2)
-            add "0GUI/pointer/02.png" at tut_pointer(1.3)
-        fixed:
-            xysize 100,100 pos(576, 729)
-            add "0GUI/pointer/01.png" at tut_clicked(3)
-            add "0GUI/pointer/02.png" at tut_pointer(2.3)
-
-
-
-
-
-    
+screen tut(c):
+    if len(c.tuts):
+        timer 2.2 repeat True action Function(c.tut_show)
+    else:
+        timer .1 action Hide("tut")
+screen tut_click(c):
+    fixed:
+        xysize 100,100 pos c[0],c[1] offset 20,20
+        add "0GUI/pointer/01.png" at tut_clicked(1)
+        add "0GUI/pointer/02.png" at tut_pointer(.3)
+    timer 2 action Hide("tut_click")

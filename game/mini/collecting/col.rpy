@@ -42,7 +42,7 @@ screen collect(p , g, c = False, e = True):
         add g.bg
     for i in g.lst:
         button:
-            background None
+            background None anchor 0.0,0.0 padding 0,0
             pos i.pos
             add i.img
             action Function(g.clicked, i, p)

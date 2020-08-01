@@ -24,6 +24,20 @@
                         return True
                 else:
                     return False
+        def rem(self, item, quantity):
+            for n,i in enumerate(self.items):
+                if i and i.item == item:
+                    if i.qtt > quantity:
+                        i.qtt -= quantity
+                        return True
+                    elif i.qtt == quantity:
+                        self.items[n] = None
+                        return True
+                    else:
+                        return False
+            else:
+                return False
+
         def stack(self):
             pass
         def drop(self, drags, drop):

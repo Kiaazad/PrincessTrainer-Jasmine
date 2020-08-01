@@ -43,28 +43,7 @@ default snake = unit(
     )
 
 
-default akbar = unit(
-    "Akbar",
-    "char/akbar",
 
-    210,
-    [
-        (wood, 20),
-        (snake_bite_remedy, 2),
-        (scorpion_bite_remedy, 5),
-        (small_sword, 1),
-        (bow, 1),
-        (book1, 1),
-        (book4, 1),
-        (book2, 1),
-        (book3, 1),
-        (arrows, 6),
-    ],
-    1.1,
-
-    8,
-    "Peasant",
-    )
 
 default snake_dancer = unit(
     "Snake",

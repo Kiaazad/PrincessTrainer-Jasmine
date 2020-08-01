@@ -4,9 +4,10 @@
 
 label intro_0:
     # default skip_next = "skip_to_ch1"
-    call desert_0 from _call_desert_0
-    show bg bg1
+    call desert_0
+    # show bg bg1
     # show screen skips
+label intro_0_1:
     show abd tired at left with dissolve
     abd "Phew..."
     abd "There's nothing left here but sand."
