@@ -128,7 +128,9 @@ label hakim:
     hak "Have you came to buy a remedy?"
     abd "Fond anything to erect old men yet Hakim?"
     hak "Ah hahaha, This joke again? Let me know if there's anything I can do for you."
-    abd "Sure."
+    abd "Sure. I'll take a look."
+    hak "Choose wisely."
+    #just added a cue from the seller, otherwise Abdul continues to slap his lips.
     show screen shop(s = hakim_u, c = abdul)
     pause
     jump bazaar
