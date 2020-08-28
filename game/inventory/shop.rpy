@@ -25,17 +25,23 @@
     #     c.togos_collect()
     def buy_one(item, s, c):
         if c.cash < item.item.val*s.markup:
-            msg.msg("You don't have enough cash.")
+            msg.msg("{} don't have enough cash.".format(c.name))
         else:
             c.cash -= int(item.item.val*s.markup)
             s.cash += int(item.item.val*s.markup)
             c.bags[0].add(item.item, 1)
             s.bags[0].rem(item.item, 1)
-        
+    def buy_all(item, s, c):
+        if c.cash < (item.item.val*item.qtt)*s.markup:
+            msg.msg("{} don't have enough cash.".format(c.name))
+        else:
+            c.cash -= int((item.item.val*item.qtt)*s.markup)
+            s.cash += int((item.item.val*item.qtt)*s.markup)
+            c.bags[0].add(item.item, item.qtt)
+            s.bags[0].rem(item.item, item.qtt)
 
 screen shop(s, c):
     modal True
-    default mode = "single"
     default selling = True
     button:
         yalign 1.0
@@ -63,7 +69,7 @@ screen shop(s, c):
                 use shop_list_1(s = c, c = s)
 
 screen shop_list_1(s, c):
-    default mode = "single"
+    default mode = "Single"
     hbox:
         spacing 4 box_wrap True box_wrap_spacing 4
         for ii,i in enumerate(s.bags[0].items):
@@ -77,16 +83,19 @@ screen shop_list_1(s, c):
                     if i.qtt > 1:
                         text "[i.qtt]" color "#fff" align(.9,.9)
                     tooltip i
-                    if mode == "stack":
-                        action Function(buy_one, i, s, c)
-                    elif mode == "single":
+                    if mode == "Stacks":
+                        text "{}".format(int((i.item.val*i.qtt)*s.markup)) align(.1,.1)
+                        action Function(buy_all, i, s, c)
+                    elif mode == "Single":
+                        text "{}".format(int(i.item.val*s.markup)) align(.1,.1)
                         action Function(buy_one, i, s, c)
     frame:
         hbox:
             text "Cash: {}".format(c.cash)
             add "inventory/coin.png"
             button:
-                text "Stacks"
+                text mode
+                action ToggleLocalVariable("mode", "Stacks", "Single")
 
 
 

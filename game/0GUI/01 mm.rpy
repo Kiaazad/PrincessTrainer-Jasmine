@@ -84,7 +84,7 @@ screen main_menu(ii=0):
         add "bg/01.png"
         add "0gui/abdul_frm.png"
         vbox:
-            yoffset 100 spacing -30
+            yoffset 100 spacing 10
             add "0gui/abdul.png"
             null height 100
             button:
@@ -97,27 +97,44 @@ screen main_menu(ii=0):
                 action Quit(confirm=not main_menu)
     else:
         add "0GUI/mm/bg.jpg"
-
-        fixed:
-            fit_first True
-            align (0.9, 0.0)
+        hbox:
+            align(0.72, 0.21)
             button:
-                add "0GUI/mm/start.png"
+                text "Start"
                 action Start()
                 at btn
             button:
-                add "0GUI/mm/load.png"
+                text "Load"
                 action ShowMenu("load")
                 at btn
             button:
-                add "0GUI/mm/settings.png"
+                text "Settings"
                 action ShowMenu("preferences")
                 at btn
             button:
-                add "0GUI/mm/quit.png"
+                text "Quit"
                 action Quit(confirm=not main_menu)
                 at btn
-            add "0GUI/mm/logo.png"
+        # fixed:
+        #     fit_first True
+        #     align (0.9, 0.0)
+        #     button:
+        #         add "0GUI/mm/start.png"
+        #         action Start()
+        #         at btn
+        #     button:
+        #         add "0GUI/mm/load.png"
+        #         action ShowMenu("load")
+        #         at btn
+        #     button:
+        #         add "0GUI/mm/settings.png"
+        #         action ShowMenu("preferences")
+        #         at btn
+        #     button:
+        #         add "0GUI/mm/quit.png"
+        #         action Quit(confirm=not main_menu)
+        #         at btn
+        #     add "0GUI/mm/logo.png"
 
 style mm_button:
     background None

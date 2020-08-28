@@ -47,7 +47,11 @@
                         break
                 else:
                     renpy.show_screen("do_it", i[1])
-
+                    self.cond.remove(i)
+        def add(self, click, cond = None):
+            self.clicks.append(click)
+            if cond:
+                self.cond.append(cond)
         def act_done(self):
             self.act = None
         def idle_tick(self):
@@ -61,20 +65,22 @@
         def tut_show(self):
             p = self.tuts.pop()
             renpy.show_screen("tut_click", p)
+
 screen pnc(p , g):
-    # modal True
-    # layer "screens"
-    zorder -100
+    layer "map"
     timer 1 repeat True action Function(g.idle_tick)
 
     for i in g.clicks:
-        button:
-            background None anchor 0.0,0.0 padding 0,0
-            pos i.pos
-            add i.img
-            if i.enabled:
-                if i.act:
-                    action Function(g.clicked, i, p), i.act
-                else:
-                    action Function(g.clicked, i, p)
+        if isinstance(i, basestring):
+            add i
+        else:
+            button:
+                background None anchor 0.0,0.0 padding 0,0
+                pos i.pos
+                add i.img
+                if i.enabled:
+                    if i.act:
+                        action Function(g.clicked, i, p), i.act
+                    else:
+                        action Function(g.clicked, i, p)
 

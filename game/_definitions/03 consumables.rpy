@@ -63,6 +63,34 @@ default dates = item(
     10,
     )
 
+default cantaloupe = item(
+    _("Cantaloupe"),
+    _("Not enough for a breakfast, specially half of it."),
+    "items/dates.png",
+    80,
+    )
+
+default watermelon = item(
+    _("Watermelon"),
+    _("A sweet sensational taste."),
+    "items/dates.png",
+    90,
+    )
+
+default pomegranate = item(
+    _("Pomegranate"),
+    _("n/a."),
+    "items/dates.png",
+    30,
+    )
+
+default apple = item(
+    _("Apple"),
+    _("n/a."),
+    "items/dates.png",
+    40,
+    )
+
 default crackers = item(
     _("Naan crackers"),
     _("A dried small bread."),
@@ -92,7 +120,7 @@ default saffron = item(
     )
 
 default list_of_foods = [
-    bread, water, dates, crackers, damp_crackers, salt, saffron,
+    bread, water, dates, cantaloupe, watermelon, pomegranate, apple, crackers, damp_crackers, salt, saffron,
 ]
 
 # remedy

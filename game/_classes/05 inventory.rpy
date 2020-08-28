@@ -2,7 +2,7 @@
     class inventory:
         def __init__(self, cash, items, markup):
             self.cash = cash
-            self.bags = [bag("Bag", 10), bag("Person", 5)]
+            self.bags = [bag("Bag", 12), bag("Person", 5)]
             self.togos = bag("To Go", 5)
             self.sum = 0
             if items:
@@ -53,11 +53,11 @@
             if uniqueID and uniqueID in self.uniqueID:
                 pass
             elif len(self.bags) == 0:
-                msg.msg("You have no bags.")
+                msg.msg("{} have no bags.".format(self.name))
             else:
                 for i in self.bags:
                     if i.add(item,quantity):
-                        msg.msg("You have got {} {}".format(quantity, item.name))
+                        msg.msg("{} have got {} {}".format(self.name, quantity, item.name))
                         self.uniqueID.append(uniqueID)
                         break
                 else:
@@ -67,3 +67,10 @@
             if len(self.bags):
                 self.bags[0].rem(x, q)
                 msg.msg("You have dropped {} {}".format(q, x.name))
+        def sell(self, x, q, buyer, price):
+            if len(self.bags):
+                self.bags[0].rem(x, q)
+                buyer.got(x,q)
+                buyer.cash -= price
+                self.cash += price
+                msg.msg("You have sold {} of {} to {} for {}".format(q, x.name, buyer.name, price))

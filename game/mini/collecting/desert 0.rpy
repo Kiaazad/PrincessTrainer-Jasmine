@@ -43,18 +43,38 @@ default des_0_7 = pnco(
     (632, 612),
     items = [[thorns, 1]],
     )
+
+default empty_chest = item(
+    _("Empty chest"),
+    _("It's too beat up to keep stuff."),
+    "items/wood.png",
+    220,
+    )
 default des_0_chest = pnco(
     "Empty chest",
     "bg/rock_pass/chest.png",
     (1524, 744),
-    items = [[thorns, 1]],
+    items = [[empty_chest, 1]],
+    )
+
+default rusty_sword = item(
+    _("Rusty sword"),
+    _("Can it be restored?"),
+    "items/wood.png",
+    220,
     )
 default des_0_sword = pnco(
     "Rusty sword",
     "bg/rock_pass/sword.png",
     (1399, 715),
-    items = [[thorns, 1]],
+    items = [[rusty_sword, 1]],
     )
+
+image des_0_shine:
+    "bg/ev/shine.png"
+    ease .3 zoom .1 rotate -20
+    ease .3 zoom 1 rotate 20
+    repeat
 
 default des_0_col = pncs("Roc pass",
     [
@@ -74,9 +94,9 @@ default des_0_col = pncs("Roc pass",
     )
 
 label desert_0:
-    scene black
-    show bg rock_pass
+    scene 
+    show bg rock_pass onlayer bg
     show screen pnc(abdul, des_0_col)
     with dissolve
     pause
-    return
+    jump desert_0

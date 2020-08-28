@@ -12,11 +12,7 @@ image bg gall = "bg/gall.jpg"
 image bg harem = "bg/harem.jpg"
 image bg lib = "bg/lib.jpg"
 image bg black = "bg/black.png"
-image ev 01:
-    "bg/ev/shine.png"
-    ease .3 zoom .1 rotate -20
-    ease .3 zoom 1 rotate 20
-    repeat
+
 
 
 

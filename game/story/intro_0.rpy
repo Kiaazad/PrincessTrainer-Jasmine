@@ -4,8 +4,8 @@
 
 label intro_0:
     # default skip_next = "skip_to_ch1"
-    call desert_0
-    # show bg bg1
+    show bg bg2  onlayer bg with Dissolve(2)
+    jump desert_0
     # show screen skips
 label intro_0_1:
     show abd tired at left with dissolve
@@ -13,14 +13,16 @@ label intro_0_1:
     abd "There's nothing left here but sand."
     abd "Not even a single tumbleweed!"
     abd "I need to find another place to collect some firewood."
-    show ev 01
+    show des_0_shine:
+        align (.834,.73)
+        anchor (.5,.5)
     show abd back at left with dissolve
     abd "{size=45}Huh!?"
     abd "That isn't...{w=.4} a mirage."
     abd "..."
     abd "There's something shiny in the sand."
     show abd confused at left with dissolve
-    hide ev 01
+    hide des_0_shine
     $ abdul.got(black_lamp,1,002)
     with dissolve
     abd "An oil lamp?"
@@ -254,3 +256,5 @@ label intro_0_1:
             
 
             jump endless_grind
+        "<dev> jump to the city":
+            jump agrabah
