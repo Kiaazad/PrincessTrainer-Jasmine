@@ -6,7 +6,7 @@ default rugs_loc = place("Rugs and rags shack", (868, 486), Jump('rugs_shop'), "
 default tailor_loc = place("Tailor", (1195, 527), Jump('tailor'), "bg/bazaar/tailor.png")
 default hakim_loc = place("Hakim", (1476, 75), Jump('hakim'), "bg/bazaar/hakim.png")
 
-default alley_loc = place("Shady Alley", (71, 379), Jump('shady_alley'))
+default alley_loc = place("Shady Alley", (356, 646), Jump('shady_alley'))
 default bazaar_home_loc = place("Home", (1172, 31), Jump('agrabah'))
 
 default bazaar_map = maps(
@@ -231,6 +231,31 @@ label rugs_shop:
     abd "Not today."
     jump bazaar
 
+# Shady alley
+define pet = Character("Petros", color="#4ff", what_text_color="#dff")
+image petros normal = "char/petros/normal.png"
+
+default petros_u = unit(
+    "Petros",
+    "char/petros",
+
+    3410,
+    [
+        (beer, 1),
+        (liquor, 1),
+        (wine, 1),
+    ],
+    1.2,
+
+    8,
+    "Peasant",
+    )
 label shady_alley:
-    "There's some shady deals going on there."
+    show petros normal at right
+    pet "Hey... Dabul... know any women to hook me up with?"
+    show abd normal at left
+    abd "It's Abdul, and no."
+    pet "Came here to sin then? What's your choice?"
+    show screen shop(s = petros_u, c = abdul)
+    pause
     jump bazaar

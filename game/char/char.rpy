@@ -331,12 +331,6 @@ image jas seducing = "char/jasmine/seducing.png"
 image ras normal = "char/rasoul/normal.png"
 
 
-#------------------------------------ Shops
-
-# Money lender
-define mst = Character("Mostafa the money lender", color="#4ff", what_text_color="#dff")
-image mostafa normal = "char/money_lender/normal.png"
-
 
 
 

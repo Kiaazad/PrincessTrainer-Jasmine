@@ -12,7 +12,7 @@ default liquor = item(
     _("Doggy liquor"),
     _("A very bitter moonshine made by distilling raisin's wine."),
     "items/liquor.png",
-    590,
+    1590,
     )
 
 default wine = item(
@@ -42,9 +42,16 @@ default list_of_drugs = [
 
 
 # food
+default rice = item(
+    _("White rice"),
+    _("Can you cook rice the right way?."),
+    "items/bread.png",
+    75,
+    )
+
 default bread = item(
     _("Naan bread"),
-    _("A delicious Middle Eastern bread."),
+    _("Almost fresh flat bread."),
     "items/bread.png",
     50,
     )
@@ -56,6 +63,35 @@ default water = item(
     10,
     )
 
+default crackers = item(
+    _("Naan crackers"),
+    _("A dried small bread."),
+    "items/crackers.png",
+    10,
+    )
+
+default damp_crackers = item(
+    _("Damp naan crackers"),
+    _("Crackers you kept in your pants."),
+    "items/damp_crackers.png",
+    10,
+    )
+
+default salt = item(
+    _("Salt"),
+    _("A spoon of salt."),
+    "items/damp_crackers.png",
+    10,
+    )
+
+default saffron = item(
+    _("Saffron"),
+    _("A very expensive spice that cause a happy feeling."),
+    "items/damp_crackers.png",
+    1000,
+    )
+
+# Fruits
 default dates = item(
     _("Dates"),
     _("Dried dates."),
@@ -89,34 +125,6 @@ default apple = item(
     _("n/a."),
     "items/dates.png",
     40,
-    )
-
-default crackers = item(
-    _("Naan crackers"),
-    _("A dried small bread."),
-    "items/crackers.png",
-    10,
-    )
-
-default damp_crackers = item(
-    _("Damp naan crackers"),
-    _("Crackers you kept in your pants."),
-    "items/damp_crackers.png",
-    10,
-    )
-
-default salt = item(
-    _("Salt"),
-    _("A soon of salt."),
-    "items/damp_crackers.png",
-    10,
-    )
-
-default saffron = item(
-    _("Saffron"),
-    _("A very expensive spice that cause a happy feeling."),
-    "items/damp_crackers.png",
-    1000,
     )
 
 default list_of_foods = [

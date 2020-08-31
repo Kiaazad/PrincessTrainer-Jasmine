@@ -137,8 +137,8 @@ screen main_menu(ii=0):
         #     add "0GUI/mm/logo.png"
 
 style mm_button:
-    background None
-    padding (0,0)
+    # background None
+    # padding (0,0)
     focus_mask True
 ## Game Menu screen ############################################################
 
