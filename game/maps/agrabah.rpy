@@ -1,14 +1,66 @@
-﻿default palace_loc = place("Palace", (924, 77), Jump('palace'), "bg/agrabah/palace.png")
-default barracks_loc = place("Barracks", (1583, 448), Jump('barracks'), "bg/agrabah/barracks.png")
-default poor_loc = place("Poor section", (1654, 508), Jump('poor_town'), "bg/agrabah/poor.png")
-default rich_loc = place("Rich section", (719, 512), Jump('rich_town'), "bg/agrabah/rich.png")
-default school_loc = place("School", (936, 533), Jump('school'), "bg/agrabah/school.png")
-default bazaar_loc = place("Bazaar", (1309, 496), Jump('bazaar'), "bg/agrabah/bazaar.png")
-default street_loc = place("Main street", (832, 525), Jump('street'), "bg/agrabah/street.png")
-default middle_loc = place("Mid town", (1191, 587), Jump('mid_town'), "bg/agrabah/middle.png")
-default bed_loc = place("Bed", (1145, 729), Jump('sleeping'), "bg/agrabah/bed.png")
+﻿default palace_loc = pnco(
+    "Palace",
+    "bg/agrabah/palace.png",
+    (924, 77),
+    Jump('palace'),
+    )
+default barracks_loc = pnco(
+    "Barracks",
+    "bg/agrabah/barracks.png",
+    (1583, 448),
+    Jump('barracks'),
+    )
+default poor_loc = pnco(
+    "Poor section",
+    "bg/agrabah/poor.png",
+    (1654, 508),
+    Jump('poor_town'),
+    )
+default rich_loc = pnco(
+    "Rich section",
+    "bg/agrabah/rich.png",
+    (719, 512),
+    Jump('rich_town'),
+    )
+default school_loc = pnco(
+    "School",
+    "bg/agrabah/school.png",
+    (936, 533),
+    Jump('school'),
+    )
+default bazaar_loc = pnco(
+    "Bazaar",
+    "bg/agrabah/bazaar.png",
+    (1309, 496),
+    Jump('bazaar'),
+    )
+default street_loc = pnco(
+    "Main street",
+    "bg/agrabah/street.png",
+    (832, 525),
+    Jump('street'),
+    )
+default middle_loc = pnco(
+    "Mid town",
+    "bg/agrabah/middle.png",
+    (1191, 587),
+    Jump('mid_town'),
+    )
+default bed_loc = pnco(
+    "Bed",
+    "bg/agrabah/bed.png",
+    (1145, 729),
+    Jump('sleeping'),
+    )
 
-default agrabah_map = maps(
+default agrabah_coins = pnco(
+    "Coins",
+    "bg/agrabah/coins.png",
+    (192, 874),
+    items = [30]
+    )
+
+default agrabah_map = pncs(
     "Agrabah",
     [
         palace_loc,
@@ -20,13 +72,18 @@ default agrabah_map = maps(
         street_loc,
         middle_loc,
         bed_loc,
+        
+        agrabah_coins,
     ]
     )
 
+image bg agrabah = "bg/03.jpg"
 label agrabah:
-    scene image "bg/03.jpg"
-    show screen map(agrabah_map)
+    scene
+    show bg agrabah onlayer bg
+    show screen pnc(abdul, agrabah_map)
     pause
+    jump agrabah
 
 label school:
     "You don't have anything to do in a school."

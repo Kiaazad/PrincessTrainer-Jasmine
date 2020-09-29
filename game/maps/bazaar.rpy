@@ -1,15 +1,60 @@
-﻿default bazaar_street_loc = place("Street", (516, 343), Jump('street'), "bg/bazaar/street.png")
-default akbar_loc = place("Akbar's shack", (0, 466), Jump('akbars_shack'), "bg/bazaar/akbar.png")
-default fruits_loc = place("Fruits shack", (631, 581), Jump('fruit_shack'), "bg/bazaar/fruits.png")
-default jewelry_loc = place("Jewelry", (798, 405), Jump('jewelry_shop'), "bg/bazaar/jewelry.png")
-default rugs_loc = place("Rugs and rags shack", (868, 486), Jump('rugs_shop'), "bg/bazaar/rugs.png")
-default tailor_loc = place("Tailor", (1195, 527), Jump('tailor'), "bg/bazaar/tailor.png")
-default hakim_loc = place("Hakim", (1476, 75), Jump('hakim'), "bg/bazaar/hakim.png")
+﻿default bazaar_street_loc = pnco(
+    "Street",
+    "bg/bazaar/street.png",
+    (516, 343),
+    Jump('street'),
+    )
+default akbar_loc = pnco(
+    "Akbar's shack",
+    "bg/bazaar/akbar.png",
+    (0, 466),
+    Jump('akbars_shack'),
+    )
+default fruits_loc = pnco(
+    "Fruits shack",
+    "bg/bazaar/fruits.png",
+    (631, 581),
+    Jump('fruit_shack'),
+    )
+default jewelry_loc = pnco(
+    "Jewelry",
+    "bg/bazaar/jewelry.png",
+    (798, 405),
+    Jump('jewelry_shop'),
+    )
+default rugs_loc = pnco(
+    "Rugs and rags shack",
+    "bg/bazaar/rugs.png",
+    (868, 486),
+    Jump('rugs_shop'),
+    )
+default tailor_loc = pnco(
+    "Tailor",
+    "bg/bazaar/tailor.png",
+    (1195, 527),
+    Jump('tailor'),
+    )
+default hakim_loc = pnco(
+    "Hakim",
+    "bg/bazaar/hakim.png",
+    (1476, 75),
+    Jump('hakim'),
+    )
 
-default alley_loc = place("Shady Alley", (356, 646), Jump('shady_alley'))
-default bazaar_home_loc = place("Home", (1172, 31), Jump('agrabah'))
+default alley_loc = pnco(
+    "Shady Alley",
+    "bg/bazaar/shady figure.png",
+    (332, 602),
+    Jump('shady_alley'),
+    )
+default bazaar_home_loc = pnco(
+    "Home",
+    "bg/bazaar/poor.png",
+    (407, 999),
+    Jump('agrabah'),
+    )
 
-default bazaar_map = maps(
+default bazaar_map = pncs(
     "Bazaar",
     [
         bazaar_street_loc,
@@ -24,11 +69,13 @@ default bazaar_map = maps(
     ]
     )
 
-
+image bg bazaar = "bg/bazaar.jpg"
 label bazaar:
-    scene image "bg/bazaar.jpg"
-    show screen map(bazaar_map)
+    scene
+    show bg bazaar onlayer bg
+    show screen pnc(abdul, bazaar_map)
     pause
+    jump bazaar
 
 # Fruit vendor
 define sim = Character("Simin", color="#4ff", what_text_color="#dff")
@@ -51,6 +98,7 @@ default simin_u = unit(
     "Peasant",
     )
 label fruit_shack:
+    scene
     show simin normal at right
     sim "Dates?"
     show screen shop(s = simin_u, c = abdul)
@@ -77,6 +125,7 @@ default jeweler_u = unit(
     )
 default jewelry_shop = True
 label jewelry_shop:
+    scene
     show jeweler normal at right
     jew "You don't look like you belong here! Did you find something valuable to sell?"
     show abd normal at left
@@ -118,6 +167,7 @@ default akbar = unit(
     )
 
 label akbars_shack:
+    scene
     show akbar normal at right
     akb "Ah, Abdul. what can I help you with?"
     show abd normal at left
@@ -151,6 +201,7 @@ default hakim_u = unit(
     )
 
 label hakim:
+    scene
     show hakim normal at right
     hak "Ah, Abdul, how are you today, are you feeling sick again?"
     show abd normal at left
@@ -210,6 +261,7 @@ default tailor_u = unit(
     )
 
 label tailor:
+    scene
     show farrokh normal at right
     far "Do you need another stitching abdul?"
     show abd normal at left
@@ -227,6 +279,7 @@ label tailor:
 
 
 label rugs_shop:
+    scene
     "Rugs?"
     abd "Not today."
     jump bazaar
@@ -251,6 +304,7 @@ default petros_u = unit(
     "Peasant",
     )
 label shady_alley:
+    scene
     show petros normal at right
     pet "Hey... Dabul... know any women to hook me up with?"
     show abd normal at left

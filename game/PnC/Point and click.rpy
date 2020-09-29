@@ -37,7 +37,10 @@
                     else:
                         if o.items:
                             for i in o.items:
-                                p.got(i[0], i[1])
+                                if isinstance(i, (int, long)):
+                                    p.gotcash(i)
+                                else:
+                                    p.got(i[0], i[1])
                             self.clicks.remove(o)
             self.cond_check()
         def cond_check(self):
@@ -67,6 +70,8 @@
             renpy.show_screen("tut_click", p)
 
 screen pnc(p , g):
+    default hov = None
+    tag place
     layer "map"
     timer 1 repeat True action Function(g.idle_tick)
 
@@ -75,12 +80,25 @@ screen pnc(p , g):
             add i
         else:
             button:
-                background None anchor 0.0,0.0 padding 0,0
+                anchor 0.0,0.0 padding 0,0
                 pos i.pos
-                add i.img
+                if i.img:
+                    background None
+                    add i.img
+                else:
+                    text i.name
                 if i.enabled:
                     if i.act:
+                        focus_mask True
+                        at map_transform
                         action Function(g.clicked, i, p), i.act
+                        hovered SetScreenVariable("hov", i.name)
                     else:
                         action Function(g.clicked, i, p)
 
+    vbox:
+        align 1.0,0.0 offset -100,100
+        frame:
+            text g.name
+        if hov:
+            text hov

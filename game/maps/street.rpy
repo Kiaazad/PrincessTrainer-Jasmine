@@ -1,14 +1,70 @@
-﻿default street_money_lender_loc = place("Money lender", (483, 576), Jump('money_lender'), "bg/street/Money lender.png")
-default street_empty_shop_loc = place("Empty shop", (146, 486), Jump('empty_shop'), "bg/street/empty shop.png")
-default street_karim_loc = place("Karim's shop", (94, 636), Jump('karim'), "bg/street/karim.png")
-default street_palace_loc = place("Palace", (711, 357), Jump('palace'), "bg/street/palace.png")
-default street_home_loc = place("Home", (1464, 200), Jump('agrabah'), "bg/street/home.png")
-default street_blacksmith_loc = place("Blacksmith", (1536, 406), Jump('blacksmith'), "bg/street/blacksmith.png")
+﻿default street_money_lender_loc = pnco(
+    "Money lender",
+    "bg/street/Money lender.png",
+    (483, 576),
+    Jump('money_lender'),
+    )
+default street_empty_shop_loc = pnco(
+    "Empty shop",
+    "bg/street/empty shop.png",
+    (146, 486),
+    Jump('empty_shop'),
+    )
+default street_karim_loc = pnco(
+    "Karim's shop",
+    "bg/street/karim.png",
+    (94, 636),
+    Jump('karim'),
+    )
+default street_palace_loc = pnco(
+    "Palace",
+    "bg/street/palace.png",
+    (711, 357),
+    Jump('palace'),
+    )
+default street_home_loc = pnco(
+    "Home",
+    "bg/street/home.png",
+    (1464, 200),
+    Jump('agrabah'),
+    )
+default street_blacksmith_loc = pnco(
+    "Blacksmith",
+    "bg/street/blacksmith.png",
+    (1536, 406),
+    Jump('blacksmith'),
+    )
 
 
-default street_desert_loc = place("Desert", (141, 742), Jump('desert'))
-default street_bazaar_loc = place("Bazaar", (1046, 760), Jump('bazaar'))
-default street_map = maps(
+default street_desert_loc = pnco(
+    "Desert",
+    "bg/street/desert.png",
+    (655, 959),
+    Jump('desert')
+    )
+default street_bazaar_loc = pnco(
+    "Bazaar",
+    None,
+    (1046, 760),
+    Jump('bazaar')
+    )
+
+default street_beggar = pnco(
+    "Beggar",
+    "bg/street/beggar.png",
+    (1182, 808),
+    Jump('beggar')
+    )
+
+default street_youngster = pnco(
+    "Youngster",
+    "bg/street/youngster.png",
+    (784, 791),
+    Jump('youngster')
+    )
+
+
+default street_map = pncs(
     "Main street",
     [
         street_money_lender_loc,
@@ -19,19 +75,25 @@ default street_map = maps(
         street_bazaar_loc,
         street_home_loc,
         street_blacksmith_loc,
+
+        street_beggar,
+        street_youngster,
     ]
     )
-
+image bg street = "bg/street.png"
 label street:
-    scene image "bg/street.png"
-    show screen map(street_map)
+    scene
+    show bg street onlayer bg
+    show screen pnc(abdul, street_map)
     pause
+    jump street
 
 # Blacksmith
 define rah = Character("Rahman", color="#4ff", what_text_color="#dff")
 image rahman normal = "char/rahman/normal.png"
 
 label blacksmith:
+    scene
     show rahman normal at right
     rah "Abdul my friend, what you got for me today?"
     show abd normal at left
@@ -45,6 +107,7 @@ define mst = Character("Mostafa the money lender", color="#4ff", what_text_color
 image mostafa normal = "char/money_lender/normal.png"
 
 label money_lender:
+    scene
     show mostafa normal at right
     mst "...?"
     show abd normal at left
@@ -55,6 +118,7 @@ label money_lender:
 
 # Empty shop
 label empty_shop:
+    scene
     show mostafa normal at right
     mst "The rent is 4000 per month, do you want to rent?"
     show abd normal at left
@@ -86,6 +150,7 @@ default karim_u = unit(
     "Peasant",
     )
 label karim:
+    scene
     show karim normal at right
     kar "No hand outs!"
     show abd normal at left
@@ -94,4 +159,34 @@ label karim:
     show screen shop(s = karim_u, c = abdul)
     pause
     jump street
+
+image beggar = "char/pedestrians/beggar.png"
+label beggar:
+    scene
+    show beggar at right
+    "Give me money."
+    show abd normal at left
+    abd "Can't you ask nicely for once old man?"
+    "Give me money."
+    menu:
+        "Here's 10 dinars...":
+            abd "Here, take this 10 dinars."
+            "Thank you, the God's blessing be upon you."
+        "I don't have anything...":
+            abd  "I don't have anything right now."
+            "You're lying, go away."
+            abd "I'm n..."
+            "Go away!"
+    jump street
+
+image youngster = "char/pedestrians/youngster.png"
+label youngster:
+    scene
+    show youngster at right
+    show abd normal at left
+    "Beat it!"
+    hide abd
+    hide youngster with dissolve
+    jump street
+
 

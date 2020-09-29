@@ -36,11 +36,12 @@
             else:
                 return False
 
-        def gotcash(self, a, u):
+        def gotcash(self, a, u = None):
             if u and u in self.uniqueID:
                 pass
             else:
                 self.cash += a
+                msg.msg("You've got {} dinars.".format(a))
         def paidcash(self, a):
             self.cash -= a
 
