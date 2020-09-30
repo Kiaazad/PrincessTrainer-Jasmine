@@ -1,7 +1,7 @@
 ﻿label ch2:
     # $ skip_next = "skip_to_ch3"
-    scene black
-    show bg bg3 with Dissolve(2)
+    scene black with Dissolve(2)
+    show bg agrabah with Dissolve(2)
     show abd normal at left
     with dissolve
     show jaf normal at right

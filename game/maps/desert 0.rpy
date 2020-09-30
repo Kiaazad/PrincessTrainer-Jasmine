@@ -69,7 +69,12 @@ default des_0_sword = pnco(
     (1399, 715),
     items = [[rusty_sword, 1]],
     )
-
+default des_0_return = pnco(
+    "Return",
+    None,
+    (300, 800),
+    Jump('desert'),
+    )
 image des_0_shine:
     "bg/ev/shine.png"
     ease .3 zoom .1 rotate -20

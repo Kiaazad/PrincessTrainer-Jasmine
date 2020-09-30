@@ -62,7 +62,12 @@ default street_youngster = pnco(
     (784, 791),
     Jump('youngster')
     )
-
+default street_shepard = pnco(
+    "Shepard",
+    "bg/street/shepard.png",
+    (900, 783),
+    Jump('shepard')
+    )
 
 default street_map = pncs(
     "Main street",
@@ -78,6 +83,7 @@ default street_map = pncs(
 
         street_beggar,
         street_youngster,
+        street_shepard,
     ]
     )
 image bg street = "bg/street.png"
@@ -164,19 +170,20 @@ image beggar = "char/pedestrians/beggar.png"
 label beggar:
     scene
     show beggar at right
-    "Give me money."
+    "Beggar" "Give me money."
     show abd normal at left
     abd "Can't you ask nicely for once old man?"
-    "Give me money."
+    "Beggar" "Give me money."
     menu:
         "Here's 10 dinars...":
             abd "Here, take this 10 dinars."
-            "Thank you, the God's blessing be upon you."
+            $ abdul.paidcash(10)
+            "Beggar" "Thank you, the God's blessing be upon you."
         "I don't have anything...":
             abd  "I don't have anything right now."
-            "You're lying, go away."
+            "Beggar" "You're lying, go away."
             abd "I'm n..."
-            "Go away!"
+            "Beggar" "Go away!"
     jump street
 
 image youngster = "char/pedestrians/youngster.png"
@@ -184,9 +191,17 @@ label youngster:
     scene
     show youngster at right
     show abd normal at left
-    "Beat it!"
+    "Youngster" "Beat it!"
     hide abd
     hide youngster with dissolve
     jump street
 
-
+image shepard = "char/pedestrians/shepard.png"
+label shepard:
+    scene
+    show shepard at right
+    show abd normal at left
+    "..."
+    hide abd
+    hide shepard with dissolve
+    jump street

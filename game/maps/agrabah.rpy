@@ -20,7 +20,7 @@ default rich_loc = pnco(
     "Rich section",
     "bg/agrabah/rich.png",
     (719, 512),
-    Jump('rich_town'),
+    Jump('rich'),
     )
 default school_loc = pnco(
     "School",
@@ -77,7 +77,7 @@ default agrabah_map = pncs(
     ]
     )
 
-image bg agrabah = "bg/03.jpg"
+image bg agrabah = "bg/agrabah.jpg"
 label agrabah:
     scene
     show bg agrabah onlayer bg
@@ -85,17 +85,14 @@ label agrabah:
     pause
     jump agrabah
 
-label school:
-    "You don't have anything to do in a school."
-    jump agrabah
+
+
 
 label mid_town:
     "Not ready yet."
     jump agrabah
 
-label rich_town:
-    "Not ready yet."
-    jump agrabah
+
 
 label poor_town:
     "Not ready yet."

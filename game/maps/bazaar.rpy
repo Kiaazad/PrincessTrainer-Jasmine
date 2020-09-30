@@ -53,7 +53,12 @@ default bazaar_home_loc = pnco(
     (407, 999),
     Jump('agrabah'),
     )
-
+default bazaar_fatti = pnco(
+    "Fatti",
+    "bg/bazaar/fatti.png",
+    (532, 669),
+    Jump('bazaar_fatti'),
+    )
 default bazaar_map = pncs(
     "Bazaar",
     [
@@ -66,6 +71,7 @@ default bazaar_map = pncs(
         hakim_loc,
         alley_loc,
         bazaar_home_loc,
+        bazaar_fatti,
     ]
     )
 
@@ -101,6 +107,7 @@ label fruit_shack:
     scene
     show simin normal at right
     sim "Dates?"
+    show abd normal at left
     show screen shop(s = simin_u, c = abdul)
     pause
     jump bazaar
@@ -277,10 +284,14 @@ label tailor:
     pause
     jump bazaar
 
-
+# Rugs shop
+define nem = Character("Nemat", color="#4ff", what_text_color="#dff")
+image nemat normal = "char/nemat/normal.png"
 label rugs_shop:
     scene
-    "Rugs?"
+    show nemat normal at right
+    nem "Rugs?"
+    show abd normal at left
     abd "Not today."
     jump bazaar
 
@@ -313,3 +324,17 @@ label shady_alley:
     show screen shop(s = petros_u, c = abdul)
     pause
     jump bazaar
+
+# fat
+define fat = Character("Fatti", color="#4ff", what_text_color="#dff")
+image fatti normal = "char/pedestrians/fatti.png"
+label bazaar_fatti:
+    scene
+    show fatti normal at right
+    fat "What are you shopping for Abdul."
+    show abd normal at left
+    abd "Nothing."
+    fat "Buy something to eat Abdul, you've wasting away."
+    jump bazaar
+
+

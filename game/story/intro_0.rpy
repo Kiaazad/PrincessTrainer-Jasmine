@@ -4,7 +4,7 @@
 
 label intro_0:
     # default skip_next = "skip_to_ch1"
-    show bg bg2  onlayer bg with Dissolve(2)
+    # show bg bg2  onlayer bg with Dissolve(2)
     jump desert_0
     # show screen skips
 label intro_0_1:
@@ -225,6 +225,8 @@ label intro_0_1:
                     $ qlog.cancel(sell_lamp)
                     jaf "Bring the thorns. {w=.5}We need all the money we can get."
                     $ msg.msg("You got CamelThorns")
+                    $ des_0_col.add(des_0_return)
+                    "{nw}"
                     jump ch1
                 "No! I want my wishes":
                     show abd normal at left
@@ -244,6 +246,8 @@ label intro_0_1:
                             show abd confused at left
                             abd "What?"
                             jaf "Something I heard- {w=.5}you know what, never mind."
+                            "{nw}"
+                            $ des_0_col.add(des_0_return)
                             jump ch1
         "Don't be naive, search for more firewood.":
             show abd alert at left
@@ -252,9 +256,9 @@ label intro_0_1:
             show abd tired at left
             abd "It's unusually hot today."
             abd "..."
+            $ des_0_col.add(des_0_return)
             call desert_1 from _call_desert_1
-            
-
             jump endless_grind
         "<dev> jump to the city":
+            $ des_0_col.add(des_0_return)
             jump agrabah
