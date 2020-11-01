@@ -1,6 +1,6 @@
 ﻿label lamp_visit:
     scene black
-    hide screen map
+    hide screen pnc
     hide screen lamp_get
     show bg black
     show abd concerned at left

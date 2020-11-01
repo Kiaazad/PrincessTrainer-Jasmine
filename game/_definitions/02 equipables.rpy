@@ -4,7 +4,7 @@ default abduls_sword = item(
     _("A very normal sword."),
     "items/abduls_sword.png",
     2100,
-    "Hand",
+    ["Hand", "Weapon"],
     )
 
 default small_sword = item(
@@ -12,7 +12,7 @@ default small_sword = item(
     _("It's more like a dagger."),
     "items/small_sword.png",
     2100,
-    "Hand",
+    ["Hand", "Weapon"],
     )
 
 default bow = item(
@@ -20,7 +20,7 @@ default bow = item(
     _("The vendor says: it Gives you 15 agility."),
     "items/bow.png",
     4200,
-    "Hand",
+    ["Hand", "Weapon"],
     )
 
 default arrows = item(
@@ -28,7 +28,7 @@ default arrows = item(
     _("Normal looking arrows."),
     "items/arrows.png",
     40,
-    "Hand",
+    ["Hand"],
     )
 
 default list_of_weapons = [
@@ -41,7 +41,7 @@ default bracers_of_agility = item(
     _("The vendor says: it Gives you 15 agility."),
     "items/bracers_of_agility.png",
     1200,
-    "Wrist",
+    ["Wrist", "armor"],
     )
 
 default simple_hat = item(
@@ -49,7 +49,7 @@ default simple_hat = item(
     _("A test hat with icon like bow."),
     "items/simple_hat.png",
     4200,
-    "Hat",
+    ["Hat"],
     )
 
 default left_sandal = item(
@@ -57,7 +57,7 @@ default left_sandal = item(
     _("A pair of sandals, well the left one."),
     "items/left_sandal.png",
     4200,
-    "Left Foot",
+    ["Left Foot"],
     )
 
 default right_sandal = item(
@@ -65,7 +65,7 @@ default right_sandal = item(
     _("A pair of sandals, well the right one."),
     "items/right_sandal.png",
     4200,
-    "Right Foot",
+    ["Right Foot"],
     )
 
 default simple_shirt = item(
@@ -73,7 +73,7 @@ default simple_shirt = item(
     _("White shows you're clean."),
     "items/simple_shirt.png",
     4200,
-    "Top",
+    ["Top"],
     )
 
 default simple_pants = item(
@@ -81,7 +81,7 @@ default simple_pants = item(
     _("White and baggy, good for hot climate."),
     "items/simple_pants.png",
     4200,
-    "Bottom",
+    ["Bottom"],
     )
 
 default list_of_equipments = [
@@ -94,7 +94,7 @@ default silver_ring = item(
     _("It has some value."),
     "items/silver_ring.png",
     4200,
-    "Finger",
+    ["Finger", "jewelry"],
     )
 
 default gold_ring = item(
@@ -102,7 +102,7 @@ default gold_ring = item(
     _("A wedding ring if you wear it on your left ring finger."),
     "items/gold_ring.png",
     4200,
-    "Finger",
+    ["Finger", "jewelry"],
     )
 
 default prayer_beads = item(
@@ -123,15 +123,15 @@ default axe = item(
     _("A simple wood cutting axe."),
     "items/axe.png",
     1400,
-    type = "tools"
+    ["tools", "weapon"],
     )
 
 default saw = item(
     _("Saw"),
     _("A single handle saw."),
-    "items/bracers_of_agility.png",
+    "items/bracers_of_agility.png", ##
     1600,
-    type = "tools",
+    ["tools"],
     )
 
 default list_of_tools = [

@@ -4,7 +4,7 @@ default thorns = item(
     inf = _("A round-shaped plant that are wrapped by dead plants."), #Descriptions optional
     icon = "items/thorns.png",      # Icon [optional]
     val = 10,                       # Value [optional] [Default = 0]
-    type = None,                    # Type [optional] [default = None]
+    tags = ["fuel"],                      # tags [optional] [default = empty list]
     use_event = None,               # Event happening when used [optional] [default = None]
     )
 
@@ -13,6 +13,15 @@ default wood = item(
     _("A piece of wood that can be used to make fire."),
     "items/wood.png",
     40,
+    ["fuel"],
+    )
+
+default coal = item(
+    _("Coal"),
+    _("A lump of coal."),
+    "items/wood.png", ##
+    100,
+    ["fuel"],
     )
 
 default feather = item(
@@ -27,6 +36,7 @@ default stick = item(
     _("Behold the mighty stick! You can whack someone or you can STICK it in a hole somewhere!"),
     "items/stick.png",
     1,
+    ["fuel"],
     )
 
 default string = item(
@@ -75,6 +85,7 @@ default book1 = item(
     _("It's a red book. I'm sure it's one of Jafar's works."),
     "items/book1.png",
     3100,
+    ["book"],
     )
 
 default book2 = item(
@@ -82,6 +93,7 @@ default book2 = item(
     _("The facetting tale of Err. It's about an errrr man that went errrr."),
     "items/book2.png",
     5300,
+    ["book"],
     )
 
 default book3 = item(
@@ -89,6 +101,7 @@ default book3 = item(
     _("It seems to be written in code."),
     "items/book3.png",
     9500,
+    ["book"],
     )
 
 default book4 = item(
@@ -96,6 +109,7 @@ default book4 = item(
     _("This book looks old. The cover the worn out and the papers are completely brown"),
     "items/book4.png",
     2200,
+    ["book"],
     )
 
 default list_of_books = [
@@ -128,6 +142,7 @@ default black_lamp = item(
     _("An oil lamp used for illumination."),
     "items/black_lamp.png",
     2100,
+    ["magic", "lamp"],
     )
 
 default sand_bottle = item(
@@ -135,6 +150,7 @@ default sand_bottle = item(
     _("Now let's go hang it in the lamp."),
     "items/sand_bottle.png",
     500,
+    ["magic", "junk"],
     )
 
 default magic_ring = item(
@@ -142,6 +158,7 @@ default magic_ring = item(
     _("A ring with a Genie engraved on it."),
     "items/sand_bottle.png",
     500,
+    ["magic"],
     )
 
 default list_of_lamp_items = [

@@ -86,7 +86,7 @@ default street_map = pncs(
         street_shepard,
     ]
     )
-image bg street = "bg/street.png"
+image bg street = "bg/street/bg.png"
 label street:
     scene
     show bg street onlayer bg
@@ -98,6 +98,25 @@ label street:
 define rah = Character("Rahman", color="#4ff", what_text_color="#dff")
 image rahman normal = "char/rahman/normal.png"
 
+default rahman_u = unit(
+    "Rahman",
+    "char/rahman",
+
+    1310,
+    [
+        (arrowhead, 24),
+        (small_sword, 2),
+        (axe, 4),
+        (saw, 2),
+
+    ],
+    1.1,
+
+    14,
+    "Peasant",
+    interests = ["Weapon", "armor", "fuel"],
+    reject = ["hard drug"]
+    )
 label blacksmith:
     scene
     show rahman normal at right
@@ -105,6 +124,8 @@ label blacksmith:
     show abd normal at left
     abd "Maybe later Rahman."
     rah "Alright."
+    show screen shop(s = rahman_u, c = abdul)
+    pause
     jump street
 
 
@@ -154,6 +175,8 @@ default karim_u = unit(
 
     8,
     "Peasant",
+    interests = ["hard drug"],
+    reject = ["Weapon", "armor", "fuel", "lamp"]
     )
 label karim:
     scene

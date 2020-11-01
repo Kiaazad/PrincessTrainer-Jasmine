@@ -45,7 +45,7 @@ default palace_map = pncs(
     ]
     )
 
-image bg palace = "bg/palace.jpg"
+image bg palace = "bg/palace/bg.jpg"
 label palace:
     scene
     show bg palace onlayer bg

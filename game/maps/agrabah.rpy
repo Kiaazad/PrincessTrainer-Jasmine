@@ -14,7 +14,7 @@ default poor_loc = pnco(
     "Poor section",
     "bg/agrabah/poor.png",
     (1654, 508),
-    Jump('poor_town'),
+    Jump('poor'),
     )
 default rich_loc = pnco(
     "Rich section",
@@ -77,7 +77,7 @@ default agrabah_map = pncs(
     ]
     )
 
-image bg agrabah = "bg/agrabah.jpg"
+image bg agrabah = "bg/agrabah/bg.jpg"
 label agrabah:
     scene
     show bg agrabah onlayer bg

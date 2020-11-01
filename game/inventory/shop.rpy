@@ -23,23 +23,38 @@
     # def itemswap_exit(s, c):
     #     s.togos_collect()
     #     c.togos_collect()
-    def buy_one(item, s, c):
-        if c.cash < item.item.val*s.markup:
-            msg.msg("{} don't have enough cash.".format(c.name))
-        else:
-            c.cash -= int(item.item.val*s.markup)
-            s.cash += int(item.item.val*s.markup)
-            c.bags[0].add(item.item, 1)
-            s.bags[0].rem(item.item, 1)
-    def buy_all(item, s, c):
-        if c.cash < (item.item.val*item.qtt)*s.markup:
-            msg.msg("{} don't have enough cash.".format(c.name))
-        else:
-            c.cash -= int((item.item.val*item.qtt)*s.markup)
-            s.cash += int((item.item.val*item.qtt)*s.markup)
-            c.bags[0].add(item.item, item.qtt)
-            s.bags[0].rem(item.item, item.qtt)
 
+    def is_interested(a, b):
+        for i in a:
+            if i in b:
+                return True
+        else:
+            return False
+
+    def buy_one(item, s, c):
+        if is_interested(item.item.tags, c.reject):
+            msg.msg("The shop keeper isn't interested in that.")
+        else:
+            if c.cash < item.item.val*s.markup:
+                msg.msg("{} don't have enough cash.".format(c.name))
+            else:
+                c.cash -= int(item.item.val*s.markup)
+                s.cash += int(item.item.val*s.markup)
+                c.bags[0].add(item.item, 1)
+                s.bags[0].rem(item.item, 1)
+            
+    def buy_all(item, s, c):
+        if is_interested(item.item.tags, c.reject):
+            msg.msg("The shop keeper isn't interested in that.")
+        else:
+            if c.cash < (item.item.val*item.qtt)*s.markup:
+                msg.msg("{} don't have enough cash.".format(c.name))
+            else:
+                c.cash -= int((item.item.val*item.qtt)*s.markup)
+                s.cash += int((item.item.val*item.qtt)*s.markup)
+                c.bags[0].add(item.item, item.qtt)
+                s.bags[0].rem(item.item, item.qtt)
+            
 screen shop(s, c):
     modal True
     default selling = True

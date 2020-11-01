@@ -80,10 +80,10 @@ screen pnc(p , g):
             add i
         else:
             button:
-                anchor 0.0,0.0 padding 0,0
+                anchor 0.0,0.0 
                 pos i.pos
                 if i.img:
-                    background None
+                    background None padding 0,0
                     add i.img
                 else:
                     text i.name
