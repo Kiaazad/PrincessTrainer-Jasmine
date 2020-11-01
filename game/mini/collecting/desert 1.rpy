@@ -62,5 +62,9 @@ label desert_1_dream:
     pause 5
     $ msg.msg("Real animation, not pan and scan though.")
     pause 1
-    "After this, Abdul returns to agrabah."
+    hide cg with dissolve
+    show bg rock_pass with dissolve
+    abd "Woah..."
+    abd "That was weird."
+    abd "I need to got to the city before I die from heat."
     jump street

@@ -21,6 +21,12 @@
 
 - The front part of the town that travelers reside in
 
+- Barracks and jail combo attached to the palace
+
+- Jasmine's quarter that leads to her sleeping chamber, kitchen/servant's resident and the yard with the fountain
+
+- Sultan's quarter that leads to threasory, sultan's harem, and barracks.
+
 ## Icons:
 - The icons inside the lamp for the different places in it, they look like a spotlight shining from above illuminating the locations in the dark abyss of the lamp.
 

@@ -37,6 +37,7 @@ label intro_0_1:
     $ _last_say_who = None
     menu:
         "Rub the lamp!":
+            $ abdul.add_flag("Meet Jafar")
             # hide abd
             show cg found_lamp with Dissolve(2)
             pause 6
@@ -257,8 +258,8 @@ label intro_0_1:
             abd "It's unusually hot today."
             abd "..."
             $ des_0_col.add(des_0_return)
-            call desert_1 from _call_desert_1
-            jump endless_grind
+            jump desert_1
+
         "<dev> jump to the city":
             $ des_0_col.add(des_0_return)
             jump agrabah

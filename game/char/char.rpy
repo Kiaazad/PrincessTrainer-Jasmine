@@ -306,12 +306,40 @@ image jaf thinking = Composite((783, 1097),
     (0,0), "jaf_thinking_blink",
 )
 
+# angry
+image jaf_angry_blink:
+    "char/jafar/angry_blink.png"
+    alpha 0
+    choice:
+        2
+    choice:
+        3
 
+    alpha 1
+    .1
+    repeat
+image jaf_angry_mouth_moving:
+    "char/jafar/angry_bla.png"
+    .1
+    alpha 0
+    .2
+    alpha 1
+    repeat
+
+image jaf_angry_mouth = ConditionSwitch(
+    "_last_say_who == 'jaf'", "jaf_angry_mouth_moving",
+    "not _last_say_who == 'jaf'", "char/jafar/angry.png")
+
+image jaf angry = Composite((783, 1097),
+    (0,0), "char/jafar/angry.png",
+    (0,0), "jaf_angry_mouth",
+    (0,0), "jaf_angry_blink",
+)
 image jaf genie = "char/jafar/genie.png"
 image jaf genie bent = "char/jafar/genie_bent.png"
 image jaf disappointed = "char/jafar/disappointed.png"
 image jaf magic = "char/jafar/magic.png"
-image jaf angry = "char/jafar/angry.png"
+# image jaf angry = "char/jafar/angry.png"
 image jaf smile = "char/jafar/smile.png"
 image jaf annoyed = "char/jafar/annoyed.png"
 image jaf probing = "char/jafar/probing.png"

@@ -75,7 +75,7 @@ default bazaar_map = pncs(
     ]
     )
 
-image bg bazaar = "bg/bazaar.jpg"
+image bg bazaar = "bg/bazaar/bg.jpg"
 label bazaar:
     scene
     show bg bazaar onlayer bg
@@ -102,6 +102,8 @@ default simin_u = unit(
 
     8,
     "Peasant",
+    interests = [],
+    reject = ["Weapon", "armor", "lamp"]
     )
 label fruit_shack:
     scene
@@ -123,27 +125,37 @@ default jeweler_u = unit(
     9610,
     [
         (book3, 1),
-        (arrows, 6),
+        (silver_ring, 7),
+        (gold_ring, 3),
     ],
     1.1,
 
     8,
     "Peasant",
+    interests = ["jewelry"],
+    reject = ["food", "fuel", "Weapon", "armor", "lamp"]
     )
-default jewelry_shop = True
 label jewelry_shop:
     scene
-    show jeweler normal at right
-    jew "You don't look like you belong here! Did you find something valuable to sell?"
-    show abd normal at left
-    if abdul.has(black_lamp) and jewelry_shop:
-        $ jewelry_shop = False
-        abd "I've found this lamp in the desert."
-        abd "Do you look like a junk trader?"
-        jew "Take it elsewhere..."
+    if not "first" in jeweler_u.flags:
+        show jeweler normal at right
+        jew "You don't look like you belong here! Did you find something valuable to sell?"
+        show abd normal at left
+        if abdul.has(black_lamp) and not "shown lamp" in jeweler_u.flags:
+            $ jeweler_u.add_flag("shown lamp")
+            abd "I've found this lamp in the desert."
+            abd "Do you look like a junk trader?"
+            jew "Take it elsewhere..."
+        else:
+            abd "No, I'm just browsing."
+            jew "No browsing! Buys something or get out!"
+        $ jeweler_u.add_flag("first")
     else:
-        abd "No, I'm just browsing."
-        jew "No browsing! Buys something or get out!"
+        show jeweler normal at right
+        jew "What do you want?"
+        show abd normal at left
+        show screen shop(s = jeweler_u, c = abdul)
+        pause
     jump bazaar
 
 
@@ -166,11 +178,15 @@ default akbar = unit(
         (book2, 1),
         (arrows, 6),
         (water, 7),
+        (prayer_beads, 12),
+
     ],
     1.1,
 
     8,
     "Peasant",
+    interests = [],
+    reject = []
     )
 
 label akbars_shack:
@@ -199,48 +215,59 @@ default hakim_u = unit(
         (scorpion_bite_remedy, 5),
         (salt, 12),
         (saffron, 2),
-        
+        (book2, 1),
+        (book4, 1),
+
     ],
     1.1,
 
     8,
     "Peasant",
+    interests = ["remedy"],
+    reject = ["Weapon", "armor"]
     )
 
 label hakim:
     scene
-    show hakim normal at right
-    hak "Ah, Abdul, how are you today, are you feeling sick again?"
-    show abd normal at left
-    menu:
-        "Not today...":
-            abd "Not today Hakim."
-            hak "Have you came to buy a remedy?"
-            abd "Let me see what you have."
-        "Fond anything to erect old men yet Hakim?":
-            abd "Fond anything to erect old men yet Hakim?"
-            hak "Ah hahaha, This joke again? Let me know if there's anything I can do for you."
-            abd "Sure. I'll take a look."
-        "I've found this lamp..." if abdul.has(black_lamp):
-            abd "I've found this lamp hakim."
-            abd "Do you want to buy it?"
-            hak "Hmmm... I do need a good old lamp for my nightly reading sessions."
-            hak "Looks fine... How much are you selling it?"
-            abd "For you hakim, 2000!"
-            hak "You know I can't afford that abdul."
-            hak "1500?"
-            menu:
-                "Sure":
-                    abd "Sure"
-                    hak "Thank you abdul. I'll make it up to you"
-                    $ abdul.sell(black_lamp, 1, hakim_u, 1500)
-                    hak "Do you want to buy something as well?"
-                    abd "Sure."
-                "Too low!":
-                    abd "That's too low hakim."
-                    hak "Alright, buy something and I might be able to buy it from you."
-                    abd "Sure."
-    hak "Choose wisely."
+    if not "erect old" in hakim_u.flags or not "shown lamp" in hakim_u.flags:
+        show hakim normal at right
+        hak "Ah, Abdul, how are you today, are you feeling sick again?"
+        show abd normal at left
+        menu:
+            "Not today...":
+                abd "Not today Hakim."
+                hak "Have you came to buy a remedy?"
+                abd "Let me see what you have."
+            "Fond anything to erect old men yet Hakim?" if not "erect old" in hakim_u.flags:
+                $ hakim_u.add_flag("erect old")
+                abd "Fond anything to erect old men yet Hakim?"
+                hak "Ah hahaha, This joke again? Let me know if there's anything I can do for you."
+                abd "Sure. I'll take a look."
+            "I've found this lamp..." if abdul.has(black_lamp) and not "shown lamp" in hakim_u.flags:
+                $ hakim_u.add_flag("shown lamp")
+                abd "I've found this lamp hakim."
+                abd "Do you want to buy it?"
+                hak "Hmmm... I do need a good old lamp for my nightly reading sessions."
+                hak "Looks fine... How much are you selling it?"
+                abd "For you hakim, 2000!"
+                hak "You know I can't afford that abdul."
+                hak "1500?"
+                menu:
+                    "Sure":
+                        abd "Sure"
+                        hak "Thank you abdul. I'll make it up to you"
+                        $ abdul.sell(black_lamp, 1, hakim_u, 1500)
+                        hak "Do you want to buy something as well?"
+                        abd "Sure."
+                    "Too low!":
+                        abd "That's too low hakim."
+                        hak "Alright, buy something and I might be able to buy it from you."
+                        abd "Sure."
+        hak "Choose wisely."
+    else:
+        show hakim normal at right
+        hak "Ah, Abdul, nice to see you again."
+        show abd normal at left
     #just added a cue from the seller, otherwise Abdul continues to slap his lips.
     # since we might add lip flip to vendors, "{nw}" should do the job as well
     show screen shop(s = hakim_u, c = abdul)
@@ -258,13 +285,17 @@ default tailor_u = unit(
     3410,
     [
         (book1, 1),
-        (book4, 1),
-        (book2, 1),
+        (simple_hat, 2),
+        (simple_shirt, 3),
+        (simple_pants, 2),
+
     ],
     1.1,
 
     8,
     "Peasant",
+    interests = ["textile"],
+    reject = ["Weapon", "armor", "lamp"]
     )
 
 label tailor:
@@ -276,7 +307,8 @@ label tailor:
         "Not today...":
             abd "Not today Farrokh, I'm just browsing."
             far "Alright then, tell me if anything catches your eye."
-        "I've found this lamp..." if abdul.has(black_lamp):
+        "I've found this lamp..." if abdul.has(black_lamp) and not "shown lamp" in tailor_u.flags:
+            $ tailor_u.add_flag("shown lamp")
             abd "I've found this lamp in the desert."
             far "Hmmm... show it to Akbar. Or Hakim."
             far "I'll end up selling it to them if I buy it."
@@ -313,6 +345,8 @@ default petros_u = unit(
 
     8,
     "Peasant",
+    interests = [],
+    reject = ["Weapon", "armor", "lamp"]
     )
 label shady_alley:
     scene
