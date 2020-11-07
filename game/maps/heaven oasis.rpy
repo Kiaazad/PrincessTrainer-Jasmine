@@ -1,7 +1,7 @@
 ﻿default heaven_oasis_viking = pnco(
     "The viking",
     "bg/heaven_oasis/viking.png",
-    (188, 598),
+    (518, 559),
     Jump('the_viking'),
     )
 default heaven_oasis_1 = pnco(
@@ -27,6 +27,7 @@ default heaven_oasis_loc = pncs(
     ]
     )
 
+image bg heaven_oasis = "bg/heaven_oasis/bg.png"
 label heaven_oasis:
     scene
     show bg heaven_oasis onlayer bg
@@ -43,7 +44,7 @@ image viking normal = "char/viking/normal.png"
 
 label the_viking:
     scene
-    show bg water_front
+    #show bg water_front
     show viking normal at right
     vik "Abdul the wood collector... have you came here to take my boat apart?"
     show abd normal at left
