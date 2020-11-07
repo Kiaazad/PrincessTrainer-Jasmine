@@ -52,20 +52,20 @@ default street_bazaar_loc = pnco(
 default street_beggar = pnco(
     "Beggar",
     "bg/street/beggar.png",
-    (1182, 808),
+    (1193, 802),
     Jump('beggar')
     )
 
 default street_youngster = pnco(
     "Youngster",
     "bg/street/youngster.png",
-    (784, 791),
+    (781, 775),
     Jump('youngster')
     )
 default street_shepard = pnco(
     "Shepard",
     "bg/street/shepard.png",
-    (900, 783),
+    (899, 780),
     Jump('shepard')
     )
 

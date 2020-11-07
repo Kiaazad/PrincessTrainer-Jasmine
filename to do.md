@@ -1,7 +1,7 @@
 ## Backgrounds:
 - The area outside of the Agrabah where few key locations are seen in the distance, this will serve as the main hub for choosing the desert location to go to.
 
-- An area beside a body of water (the place that the guards dumbed Aladdin or near the den of 40 thieves) where our viking is camping. he sells viking stuff to the player, specially the mead.
+//- An area beside a body of water (the place that the guards dumbed Aladdin or near the den of 40 thieves) where our viking is camping. he sells viking stuff to the player, specially the mead.
 
 - A handful of random places on the desert to gather things explore ruins and fight enemies.
 
@@ -15,7 +15,7 @@
 
 - (inside the lamp) THe settings room that looks like Jafar's hideout in the palace, this room has leavers and buttons that the player can manipulate to change the game's settings.
 
-- The school background, preferably a yard with multiple rooms around it: https://c8.alamy.com/comp/KY6MJD/open-yard-of-traditional-persian-house-in-kashan-iran-KY6MJD.jpg from the eye level.
+//- The school background, preferably a yard with multiple rooms around it: https://c8.alamy.com/comp/KY6MJD/open-yard-of-traditional-persian-house-in-kashan-iran-KY6MJD.jpg from the eye level.
 
 - The poor side of the town
 
@@ -37,6 +37,6 @@
 - Item icons for: Dry white rice, flat bread, salt, saffron, hashish, cheap liquor in cheap bottles, cantaloupe, pomegranate, watermelon, apple, coal, charcoal, lamp oil, jewelry pieces, gem stones, 
 
 ## Characters
-- One or two palace guards
+//- One or two palace guards
 
 - 

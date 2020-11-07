@@ -15,7 +15,7 @@ default poor_map = pncs(
     ]
     )
 
-image bg poor = "bg/poor/bg.jpg"
+image bg poor = "bg/poor/bg.png"
 label poor:
     scene
     show bg poor onlayer bg
