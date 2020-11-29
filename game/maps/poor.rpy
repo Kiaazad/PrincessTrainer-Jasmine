@@ -21,7 +21,7 @@ label poor:
     show bg poor onlayer bg
     show screen pnc(abdul, poor_map)
     pause
-    jump rich
+    jump poor
 
 
 

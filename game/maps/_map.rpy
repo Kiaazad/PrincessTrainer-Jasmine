@@ -30,6 +30,10 @@ screen map(m):
             at map_transform
             focus_mask True
             hovered SetScreenVariable("hov", i.name)
+        frame:
+            pos i.xy
+            background Frame("0GUI/scroll.png", 20, 0)
+            text i.name
     vbox:
         align 1.0,0.0 offset -100,100
         frame:

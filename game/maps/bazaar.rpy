@@ -3,61 +3,71 @@
     "bg/bazaar/street.png",
     (516, 343),
     Jump('street'),
+    hidden = False, hoffset = (40,60),
     )
 default akbar_loc = pnco(
     "Akbar's shack",
     "bg/bazaar/akbar.png",
     (0, 466),
     Jump('akbars_shack'),
+    hidden = False, hoffset = (200,0),
     )
 default fruits_loc = pnco(
     "Fruits shack",
     "bg/bazaar/fruits.png",
     (631, 581),
     Jump('fruit_shack'),
+    hidden = False, hoffset = (83,-40),
     )
 default jewelry_loc = pnco(
     "Jewelry",
     "bg/bazaar/jewelry.png",
     (798, 405),
     Jump('jewelry_shop'),
+    hidden = False, hoffset = (146,-80),
     )
 default rugs_loc = pnco(
     "Rugs and rags shack",
     "bg/bazaar/rugs.png",
     (868, 486),
     Jump('rugs_shop'),
+    hidden = False, hoffset = (200,0),
     )
 default tailor_loc = pnco(
     "Tailor",
     "bg/bazaar/tailor.png",
     (1195, 527),
     Jump('tailor'),
+    hidden = False, hoffset = (154,-80),
     )
 default hakim_loc = pnco(
     "Hakim",
     "bg/bazaar/hakim.png",
     (1476, 75),
     Jump('hakim'),
+    hidden = False, hoffset = (100,100),
     )
 
 default alley_loc = pnco(
-    "Shady Alley",
+    "Shady Figure",
     "bg/bazaar/shady figure.png",
     (332, 602),
     Jump('shady_alley'),
+    hidden = False, hoffset = (20,-80),
     )
 default bazaar_home_loc = pnco(
     "Home",
     "bg/bazaar/poor.png",
     (407, 999),
     Jump('agrabah'),
+    hidden = False, hoffset = (0,0),
     )
 default bazaar_fatti = pnco(
     "Fatti",
     "bg/bazaar/fatti.png",
     (532, 669),
     Jump('bazaar_fatti'),
+    hidden = False, hoffset = (43,106),
     )
 default bazaar_map = pncs(
     "Bazaar",

@@ -3,6 +3,7 @@
     "bg/heaven_oasis/viking.png",
     (518, 559),
     Jump('the_viking'),
+    hidden = False, hoffset = (120,97),
     )
 default heaven_oasis_1 = pnco(
     "thorns",
@@ -16,6 +17,7 @@ default heaven_oasis_back = pnco(
     None,
     (611, 729),
     Jump('desert'),
+    hidden = False, hoffset = (83,-40),
     )
 
 default heaven_oasis_loc = pncs(
@@ -33,7 +35,7 @@ label heaven_oasis:
     show bg heaven_oasis onlayer bg
     show screen pnc(abdul, heaven_oasis_loc)
     pause
-    jump desert
+    jump heaven_oasis
 
 # The viking
 
@@ -51,9 +53,9 @@ label the_viking:
     abd "Do you have to mention that every time? I thought it was abandoned."
     vik "Alright alright... Came to buy what I've fished out from my sunken cargo?"
     abd "What do you have."
-    vik "Nothing yer, but soon."
+    vik "Nothing yet, but soon."
     abd "Alright I'll visit later."
-    jump desert
+    jump heaven_oasis
 
 
 

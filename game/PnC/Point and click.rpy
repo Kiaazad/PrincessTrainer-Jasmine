@@ -4,7 +4,7 @@
             name, img, pos,
             act = None, enabled = True, 
             hits = 1, items = [], tools = [],
-            tut = False,
+            tut = False, hidden = True, hoffset = (0,0)
         ):
             self.name = name
             self.img = img
@@ -15,7 +15,12 @@
             self.items = items
             self.tools = tools
             self.tut = tut
-            
+            self.hov = 0
+            self.hidden = hidden
+            self.hoffset = hoffset
+        def hovered(self, h):
+            if not self.hidden:
+                self.hov = h
 
     class pncs:
         def __init__(self, name, clicks = [],
@@ -68,6 +73,9 @@
         def tut_show(self):
             p = self.tuts.pop()
             renpy.show_screen("tut_click", p)
+        def on_show(self):
+            for i in self.clicks:
+                i.hov = 0
 
 screen pnc(p , g):
     default hov = None
@@ -91,14 +99,23 @@ screen pnc(p , g):
                     if i.act:
                         focus_mask True
                         at map_transform
-                        action Function(g.clicked, i, p), i.act
-                        hovered SetScreenVariable("hov", i.name)
+                        action Function(g.clicked, i, p), Function(g.on_show), i.act
+                        hovered Function(i.hovered, 1)
+                        unhovered Function(i.hovered, 0)
                     else:
                         action Function(g.clicked, i, p)
-
+        if not i.hidden:
+            frame:
+                at pnc_hover(i.hov)
+                anchor .5,0.0 pos i.pos offset i.hoffset
+                background Frame("0GUI/scroll.png", 20, 0)
+                text i.name color "#000"
     vbox:
         align 1.0,0.0 offset -100,100
         frame:
             text g.name
         if hov:
             text hov
+
+transform pnc_hover(a):
+    ease .2 alpha a yoffset (a-1)*20

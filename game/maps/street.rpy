@@ -3,36 +3,42 @@
     "bg/street/Money lender.png",
     (483, 576),
     Jump('money_lender'),
+    hidden = False, hoffset = (110,-20),
     )
 default street_empty_shop_loc = pnco(
     "Empty shop",
     "bg/street/empty shop.png",
     (146, 486),
     Jump('empty_shop'),
+    hidden = False, hoffset = (20,20),
     )
 default street_karim_loc = pnco(
     "Karim's shop",
     "bg/street/karim.png",
     (94, 636),
     Jump('karim'),
+    hidden = False, hoffset = (20,20),
     )
 default street_palace_loc = pnco(
     "Palace",
     "bg/street/palace.png",
     (711, 357),
     Jump('palace'),
+    hidden = False, hoffset = (20,20),
     )
 default street_home_loc = pnco(
     "Home",
     "bg/street/home.png",
     (1464, 200),
     Jump('agrabah'),
+    hidden = False, hoffset = (20,20),
     )
 default street_blacksmith_loc = pnco(
     "Blacksmith",
     "bg/street/blacksmith.png",
     (1536, 406),
     Jump('blacksmith'),
+    hidden = False, hoffset = (20,20),
     )
 
 
@@ -40,33 +46,38 @@ default street_desert_loc = pnco(
     "Desert",
     "bg/street/desert.png",
     (655, 959),
-    Jump('desert')
+    Jump('desert'),
+    hidden = False, hoffset = (20,20),
     )
 default street_bazaar_loc = pnco(
     "Bazaar",
     None,
     (1046, 760),
-    Jump('bazaar')
+    Jump('bazaar'),
+    hidden = False, hoffset = (20,20),
     )
 
 default street_beggar = pnco(
     "Beggar",
     "bg/street/beggar.png",
     (1193, 802),
-    Jump('beggar')
+    Jump('beggar'),
+    hidden = False, hoffset = (17,42),
     )
 
 default street_youngster = pnco(
     "Youngster",
     "bg/street/youngster.png",
     (781, 775),
-    Jump('youngster')
+    Jump('youngster'),
+    hidden = False, hoffset = (14,76),
     )
 default street_shepard = pnco(
     "Shepard",
     "bg/street/shepard.png",
     (899, 780),
-    Jump('shepard')
+    Jump('shepard'),
+    hidden = False, hoffset = (15,43),
     )
 
 default street_map = pncs(

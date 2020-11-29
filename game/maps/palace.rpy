@@ -3,12 +3,14 @@
     "bg/palace/jasmine.png",
     (195, 558),
     Jump('jasmines_quarter'),
+    hidden = False, hoffset = (0,-40),
     )
 default throne_loc = pnco(
     "The Throne",
     "bg/palace/throne.png",
     (791, 651),
     Jump('the_throne'),
+    hidden = False, hoffset = (174,-40),
     
     )
 default sultans_quarter_loc = pnco(
@@ -16,12 +18,14 @@ default sultans_quarter_loc = pnco(
     "bg/palace/sultan.png",
     (1530, 558),
     Jump('sultans_quarter'),
+    hidden = False, hoffset = (209,-40),
     )
 default palace_street_loc = pnco(
     "Go back",
     "bg/palace/city.png",
     (1025, 1019),
-    Jump('street')
+    Jump('street'),
+    hidden = False, hoffset = (83,-40),
     )
 
 default palace_bags = pnco(
@@ -53,19 +57,26 @@ label palace:
     pause
     jump palace
 
+define guard_1 = Character("Guard", color="#4ff", what_text_color="#dff")
+image guard_1 normal = "char/guard/guy1 normal.png"
+
+
 label jasmines_quarter:
     scene
-    "Guard" "Where do you think you're going peasant? get lost."
+    show guard_1 normal at left
+    guard_1 "Where do you think you're going peasant? get lost."
     jump palace
 
 label the_throne:
     scene
-    "Guard" "You can't approach the throne peasant, get lost."
+    show guard_1 normal at center
+    guard_1 "You can't approach the throne peasant, get lost."
     jump palace
 
 label sultans_quarter:
     scene
-    "Guard" "You can't enter the building peasant, get lost."
+    show guard_1 normal at right
+    guard_1 "You can't enter the building peasant, get lost."
     jump palace
 
 
