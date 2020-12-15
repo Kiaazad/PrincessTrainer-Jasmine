@@ -84,9 +84,9 @@ label intro_0_1:
             abd "Every other day, he would drag a fight into the bazaar and mess the place up."
             abd "Breaking my fish barrels every single time... {w=.5}Those cost lots of money."
             abd "They blamed it on you returning to Agrabah."
-            jaf "Did they compensated you for the damages?"
+            jaf "Did they compensate you for the damages?"
             abd "No."
-            abd "After your sudden death, nobody tends to peoples requests."
+            abd "After your sudden death, nobody tends to the people's requests."
             jaf "I'm still alive, Abdul."
             show abd alert at left
             abd "I meant after you left."
