@@ -20,7 +20,7 @@ init python:
     def return_mouse_pos():
         return renpy.get_mouse_pos()
 
-screen show_bag(p = abdul, xside = 0.0):
+screen show_bag(p = abdul, xside = 0.5):
     default mode = "stack"
     default options = 0
     default selected_bag = p.bags[0]
@@ -28,7 +28,6 @@ screen show_bag(p = abdul, xside = 0.0):
         xalign xside
         dragged selected_bag.drop
         hbox:
-            
             if selected_bag.dropped_x > 650:
                 box_reverse True
             frame:

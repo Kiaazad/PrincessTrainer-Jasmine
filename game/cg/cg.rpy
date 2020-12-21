@@ -1,8 +1,7 @@
 ﻿image cg cg1 = "cg/found lamp/01.jpg"
 image cg cg2 = "cg/found lamp/02.jpg"
 
-image cg dream jasmine 01 = "cg/jasmine dream/01.jpg"
-image cg dream jasmine 02 = "cg/jasmine dream/02.jpg"
+
 
 image cg harem bath 01 = "cg/harem bath/01.jpg"
 image cg harem bath 02 = "cg/harem bath/02.jpg"
