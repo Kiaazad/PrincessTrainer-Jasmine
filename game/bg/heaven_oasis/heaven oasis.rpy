@@ -11,11 +11,16 @@ default heaven_oasis_1 = pnco(
     (1713, 559),
     items = [[thorns, 1]],
     )
-
+default heaven_oasis_fishing = pnco(
+    "Start fishing",
+    None,
+    (824, 845),
+    Jump('heaven_oasis_fishing'),
+    )
 default heaven_oasis_back = pnco(
     "Back",
     None,
-    (611, 729),
+    (311, 629),
     Jump('desert'),
     hidden = False, hoffset = (83,-40),
     )
@@ -25,6 +30,7 @@ default heaven_oasis_loc = pncs(
     [
         heaven_oasis_viking,
         heaven_oasis_back,
+        heaven_oasis_fishing,
 
     ]
     )
@@ -58,5 +64,14 @@ label the_viking:
     jump heaven_oasis
 
 
-
+label heaven_oasis_fishing:
+    scene
+    show viking normal at right
+    vik "Trying to fish with your hands?"
+    show abd normal at left
+    abd "Well..."
+    vik "Don't bother, it's not ready yet."
+    vik "Here, have this fish instead."
+    $ abdul.got(fish,1)
+    jump heaven_oasis
 

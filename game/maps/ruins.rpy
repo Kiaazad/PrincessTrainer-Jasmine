@@ -43,6 +43,7 @@ default ruins_loc = pncs("Roc pass",
 
     )
 
+image bg ruins = "bg/ruins/bg.png"
 
 label ruins:
     scene 
