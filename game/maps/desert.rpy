@@ -22,12 +22,7 @@ default desert_ruins = pnco(
     (670, 200),
     Jump('ruins'),
     )
-default desert_beduins_camp = pnco(
-    "Beduins camp",
-    None,
-    (370, 600),
-    Jump('beduins_camp'),
-    )
+
 default desert_map = pncs(
     "Main street",
     [
@@ -35,7 +30,6 @@ default desert_map = pncs(
         desert_agrabah,
         desert_heaven_oasis,
         desert_ruins,
-        desert_beduins_camp,
     ]
     )
 

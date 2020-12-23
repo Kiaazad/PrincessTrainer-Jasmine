@@ -49,15 +49,18 @@ label desert_1:
     jas "I need you to impregnate me, Abdul. Right here, Right now."
     abd "Are you..."
     abd "If you insist, your highness."
-
-image cg dream jasmine 01 = Movie(play="cg/jasmine dream/01.webm", size = (1920, 1080))
-image cg dream jasmine 02 = Movie(play="cg/jasmine dream/02.webm", size = (1920, 1080))
 label desert_1_dream:
     scene black with dissolve
     show cg dream jasmine 01 with dissolve
-    pause 8
+    $ msg.msg("Hopefully this will be replaced with a fully animated scene.")
+    pause 4
     show cg dream jasmine 02 with dissolve:
-    pause 8
+        subpixel True
+        yalign 0.0
+        pause 2
+        linear 3.0 yalign 1.0
+    pause 5
+    $ msg.msg("Real animation, not pan and scan though.")
     pause 1
     hide cg with dissolve
     show bg rock_pass with dissolve

@@ -5,7 +5,6 @@
             self.bags = [bag("Bag", 12), bag("Person", 5)]
             self.togos = bag("To Go", 5)
             self.sum = 0
-
             if items:
                 for i in items:
                     self.bags[0].add(i[0], i[1])
@@ -14,22 +13,6 @@
 
             self.uniqueID = []
             self.holding = None
-
-            self.pick_pocket_skill = 0
-
-        def pick_pocket(self, target):
-            amount = renpy.random.randint(0, target.cash)
-            chance = renpy.random.randint(0,100)
-            fail = renpy.random.randint(0,100)
-            if fail > self.pick_pocket_skill:
-                msg.msg(target.name + _(" felt something fishy is going on."))
-            if chance < self.pick_pocket_skill:
-                target.cash -= amount
-                self.cash += amount
-                return True
-            else:
-                return False
-
         def discard(self):
             self.holding = None
 

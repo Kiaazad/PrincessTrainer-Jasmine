@@ -102,13 +102,6 @@ default saffron = item(
     1000,
     ["food"],
     )
-default fish = item(
-    _("Fish"),
-    _("An ordinary fish."),
-    "items/damp_crackers.png",
-    250,
-    ["food", "raw"],
-    )
 
 # Fruits
 default dates = item(
