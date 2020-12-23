@@ -64,7 +64,7 @@ label intro_0_1:
             jaf "Ah, much better."
             show abd afraid at left
             abd "Wait! {w=.3}Jafar?"
-            jaf "In the flesh, {w=.5}or smoke. {w=.8}Fire to be precise."
+            jaf "In the flesh... {w=.5}or smoke. {w=.8}Fire, if you want to be precise."
             jaf "Yes,{w=.3} yes, {w=.3}Genies are made of fire."
             jaf "Pick up my lamp would you?"
             show abd alert at left
@@ -74,7 +74,7 @@ label intro_0_1:
             show jaf thinking at right
             jaf "Abdul? {w=.8}Is that you?"
             show abd confused at left
-            jaf "Where's your belly you fat fuck? {w=.5}I didn't even recognize you without it."
+            jaf "Where did your massive belly go? {w=.5}You might have looked atrocious, but it made you easy to recognize."
             jaf "What are you doing in the middle of desert at this time of day?"
             jaf "Shouldn't you be selling fish in the bazaar?"
             show jaf normal at right
@@ -98,16 +98,16 @@ label intro_0_1:
             show jaf normal at right
             jaf "Agrabah is an oasis, my friend. {w=.5}A drop of water in the middle of the scorching sand."
             show abd normal at left
-            jaf "I warned the Sultan about wasting too much of our limited drinkable water for fountains and his garden."
+            jaf "I warned the Sultan about wasting too much of our limited drinkable water for his fountains and gardens."
             jaf "He never listened."
             jaf "Or maybe he never cared."
-            jaf "Either way he's to blame. {w=.4}That motherfucking old piece of shit."
+            jaf "Either way, {w=.4}that miserable old piece of shit is to blame."
             abd "..."
             show jaf thinking at right
-            jaf "Hey, {w=.4}hows your mother?"
+            jaf "Say, {w=.4}how is your mother?"
             show abd sad at left
             abd "She died."
-            jaf "Damn, {w=.8}how long was I gone for? {w=.5}That old hag still had a solid ten years or so."
+            jaf "Strange, {w=.8}that hag still had a solid ten years or so.{w=.5} How long was I gone for?"
             abd "Roughly a year."
             jaf "Is that so?"
             abd "Yes, my mother died few months ago, after I lost my business."
