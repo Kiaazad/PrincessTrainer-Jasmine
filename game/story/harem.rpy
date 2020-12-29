@@ -46,7 +46,17 @@
                                     jump lamp_visit_back_to_jafar
                                 "No way.":
                                     abd "No way! you need to respect me."
-                                    "fight with Halia happens here"
+                                    hal "Respect huh?"
+                                    hide hur
+                                    hal "Alright, here's my respect."
+                                    hal "For the dead!"
+                                    hide abd
+                                    hide hal
+                                    
+                                    window hide
+                                    show screen btl_scr(team([abdul]), team([halia]))
+                                    pause
+
                                     jump lamp_visit_back_to_jafar
                 "Go to the angry one.":
                     show hal normal at midright

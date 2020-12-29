@@ -2,9 +2,9 @@
     class pnco:
         def __init__(self,
             name, img, pos,
-            act = None, enabled = True, 
+            act = [], enabled = True, 
             hits = 1, items = [], tools = [],
-            tut = False, hidden = True, hoffset = (0,0)
+            tut = False, hidden = True, hoffset = (0,0), highlight = False
         ):
             self.name = name
             self.img = img
@@ -18,6 +18,7 @@
             self.hov = 0
             self.hidden = hidden
             self.hoffset = hoffset
+            self.highlight = highlight
         def hovered(self, h):
             if not self.hidden:
                 self.hov = h
@@ -28,40 +29,40 @@
             self.name = name
             self.clicks = clicks
             self.cond = cond
+            self.command = None
             self.tuts = []
             self.idle = 0
-        def clicked(self, o, p):
+        def clicked(self, click, p):
             self.idle = 0
-            if o.items:
-                if o.tools and not p.has(o.tools):
-                    msg.msg("You don't have the right tools ({}) for this.".format(' or '.join(i.name for i in o.tools)))
+            if click.items:
+                if click.tools and not p.has(click.tools):
+                    msg.msg("You don't have the right tools ({}) for this.".format(' or '.join(i.name for i in click.tools)))
                 else:
-                    if o.hits > 1:
-                        o.hits -= 1
-                        msg3("{}".format(o.hits))
+                    if click.hits > 1:
+                        click.hits -= 1
+                        msg3("{}".format(click.hits))
                     else:
-                        if o.items:
-                            for i in o.items:
+                        if click.items:
+                            for i in click.items:
                                 if isinstance(i, (int, long)):
                                     p.gotcash(i)
                                 else:
                                     p.got(i[0], i[1])
-                            self.clicks.remove(o)
-            self.cond_check()
-        def cond_check(self):
+                            self.clicks.remove(click)
+                            self.cond_check(click)
+        def cond_check(self, click):
             for i in self.cond:
-                for ii in i[0]:
-                    if ii in self.clicks:
-                        break
-                else:
-                    renpy.show_screen("do_it", i[1])
-                    self.cond.remove(i)
+                if click in i[0]:
+                    i[0].remove(click)
+                    if len(i[0]) == 1 :
+                        self.command = i
+                        self.cond.remove(i)
+
         def add(self, click, cond = None):
             self.clicks.append(click)
             if cond:
                 self.cond.append(cond)
-        def act_done(self):
-            self.act = None
+
         def idle_tick(self):
             self.idle += 1
             if self.idle > 10:
@@ -83,6 +84,10 @@ screen pnc(p , g):
     layer "map"
     timer 1 repeat True action Function(g.idle_tick)
 
+    # text str(g.command) size 50 yoffset 50
+    # if len(g.cond):
+    #     text str(len(g.cond[0][0])) size 50 xoffset 150
+
     for i in g.clicks:
         if isinstance(i, basestring):
             add i
@@ -103,7 +108,10 @@ screen pnc(p , g):
                         hovered Function(i.hovered, 1)
                         unhovered Function(i.hovered, 0)
                     else:
-                        action Function(g.clicked, i, p)
+                        if g.command and g.command[0][0] == i:
+                            action Function(g.clicked, i, p), g.command[1]
+                        else:
+                            action Function(g.clicked, i, p)
         if not i.hidden:
             frame:
                 at pnc_hover(i.hov)
@@ -116,6 +124,7 @@ screen pnc(p , g):
             text g.name
         if hov:
             text hov
+
 
 transform pnc_hover(a):
     ease .2 alpha a yoffset (a-1)*20

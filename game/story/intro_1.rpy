@@ -46,7 +46,7 @@
     jaf "I'll deal with this later, for now we have a bigger fish to fry."
     show jaf normal at right
     show abd sad at left
-    abd "..."
+    "..."
     jaf "What?"
     abd "My fish business..."
     show jaf annoyed at right
@@ -61,7 +61,7 @@
     abd "No."
     show jaf annoyed at right
     jaf "Which way then?"
-    abd "..."
+    "..."
     show jaf disappointed at right
     jaf "You've lost your house too?"
     abd "Yes, I've been living on the streets."

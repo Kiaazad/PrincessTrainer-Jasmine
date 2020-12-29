@@ -38,4 +38,11 @@
 
         def tick(self):
             for i in self.team:
-                i.regen()
+                if i.alive:
+                    i.tick()
+        def defeated(self):
+            for i in self.team:
+                if i.alive:
+                    return False
+            else:
+                return True

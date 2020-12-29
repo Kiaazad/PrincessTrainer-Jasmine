@@ -9,7 +9,7 @@
     show jaf smile at right
     jaf "Welcome to your new luxurious home, my friend."
     show abd confused at left
-    abd "..."
+    "..."
     show jaf normal at right
     jaf "Alright, it's a dump. But look at that marvelous view!"
     show abd sad at left
@@ -197,8 +197,8 @@ label ch2_1:
             show abd alert at left
             abd "I wish that Jafar can use the lamp as he wishes."
             show jaf looking at right
-            jaf "..."
-            abd "..."
+            "..."
+            "..."
             show jaf normal at right
             show abd concerned at left
             abd "Did it work?"
@@ -233,7 +233,7 @@ label ch2_1:
     show abd normal at left
     show jaf thinking at right
     jaf "Who can see... No, who can enter... No, I need to choose my words carefully."
-    jaf "..."
+    "..."
     show jaf normal at right
     jaf "Aha, I know."
     jaf "Say: I wish for Jafar to have full control of who can interact with his lamp and how."
@@ -273,7 +273,7 @@ label ch2_1:
     hide jaf
     abd "Hey...!"
     abd "Jafar?"
-    abd "..."
+    "..."
     show abd sad at left
     abd "I knew it, he tricked me."
     jaf "You're thinking out loud again, my friend."
@@ -296,7 +296,7 @@ label ch2_1:
     jaf "Believe me, one wish is more than enough."
     jaf "Now that the lamp is safe, go get something to eat and rest a little."
     jaf "I can hear your stomach rumbling."
-    abd "..."
+    "..."
     jaf "Once you're ready, rub the lamp, we have more to do."
     abd "But you took it away."
     show screen lamp_get

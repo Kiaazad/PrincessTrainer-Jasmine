@@ -20,9 +20,9 @@ default jafar = unit(
     type = "Wizard"
     )
 
-default harem_girl_1 = unit(
-    "Harem Girl",
-    "char/harem_girl_1",
+default halia = unit(
+    "Halia",
+    "char/halia",
 
     lvl = 2,
     type = "Dancer"

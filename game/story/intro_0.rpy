@@ -19,7 +19,7 @@ label intro_0_1:
     show abd back at left with dissolve
     abd "{size=45}Huh!?"
     abd "That isn't...{w=.4} a mirage."
-    abd "..."
+    "..."
     abd "There's something shiny in the sand."
     show abd confused at left with dissolve
     hide des_0_shine
@@ -53,7 +53,7 @@ label intro_0_1:
             abd "{size=45}Woah! {w=.6}whoa. {w=.4}wha {w=.2}wh...{nw}"
             hide abd with moveoutleft
             jaf "{size=45}Where are you running to?"
-            jaf "{size=45}COME BACK HERE!{nw}" with hpunch
+            jaf "{size=45}COME BACK HERE!{w=1}{nw}" with hpunch
             show abd alert at left with moveinleft
             abd "{size=40}Please don't steal my soul!"
             jaf "{size=40}Calm down, I'm not interested in your soul."
@@ -121,7 +121,6 @@ label intro_0_1:
             else:
                 abd "She tried to help me by working..."
                 jaf "Aha? {w=.8}Tell me about it later."
-                show abd confused at left
             show jaf thinking at right
             jaf "But hey, you know what this means don't you?"
             show abd confused at left
@@ -256,10 +255,13 @@ label intro_0_1:
             $ msg.msg("You hang the lap on your bundle.")
             show abd tired at left
             abd "It's unusually hot today."
-            abd "..."
+            "..."
             $ des_0_col.add(des_0_return)
             jump desert_1
 
         "<dev> jump to the city":
             $ des_0_col.add(des_0_return)
             jump agrabah
+        "<dev> jump to the lamp":
+            $ des_0_col.add(des_0_return)
+            jump lamp_visit

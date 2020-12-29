@@ -227,7 +227,13 @@
                             show abd alert at left
                             abd "Yes."
                             jaf "Alright, here we go."
-                            call lamp_fight_1 from _call_lamp_fight_1
+
+                            hide abd
+                            hide jaf
+                            window hide
+                            show screen btl_scr(team([abdul]), team([halia]))
+                            pause
+
                             show abd normal at left
                             with dissolve
                             show jaf normal at right
@@ -348,7 +354,8 @@ label ch3_mirror:
 
 label ch3_fight(j=False):
     window hide
-    call lamp_fight_1 from _call_lamp_fight_1_1
+    show screen btl_scr(team([abdul]), team([halia]))
+    pause
     if j:
         return
     else:

@@ -1,4 +1,30 @@
 ﻿init python:
+    def pts_calc(self):
+        self.pts = int((float(self.lvl) / (float(self.lvl) + float(20)))*1000) + self.lvl
+
+    def arc_calc(self):
+        while self.pts:
+            c = renpy.random.randint(1,100)
+            if c < arcDic[self.type][0][0]:
+                self.mhp += 10
+            elif c < arcDic[self.type][0][1]:
+                self.mmp += 4
+            elif c < arcDic[self.type][0][2]:
+                self.mstm += 4
+            elif c < arcDic[self.type][0][3]:
+                self.pwr += 1
+            elif c < arcDic[self.type][0][4]:
+                self.agl += 1
+            self.pts -= 1
+            self.used_pts += 1
+        for i in range(self.lvl):
+            s = renpy.random.choice(arcDic[self.type][1])
+            if s not in self.skills:
+                self.skills.append(s)
+        for ii, i in enumerate(self.skills):
+            if self.spells[ii] is None:
+                self.spells[ii] = i
+
     class fight:
         def __init__(self, lvl, type):
             self.lvl = lvl
@@ -16,8 +42,8 @@
             self.spells = [None, None, None, None, None, None]
             self.skills = []
 
-            self.pts_calc()
-            self.arc_calc()
+            pts_calc(self)
+            arc_calc(self)
 
             self.hp = self.mhp
             self.mp = self.mmp
@@ -28,47 +54,28 @@
             self.alive = True
 
             self.ani = "idle"
-            self.ani_timer = 0
+            self.busy = 0
+            self.elapsed = 0
 
-        def arc_calc(self):
-            while self.pts:
-                c = renpy.random.randint(1,100)
-                if c < arcDic[self.type][0][0]:
-                    self.mhp += 10
-                elif c < arcDic[self.type][0][1]:
-                    self.mmp += 4
-                elif c < arcDic[self.type][0][2]:
-                    self.mstm += 4
-                elif c < arcDic[self.type][0][3]:
-                    self.pwr += 1
-                elif c < arcDic[self.type][0][4]:
-                    self.agl += 1
-                self.pts -= 1
-                self.used_pts += 1
-            for i in range(self.lvl):
-                s = renpy.random.choice(arcDic[self.type][1])
-                if s not in self.skills:
-                    self.skills.append(s)
-            for ii, i in enumerate(self.skills):
-                if self.spells[ii] is None:
-                    self.spells[ii] = i
-
-
-        def pts_calc(self):
-            self.pts = int((float(self.lvl) / (float(self.lvl) + float(20)))*1000) + self.lvl
-
+        def tick(self):
+            self.elapsed += 1
+            if self.elapsed == 60:
+                self.regen()
+                self.elapsed = 0
+            if self.busy > 1:
+                self.busy -= 1
+            else:
+                self.ani = "idle"
 
         def regen(self):
-            self.ani = "idle"
             if self.mp < self.mmp:
-                self.mp += int(self.mmp/100)+1
+                self.mp += int(self.mmp/50)+1
                 if self.mp > self.mmp:
                     self.mp = self.mmp
             if self.stm < self.mstm:
-                self.stm += int(self.mstm/100)+1
+                self.stm += int(self.mstm/50)+1
                 if self.stm > self.mstm:
                     self.stm = self.mstm
-
 
         def gotskill(self, x):
             if x not in self.skills:
