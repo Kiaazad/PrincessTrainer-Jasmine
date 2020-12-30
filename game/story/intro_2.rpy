@@ -1,5 +1,4 @@
 ﻿label ch2:
-    # $ skip_next = "skip_to_ch3"
     scene black with Dissolve(2)
     show bg agrabah with Dissolve(2)
     show abd normal at left
@@ -30,12 +29,13 @@
     jaf "For years, I've kept the sultan and the city shielded from their extreme ideology."
     show jaf normal at right
     jaf "We'll need to pay both a visit, eventually."
-    # $ qlog.got(visit_malik)
-    # $ qlog.got(visit_hosein)
+    $ qlog.got(visit_malik)
+    $ qlog.got(visit_hosein)
     jaf "Abdul!"
     show abd alert at left
-    jaf "How are you with swords?"
+    
     menu:
+        jaf "How are you with swords?"
         "Never used one.":
             abd "I never used one."
             show jaf disappointed at right
@@ -51,14 +51,16 @@
             jaf "Killing and murdering are different. Very different."
             jaf "Look! You have the opportunity to rescue your city! Man up and fight for it!"
             show jaf normal at right
-            jaf "Or... Maybe you'd rather sit here and do nothing?"
+            
             menu:
+                jaf "Or... Maybe you'd rather sit here and do nothing?"
                 "Well, I do have 3 wishes.":
                     show abd confused at left
                     abd "Well, I do have 3 wishes."
                     show jaf angry at right
-                    jaf "Are you going back on our deal, Abdul?"
+                    
                     menu:
+                        jaf "Are you going back on our deal, Abdul?"
                         "I mean, can't I just fix everything with my wishes now?":
                             abd "I mean, can't I just fix..."
                             show jaf angry at right
@@ -67,12 +69,13 @@
                             jaf "Didn't I warn you what would happen?"
                             jaf "I can't afford to wait for the next person, Abdul. Don't ruin this for both of us."
                             jaf "Do you really want to go head to head with me?"
-                            jaf "Do you really want to try your luck?"
+                            
                             menu:
+                                jaf "Do you really want to try your luck?"
                                 "No Jafar. Forgive my moment of stupidity.":
                                     show abd afraid at left
                                     abd "No Jafar. Forgive my moment of stupidity."
-                                    # $ qlog.got(master_swordsman)
+                                    $ qlog.got(master_swordsman)
                                     show jaf normal at right
                                     jaf "Good.{w=.5} You've escaped a sticky situation, Abdul."
                                     show abd normal at left
@@ -86,7 +89,7 @@
                         "No, no, no, I just forgot.":
                             show abd alert at left
                             abd "No, no, no, I just forgot."
-                            # $ qlog.got(master_swordsman)
+                            $ qlog.got(master_swordsman)
                             show jaf disappointed at right
                             jaf "Get your head in the game, Abdul. I'm not going to hold your hand all the time."
                             show jaf normal at right
@@ -114,7 +117,7 @@
                     jaf "No."
                     show abd sad at left
                     abd "Fine!{w=.5} what now Jafar?"
-                    # $ qlog.got(master_swordsman)
+                    $ qlog.got(master_swordsman)
                     show abd normal at left
                     jaf "It's your lucky day, we're going to use one of your wishes."
                     abd "You mean you're..."
@@ -126,19 +129,20 @@
                     jaf "Yes, I am always right. Never forget that."
                     jaf "Now, let's find a sword and I'll teach you how to fight."
                     jaf "But first, I'm going to need one of your wishes."
-                    # $ qlog.got(master_swordsman)
+                    $ qlog.got(master_swordsman)
                     jump ch2_1
         "I have one, this is Agrabah after all.":
             show abd smile at left
             abd "I have one, this is Agrabah after all."
-            jaf "Excellent! Can you fight or is it just for show?"
+            
             menu:
+                jaf "Excellent! Can you fight or is it just for show?"
                 "Just for show.":
                     show abd alert at left
                     abd "Just for show."
                     show jaf thinking at right
                     jaf "I'll have to come up with a way to train you, then."
-                    # $ qlog.got(master_swordsman)
+                    $ qlog.got(master_swordsman)
                     jaf "Shouldn't be too hard."
                     show abd concerned at left
                     abd "Jafar, I'm not a young man anymore."
@@ -159,7 +163,7 @@
                     show abd alert at left
                     show jaf normal at right
                     jaf "Hopefully you kept that sword sharp."
-                    # $ qlog.got(master_swordsman)
+                    $ qlog.got(master_swordsman)
                     jaf "I will put your skills and sword to test today."
                     jaf "After some preparation of course."
                     jaf "But let's start with a wish."
@@ -175,7 +179,7 @@
             jaf "Cutting off hands is just stupid. Rehabilitation is pretty hard when you are missing a hand and can't work."
             show abd alert at left
             jaf "That being said, your enthusiasm for violence is exactly what I need right now."
-            # $ qlog.got(master_swordsman)
+            $ qlog.got(master_swordsman)
             jaf "But that attitude isn't enough on its own. We need your wishes, too. Let's use them so you can satisfy your bloodlust."
             show abd concerned at left
             abd "I'm not a bloodthirsty monster that you think I am."
@@ -190,9 +194,9 @@ label ch2_1:
     jaf "...and the first time, too."
     jaf "But we learn from our mistakes. Let's try this."
     show jaf normal at right
-    jaf "Repeat after me."
-    jaf "I wish that Jafar can use the lamp as he wishes."
+
     menu:
+        jaf "Repeat after me... {w=.4}I wish that Jafar can use the lamp as he wishes."
         "I wish that Jafar can use the lamp as he wishes.":
             show abd alert at left
             abd "I wish that Jafar can use the lamp as he wishes."
@@ -212,8 +216,9 @@ label ch2_1:
             jaf "ABDUL!?"
             show abd alert at left
             abd "What?"
-            jaf "ARE YOU TRYING TO FUCK WITH ME?"
+            
             menu:
+                jaf "ARE YOU TRYING TO FUCK WITH ME?"
                 "It's my wish, isn't it?":
                     abd "It's my wish, isn't it?"
                     jaf "YOUR WISH AND YOUR LAST MISTAKE."
@@ -232,15 +237,16 @@ label ch2_1:
     jaf "Now let's try it another way."
     show abd normal at left
     show jaf thinking at right
-    jaf "Who can see... No, who can enter... No, I need to choose my words carefully."
+    jaf "Who can see... {w=.4}No, {w=.4}who can enter... {w=.4}No, {w=.8}I need to choose my words carefully."
     "..."
     show jaf normal at right
     jaf "Aha, I know."
     jaf "Say: I wish for Jafar to have full control of who can interact with his lamp and how."
     show abd concerned at left
     abd "Isn't that two wishes?"
-    jaf "Just say it, We will find out."
+    
     menu:
+        jaf "Just say it, We will find out."
         "I wish to have full control of who can interact with Jafar's lamp and how.":
             show abd smug at left
             abd "I wish to have full control of who can interact with Jafar's lamp and how."

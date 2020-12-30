@@ -10,7 +10,7 @@ label lamp_visit_back_to_jafar:
     jaf "Done already?"
     show abd alert at left
     abd "Well..."
-    abd "..."
+    "..."
     show jaf normal at right
     jaf "Alright, you don't want to tell and I don't want to know."
     jaf "Let's move on."
@@ -67,18 +67,18 @@ label lamp_visit_back_to_jafar:
     show jaf normal at right
     jaf "So I guess that's everything: Your mission, wealth, your attire and combat training. Did I miss anything?"
     show abd concerned at left
-    abd "Well, food. I'm starving."
+    abd "Well...{w=.4} food...{w=.4} I'm starving."
     jaf "Ah yes, that too."
     jaf "Let us get out here and start executing our plan."
     abd "You mean..."
     scene black
-    show bg bg3 with Dissolve(2)
+    show bg agrabah with Dissolve(2)
     show abd concerned at left
     with dissolve
     show jaf normal at right
     with dissolve
     abd "... Your plan?"
-    jaf "You're a part of it, then that makes it our plan."
+    jaf "You're a part of it, that makes it our plan."
     show jaf thinking at right
     jaf "Anyways, you need to make your way back into the lamp, now let me see."
     show jaf normal at right

@@ -3,10 +3,7 @@
 
 
 label intro_0:
-    # default skip_next = "skip_to_ch1"
-    # show bg bg2  onlayer bg with Dissolve(2)
     jump desert_0
-    # show screen skips
 label intro_0_1:
     show abd tired at left with dissolve
     abd "Phew..."
@@ -34,11 +31,10 @@ label intro_0_1:
     with dissolve
     abd "Hmmm... They say Aladdin found his Genie in a lamp like this and the Genie made all his wishes come true."
     abd "I {b}wish{/b} these rumours were believable."
-    $ _last_say_who = None
+    "{nw}"
     menu:
         "Rub the lamp!":
             $ abdul.add_flag("Meet Jafar")
-            # hide abd
             show cg found_lamp with Dissolve(2)
             pause 6
             hide cg with Dissolve(2)
@@ -232,6 +228,7 @@ label intro_0_1:
                     show abd normal at left
                     abd "No! I just want my wishes Jafar!"
                     jaf "Are you sure? {w=.5}This will not end well for you my friend."
+                    
                     menu:
                         jaf "Last chance, Abdul! Don't throw away this opportunity."
                         "I really want my wishes Jafar.":

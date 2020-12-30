@@ -103,11 +103,6 @@ label mid_town:
 
 
 
-label poor_town:
-    "Not ready yet."
-    jump agrabah
-
-
 
 label sleeping:
     "Resting for a while."

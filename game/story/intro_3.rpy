@@ -29,12 +29,12 @@
     jaf "I want to show you my home."
     abd "This darkness is your home?"
     show abd normal at left
-    abd "..."
+    "..."
     show abd smug at left
     abd "It's a lot bigger on the inside."
-    jaf "..."
+    "..."
     abd "You have quite the leg room in here too."
-    jaf "..."
+    "..."
     abd "Doesn't smell like farts either."
     show jaf annoyed at right
     jaf "Stop with your wisecracks, we have work to do."
@@ -53,8 +53,9 @@
     abd "Oh!"
     jaf "I'll come up with something. We can worry about that later."
     show jaf normal at right
-    jaf "But first, let me show you around."
+
     menu:
+        jaf "But first, let me show you around."
         "I can find my way around, let's get to something more exciting.":
             show abd smug at left
             abd "I can find my way around, let's get to something more exciting."
@@ -94,7 +95,7 @@
             jaf "Here, take this."
             $ msg.msg("Received a bag?")
             show abd normal at left
-            abd "..."
+            "..."
             $ msg.msg("...of sand?")
             show abd confused at left
             abd "A bag of sand?"
@@ -211,8 +212,9 @@
             jaf "Yes, those statues look a lot like me peeing.{w=.5} It seemed like a good idea at that time."
             jaf "The girls seem to like them, and I wasn't expecting any guests in here anytime soon either."
             show jaf normal at right
-            jaf "Now, let's go back and visit the places we skipped."
+            
             menu:
+                jaf "Now, let's go back and visit the places we skipped."
                 "Sure, I can come back later.":
                     show abd normal at left
                     abd "Sure, I can come back later."
@@ -221,8 +223,9 @@
                     jaf "This is my throne. You'll be fighting the creatures I conjure in here."
                     jaf "To increase your fighting skill, and maybe for my amusement."
                     jaf "You can come here and start fighting any time."
-                    jaf "But... do you want to give it a try right now?"
+                    
                     menu:
+                        jaf "But... do you want to give it a try right now?"
                         "Yes.":
                             show abd alert at left
                             abd "Yes."

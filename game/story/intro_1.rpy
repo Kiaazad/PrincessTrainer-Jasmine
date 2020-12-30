@@ -1,5 +1,4 @@
 ﻿label ch1:
-    # $ skip_next = "skip_to_ch2"
     scene black with Dissolve(2)
     show bg street with Dissolve(2)
     show abd normal at left
