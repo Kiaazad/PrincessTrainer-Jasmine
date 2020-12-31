@@ -19,7 +19,7 @@ default wood = item(
 default coal = item(
     _("Coal"),
     _("A lump of coal."),
-    "items/wood.png", ##
+    "items/coal.png", ##
     100,
     ["fuel"],
     )
@@ -121,14 +121,14 @@ default list_of_books = [
 default coconut_oil = item(
     _("Coconut  oil"),
     _("There's no domain that can't be conquered with a bit of spit. But in the dry desert, Hakim's coconut  oil saves you from an embarrassing situation when you're too thirsty to spit."),
-    "items/_frm.png",
+    "items/coconut_oil.png",
     942,
     )
 
 default nuru_gel = item(
     _("Nuru gel"),
     _("From the far east, slippery, sticky, stringy lubrication. It's used in full body massage."),
-    "items/_frm.png",
+    "items/nuru_gel.png",
     1956,
     )
 
@@ -156,7 +156,7 @@ default sand_bottle = item(
 default magic_ring = item(
     _("Magic ring"),
     _("A ring with a Genie engraved on it."),
-    "items/sand_bottle.png",
+    "items/magic_ring.png",
     500,
     ["magic"],
     )

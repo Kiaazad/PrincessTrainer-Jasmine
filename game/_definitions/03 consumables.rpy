@@ -36,7 +36,7 @@ default opium = item(
 default hashish = item(
     _("Hashish"),
     _("Good for smoking pipes. Careful not to get attached to this."),
-    "items/opium.png",
+    "items/hashish.png",
     200,
     ["drug"],
     )
@@ -50,7 +50,7 @@ default list_of_drugs = [
 default rice = item(
     _("White rice"),
     _("Can you cook rice the right way?."),
-    "items/bread.png",
+    "items/rice.png",
     75,
     ["food", "raw"],
     )
@@ -90,7 +90,7 @@ default damp_crackers = item(
 default salt = item(
     _("Salt"),
     _("A spoon of salt."),
-    "items/damp_crackers.png",
+    "items/salt.png",
     10,
     ["food"],
     )
@@ -98,14 +98,14 @@ default salt = item(
 default saffron = item(
     _("Saffron"),
     _("A very expensive spice that cause a happy feeling."),
-    "items/damp_crackers.png",
+    "items/saffron.png",
     1000,
     ["food"],
     )
 default fish = item(
     _("Fish"),
     _("An ordinary fish."),
-    "items/damp_crackers.png",
+    "items/fish.png",
     250,
     ["food", "raw"],
     )
@@ -122,7 +122,7 @@ default dates = item(
 default cantaloupe = item(
     _("Cantaloupe"),
     _("Not enough for a breakfast, specially half of it."),
-    "items/dates.png",
+    "items/cantaloupe.png",
     80,
     ["food"],
     )
@@ -130,7 +130,7 @@ default cantaloupe = item(
 default watermelon = item(
     _("Watermelon"),
     _("A sweet sensational taste."),
-    "items/dates.png",
+    "items/watermelon.png",
     90,
     ["food"],
     )
@@ -138,7 +138,7 @@ default watermelon = item(
 default pomegranate = item(
     _("Pomegranate"),
     _("n/a."),
-    "items/dates.png",
+    "items/pomegranate.png",
     30,
     ["food"],
     )
@@ -146,7 +146,7 @@ default pomegranate = item(
 default apple = item(
     _("Apple"),
     _("n/a."),
-    "items/dates.png",
+    "items/apple.png",
     40,
     ["food"],
     )
