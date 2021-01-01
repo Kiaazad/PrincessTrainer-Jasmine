@@ -95,6 +95,7 @@ screen quick_menu():
                     background None
                     add "0gui/q.png"
                     action ToggleScreen('show_bag')
+
     if not quick_menu:
         key "game_menu" action Function(msg.msg, renpy.random.choice(["Nope", "not yet", "Not available this early", "you don't have to save this early", "you'll get access to the settings before the sex sounds start", "if it's the full screen bothering you just press alt+enter or F11", "keep your pants on"]))
 init python:

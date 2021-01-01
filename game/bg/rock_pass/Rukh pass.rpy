@@ -1,4 +1,7 @@
-﻿default des_0_1 = pnco(
+﻿# A Roc or Rukh is a very big bird that could lift elephants to the sky, probably an eagle that got embellished in the stories.
+# https://en.wikipedia.org/wiki/Roc_(mythology)
+
+default des_0_1 = pnco(
     "thorns",
     "bg/rock_pass/01.png",
     (188, 598),
@@ -97,7 +100,7 @@ default des_0_col = pncs("Roc pass",
         [[des_0_3, des_0_4, des_0_6], Jump("intro_0_1")]
     ]
     )
-
+image bg rock_pass = "bg/rock_pass/bg.jpg"
 label desert_0:
     scene 
     show bg rock_pass onlayer bg

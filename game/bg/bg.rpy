@@ -1,5 +1,5 @@
 ﻿
-image bg rock_pass = "bg/rock_pass/bg.jpg"
+
 image bg bg1 = "bg/01.png"
 
 image bg sav = "bg/sav.jpg"

@@ -23,11 +23,11 @@ screen demo_warning:
     
 screen danza_splash:
     add "#999"
-    add "splash/swoosh.png" at danza_splash_1(.3)
-    add "splash/bam.png" at danza_splash_2(.4)
-    add "splash/frame.png" at danza_splash_3(.6)
-    add "splash/studio.png" at danza_splash_4(.8,188)
-    add "splash/danza.png" at danza_splash_4(.8,-225)
+    add "0GUI/splash/swoosh.png" at danza_splash_1(.3)
+    add "0GUI/splash/bam.png" at danza_splash_2(.4)
+    add "0GUI/splash/frame.png" at danza_splash_3(.6)
+    add "0GUI/splash/studio.png" at danza_splash_4(.8,188)
+    add "0GUI/splash/danza.png" at danza_splash_4(.8,-225)
 
 transform danza_splash_1(d=0):
     crop_relative True

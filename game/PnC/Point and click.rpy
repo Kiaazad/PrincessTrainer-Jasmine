@@ -1,10 +1,17 @@
 ﻿init python:
+    def overnight_regen(places):
+        for j in places:
+            for i in j.clicks:
+                chance = renpy.random.randint(0, 100)
+                if chance < i.regen:
+                    i.enabled = True
+
     class pnco:
         def __init__(self,
             name, img, pos,
             act = [], enabled = True, 
             hits = 1, items = [], tools = [],
-            tut = False, hidden = True, hoffset = (0,0), highlight = False
+            tut = False, hidden = False, hoffset = None, highlight = False, regen = 0
         ):
             self.name = name
             self.img = img
@@ -19,8 +26,9 @@
             self.hidden = hidden
             self.hoffset = hoffset
             self.highlight = highlight
+            self.regen = regen
         def hovered(self, h):
-            if not self.hidden:
+            if self.hoffset:
                 self.hov = h
 
     class pncs:
@@ -31,6 +39,7 @@
             self.cond = cond
             self.command = None
             self.tuts = []
+
             self.idle = 0
         def clicked(self, click, p):
             self.idle = 0
@@ -48,7 +57,9 @@
                                     p.gotcash(i)
                                 else:
                                     p.got(i[0], i[1])
-                            self.clicks.remove(click)
+                            click.hidden = True
+                            click.tut = False
+                            # self.clicks.remove(click)
                             self.cond_check(click)
         def cond_check(self, click):
             for i in self.cond:
@@ -92,32 +103,33 @@ screen pnc(p , g):
         if isinstance(i, basestring):
             add i
         else:
-            button:
-                anchor 0.0,0.0 
-                pos i.pos
-                if i.img:
-                    background None padding 0,0
-                    add i.img
-                else:
-                    text i.name
-                if i.enabled:
-                    if i.act:
-                        focus_mask True
-                        at map_transform
-                        action Function(g.clicked, i, p), Function(g.on_show), i.act
-                        hovered Function(i.hovered, 1)
-                        unhovered Function(i.hovered, 0)
+            if not i.hidden:
+                button:
+                    anchor 0.0,0.0 
+                    pos i.pos
+                    if i.img:
+                        background None padding 0,0
+                        add i.img
                     else:
-                        if g.command and g.command[0][0] == i:
-                            action Function(g.clicked, i, p), g.command[1]
+                        text i.name
+                    if i.enabled:
+                        if i.act:
+                            focus_mask True
+                            at map_transform
+                            action Function(g.clicked, i, p), Function(g.on_show), i.act
+                            hovered Function(i.hovered, 1)
+                            unhovered Function(i.hovered, 0)
                         else:
-                            action Function(g.clicked, i, p)
-        if not i.hidden:
-            frame:
-                at pnc_hover(i.hov)
-                anchor .5,0.0 pos i.pos offset i.hoffset
-                background Frame("0GUI/scroll.png", 20, 0)
-                text i.name color "#000"
+                            if g.command and g.command[0][0] == i:
+                                action Function(g.clicked, i, p), g.command[1]
+                            else:
+                                action Function(g.clicked, i, p)
+                if i.hoffset:
+                    frame:
+                        at pnc_hover(i.hov)
+                        anchor .5,0.0 pos i.pos offset i.hoffset
+                        background Frame("0GUI/scroll.png", 20, 0)
+                        text i.name color "#000"
     vbox:
         align 1.0,0.0 offset -100,100
         frame:
@@ -128,3 +140,37 @@ screen pnc(p , g):
 
 transform pnc_hover(a):
     ease .2 alpha a yoffset (a-1)*20
+
+
+
+# Tutorial
+
+transform tut_clicked(p):
+    alpha 0 zoom .1
+    pause p
+    alpha 1
+    ease 1 zoom 2 alpha 0
+
+transform tut_pointer(p):
+    xoffset renpy.random.randint(-200, 200)
+    yoffset renpy.random.randint(-200, 200)
+    alpha 0
+    pause p
+    ease .2 alpha 1
+    parallel:
+        ease_back .4 xoffset 0
+    parallel:
+        ease .3 yoffset 0
+    ease 1 alpha 0
+
+screen tut(c):
+    if len(c.tuts):
+        timer 2.2 repeat True action Function(c.tut_show)
+    else:
+        timer .1 action Hide("tut")
+screen tut_click(c):
+    fixed:
+        xysize 100,100 pos c[0],c[1] offset 20,20
+        add "0GUI/pointer/01.png" at tut_clicked(1)
+        add "0GUI/pointer/02.png" at tut_pointer(.3)
+    timer 2 action Hide("tut_click")

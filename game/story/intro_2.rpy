@@ -312,3 +312,18 @@ label ch2_1:
     jaf "Now go, before the shops in the bazaar close."
     abd "Oh, right!"
     jump agrabah
+
+
+transform lamp_get_trans:
+    alpha 0 align (.5,.5) zoom 3 rotate 45
+    ease .2 alpha 1
+    ease .4 align (0.0,0.0) zoom .2 rotate 0
+
+screen lamp_get:
+    zorder 1100
+    button:
+        background None
+        at lamp_get_trans
+        add "0GUI/say/lamp.png"
+        action Jump("lamp_visit")
+
