@@ -8,7 +8,7 @@
     markup = 1, # Price markup ##(optional - default is: 1)
 
     # fight
-    lvl = 1, # Level ##(optional - default is: 1)
+    lvl = 2, # Level ##(optional - default is: 1)
     type = "Peasant", # Archetype ##(optional - default is: Peasant)
     )
 
@@ -41,7 +41,13 @@ default snake = unit(
     lvl = 2,
     type = "Beast"
     )
+default training_dummy = unit(
+    "Training dummy",
+    "char/training_dummy",
 
+    lvl = 1,
+    type = "Dummy"
+    )
 
 
 

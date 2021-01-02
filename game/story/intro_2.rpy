@@ -40,8 +40,9 @@
             abd "I never used one."
             show jaf disappointed at right
             jaf "Just my fucking luck. I'll have to come up with a way to teach you."
+            jaf "You can kick and punch right?"
             show abd confused at left
-            abd "Why?"
+            abd "Of course, why?"
             show jaf normal at right
             jaf "As a Genie, I can't directly kill anyone."
             jaf "So you're going to have to do that for me."
@@ -156,6 +157,7 @@
                     jaf "Let's see about those wishes."
                     jump ch2_1
                 "I can defend myself if I have to.":
+                    
                     show abd smug at left
                     abd "I can defend myself if I have to."
                     show jaf thinking at right

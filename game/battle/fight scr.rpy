@@ -1,6 +1,4 @@
 ﻿
-
-
 init python:
     def spell_cast(caster, spell, enemy):
         if caster.alive:

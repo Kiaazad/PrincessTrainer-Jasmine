@@ -54,3 +54,19 @@ image warrior_man fight dead:
     "char/warrior_man/fight/hit.png"
 
 
+image Training dummy fight idle:
+    "char/training_dummy/fight/idle.png"
+    pause .1
+    "char/training_dummy/fight/idle_2.png"
+    pause .1
+    "char/training_dummy/fight/idle_3.png"
+    pause .1
+    "char/training_dummy/fight/idle_2.png"
+    pause .1
+    repeat
+image Training dummy fight attack:
+    "char/training_dummy/fight/attack.png"
+image Training dummy fight hit:
+    "char/training_dummy/fight/hit.png"
+image Training dummy fight dead:
+    "char/training_dummy/fight/dead.png"

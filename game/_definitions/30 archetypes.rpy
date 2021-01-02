@@ -27,6 +27,12 @@
         [19, 27, 54, 86, 100],
         [kick, slash, pierce, stab]
     ],
-
-
+    "Demon": [
+        [28, 43, 67, 99, 100],
+        [kick, slash, pierce, stab]
+    ],
+    "Dummy": [
+        [60, 97, 98, 99, 100],
+        [kick]
+    ],
 }
