@@ -30,7 +30,7 @@ default street_home_loc = pnco(
     "Home",
     "bg/street/home.png",
     (1464, 200),
-    Jump('agrabah'),
+    Jump('agrabah'), enabled = False,
     hidden = False, hoffset = (20,20),
     )
 default street_blacksmith_loc = pnco(

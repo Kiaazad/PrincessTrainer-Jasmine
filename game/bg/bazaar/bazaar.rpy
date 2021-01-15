@@ -59,7 +59,7 @@ default bazaar_home_loc = pnco(
     "Home",
     "bg/bazaar/poor.png",
     (407, 999),
-    Jump('agrabah'),
+    Jump('poor'),
     hidden = False, hoffset = (0,0),
     )
 default bazaar_fatti = pnco(

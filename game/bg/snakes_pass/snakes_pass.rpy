@@ -110,9 +110,9 @@ image cg dream jasmine 02 = Movie(play="cg/jasmine dream/02.webm", size = (1920,
 label desert_1_dream:
     scene black with dissolve
     show cg dream jasmine 01 with dissolve
-    pause 8
+    $ renpy.pause(8)
     show cg dream jasmine 02 with dissolve:
-    pause 8
+    $ renpy.pause(8)
     hide cg with dissolve
     show bg snakes_pass with dissolve
     show abd bent at left

@@ -8,7 +8,7 @@ default desert_agrabah = pnco(
     "Agrabah",
     "bg/desert/agrabah.png",
     (900, 800),
-    Jump('agrabah'),
+    Jump('street'),
     )
 default desert_heaven_oasis = pnco(
     "Heaven oasis",

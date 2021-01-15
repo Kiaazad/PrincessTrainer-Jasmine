@@ -36,7 +36,7 @@ label intro_0_1:
         "Rub the lamp!":
             $ abdul.add_flag("Meet Jafar")
             show cg found_lamp with Dissolve(2)
-            pause 6
+            $ renpy.pause(6)
             hide cg with Dissolve(2)
             
             show jaf genie at rightend with dissolve

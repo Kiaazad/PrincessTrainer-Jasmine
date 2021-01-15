@@ -7,7 +7,7 @@
                 "Go to the sweet one.":
                     abd "Hello."
                     show hur normal at right with dissolve
-                    pause .1
+                    $ renpy.pause(.1)
                     show hur shocked at right
                     hur "Eeeep? You can talk?"
                     abd "Don't panic please, I'm a friend of Jafar."
@@ -63,7 +63,7 @@
                     abd "hi."
                     hide abd
                     show black # Halia knocks abdul out
-                    pause 3.0
+                    $ renpy.pause(3)
                     show hur normal at right behind black
                     hide black with dissolve
                     abd "What happened?"
@@ -72,7 +72,7 @@
                     abd "I didn't..."
                     hal "Now get up!"
                     show abd bent at left
-                    pause .1
+                    $ renpy.pause(.1)
                     show abd normal at left
                     hal "Can you walk?"
                     abd "Yes."
@@ -132,15 +132,15 @@ label harem_bath:
     hal "{size=10} ... if I ... but ... once ..."
     hal "{size=10} ... alright but ..."
     hal "{size=10} ... yay ... love ..."
-    pause 1.0
+    $ renpy.pause(1)
     show cg harem bath 02 with dissolve
-    pause 1.0
+    $ renpy.pause(1)
     show cg harem bath 03 with dissolve
-    pause 1.0
+    $ renpy.pause(1)
     show cg harem bath 04 with dissolve
-    pause 1.0
+    $ renpy.pause(1)
     show cg harem bath 05 with dissolve
-    pause 1.0
+    $ renpy.pause(1)
     hide cg with dissolve
     scene bg harem with dissolve
     show abd normal at left with dissolve
