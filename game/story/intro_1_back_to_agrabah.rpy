@@ -23,7 +23,7 @@
     jaf "Ah, of course. They tried, but turns out Genies can't die."
     show jaf annoyed at right
     jaf "After a... {w=0.2}painful... {w=0.2}little while, my lamp appeared where you found me."
-    jaf "Where the Cave of Wonders was."
+    jaf "Quite far from where the Cave of Wonders was."
     show jaf normal at right
     show abd confused at left
     abd "Cave of Wonders?"

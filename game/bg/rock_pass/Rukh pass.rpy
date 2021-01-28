@@ -6,12 +6,14 @@ default des_0_1 = pnco(
     "bg/rock_pass/01.png",
     (188, 598),
     items = [[thorns, 1]],
+    regen = 10,
     )
 default des_0_2 = pnco(
     "thorns",
     "bg/rock_pass/02.png",
     (1713, 559),
     items = [[thorns, 1]],
+    regen = 10,
     )
 default des_0_3 = pnco(
     "thorns",
@@ -19,6 +21,7 @@ default des_0_3 = pnco(
     (173, 842),
     items = [[thorns, 1]],
     tut = True,
+    regen = 10,
     )
 default des_0_4 = pnco(
     "thorns",
@@ -26,12 +29,14 @@ default des_0_4 = pnco(
     (411, 729),
     items = [[thorns, 1]],
     tut = True,
+    regen = 10,
     )
 default des_0_5 = pnco(
     "thorns",
     "bg/rock_pass/05.png",
     (1222, 634),
     items = [[thorns, 1]],
+    regen = 10,
     )
 default des_0_6 = pnco(
     "thorns",
@@ -39,14 +44,17 @@ default des_0_6 = pnco(
     (1658, 774),
     items = [[thorns, 1]],
     tut = True,
+    regen = 10,
     )
 default des_0_7 = pnco(
     "thorns",
     "bg/rock_pass/07.png",
     (632, 612),
     items = [[thorns, 1]],
+    regen = 10,
     )
 
+# Chest item
 default empty_chest = item(
     _("Empty chest"),
     _("It's too beat up to keep stuff."),
@@ -60,6 +68,7 @@ default des_0_chest = pnco(
     items = [[empty_chest, 1]],
     )
 
+# Sword item
 default rusty_sword = item(
     _("Rusty sword"),
     _("Can it be restored?"),
@@ -72,12 +81,15 @@ default des_0_sword = pnco(
     (1399, 715),
     items = [[rusty_sword, 1]],
     )
+
 default des_0_return = pnco(
     "Return",
     None,
     (300, 800),
     Jump('desert'),
     )
+
+# Lamp shine
 image des_0_shine:
     "bg/ev/shine.png"
     ease .3 zoom .1 rotate -20

@@ -1,0 +1,16 @@
+
+
+
+
+
+
+
+
+
+
+Migrating to renpy version 7.4.1
+CG scenes are skipped one per click now, instead of all at once
+You can sleep to pass time
+Hunger and thirst are added
+Collected resources can be regenerated over night depending on their chance to regen
+Time keeping added

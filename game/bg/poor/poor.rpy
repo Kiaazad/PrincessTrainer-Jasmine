@@ -1,8 +1,8 @@
-﻿default poor_agrabah = pnco(
-    "Agrabah",
+﻿default poor_bazaar = pnco(
+    "Bazaar",
     None,
-    (924, 77),
-    Jump('agrabah'),
+    (700, 700),
+    Jump('bazaar'),
     )
 default poor_thief = pnco(
     "Ahmad",
@@ -17,7 +17,7 @@ default poor_thief = pnco(
 default poor_map = pncs(
     "Poor section",
     [
-        poor_agrabah,
+        poor_bazaar,
         poor_thief,
     ]
     )

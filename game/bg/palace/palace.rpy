@@ -32,7 +32,8 @@ default palace_bags = pnco(
     "bags",
     "bg/palace/bags.png",
     (748, 997),
-    items = [1000, 700]
+    items = [1000, 700],
+    regen = 10,
     )
 
 

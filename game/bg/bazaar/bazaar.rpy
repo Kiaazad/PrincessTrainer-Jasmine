@@ -55,8 +55,8 @@ default alley_loc = pnco(
     Jump('shady_alley'),
     hidden = False, hoffset = (20,-80),
     )
-default bazaar_home_loc = pnco(
-    "Home",
+default bazaar_poor_loc = pnco(
+    "Poor section",
     "bg/bazaar/poor.png",
     (407, 999),
     Jump('poor'),
@@ -80,7 +80,7 @@ default bazaar_map = pncs(
         tailor_loc,
         hakim_loc,
         alley_loc,
-        bazaar_home_loc,
+        bazaar_poor_loc,
         bazaar_fatti,
     ]
     )

@@ -77,199 +77,241 @@
             jaf "Just don't wander far away from the bright spots."
             jaf "It's not that easy to find your way back in the darkness."
             abd "Okay..."
-            # save
-            # show bg sav
+
+label lamp_visit_save:
+    # save
+    # show bg sav
+    show abd normal at left
+    abd "Empty jars?"
+    show abd smug at left
+    abd "Are they an obsession of yours?"
+    show abd concerned at left
+    abd "Where are they hanging from? I can't see the ceiling."
+    jaf "There's no ceiling here, no walls and that thing you're walking on is not a floor."
+    show abd scared at left
+    abd "Wait, what!?"
+    show jaf angry at right
+    jaf "Focus, Abdul!"
+    show jaf normal at right
+    show abd alert at left
+    jaf "Here, take this."
+    $ msg.msg("Received a bag?")
+    show abd normal at left
+    "..."
+    $ msg.msg("...of sand?")
+    show abd confused at left
+    abd "A bag of sand?"
+    jaf "These are the Sands of Time."
+    jaf "Extremely valuable!"
+    jaf "Grab a handful, put it in one of these jars and the 'you' from that moment will remain in it."
+    show abd alert at left
+    $ msg.msg("Right, Received sands of time, a dozen handfuls.")
+    jaf "That 'you' can be recovered if something...{w=.5} unfortunate happens to you."
+    jaf "Well, {w=.2}You need to bring in your own jars."
+    jaf "The things I conjure in here will disappear a while after I take my mind of them.."
+    # Remove jars
+    abd "You can resurrect me?"
+    show jaf thinking at right
+    jaf "Not exactly."
+    show abd concerned at left
+    show jaf normal at right
+    jaf "You would have to wish for resurrection, and it wouldn't be a pretty sight. Plus, it's difficult to wish When you're dead."
+    jaf "This is my way to manage around that problem."
+    jaf "Just don't overdo it, you don't have much sand and it's not easy to obtain more of it."
+    # add a jar
+    jaf "In fact... {w=.4}Let's preserve you in this moment."
+    show abd alert at left
+    abd "Are you sure it's... {w=.2}{nw}"
+    show jaf magic at right
+    "...{nw}"
+    $ renpy.take_screenshot()
+    $ renpy.save("1-1", extra_info='')
+    abd "... safe?"
+    show jaf normal at right
+    jaf "I'm sure we'll find out soon."
+    abd "Does that mean I'm going to die soon?"
+    jaf "Let's move on."
+
+label lamp_visit_settings:
+    # set
+    show bg sett
+    show abd normal at left
+    abd "What's this one?"
+    show jaf thinking at right
+    jaf "To be honest, I'm not entirely sure. These devices seem to have some minor effects on the outside world."
+    show jaf normal at right
+    jaf "I don't have any use for them."
+    jaf "You'll have to try them by yourself, I'm afraid."
+
+default books_for_jafar = quest(
+    _("Books for jafar"),
+    _("Jafar wants books, lots of them."),
+    )
+
+label lamp_visit_library:
+    # lib
+    show bg lib
+    # this part can use a revamp
+    abd "You have a library here?"
+    jaf "Of course."
+    show abd confused at left
+    abd "Let's see..."
+    abd "Jafar's Introductory Macroeconomics for Sultans."
+    abd "Jafar's Guide to Appropriate and Proper Palace Etiquette."
+    abd "Jafar's Illustrated Manual of...{w=.5} Tapdance?"
+    show jaf disappointed at right
+    jaf "Not one of my best, I have to admit."
+    show jaf normal at right
+    show abd smug at left
+    abd "Are {b}all{/b} of these books are written by you, Jafar?"
+    show abd concerned at left
+    jaf "Of course, I can't collect any other books, being stuck in this lamp."
+    jaf "And I need to transfer my knowledge to the next generation somehow."
+    show jaf thinking at right
+    jaf "Speaking of, You should collect and bring me as many books as you can."
+    abd "Books are expensive Jafar."
+    jaf "They're worth it. Buy when you can afford them."
+    abd "But..."
+    jaf "Do as I say."
+    abd "Alright."
+    $ qlog.got(books_for_jafar)
+
+    show abd alert at left
+    jaf "You should borrow a few of them at some point."
+    show jaf normal at right
+    jaf "In fact...{w=.2} You'll need to read them all, these will help you with your quest."
+    show abd smug at left
+    abd "Even...{w=.4}tap{w=.4}dan...{w=.2}{nw}?"
+    show jaf annoyed at right
+    "...{nw}"
+    show jaf magic at right
+    show abd afraid at left
+    abd "Whah..."
+    jaf "There... It never existed."
+    show jaf annoyed at right
+    jaf "Happy now?"
+    abd "Sorry, sorry, it was just a joke."
+    abd "Did you have to burn it right in my hand?"
+    jaf "Now you know better to not annoy a powerful Genie."
+    show jaf normal at right
+    jaf "Now where were we? Ah yes, speaking of quests."
+    show abd normal at left
+    jaf "I'll keep track of your progress...{nw}"
+
+label lamp_visit_quests:
+    # quest
+    show bg quest
+    jaf "Here."
+    abd "A mirror?"
+    jaf "Through this mirror, I can watch you outside of the lamp. I can also guide you and give you information."
+    show abd concerned at left
+    abd "You can see me all the time?"
+    show jaf probing at right
+    jaf "What's the matter?"
+    abd "What about my privacy?"
+    show jaf normal at right
+    jaf "Get over yourself, I don't have time to watch you all the time. I have books to write."
+    jaf "And I don't have any interest in watching you jerk off."
+    jaf "I have a harem for myself anyway."
+    show abd excited at left
+    abd "A harem? Let me see it!"
+
+label lamp_visit_harem:
+    # fight
+    show bg fight
+    abd "Not this."
+    # gallery
+    show bg gall
+    abd "Nor this."
+    # harem
+    show bg harem
+    abd "Woah, you have slave girls in here? You also have three of them too?"
+    jaf "No, they aren't slaves, they're free people."
+    show abd confused at left
+    abd "Wives?"
+    jaf "No, they're just... here. For some reason."
+    jaf "And they seem to be happy just keeping me company."
+    show abd embarrassed at left
+    abd "Ummm..."
+    abd "Can I? Ummm... I mean... May I?"
+    show jaf probing at right
+    jaf "Fuck them?"
+    show abd alert at left
+    abd "No no, speak to them."
+    show jaf normal at right
+    jaf "I'm not the one you should ask."
+    show abd normal at left
+    jaf "Who am I to say what they can and can't do?"
+    jaf "You might want to take advantage of the running water and at least take a shower first."
+    jaf "We're trying to keep it clean in here."
+    show abd alert at left
+    abd "A shower...? Hey, are those?"
+    show jaf disappointed at right
+    jaf "Yes, those statues look a lot like me peeing.{w=.5} It seemed like a good idea at that time."
+    jaf "The girls seem to like them, and I wasn't expecting any guests in here anytime soon either."
+    show jaf normal at right
+    
+    menu:
+        jaf "Now, let's go back and visit the places we skipped."
+        "Sure, I can come back later.":
             show abd normal at left
-            abd "Empty jars?"
-            show abd smug at left
-            abd "Are they an obsession of yours?"
-            show abd concerned at left
-            abd "Where are they hanging from? I can't see the ceiling."
-            jaf "There's no ceiling here, no walls and that thing you're walking on is not a floor."
-            show abd scared at left
-            abd "Wait, what!?"
-            show jaf angry at right
-            jaf "Focus, Abdul!"
-            show jaf normal at right
-            show abd alert at left
-            jaf "Here, take this."
-            $ msg.msg("Received a bag?")
-            show abd normal at left
-            "..."
-            $ msg.msg("...of sand?")
-            show abd confused at left
-            abd "A bag of sand?"
-            jaf "These are the Sands of Time."
-            jaf "Grab a handful, put it in one of these jars and the 'you' from that moment will remain in it."
-            show abd alert at left
-            $ msg.msg("Right, Received sands of time, a dozen handfuls.")
-            jaf "That 'you' can be recovered if something...{w=.5} unfortunate happens to you."
-            abd "You can resurrect me?"
-            show jaf thinking at right
-            jaf "Not exactly."
-            show abd concerned at left
-            show jaf normal at right
-            jaf "You would have to wish for resurrection, and it wouldn't be a pretty sight. Plus, it's difficult to wish When you're dead."
-            jaf "This is my way to manage around that problem."
-            jaf "Just don't overdo it, you don't have much sand and it's not easy to obtain more of it."
-            show abd alert at left
-            abd "Alright."
-            # set
-            show bg sett
-            show abd normal at left
-            abd "What's this one?"
-            show jaf thinking at right
-            jaf "To be honest, I'm not entirely sure. These devices seem to have some minor effects on the outside world."
-            show jaf normal at right
-            jaf "I don't have any use for them."
-            jaf "You'll have to try them by yourself, I'm afraid."
-            # lib
-            show bg lib
-            # this part can use a revamp
-            abd "You have a library here?"
-            jaf "Of course."
-            show abd confused at left
-            abd "Let's see..."
-            abd "Jafar's Introductory Macroeconomics for Sultans."
-            abd "Jafar's Guide to Appropriate and Proper Palace Etiquette."
-            abd "Jafar's Illustrated Manual of...{w=.5} Tapdance?"
-            show jaf disappointed at right
-            jaf "Not one of my best, I have to admit."
-            show jaf normal at right
-            show abd smug at left
-            abd "Are {b}all{/b} of these books are written by you, Jafar?"
-            show abd concerned at left
-            jaf "Yes, I need to transfer my knowledge to the next generation somehow."
-            show jaf thinking at right
-            jaf "And it's not as though I've had a whole lot of other things on my plate."
-            show abd alert at left
-            jaf "You should borrow a few of them at some point."
-            show jaf normal at right
-            jaf "In fact...{w=.2} You'll need to read them all, these will help you with your quest."
-            show abd smug at left
-            abd "Even...?"
-            show jaf annoyed at right
-            jaf "...{nw}"
-            show jaf magic at right
-            show abd afraid at left
-            abd "Whah..."
-            jaf "There... It never existed."
-            show jaf annoyed at right
-            jaf "Happy now?"
-            abd "Sorry, sorry, it was just a joke."
-            abd "Did you have to burn it right in my hand?"
-            jaf "Now you know better to not annoy a powerful Genie."
-            show jaf normal at right
-            jaf "Now where were we? Ah yes, speaking of quests."
-            show abd normal at left
-            jaf "I'll keep track of your progress...{nw}"
-            # quest
-            show bg quest
-            jaf "Here."
-            abd "A mirror?"
-            jaf "Through this mirror, I can watch you outside of the lamp. I can also guide you and give you information."
-            show abd concerned at left
-            abd "You can see me all the time?"
-            show jaf probing at right
-            jaf "What's the matter?"
-            abd "What about my privacy?"
-            show jaf normal at right
-            jaf "Get over yourself, I don't have time to watch you all the time. I have books to write."
-            jaf "And I don't have any interest in watching you jerk off."
-            jaf "I have a harem for myself anyway."
-            show abd excited at left
-            abd "A harem? Let me see it!"
-            # fight
-            show bg fight
-            abd "Not this."
-            # gallery
-            show bg gall
-            abd "Nor this."
-            # harem
-            show bg harem
-            abd "Woah, you have slave girls in here? You also have three of them too?"
-            jaf "No, they aren't slaves, they're free people."
-            show abd confused at left
-            abd "Wives?"
-            jaf "No, they're just... here. For some reason."
-            jaf "And they seem to be happy just keeping me company."
+            abd "Sure, I can come back later."
+            jump lamp_visit_fight
+
+        "I think I'm going to take that shower you just suggested to me.":
             show abd embarrassed at left
-            abd "Ummm..."
-            abd "Can I? Ummm... I mean... May I?"
-            show jaf probing at right
-            jaf "Fuck them?"
-            show abd alert at left
-            abd "No no, speak to them."
-            show jaf normal at right
-            jaf "I'm not the one you should ask."
-            show abd normal at left
-            jaf "Who am I to say what they can and can't do?"
-            jaf "You might want to take advantage of the running water and at least take a shower first."
-            jaf "We're trying to keep it clean in here."
-            show abd alert at left
-            abd "A shower...? Hey, are those?"
+            abd "I think I'm going to take that shower you just suggested to me."
             show jaf disappointed at right
-            jaf "Yes, those statues look a lot like me peeing.{w=.5} It seemed like a good idea at that time."
-            jaf "The girls seem to like them, and I wasn't expecting any guests in here anytime soon either."
+            jaf "Of course, there are women around, so you aren't capable of thinking straight."
+            jaf "Come to me when you've relieved yourself."
             show jaf normal at right
-            
-            menu:
-                jaf "Now, let's go back and visit the places we skipped."
-                "Sure, I can come back later.":
-                    show abd normal at left
-                    abd "Sure, I can come back later."
-                    # fight
-                    show bg fight
-                    jaf "This is my throne. You'll be fighting the creatures I conjure in here."
-                    jaf "To increase your fighting skill, and maybe for my amusement."
-                    jaf "You can come here and start fighting any time."
-                    
-                    menu:
-                        jaf "But... do you want to give it a try right now?"
-                        "Yes.":
-                            show abd alert at left
-                            abd "Yes."
-                            jaf "Alright, here we go."
+            jaf "I'll think of a plan in the mean time."
+            jaf "And we're going to have to work on your self-discipline."
+            hide jaf with dissolve
+            jump harem
 
-                            hide abd
-                            hide jaf
-                            window hide
-                            show screen btl_scr(team([abdul]), team([training_dummy]))
-                            pause
+label lamp_visit_fight:
+    # fight
+    show bg fight
+    jaf "This is my throne. You'll be fighting the creatures I conjure in here."
+    jaf "To increase your fighting skill, and maybe for my amusement."
+    jaf "You can come here and start fighting any time."
+    
+    menu:
+        jaf "But... do you want to give it a try right now?"
+        "Yes.":
+            show abd alert at left
+            abd "Yes."
+            jaf "Alright, here we go."
 
-                            show abd normal at left
-                            with dissolve
-                            show jaf normal at right
-                            with dissolve
-                            jaf "Not bad."
-                            jaf "At least you didn't die."
-                            jaf "Now."
-                            jaf "I'll have to prepare something."
-                            jaf "Meet me at my library when you're done."
-                            hide jaf with dissolve
-                            jump ch3_1
-                        "Maybe later.":
-                            show abd normal at left
-                            show jaf normal at right
-                            abd "Maybe later."
-                            jaf "Alright. Next is the Hall of Memories."
-                            # hall of memories
-                            jaf "You can revisit your most proudest moments in here."
-                            jaf "And that's it. I have some thinking to do. Feel free to roam around while I'm busy."
-                            jaf "Meet me at my library when you're done."
-                            hide jaf with dissolve
-                            jump ch3_1
-                "I think I'm going to take that shower you just suggested to me.":
-                    show abd embarrassed at left
-                    abd "I think I'm going to take that shower you just suggested to me."
-                    show jaf disappointed at right
-                    jaf "Of course, there are women around, so you aren't capable of thinking straight."
-                    jaf "Come to me when you've relieved yourself."
-                    show jaf normal at right
-                    jaf "I'll think of a plan in the mean time."
-                    jaf "And we're going to have to work on your self-discipline."
-                    hide jaf with dissolve
-                    jump harem
+            hide abd
+            hide jaf
+            window hide
+            show screen btl_scr(team([abdul]), team([training_dummy]))
+            pause
+
+            show abd normal at left
+            with dissolve
+            show jaf normal at right
+            with dissolve
+            jaf "Not bad."
+            jaf "At least you didn't die."
+            jaf "Now."
+            jaf "I'll have to prepare something."
+            jaf "Meet me at my library when you're done."
+            hide jaf with dissolve
+            jump ch3_1
+        "Maybe later.":
+            show abd normal at left
+            show jaf normal at right
+            abd "Maybe later."
+            jaf "Alright. Next is the Hall of Memories."
+            # hall of memories
+            jaf "You can revisit your most proudest moments in here."
+            jaf "And that's it. I have some thinking to do. Feel free to roam around while I'm busy."
+            jaf "Meet me at my library when you're done."
+            hide jaf with dissolve
+            jump ch3_1
 
 label ch3_1:
     scene black
@@ -315,22 +357,6 @@ screen lamp_visit_menu:
         action Hide("lamp_visit_menu"), Jump("ch3_mm")
 
 
-label ch3_harem:
-    scene bg harem
-    menu:
-        "Go talk to the girls.":
-            "This scene is not ready yet."
-            jump ch3_1
-        "Jump right into the water.":
-            # show bg cg_abdul_bathing
-            "the bathing scene is not ready"
-            menu:
-                "Go talk to the girls.":
-                    "This scene is not ready yet."
-                    jump ch3_1
-                "Go back to Jafar.":
-                    jump ch4
-    jump ch3_1
 
 label ch3_mm:
     # scene bg sav

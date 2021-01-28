@@ -103,10 +103,10 @@ style default:
     hover_right_bar thm.r_bar_hov
 
 init -10:
-    $ left= Position(yalign=1.0,xalign=0.1)
-    $ right= Position(yalign=1.0,xalign=0.9)
-    $ midleft= Position(yalign=1.0,xalign=0.2)
-    $ midright= Position(yalign=1.0,xalign=0.8)
+    $ left= Position(yalign=1.0,xalign=0.06)
+    $ right= Position(yalign=1.0,xalign=0.94)
+    $ midleft= Position(yalign=1.0,xalign=0.26)
+    $ midright= Position(yalign=1.0,xalign=0.74)
     $ center= Position(yalign=1.0,xalign=0.5)
     $ leftend = Position(yalign=1.0,xalign=0.0)
     $ rightend = Position(yalign=1.0,xalign=1.0)

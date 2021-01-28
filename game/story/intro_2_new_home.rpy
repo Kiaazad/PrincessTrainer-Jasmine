@@ -1,4 +1,20 @@
-﻿label ch2:
+﻿default visit_malik = quest(
+    _("Visit Malik"),
+    _("Visit Malik and find something you can use against him."),
+    )
+
+default visit_hosein = quest(
+    _("Visit Hosein"),
+    _("Visit Hosein and find something you can use against him."),
+    )
+
+default master_swordsman = quest(
+    _("Master Swordsman"),
+    _("Become a master swordsman, the best in Agrabah."),
+    )
+
+label ch2:
+    $ street_home_loc.enabled = True
     scene black with Dissolve(2)
     show bg agrabah with Dissolve(2)
     show abd normal at left
@@ -33,7 +49,8 @@
     $ qlog.got(visit_hosein)
     jaf "Abdul!"
     show abd alert at left
-    
+    $ abdul.gotskill(kick)
+    $ abdul.gotskill(punch)
     menu:
         jaf "How are you with swords?"
         "Never used one.":
@@ -157,7 +174,9 @@
                     jaf "Let's see about those wishes."
                     jump ch2_1
                 "I can defend myself if I have to.":
-                    
+                    $ abdul.levelup(1)
+                    $ abdul.gotskill(slash)
+                    $ abdul.gotskill(pierce)
                     show abd smug at left
                     abd "I can defend myself if I have to."
                     show jaf thinking at right
@@ -171,6 +190,9 @@
                     jaf "But let's start with a wish."
                     jump ch2_1
         "Ohohoho... I've cut a hand or two.":
+            $ abdul.levelup(3)
+            $ abdul.gotskill(slash)
+            $ abdul.gotskill(pierce)
             show abd smug at left
             abd "Ohohoho... I've cut a hand or two."
             show jaf disappointed at right

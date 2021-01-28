@@ -65,11 +65,11 @@ default street_beggar = pnco(
     hidden = False, hoffset = (17,42),
     )
 
-default street_youngster = pnco(
-    "Youngster",
-    "bg/street/youngster.png",
+default street_jamal = pnco(
+    "Jamal",
+    "bg/street/jamal.png",
     (781, 775),
-    Jump('youngster'),
+    Jump('jamal'),
     hidden = False, hoffset = (14,76),
     )
 default street_shepard = pnco(
@@ -93,7 +93,7 @@ default street_map = pncs(
         street_blacksmith_loc,
 
         street_beggar,
-        street_youngster,
+        street_jamal,
         street_shepard,
     ]
     )
@@ -220,14 +220,14 @@ label beggar:
             "Beggar" "Go away!"
     jump street
 
-image youngster = "char/pedestrians/youngster.png"
-label youngster:
+image jamal = "char/pedestrians/jamal.png"
+label jamal:
     scene
-    show youngster at right
+    show jamal at right
     show abd normal at left
-    "Youngster" "Beat it!"
+    "Jamal" "Beat it!"
     hide abd
-    hide youngster with dissolve
+    hide jamal with dissolve
     jump street
 
 image shepard = "char/pedestrians/shepard.png"

@@ -54,7 +54,7 @@
                                     hide hal
                                     
                                     window hide
-                                    show screen btl_scr(team([abdul]), team([halia]))
+                                    call screen btl_scr(team([abdul]), team([halia]))
                                     pause
 
                                     jump lamp_visit_back_to_jafar

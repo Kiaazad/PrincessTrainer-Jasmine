@@ -19,6 +19,8 @@
             self.flags = []
             self.affection = 0
 
+            self.thirst = 0
+            self.hunger = 0
 
         def add_flag(self, flag):
             self.flags.append(flag)

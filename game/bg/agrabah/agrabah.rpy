@@ -105,5 +105,6 @@ label mid_town:
 
 
 label sleeping:
+    show screen time_pass(renpy.random.randint(3,10))
     "Resting for a while."
     jump agrabah

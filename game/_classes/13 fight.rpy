@@ -91,7 +91,10 @@
             self.spells[p] = x
 
 
-        
+        def levelup(self, amount):
+            self.lvl += amount
+            pts_calc(self)
+
         
         def gotxp(self):
             pass

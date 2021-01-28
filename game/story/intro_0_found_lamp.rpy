@@ -1,10 +1,22 @@
 ﻿image cg found_lamp = Movie(play="cg/found lamp/01.webm", size = (1920, 1080))
 
 
+default sell_lamp = quest(
+    _("Sell the Lamp"),
+    _("Go to the bazaar and sell the lamp you have found."),
+    )
+
+default jafars_revenge = quest(
+    _("Jafar's revenge"),
+    _("Assist Jafar in getting his revenge from Aladdin, Jasmine and the Sultan."),
+    )
+
 
 label intro_0:
     jump desert_0
 label intro_0_1:
+    $ des_0_col.command = None
+    $ all_places.append(des_0_col)
     show abd tired at left with dissolve
     abd "Phew..."
     abd "There's nothing left here but sand."
@@ -216,7 +228,12 @@ label intro_0_1:
                 jaf "No time to explain. {w=.5}What do you say? {w=.5}Do we have a deal?"
                 "Sure..!?":
                     abd "Sure..!?"
-                    jaf "Excellent! Now let us head back to Agrabah."
+                    jaf "Excellent!"
+                    show jaf magic at right
+                    $ calendar.day = 1
+                    jaf "You're born anew."
+                    show jaf normal at right
+                    jaf "Now let us head back to Agrabah."
                     $ qlog.got(jafars_revenge)
                     $ qlog.cancel(sell_lamp)
                     jaf "Bring the thorns. {w=.5}We need all the money we can get."

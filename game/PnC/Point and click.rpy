@@ -1,10 +1,12 @@
-﻿init python:
+﻿
+init python:
     def overnight_regen(places):
         for j in places:
             for i in j.clicks:
-                chance = renpy.random.randint(0, 100)
-                if chance < i.regen:
-                    i.enabled = True
+                if i.regen and i.hidden:
+                    chance = renpy.random.randint(0, 100)
+                    if chance < i.regen:
+                        i.hidden = False
 
     class pnco:
         def __init__(self,
@@ -136,12 +138,16 @@ screen pnc(p , g):
             text g.name
         if hov:
             text hov
-
+    use clock
 
 transform pnc_hover(a):
     ease .2 alpha a yoffset (a-1)*20
 
-
+transform map_transform:
+    on idle:
+        ease .2 additive 0.0
+    on hover:
+        ease .2 additive 0.5
 
 # Tutorial
 

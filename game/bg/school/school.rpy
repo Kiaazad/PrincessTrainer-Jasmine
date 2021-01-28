@@ -47,6 +47,13 @@ default teacher_u = unit(
     interests = ["book"],
     reject = ["drug", "Weapon", "armor"]
     )
+
+default books_for_school = quest(
+    _("Books for school"),
+    _("The school teacher needs books, Jafar's books."),
+    )
+
+
 label school_teacher:
     scene
     if not "first" in teacher_u.flags:
@@ -68,6 +75,7 @@ label school_teacher:
                 tea "Or I can buy them from you if the price is fair."
                 abd "Not really."
                 tea "Alright, let me know if you've came across any."
+                $ qlog.got(books_for_school)
                 $ teacher_u.affection += 20
                 $ teacher_u.add_flag("first")
 
