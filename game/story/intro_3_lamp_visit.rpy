@@ -296,9 +296,11 @@ label lamp_visit_fight:
             with dissolve
             jaf "Not bad."
             jaf "At least you didn't die."
-            jaf "Now."
+            jaf "Or, if you did, the sands of time have worked."
+            jaf "It would be hard to decern."
+            jaf "Anyways..."
             jaf "I'll have to prepare something."
-            jaf "Meet me at my library when you're done."
+            jaf "Explore the lamp as you wish, meet me at my library when you're done."
             hide jaf with dissolve
             jump ch3_1
         "Maybe later.":
@@ -317,8 +319,6 @@ label ch3_1:
     scene black
     show screen lamp_visit_menu
     pause
-
-
 
 screen lamp_visit_menu:
     style_prefix "nav"
@@ -356,8 +356,6 @@ screen lamp_visit_menu:
         add "bg/lamp/mm.png"
         action Hide("lamp_visit_menu"), Jump("ch3_mm")
 
-
-
 label ch3_mm:
     # scene bg sav
     "Nothing to do here."
@@ -375,7 +373,6 @@ label ch3_replay:
     "Nothing to do here."
     jump ch3_1
 label ch3_mirror:
-    "the quest screen is not even designed, just a test to make sure it's functional."
     show screen quests
     pause
     jump ch3_1

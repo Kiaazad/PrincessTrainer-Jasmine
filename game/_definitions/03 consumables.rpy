@@ -7,6 +7,9 @@ default beer = item(
     "items/beer.png",
     70,
     ["drug", "drink"],
+
+    food = 3,
+    water = 45,
     )
 
 default liquor = item(
@@ -15,6 +18,7 @@ default liquor = item(
     "items/liquor.png",
     1590,
     ["drug", "drink"],
+    water = 10,
     )
 
 default wine = item(
@@ -23,6 +27,8 @@ default wine = item(
     "items/wine.png",
     550,
     ["drug", "drink"],
+    food = 4,
+    water = 45,
     )
 
 default opium = item(
@@ -53,6 +59,8 @@ default rice = item(
     "items/rice.png",
     75,
     ["food", "raw"],
+    food = 50,
+    water = -60,
     )
 
 default bread = item(
@@ -61,6 +69,7 @@ default bread = item(
     "items/bread.png",
     50,
     ["food"],
+    food = 140,
     )
 
 default water = item(
@@ -69,6 +78,7 @@ default water = item(
     "items/water.png",
     10,
     ["food"],
+    water = 180,
     )
 
 default crackers = item(
@@ -77,6 +87,8 @@ default crackers = item(
     "items/crackers.png",
     10,
     ["food"],
+    food = 65,
+    water = -5,
     )
 
 default damp_crackers = item(
@@ -85,6 +97,8 @@ default damp_crackers = item(
     "items/damp_crackers.png",
     10,
     ["food"],
+    food = 65,
+    water = 5,
     )
 
 default salt = item(
@@ -93,6 +107,7 @@ default salt = item(
     "items/salt.png",
     10,
     ["food"],
+    water = -100,
     )
 
 default saffron = item(
@@ -101,6 +116,8 @@ default saffron = item(
     "items/saffron.png",
     1000,
     ["food"],
+    food = 2,
+    water = -5,
     )
 default fish = item(
     _("Fish"),
@@ -108,6 +125,8 @@ default fish = item(
     "items/fish.png",
     250,
     ["food", "raw"],
+    food = 120,
+    water = 30,
     )
 
 # Fruits
@@ -117,6 +136,8 @@ default dates = item(
     "items/dates.png",
     10,
     ["food"],
+    food = 115,
+    water = -10,
     )
 
 default cantaloupe = item(
@@ -125,6 +146,8 @@ default cantaloupe = item(
     "items/cantaloupe.png",
     80,
     ["food"],
+    food = 40,
+    water = 100,
     )
 
 default watermelon = item(
@@ -133,6 +156,8 @@ default watermelon = item(
     "items/watermelon.png",
     90,
     ["food"],
+    food = 30,
+    water = 150,
     )
 
 default pomegranate = item(
@@ -141,6 +166,8 @@ default pomegranate = item(
     "items/pomegranate.png",
     30,
     ["food"],
+    food = 22,
+    water = 42,
     )
 
 default apple = item(
@@ -149,6 +176,8 @@ default apple = item(
     "items/apple.png",
     40,
     ["food"],
+    food = 41,
+    water = 45,
     )
 
 default list_of_foods = [

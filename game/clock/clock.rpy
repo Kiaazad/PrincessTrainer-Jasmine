@@ -6,8 +6,26 @@
         def tick(self, n = 1):
             for i in range(n):
                 self.minute += 1
-                abdul.hunger += 1
-                abdul.thirst += 1
+                if abdul.stat in ["Resting", "Chatting"]:
+                    abdul.food -= 1
+                    abdul.water -= 1
+                else:
+                    abdul.food -= 2
+                    abdul.water -= 2
+                if abdul.food in [10, 20, 30, 40]:
+                    msg.msg("You feel hungry.")
+                elif abdul.food in [-100, -200, -300, -400]:
+                    msg.msg("You're starving.")
+                elif abdul.food < -1000:
+                    msg.msg("You've died of starvation.")
+
+                if abdul.water in [10, 20, 30, 40]:
+                    msg.msg("You feel thirsty.")
+                elif abdul.water in [-100, -200, -300, -400]:
+                    msg.msg("You're very thirsty.")
+                elif abdul.water < -1000:
+                    msg.msg("You've died of thirst.")
+
                 if self.minute > 360:
                     self.day += 1
                     self.minute = 0

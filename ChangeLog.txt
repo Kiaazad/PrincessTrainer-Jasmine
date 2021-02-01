@@ -6,8 +6,8 @@
 
 
 
-
-
+You can eat / drink
+Hunger and thirst bars added
 Migrating to renpy version 7.4.1
 CG scenes are skipped one per click now, instead of all at once
 You can sleep to pass time

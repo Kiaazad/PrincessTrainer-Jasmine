@@ -81,10 +81,11 @@
                 else:
                     msg.msg("Bags are full.")
 
-        def drop(self, x, q):
+        def drop(self, x, q, a = True):
             if len(self.bags):
                 self.bags[0].rem(x, q)
-                msg.msg("You have dropped {} {}".format(q, x.name))
+                if a:
+                    msg.msg("You have dropped {} {}".format(q, x.name))
         def sell(self, x, q, buyer, price):
             if len(self.bags):
                 self.bags[0].rem(x, q)

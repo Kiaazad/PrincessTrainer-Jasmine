@@ -19,8 +19,21 @@
             self.flags = []
             self.affection = 0
 
-            self.thirst = 0
-            self.hunger = 0
+            self.water = 240
+            self.food = 260
+
+            self.stat = "Normal"
+
+        def eat(self, item):
+            self.water += item.water
+            if self.water > 280:
+                self.water = 280
+
+            self.food += item.food
+            if self.food > 280:
+                self.food = 280
+            
+            self.drop(item, 1, False)
 
         def add_flag(self, flag):
             self.flags.append(flag)

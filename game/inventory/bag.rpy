@@ -68,6 +68,8 @@ screen show_bag(p = abdul, xside = 0.5):
                                         action Function(selected_bag.pick, ii, p)
                                     elif mode == "single":
                                         action Function(selected_bag.pickOne, ii, p)
+                                    elif mode == "eat":
+                                        action Function(p.eat, i.item)
             if options:
                 vbox:
                     button:
@@ -86,6 +88,11 @@ screen show_bag(p = abdul, xside = 0.5):
                         text "Shuffle"
                         at btn
                         action Function(selected_bag.shuffle)
+                    button:
+                        text "Eat / drink"
+                        at btn
+                        action SetScreenVariable("mode", "eat"), SelectedIf(mode == "eat")
+
     default mouse = (0,0)
     if p.holding:
         timer 0.02 repeat True action SetScreenVariable("mouse", renpy.get_mouse_pos())

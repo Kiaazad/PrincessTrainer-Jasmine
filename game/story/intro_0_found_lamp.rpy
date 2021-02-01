@@ -80,6 +80,7 @@ label intro_0_1:
             show abd bent at left
             $ msg.msg("You got the Black lamp.")
             show jaf thinking at right
+            $ abdul.stat = "Chatting" # In "Chatting" or "Resting" mode abdul consommes half food and water
             jaf "Abdul? {w=.8}Is that you?"
             show abd confused at left
             jaf "Where did your massive belly go? {w=.5}You might have looked atrocious, but it made you easy to recognize."

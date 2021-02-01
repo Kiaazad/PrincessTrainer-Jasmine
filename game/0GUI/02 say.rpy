@@ -81,8 +81,20 @@ screen quick_menu():
     zorder 100
     if not persistent.theme_change:
         add "0gui/abdul_frm.png"
+        
     else:
         add "0gui/frm.png" yalign 0.0
+        fixed:
+            align .0,.0 offset 214,4 fit_first True
+            bar value abdul.food range 280:
+                xysize 280,20 right_bar "0GUI/food_1.png" left_bar "0GUI/food_2.png"
+            add "0GUI/food_4.png" xalign 0.0 xoffset -10
+        fixed:
+            align 1.0,.0 offset -214,4 fit_first True
+            bar value abdul.water range 280:
+                xysize 280,20 right_bar "0GUI/food_3.png" left_bar "0GUI/food_1.png" bar_invert True
+            add "0GUI/food_5.png" xalign 1.0 xoffset 10
+
         if quick_menu:
             hbox:
                 style_prefix "q"
@@ -95,6 +107,7 @@ screen quick_menu():
                     background None
                     add "0gui/q.png"
                     action ToggleScreen('show_bag')
+                textbutton _("Auto") action Preference("auto-forward", "toggle")
 
     if not quick_menu:
         key "game_menu" action Function(msg.msg, renpy.random.choice(["Nope", "not yet", "Not available this early", "you don't have to save this early", "you'll get access to the settings before the sex sounds start", "if it's the full screen bothering you just press alt+enter or F11", "keep your pants on"]))
