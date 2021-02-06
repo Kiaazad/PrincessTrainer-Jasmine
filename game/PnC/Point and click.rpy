@@ -132,6 +132,12 @@ screen pnc(p , g):
                         anchor .5,0.0 pos i.pos offset i.hoffset
                         background Frame("0GUI/scroll.png", 20, 0)
                         text i.name color "#000"
+    # daytime
+    add "#040004" at baddition(calendar.night)
+    vbox:
+        text str(calendar.minute)
+        text str(calendar.night)
+
     vbox:
         align 1.0,0.0 offset -100,100
         frame:
@@ -139,7 +145,8 @@ screen pnc(p , g):
         if hov:
             text hov
     use clock
-
+transform baddition(a):
+    linear 2 alpha a additive .01
 transform pnc_hover(a):
     ease .2 alpha a yoffset (a-1)*20
 

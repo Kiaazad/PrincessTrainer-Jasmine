@@ -3,6 +3,9 @@
         def __init__(self):
             self.minute = 0
             self.day = 14127
+            self.night = 1.0
+            self.eve = 0.0
+            self.evening = 0.0
         def tick(self, n = 1):
             for i in range(n):
                 self.minute += 1
@@ -30,6 +33,17 @@
                     self.day += 1
                     self.minute = 0
                     overnight_regen(all_places)
+
+                if 70 < self.minute < 100:
+                    self.night -= .05
+                    if self.night < 0:
+                        self.night = 0
+                if 250 < self.minute < 280:
+                    self.night += .05
+                    if self.night > 1:
+                        self.night = 1
+
+
         def hour_of_day(self):
             return self.minute % 15
         def day_of_week(self):
