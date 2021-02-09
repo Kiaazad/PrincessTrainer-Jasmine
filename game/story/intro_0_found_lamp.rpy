@@ -13,6 +13,7 @@ default jafars_revenge = quest(
 
 
 label intro_0:
+    $ calendar.minute = 69
     jump desert_0
 label intro_0_1:
     $ des_0_col.command = None

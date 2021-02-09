@@ -25,15 +25,18 @@
             self.stat = "Normal"
 
         def eat(self, item):
-            self.water += item.water
-            if self.water > 280:
-                self.water = 280
+            if "food" in item.tags:
+                self.water += item.water
+                if self.water > 280:
+                    self.water = 280
 
-            self.food += item.food
-            if self.food > 280:
-                self.food = 280
-            
-            self.drop(item, 1, False)
+                self.food += item.food
+                if self.food > 280:
+                    self.food = 280
+                
+                self.drop(item, 1, False)
+            else:
+                msg.msg("Can't eat that!")
 
         def add_flag(self, flag):
             self.flags.append(flag)
