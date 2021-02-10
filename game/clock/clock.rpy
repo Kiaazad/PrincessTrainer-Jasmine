@@ -67,7 +67,7 @@ screen clock:
             add "clock/c2.png"
             text "Day: [calendar.day]" color "#fff" yoffset 30
 
-    timer 2 repeat True action Function(calendar.tick)
+    timer .2 repeat True action Function(calendar.tick)
 
 
 
