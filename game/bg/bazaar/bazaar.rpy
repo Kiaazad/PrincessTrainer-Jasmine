@@ -246,11 +246,11 @@ label hakim:
         menu:
             "Not today...":
                 abd "Not today Hakim."
-                hak "Have you came to buy a remedy?"
+                hak "Have you come to buy a remedy?"
                 abd "Let me see what you have."
-            "Fond anything to erect old men yet Hakim?" if not "erect old" in hakim_u.flags:
+            "Found anything to erect old men yet Hakim?" if not "erect old" in hakim_u.flags:
                 $ hakim_u.add_flag("erect old")
-                abd "Fond anything to erect old men yet Hakim?"
+                abd "Found anything to erect old men yet Hakim?"
                 hak "Ah hahaha, This joke again? Let me know if there's anything I can do for you."
                 abd "Sure. I'll take a look."
             "I've found this lamp..." if abdul.has(black_lamp) and not "shown lamp" in hakim_u.flags:
@@ -311,7 +311,7 @@ default tailor_u = unit(
 label tailor:
     scene
     show farrokh normal at right
-    far "Do you need another stitching abdul?"
+    far "Do you need another stitching, Abdul?"
     show abd normal at left
     menu:
         "Not today...":
@@ -375,10 +375,10 @@ image fatti normal = "char/pedestrians/fatti.png"
 label bazaar_fatti:
     scene
     show fatti normal at right
-    fat "What are you shopping for Abdul."
+    fat "What are you shopping for Abdul?"
     show abd normal at left
-    abd "Nothing."
-    fat "Buy something to eat Abdul, you've wasting away."
+    abd "Nothing for now."
+    fat "You should buy something to eat Abdul, you're wasting away."
     jump bazaar
 
 
