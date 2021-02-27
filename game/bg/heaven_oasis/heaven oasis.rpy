@@ -54,13 +54,13 @@ label the_viking:
     scene
     #show bg water_front
     show viking normal at right
-    vik "Abdul the wood collector... have you came here to take my boat apart?"
+    vik "Abdul the wood collector... so, have you come to take my boat apart?"
     show abd normal at left
-    abd "Do you have to mention that every time? I thought it was abandoned."
+    abd "Do you always have to mention that? I already told you, I thought it was abandoned."
     vik "Alright alright... Came to buy what I've fished out from my sunken cargo?"
-    abd "What do you have."
+    abd "What do you have?"
     vik "Nothing yet, but soon."
-    abd "Alright I'll visit later."
+    abd "Alright, I'll visit later."
     jump heaven_oasis
 
 
