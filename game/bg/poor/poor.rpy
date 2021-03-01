@@ -9,6 +9,7 @@ default poor_thief = pnco(
     "bg/poor/thief.png",
     (1294, 601),
     Jump('poor_thief'),
+    shifts = [[100,180], [190, 250]]
     )
 
 

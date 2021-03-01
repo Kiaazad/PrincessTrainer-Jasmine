@@ -23,6 +23,7 @@
             self.food = 260
 
             self.stat = "Normal"
+            self.location = None
 
         def eat(self, item):
             if "food" in item.tags:

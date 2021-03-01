@@ -13,7 +13,8 @@ init python:
             name, img, pos,
             act = [], enabled = True, 
             hits = 1, items = [], tools = [],
-            tut = False, hidden = False, hoffset = None, highlight = False, regen = 0
+            tut = False, hidden = False, hoffset = None, highlight = False, regen = 0,
+            shifts = None,
         ):
             self.name = name
             self.img = img
@@ -29,6 +30,8 @@ init python:
             self.hoffset = hoffset
             self.highlight = highlight
             self.regen = regen
+            self.shifts = shifts
+            self.on_shift = 1
         def hovered(self, h):
             if self.hoffset:
                 self.hov = h
@@ -84,6 +87,19 @@ init python:
                         self.tuts.append(i.pos)
                 renpy.show_screen("tut", self)
                 self.idle = 0
+            self.tick()
+        def tick(self):
+            for i in self.clicks:
+                if i.shifts:
+                    for ii in i.shifts:
+                        if calendar.minute < ii[0]:
+                            i.on_shift = 0
+                            break
+                        elif calendar.minute < ii[1]:
+                            i.on_shift = 1
+                            break
+                    else:
+                        i.on_shift = 0
         def tut_show(self):
             p = self.tuts.pop()
             renpy.show_screen("tut_click", p)
@@ -107,11 +123,12 @@ screen pnc(p , g):
         else:
             if not i.hidden:
                 button:
+                    
                     anchor 0.0,0.0 
                     pos i.pos
                     if i.img:
                         background None padding 0,0
-                        add i.img
+                        add i.img at pnc_item_fade(a = i.on_shift)
                     else:
                         text i.name
                     if i.enabled:
@@ -133,10 +150,10 @@ screen pnc(p , g):
                         background Frame("0GUI/scroll.png", 20, 0)
                         text i.name color "#000"
     # daytime
-    add "bg/poor/bg_night.jpg" at baddition(calendar.night)
-    vbox:
-        text str(calendar.minute)
-        text str(calendar.night)
+    add "#001" at baddition(calendar.night)
+    # vbox:
+    #     text str(calendar.minute)
+    #     text str(calendar.night)
 
     vbox:
         align 1.0,0.0 offset -100,100
@@ -146,9 +163,11 @@ screen pnc(p , g):
             text hov
     use clock
 transform baddition(a):
-    linear 2 alpha a additive .1
+    linear calendar.speed alpha a additive .1
 transform pnc_hover(a):
     ease .2 alpha a yoffset (a-1)*20
+transform pnc_item_fade(a):
+    ease .6 alpha a
 
 transform map_transform:
     on idle:

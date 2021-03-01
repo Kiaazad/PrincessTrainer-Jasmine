@@ -411,7 +411,7 @@ label wish_for_everlasting_lavash:
     hide abd scared
     show adb confused at left
     abd "What?"
-    jaf "Yep, it can't be digested. It'll last in your stomach forever."
+    jaf "Yep, it can't be digested. It'll last forever."
     abd "You tricked me?"
     jaf "No, that's exactly what you wished for."
     return
