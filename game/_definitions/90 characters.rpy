@@ -11,7 +11,7 @@
     lvl = 2, # Level ##(optional - default is: 1)
     type = "Peasant", # Archetype ##(optional - default is: Peasant)
     )
-
+default hero = abdul # Set our hero to someone
 default jafar = unit(
     "Jafar",
     "char/jafar",

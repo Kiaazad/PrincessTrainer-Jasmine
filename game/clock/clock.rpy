@@ -6,28 +6,33 @@
             self.night = 1.0
             self.eve = 0.0
             self.evening = 0.0
+            self.speed = 2
         def tick(self, n = 1):
             for i in range(n):
                 self.minute += 1
-                if abdul.stat in ["Resting", "Chatting"]:
-                    abdul.food -= 1
-                    abdul.water -= 1
+
+                if hero.stat in ["Resting", "Chatting"]:
+                    hero.food -= 1
+                    hero.water -= 1
                 else:
-                    abdul.food -= 2
-                    abdul.water -= 2
-                if abdul.food in [10, 20, 30, 40]:
+                    hero.food -= 2
+                    hero.water -= 2
+                if hero.food in [10, 20, 30, 40]:
                     msg.msg("You feel hungry.")
-                elif abdul.food in [-100, -200, -300, -400]:
+                elif hero.food in [-100, -200, -300, -400]:
                     msg.msg("You're starving.")
-                elif abdul.food < -1000:
+                elif hero.food < -1000:
                     msg.msg("You've died of starvation.")
 
-                if abdul.water in [10, 20, 30, 40]:
+                if hero.water in [10, 20, 30, 40]:
                     msg.msg("You feel thirsty.")
-                elif abdul.water in [-100, -200, -300, -400]:
+                elif hero.water in [-100, -200, -300, -400]:
                     msg.msg("You're very thirsty.")
-                elif abdul.water < -1000:
+                elif hero.water < -1000:
                     msg.msg("You've died of thirst.")
+
+                if hero.location:
+                    hero.location.tick()
 
                 if self.minute > 360:
                     self.day += 1
@@ -48,6 +53,14 @@
             return self.minute % 15
         def day_of_week(self):
             return self.day % 7
+        def speed_change(self, d = "reset"):
+            if d == "up" and self.speed > 0.1:
+                self.speed -= 0.1
+            elif d == "down" and self.speed < 3.0:
+                self.speed += 0.1
+            elif d == "reset":
+                self.speed = 2.0
+
 default all_places = []
 
 transform clock_rot(r):
@@ -66,8 +79,16 @@ screen clock:
             add "clock/c1.png" at clock_rot(calendar.minute)
             add "clock/c2.png"
             text "Day: [calendar.day]" color "#fff" yoffset 30
+            hbox:
+                button:
+                    xysize 20,20
+                    action Function(calendar.speed_change, "down")
+                text str(calendar.speed)
+                button:
+                    xysize 20,20
+                    action Function(calendar.speed_change, "up")
 
-    timer .2 repeat True action Function(calendar.tick)
+    timer calendar.speed repeat True action Function(calendar.tick)
 
 
 
