@@ -275,9 +275,3 @@ label intro_0_1:
             $ des_0_col.add(des_0_return)
             jump desert_1
 
-        "<dev> jump to the city":
-            $ des_0_col.add(des_0_return)
-            jump agrabah
-        "<dev> jump to the lamp":
-            $ des_0_col.add(des_0_return)
-            jump lamp_visit

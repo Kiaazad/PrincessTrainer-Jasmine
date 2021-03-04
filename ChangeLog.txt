@@ -1,6 +1,10 @@
 
 
 
+
+
+now you can return to the lamp
+Added drinking from pounds and wheels
 You can't eat the lamp, or non food items anymore
 added a rudimentary day/night cycle
 Migrating to renpy version 7.4.2

@@ -24,12 +24,35 @@
 
             self.stat = "Normal"
             self.location = None
+        def drink(self, salt, filth):
+            if salt == 1:
+                msg.msg("A bit salty.")
+                self.water += 40
+            elif salt == 2:
+                msg.msg("salty!")
+                self.water += 30
+            elif salt == 3:
+                msg.msg("very salty!!")
+                self.water += 20
+            elif salt == 4:
+                msg.msg("It's practically brine!!!")
+                self.water += 10
+            elif salt > 4:
+                msg.msg("Enough salt to kill.")
+                self.water += 10
+            
+            r = renpy.random.randint(0, 100)
+            if r < filth:
+                msg.msg("You'll get sick.")
+            if self.water > 300:
+                    self.water = 300
+
 
         def eat(self, item):
             if "food" in item.tags:
                 self.water += item.water
-                if self.water > 280:
-                    self.water = 280
+                if self.water > 300:
+                    self.water = 300
 
                 self.food += item.food
                 if self.food > 280:

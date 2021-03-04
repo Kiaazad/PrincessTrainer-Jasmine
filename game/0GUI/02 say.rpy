@@ -99,10 +99,10 @@ screen quick_menu():
             hbox:
                 style_prefix "q"
                 align 0.0,0.0
-                button:
-                    background None
-                    add "0gui/q.png"
-                    action ShowMenu('navigation')
+                # button:
+                #     background None
+                #     add "0gui/q.png"
+                #     action ShowMenu('navigation')
                 button:
                     background None
                     add "0gui/q.png"

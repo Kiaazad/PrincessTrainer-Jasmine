@@ -150,7 +150,7 @@ screen pnc(p , g):
                         background Frame("0GUI/scroll.png", 20, 0)
                         text i.name color "#000"
     # daytime
-    add "#001" at baddition(calendar.night)
+    add "#000008" at baddition(calendar.night)
     # vbox:
     #     text str(calendar.minute)
     #     text str(calendar.night)
@@ -163,7 +163,7 @@ screen pnc(p , g):
             text hov
     use clock
 transform baddition(a):
-    linear calendar.speed alpha a additive .1
+    linear calendar.speed alpha a additive .04
 transform pnc_hover(a):
     ease .2 alpha a yoffset (a-1)*20
 transform pnc_item_fade(a):

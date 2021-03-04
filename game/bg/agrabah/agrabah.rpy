@@ -69,6 +69,15 @@ default agrabah_coins = pnco(
     items = [30]
     )
 
+default agrabah_lamp = pnco(
+    "Lamp",
+    "bg/agrabah/lamp.png",
+    (10, 854),
+    Jump('inside_lamp'),
+    hoffset = (340,100),
+    )
+
+
 default agrabah_map = pncs(
     "Agrabah",
     [
@@ -81,7 +90,7 @@ default agrabah_map = pncs(
         street_loc,
         middle_loc,
         bed_loc,
-        
+        agrabah_lamp,
         agrabah_coins,
     ]
     )
