@@ -1,8 +1,8 @@
 
 
-
-
-
+>> 0.17
+Disabled clicking on things while speaking (this caused a small bug with shops that will b fixed later)
+you can complete one quest with no rewards as a test (the rest will be added soon)
 now you can return to the lamp
 Added drinking from pounds and wheels
 You can't eat the lamp, or non food items anymore

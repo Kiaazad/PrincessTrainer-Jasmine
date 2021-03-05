@@ -87,16 +87,10 @@ label lamp_visit_back_to_agrabah:
     abd "... Your plan?"
     jaf "You're a part of it, that makes it our plan."
     show jaf thinking at right
-    jaf "Anyways, you need to make your way back into the lamp, now let me see."
+    jaf "Anyways, you might need quick access to the jars room though., now let me see."
     show jaf normal at right
-    jaf "You can't carry it around, knowing you, you'll lose it in a day."
-    jaf "The lamp should be safe on that shelf now that nobody sees it."
-    show jaf magic at right
-    jaf "Only you need to see it."
-    show jaf normal at right
-    jaf "To enter the lamp, you need come here and to rob it."
+    jaf "You can't carry the lamp around, knowing you, you'll lose it in a day."
     show jaf thinking at right
-    jaf "You might need quick access to the jars room though."
     jaf "I think I know what to do, you need to come up with some serious money for that though."
     show jaf normal at right
     jaf "2000 should suffice."

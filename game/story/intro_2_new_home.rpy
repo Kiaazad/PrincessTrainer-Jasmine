@@ -267,7 +267,7 @@ label ch2_1:
     jaf "Aha, I know."
     jaf "Say: I wish that only Jafar can decide who can see this lamp."
     show abd concerned at left
-    abd "Isn't that two wishes?"
+    abd "Isn't that...?{nw}"
     
     menu:
         jaf "Just say it, We will find out."
@@ -296,10 +296,12 @@ label ch2_1:
     jaf "Do you know what this means?"
     show abd confused at left
     abd "Not really."
-    jaf "Put the lamp in that shelf."
+    jaf "Put the lamp in that corner."
     abd "Alright..."
+    # ---------- lamp animation
     jaf "Excellent."
     jaf "It means I can do this!"
+    # ------ lamp hide
     show abd concerned at left
     abd "Hey! Where's the lamp?"
     jaf "Or this!"
@@ -317,7 +319,7 @@ label ch2_1:
     abd "Ow,{w=.3} Jafar."
     show abd confused at left
     abd "I'm a bit confused. What happened here? Where did the lamp go?"
-    jaf "The lamp is still here, I just hid it from everybody."
+    jaf "The lamp is still there, I just hid it from everybody."
     jaf "We don't want it to be seen by somebody else, do we? That's caused a lot of problems in the past."
     show abd alert at left
     abd "No, I guess we don't."
@@ -332,10 +334,13 @@ label ch2_1:
     "..."
     jaf "Once you're ready, rub the lamp, we have more to do."
     abd "But you took it away."
-    show screen lamp_get
+    # show screen lamp_get
+    show jaf magic at right
     jaf "Here"
-    jaf "Since nobody but you can see it now, it should be safe hanging on your waist."
-    jaf "Don't lose it Abdul."
+    show jaf normal at right
+    # ------------ lamp appear
+    jaf "Now only you can see it."
+    jaf "It should be safer than hanging from your waist."
     jaf "Now go, before the shops in the bazaar close."
     abd "Oh, right!"
     jump agrabah
@@ -350,7 +355,7 @@ screen lamp_get:
     zorder 1100
     button:
         background None
-        at lamp_get_trans
-        add "0GUI/say/lamp.png"
+        # at lamp_get_trans
+        add "bg/agrabah/lamp.png"
         action Jump("lamp_visit")
 

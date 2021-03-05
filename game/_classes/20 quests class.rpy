@@ -43,4 +43,4 @@
             if quest in self.log:
                 return quest.stat
             else:
-                return false
+                return False

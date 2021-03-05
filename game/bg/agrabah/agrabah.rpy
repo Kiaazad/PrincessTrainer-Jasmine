@@ -73,7 +73,7 @@ default agrabah_lamp = pnco(
     "Lamp",
     "bg/agrabah/lamp.png",
     (10, 854),
-    Jump('inside_lamp'),
+    Jump('lamp_visit'),
     hoffset = (340,100),
     )
 

@@ -159,22 +159,54 @@ label lamp_harem:
     "Under construction"
     jump inside_lamp
 
+
+default ring_recipe = item(
+    _("Ring recipe"),
+    _("A recipe for an odd looking copper ring. Jafar drawn and wrote it."),
+    "items/wood.png",
+    0,
+    ["Finger", "jewelry"],
+    )
+
+default make_a_copper_ring = quest(
+    _("Make a copper ring"),
+    _("Jafar wants a copper ring made."),
+    )
+
+
+image bg jafars_lab = "bg/lamp/jafars_lab.png"
 label lamp_jafar:
     scene
+    "{nw}"
+    show bg jafars_lab
+    show abd normal at left
+    show jaf normal at right
     menu:
         "Chit chat.":
             jaf "No time for chit chat."
-        "I've got the money." if abdul.has(fast_cash) == "Active" and abdul.cash > 2000:
+        "I've got the money." if qlog.has(fast_cash) == "Active" and abdul.cash > 2000:
             abd "I've got the money."
-            jaf "Excellent, take this to the jeweller in bazaar and tell him to make a cooper ring as instructed."
+            jaf "Excellent!"
+            $ abdul.got(ring_recipe, 1)
+            jaf "take this to the jeweller in bazaar and tell him to make a copper ring as instructed."
             abd "Why not bronze?"
-            jaf "Bronze is too shiny, nobody will steal a cooper ring from you."
+            jaf "Bronze is too shiny, nobody will steal a copper ring from you."
             abd "Ah, alright."
+            $ qlog.complete(fast_cash)
+            $ qlog.got(make_a_copper_ring)
             jaf "Is there anything else?"
+            show abd alert at left
             abd "No!"
             jaf "get going then."
+            show abd normal at left
             abd "Right!"
             jump agrabah
+        "The ring is ready..." if qlog.has(make_a_copper_ring) == "Active" and False:
+            pass
+
+        "I have some books" if qlog.has(books_for_jafar) and False:
+            jaf "Bating, go away."
+
         "I think I've got rubbed." if "something is missing" in abdul.flags:
             abd "I think I've got rubbed Jafar."
             jaf "Let me guess, Ahmad?"
@@ -198,3 +230,6 @@ label lamp_jafar:
             abd "Alright."
             jump agrabah
     jump inside_lamp
+
+
+
