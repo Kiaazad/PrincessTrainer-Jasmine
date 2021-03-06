@@ -4,9 +4,9 @@
 
 screen say(who, what):
     style_prefix "say"
-    # button:
-    #     background None
-    #     action Return()
+    button:
+        background None
+        action Return()
     if not persistent.theme_change:
         window:
             id "window"
@@ -51,7 +51,9 @@ define menu_shuffle = 0
 define menu_shuffle_keeper = 1
 screen choice(items):
     style_prefix "cho"
-    
+    button:
+        background None
+        action NullAction()
     if menu_shuffle: # needs work
         on "hide" action SetVariable("menu_shuffle_keeper", 1) 
         if menu_shuffle_keeper:
@@ -99,10 +101,10 @@ screen quick_menu():
             hbox:
                 style_prefix "q"
                 align 0.0,0.0
-                button:
-                    background None
-                    add "0gui/q.png"
-                    action ShowMenu('navigation')
+                # button:
+                #     background None
+                #     add "0gui/q.png"
+                #     action ShowMenu('navigation')
                 button:
                     background None
                     add "0gui/q.png"

@@ -5,6 +5,7 @@
     show bg black
     show abd concerned at left
     with dissolve
+    $ agrabah_lamp.act = Jump('inside_lamp')
     abd "Woaaaaah. What?"
     jaf "Welcome to my humble lamp, Abdul."
     show jaf normal at right

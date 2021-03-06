@@ -71,6 +71,13 @@ label lamp_visit_back_to_jafar:
     jaf "Ah yes, that too."
     jaf "Let us get out here and start executing our plan."
     abd "You mean..."
+
+define fast_cash = quest(
+    _("Cash in hand"),
+    _("We need 2000 dinars for some jewelry Jafar wants to order.")
+)
+
+label lamp_visit_back_to_agrabah:
     scene black
     show bg agrabah with Dissolve(2)
     show abd concerned at left
@@ -80,17 +87,15 @@ label lamp_visit_back_to_jafar:
     abd "... Your plan?"
     jaf "You're a part of it, that makes it our plan."
     show jaf thinking at right
-    jaf "Anyways, you need to make your way back into the lamp, now let me see."
+    jaf "Anyways, you might need quick access to the jars room though., now let me see."
     show jaf normal at right
-    jaf "To enter the lamp, look up and do this with your hand. That should do the trick."
-    # $ quick_menu = True
-    jaf "Now try it."
-    # "There will be a check to see if you have gone into the menu."
-    show abd normal at left
-    jaf "Excellent. Only you can see or feel the lamp, so it should be safe hanging around your waist."
-    jaf "Just don't hold or rub it in public. You'll look crazy doing that."
-    jaf "And try to not speak to me in front of people either."
+    jaf "You can't carry the lamp around, knowing you, you'll lose it in a day."
+    show jaf thinking at right
+    jaf "I think I know what to do, you need to come up with some serious money for that though."
+    show jaf normal at right
+    jaf "2000 should suffice."
     show abd alert at left
-    abd "I'll try."
-    jaf "Well then, off you go. I'll be in the lamp if you need me."
+    abd "2000?{w=.4} how?."
+    jaf "Come up with something,{w=.2} off you go.{w=.2} I'll be in the lamp if you need me."
+    $ qlog.got(fast_cash)
     jump agrabah

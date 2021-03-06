@@ -39,4 +39,8 @@
         def fail(self, q):
             q.stat = "Failed"
             msg.msg("Quest failed: {}".format(q.name))
-
+        def has(self, quest):
+            if quest in self.log:
+                return quest.stat
+            else:
+                return False

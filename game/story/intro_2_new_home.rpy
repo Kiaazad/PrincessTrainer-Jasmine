@@ -261,19 +261,19 @@ label ch2_1:
     jaf "Now let's try it another way."
     show abd normal at left
     show jaf thinking at right
-    jaf "Who can see... {w=.4}No, {w=.4}who can enter... {w=.4}No, {w=.8}I need to choose my words carefully."
+    jaf "Who can rob... {w=.4}No, {w=.4}who can enter... {w=.4}No, {w=.8}I need to choose my words carefully."
     "..."
     show jaf normal at right
     jaf "Aha, I know."
-    jaf "Say: I wish for Jafar to have full control of who can interact with his lamp and how."
+    jaf "Say: I wish that only Jafar can decide who can see this lamp."
     show abd concerned at left
-    abd "Isn't that two wishes?"
+    abd "Isn't that...?{nw}"
     
     menu:
         jaf "Just say it, We will find out."
-        "I wish to have full control of who can interact with Jafar's lamp and how.":
+        "I wish that only I can decide who can see this lamp.":
             show abd smug at left
-            abd "I wish to have full control of who can interact with Jafar's lamp and how."
+            abd "I wish that only I can decide who can see this lamp.."
             show jaf genie at right
             jaf "What have you done, Abdul?!"
             jaf "You bastard, I should've known not to trust you!"
@@ -285,9 +285,9 @@ label ch2_1:
             "I'll return you to an earlier point."
             jump ch2_1
             # jump hard_mode
-        "I wish for Jafar to have full control of who can interact with his lamp and how.":
+        "I wish that only Jafar can decide who can see this lamp..":
             show abd alert at left
-            abd "I wish for Jafar to have full control of who can interact with his lamp and how."
+            abd "I wish that only Jafar can decide who can see this lamp.."
             show jaf magic at right
             jaf "Yessss...{w=.5} Yeeeeesss...{w=.5} Hahahahaha... It worked! I can feel it!"
             jaf "Haaaaa..."
@@ -296,7 +296,12 @@ label ch2_1:
     jaf "Do you know what this means?"
     show abd confused at left
     abd "Not really."
+    jaf "Put the lamp in that corner."
+    abd "Alright..."
+    # ---------- lamp animation
+    jaf "Excellent."
     jaf "It means I can do this!"
+    # ------ lamp hide
     show abd concerned at left
     abd "Hey! Where's the lamp?"
     jaf "Or this!"
@@ -314,7 +319,7 @@ label ch2_1:
     abd "Ow,{w=.3} Jafar."
     show abd confused at left
     abd "I'm a bit confused. What happened here? Where did the lamp go?"
-    jaf "The lamp is still here, I just hid it from everybody."
+    jaf "The lamp is still there, I just hid it from everybody."
     jaf "We don't want it to be seen by somebody else, do we? That's caused a lot of problems in the past."
     show abd alert at left
     abd "No, I guess we don't."
@@ -329,10 +334,13 @@ label ch2_1:
     "..."
     jaf "Once you're ready, rub the lamp, we have more to do."
     abd "But you took it away."
-    show screen lamp_get
+    # show screen lamp_get
+    show jaf magic at right
     jaf "Here"
-    jaf "Since nobody but you can see it now, it should be safe hanging on your waist."
-    jaf "Don't lose it Abdul."
+    show jaf normal at right
+    # ------------ lamp appear
+    jaf "Now only you can see it."
+    jaf "It should be safer than hanging from your waist."
     jaf "Now go, before the shops in the bazaar close."
     abd "Oh, right!"
     jump agrabah
@@ -347,7 +355,7 @@ screen lamp_get:
     zorder 1100
     button:
         background None
-        at lamp_get_trans
-        add "0GUI/say/lamp.png"
+        # at lamp_get_trans
+        add "bg/agrabah/lamp.png"
         action Jump("lamp_visit")
 

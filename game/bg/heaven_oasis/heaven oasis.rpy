@@ -14,8 +14,14 @@ default heaven_oasis_1 = pnco(
 default heaven_oasis_fishing = pnco(
     "Start fishing",
     None,
-    (824, 845),
+    (824, 800),
     Jump('heaven_oasis_fishing'),
+    )
+default heaven_oasis_drink = pnco(
+    "Drink",
+    None,
+    (924, 850),
+    Jump('heaven_oasis_drink'),
     )
 default heaven_oasis_back = pnco(
     "Back",
@@ -31,6 +37,7 @@ default heaven_oasis_loc = pncs(
         heaven_oasis_viking,
         heaven_oasis_back,
         heaven_oasis_fishing,
+        heaven_oasis_drink,
 
     ]
     )
@@ -74,4 +81,11 @@ label heaven_oasis_fishing:
     vik "Here, have this fish instead."
     $ abdul.got(fish,1)
     jump heaven_oasis
+
+label heaven_oasis_drink:
+    scene
+    $ hero.drink(1, 4)
+    jump heaven_oasis
+
+
 

@@ -72,6 +72,8 @@ default week_days = [_("Saturday"), _("Sunday"), _("Monday"), _("Tuesday"), _("W
 default calendar = calendar_class()
 screen clock:
     default t = 0
+    if len(renpy.get_return_stack()):
+        text "{}".format(renpy.get_return_stack()[0])
     drag:
         align(0.07, 0.134)
         fixed:

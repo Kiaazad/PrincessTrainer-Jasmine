@@ -50,9 +50,7 @@ screen file_slots(title, s = sav_btl_lst()):
             button:
                 text "test"
                 action Function(s.add)
-            # button:
-            #     text "test"
-            #     action Function(s.add)
+
         if simg:
             add FileScreenshot(simg) at sav_thmb
             key "save_delete" action FileDelete(simg)

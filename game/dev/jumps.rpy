@@ -11,5 +11,16 @@
     )
 label dev_jumps:
     menu:
-        "city":
-            jump street
+        "jump to the city":
+
+            $ des_0_col.add(des_0_return)
+            jump agrabah
+        "jump to the lamp":
+            
+            $ des_0_col.add(des_0_return)
+            jump lamp_visit
+
+
+
+
+
