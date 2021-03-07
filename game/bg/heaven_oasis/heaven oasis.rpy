@@ -68,7 +68,19 @@ label the_viking:
     abd "What do you have?"
     vik "Nothing yet, but soon."
     abd "Alright, I'll visit later."
-    vik "Before you go, Abdul." 
+    vik "Before you go, Abdul."
+    vik "Do you think you could help me with a simple delivery job?"
+    vik "Think of it as paying me back for almost wrecking my boat."
+    abd "…you don’t have to put it like that."
+    abd "But alright, I guess I can help. As long as it isn’t anything dangerous."
+    abd "What do you need me to do?"
+    vik "Do you know Petros? He sells me plenty of beer, and I still haven’t paid him off for the last few barrels I bought."
+    vik "Here’s some money. Just pass it to him when you see him."
+    vik "He should be somewhere in the baazar, hiding from the guards as usual."
+    abd "Sounds easy enough."
+    abd "Agrabah isn’t that far. Why… I mean, you could have done this yourself."
+    vik "I’m not a wood collector. I don’t have a reason to be travelling in this blasted heat."
+    abd "..."
     jump heaven_oasis
 
 
