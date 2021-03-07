@@ -68,6 +68,7 @@ label the_viking:
     abd "What do you have?"
     vik "Nothing yet, but soon."
     abd "Alright, I'll visit later."
+    vik "Before you go, Abdul." 
     jump heaven_oasis
 
 
