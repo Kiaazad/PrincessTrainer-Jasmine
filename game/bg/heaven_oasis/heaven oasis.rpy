@@ -78,7 +78,11 @@ label the_viking:
     vik "Here’s some money. Just pass it to him when you see him."
     vik "He should be somewhere in the baazar, hiding from the guards as usual."
     abd "Sounds easy enough."
-    abd "Agrabah isn’t that far. Why...I mean, you could have done this yourself."
+    abd "So long as I don’t have to smuggle any alcohol."
+    vik "Hah. Leave that to the experts. Wouldn't want Petros to get in trouble if you get caught."
+    vik "Losing access to fresh beer would be troublesome."
+    abd "Err, right."
+    abd "Also, Agrabah isn’t that far. Why...I mean, you could have gone to find him yourself."
     vik "I’m not a wood collector. I don’t have a reason to be travelling in this blasted heat."
     abd "..."
     jump heaven_oasis
