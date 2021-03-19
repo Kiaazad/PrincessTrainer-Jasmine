@@ -1,0 +1,99 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "day_time",
+			"GroupId": "",
+			"Name": "day_time"
+		},
+		{
+			"Id": "upper_light_alpha",
+			"GroupId": "",
+			"Name": "upper_light_alpha"
+		},
+		{
+			"Id": "Throne_fire_play",
+			"GroupId": "",
+			"Name": "Throne_fire_play"
+		},
+		{
+			"Id": "left_throne_light",
+			"GroupId": "",
+			"Name": "left_throne_light"
+		},
+		{
+			"Id": "right_throne_light",
+			"GroupId": "",
+			"Name": "right_throne_light"
+		},
+		{
+			"Id": "Wall_light_play",
+			"GroupId": "",
+			"Name": "Wall_light_play"
+		},
+		{
+			"Id": "City_illumination_alpha",
+			"GroupId": "",
+			"Name": "City_illumination_alpha"
+		},
+		{
+			"Id": "Jass_room_on",
+			"GroupId": "",
+			"Name": "Jass_room_on"
+		},
+		{
+			"Id": "Jass_room_play",
+			"GroupId": "",
+			"Name": "Jass_room_play"
+		},
+		{
+			"Id": "Sultan_room_on",
+			"GroupId": "",
+			"Name": "Sultan_room_on"
+		},
+		{
+			"Id": "Sultan_room_play",
+			"GroupId": "",
+			"Name": "Sultan_room_play"
+		},
+		{
+			"Id": "light1_play",
+			"GroupId": "",
+			"Name": "light1_play"
+		},
+		{
+			"Id": "light2_play",
+			"GroupId": "",
+			"Name": "light2_play"
+		},
+		{
+			"Id": "light3_play",
+			"GroupId": "",
+			"Name": "light3_play"
+		},
+		{
+			"Id": "light4_play",
+			"GroupId": "",
+			"Name": "light4_play"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "DAY",
+			"Name": "DAY"
+		},
+		{
+			"Id": "NIGHT",
+			"Name": "NIGHT"
+		},
+		{
+			"Id": "Part",
+			"Name": "big_fires"
+		},
+		{
+			"Id": "upper_light",
+			"Name": "upper_light"
+		}
+	]
+}

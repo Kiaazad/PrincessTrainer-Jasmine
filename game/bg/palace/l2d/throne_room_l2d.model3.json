@@ -1,0 +1,46 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "throne_room_l2d.moc3",
+		"Textures": [
+			"throne_room_l2d.2048/texture_00.png",
+			"throne_room_l2d.2048/texture_01.png",
+			"throne_room_l2d.2048/texture_02.png",
+			"throne_room_l2d.2048/texture_03.png",
+			"throne_room_l2d.2048/texture_04.png"
+		],
+		"DisplayInfo": "throne_room_l2d.cdi3.json",
+		"Expressions": [
+			{
+				"Name": "jass_room",
+				"File": "jass_room.exp3.json"
+			},
+			{
+				"Name": "sultan_room",
+				"File": "sultan_room.exp3.json"
+			}
+		],
+		"Motions": {
+			"": [
+				{
+					"File": "idle.motion3.json",
+					"FadeInTime": 0,
+					"FadeOutTime": 0
+				}
+			]
+		}
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		}
+	],
+	"HitAreas": []
+}

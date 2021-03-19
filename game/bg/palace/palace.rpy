@@ -1,34 +1,35 @@
-﻿default jasmines_quarter_loc = pnco(
+﻿default jasmines_quarter_loc = pncc(
     "Jasmine's quarter",
     "bg/palace/jasmine.png",
     (195, 558),
-    Jump('jasmines_quarter'),
-    hidden = False, hoffset = (0,-40),
+    'jasmines_quarter',
+    "",
+    # hidden = False, hoffset = (0,-40),
     )
-default throne_loc = pnco(
+default throne_loc = pncc(
     "The Throne",
     "bg/palace/throne.png",
     (791, 651),
-    Jump('the_throne'),
-    hidden = False, hoffset = (174,-40),
+    'the_throne',
+    # hidden = False, hoffset = (174,-40),
     
     )
-default sultans_quarter_loc = pnco(
+default sultans_quarter_loc = pncc(
     "Sultan's quarter",
     "bg/palace/sultan.png",
     (1530, 558),
-    Jump('sultans_quarter'),
-    hidden = False, hoffset = (209,-40),
+    'sultans_quarter',
+    # hidden = False, hoffset = (209,-40),
     )
-default palace_street_loc = pnco(
+default palace_street_loc = pncc(
     "Go back",
     "bg/palace/city.png",
     (1025, 1019),
-    Jump('street'),
-    hidden = False, hoffset = (83,-40),
+    'street',
+    # hidden = False, hoffset = (83,-40),
     )
 
-default palace_bags = pnco(
+default palace_bags = pncc(
     "bags",
     "bg/palace/bags.png",
     (748, 997),
@@ -36,9 +37,12 @@ default palace_bags = pnco(
     regen = 10,
     )
 
+image palace_l2d = Live2D("bg/palace/l2d/throne_room_l2d.model3.json", loop=True,
+    nonexclusive= ["jass_room"],
+    update_function=i_love_you_parasite,
+    )
 
-
-default palace_map = pncs(
+default palace_map = pnch(
     "Palace",
     [
         jasmines_quarter_loc,
@@ -47,14 +51,14 @@ default palace_map = pncs(
         palace_street_loc,
 
         palace_bags,
-    ]
+    ], "palace_l2d"
     )
 
 image bg palace = "bg/palace/bg.jpg"
 label palace:
     scene
     show bg palace onlayer bg
-    show screen pnc(abdul, palace_map)
+    show screen pnc2(palace_map)
     pause
     jump palace
 

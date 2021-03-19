@@ -1,4 +1,6 @@
 
+Live2D integration into the point and click system
+Migrating to renpy version 7.4.3
 
 >> 0.17
 Disabled clicking on things while speaking (this caused a small bug with shops that will b fixed later)
