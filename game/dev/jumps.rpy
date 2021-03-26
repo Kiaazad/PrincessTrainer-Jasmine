@@ -20,7 +20,10 @@ label dev_jumps:
             $ des_0_col.add(des_0_return)
             jump lamp_visit
 
+        "desert_1_dream":
+            jump desert_1_dream
+        "main menu":
+            jump main_menu_jump
 
-
-
-
+label main_menu_jump:
+    return

@@ -105,15 +105,111 @@ label desert_1_conv:
     abd "Are you..."
     abd "If you insist, your highness."
 
-image cg dream jasmine 01 = Movie(play="cg/jasmine dream/01.webm", size = (1920, 1080))
-image cg dream jasmine 02 = Movie(play="cg/jasmine dream/02.webm", size = (1920, 1080))
+
+# ---------- CG
+
+default jasmine_dream_veil = cg_obj(
+    _("Veil"),
+    "cg/jasmine dream/veil.png",
+    "veil",
+    5,10,
+    type = "item"
+    )
+default jasmine_dream_leash = cg_obj(
+    _("Leash"),
+    "cg/jasmine dream/leash.png",
+    "leash",
+    10,5,
+    type = "item"
+    )
+
+default jasmine_dream_shocked = cg_obj(
+    _("Shocked"),
+    "cg/jasmine dream/shocked.png",
+    "shocked",
+    type = "expression"
+    )
+default jasmine_dream_adore = cg_obj(
+    _("Adore"),
+    "cg/jasmine dream/adore.png",
+    "adore",
+    type = "expression"
+    )
+default jasmine_dream_angry = cg_obj(
+    _("Angry"),
+    "cg/jasmine dream/angry.png",
+    "angry",
+    type = "expression"
+    )
+default jasmine_dream_default = cg_obj(
+    _("Default"),
+    "cg/jasmine dream/default.png",
+    "default",
+    type = "expression"
+    )
+
+
+default jasmine_dream_scene1_fx = cg_obj(
+    _("Scene1_fx"),
+    "cg/jasmine dream/shocked.png",
+    "scene1_fx",
+    0,0,2,
+    type = "motion"
+    )
+default jasmine_dream_scene2_fx = cg_obj(
+    _("Scene2_fx"),
+    "cg/jasmine dream/shocked.png",
+    "scene2_fx",
+    0,0,4,
+    type = "motion"
+    )
+default jasmine_dream_scene3_fx = cg_obj(
+    _("Scene3_fx"),
+    "cg/jasmine dream/shocked.png",
+    "scene3_fx",
+    0,0,8,
+    type = "motion"
+    )
+
+image jasmine_dream_l2d = Live2D("cg/jasmine dream/l2d/jassmine_ride_model.model3.json", loop=True,
+    nonexclusive= ["veil","leash", "shocked", "adore", "angry", "default"],
+    # update_function=i_love_you_parasite,
+    )
+
+
+default jasmine_dream_cg = l2dcg(
+    jasmine,
+    [
+        jasmine_dream_scene1_fx,
+        jasmine_dream_scene2_fx,
+        jasmine_dream_scene3_fx,
+
+        jasmine_dream_shocked,
+        jasmine_dream_adore,
+        jasmine_dream_angry,
+
+        jasmine_dream_veil,
+        jasmine_dream_leash,
+
+    ], "jasmine_dream_l2d"
+    )
+
+
+
+
+# image cg dream jasmine 01 = Movie(play="cg/jasmine dream/01.webm", size = (1920, 1080))
+# image cg dream jasmine 02 = Movie(play="cg/jasmine dream/02.webm", size = (1920, 1080))
 label desert_1_dream:
     scene black with dissolve
-    show cg dream jasmine 01 with dissolve
-    $ renpy.pause(8)
-    show cg dream jasmine 02 with dissolve:
-    $ renpy.pause(8)
-    hide cg with dissolve
+
+    show screen cgscr(jasmine_dream_cg)
+    pause
+
+    # show cg dream jasmine 01 with dissolve
+    # $ renpy.pause(8)
+    # show cg dream jasmine 02 with dissolve:
+    # $ renpy.pause(8)
+    # hide cg with dissolve
     show bg snakes_pass with dissolve
     show abd bent at left
     show abd tired at left with dissolve

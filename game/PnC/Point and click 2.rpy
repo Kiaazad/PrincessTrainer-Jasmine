@@ -7,7 +7,9 @@ init python:
             model = None,
             enabled = True,
             items = [],
-            regen = 0
+            regen = 0,
+            tools = [],
+            hits = 1
         ):
             self.name = name
             self.img = img
@@ -16,8 +18,10 @@ init python:
             self.model = model
 
             self.items = items
-            self.enabled = enabled
             self.regen = regen
+            self.enabled = enabled
+            self.tools = tools
+            self.hits = hits
 
     class pnch():
         def __init__(self, name, clicks = [], model = None):
@@ -30,7 +34,20 @@ init python:
             if click.jump:
                 renpy.jump(click.jump)
             else:
-                click.enabled = False
+                if click.tools and not hero.has(click.tools):
+                    msg.msg("You don't have the right tools ({}) for this.".format(' or '.join(i.name for i in click.tools)))
+                else:
+                    if click.hits > 1:
+                        click.hits -= 1
+                        msg3("{}".format(click.hits))
+                    else:
+                        if click.items:
+                            for i in click.items:
+                                if isinstance(i, (int, long)):
+                                    hero.gotcash(i)
+                                else:
+                                    hero.got(i[0], i[1])
+                        click.enabled = False
 
         def add(self, click, cond = None):
             self.clicks.append(click)

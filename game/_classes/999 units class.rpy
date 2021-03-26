@@ -21,6 +21,7 @@
 
             self.water = 240
             self.food = 260
+            self.pleasure = 0
 
             self.stat = "Normal"
             self.location = None

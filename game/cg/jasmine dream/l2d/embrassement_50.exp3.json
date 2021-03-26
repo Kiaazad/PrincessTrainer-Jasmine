@@ -1,0 +1,12 @@
+{
+	"Type": "Live2D Expression",
+	"FadeInTime": 1,
+	"FadeOutTime": 1,
+	"Parameters": [
+		{
+			"Id": "blush_on",
+			"Value": 0.5,
+			"Blend": "Add"
+		}
+	]
+}

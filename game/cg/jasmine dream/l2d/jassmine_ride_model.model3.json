@@ -1,0 +1,97 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "jassmine_ride_model.moc3",
+		"Textures": [
+			"jassmine_ride_model.2048/texture_00.png",
+			"jassmine_ride_model.2048/texture_01.png"
+		],
+		"Physics": "jassmine_ride_model.physics3.json",
+		"DisplayInfo": "jassmine_ride_model.cdi3.json",
+		"Expressions": [
+			{
+				"Name": "no_leash",
+				"File": "no_leash.exp3.json"
+			},
+			{
+				"Name": "leash",
+				"File": "leash.exp3.json"
+			},
+			{
+				"Name": "embrassement_0",
+				"File": "embrassement_0.exp3.json"
+			},
+			{
+				"Name": "embrassement_50",
+				"File": "embrassement_50.exp3.json"
+			},
+			{
+				"Name": "embrassement_100",
+				"File": "embrassement_100.exp3.json"
+			},
+			{
+				"Name": "default",
+				"File": "default.exp3.json"
+			},
+			{
+				"Name": "veil",
+				"File": "veil.exp3.json"
+			},
+			{
+				"Name": "no_veil",
+				"File": "no_veil.exp3.json"
+			},
+			{
+				"Name": "angry",
+				"File": "angry.exp3.json"
+			},
+			{
+				"Name": "shocked",
+				"File": "shocked.exp3.json"
+			},
+			{
+				"Name": "adore",
+				"File": "adore.exp3.json"
+			}
+		],
+		"Motions": {
+			"Idle": [
+				{
+					"File": "Scene1_fx.motion3.json",
+					"FadeInTime": 0,
+					"FadeOutTime": 0
+				}
+			],
+			"": [
+				{
+					"File": "Scene1a_fx.motion3.json",
+					"FadeInTime": 0,
+					"FadeOutTime": 0
+				},
+				{
+					"File": "Scene2_fx.motion3.json",
+					"FadeInTime": 0,
+					"FadeOutTime": 0
+				},
+				{
+					"File": "Scene3_fx.motion3.json",
+					"FadeInTime": 0,
+					"FadeOutTime": 0
+				}
+			]
+		}
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		}
+	],
+	"HitAreas": []
+}
