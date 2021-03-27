@@ -31,6 +31,7 @@ init python:
 
             self.hovering = []
             self.active = []
+            self.reserved = []
             self.replace(clicks[0])
             self.tick_pleasure = 0
 
@@ -41,7 +42,7 @@ init python:
                 r.y = renpy.random.randint(-400, 400)
                 self.hovering.append(r)
 
-        def clicked(self, click):
+        def clicked(self, click, from_reserved = False):
             self.target.pleasure += click.target_pleasure
             hero.pleasure += click.player_pleasure
 
@@ -49,8 +50,14 @@ init python:
                 self.active.remove(click)
             else:
                 self.active.append(click)
-            self.hovering.remove(click)
-        def replace(self, click):
+            try:
+                if from_reserved:
+                    self.reserved.remove(click)
+                else:
+                    self.hovering.remove(click)
+            except:
+                pass
+        def replace(self, click, from_reserved = False):
             for i in self.active:
                 if i.type == click.type:
                     self.active.remove(i)
@@ -58,9 +65,18 @@ init python:
             if click.tick_pleasure is not None:
                 self.tick_pleasure = click.tick_pleasure
             try:
+                if from_reserved:
+                    self.reserved.remove(click)
+                else:
+                    self.hovering.remove(click)
+            except:
+                pass
+        def reserve(self, click):
+            try:
                 self.hovering.remove(click)
             except:
                 pass
+            self.reserved.append(click)
         def tick(self):
             self.target.pleasure += self.tick_pleasure
             hero.pleasure += self.tick_pleasure
@@ -91,7 +107,7 @@ screen cgscr(g):
     timer renpy.random.randint(4, 10) repeat True action Function(g.add_hover)
     for i in g.hovering:
         button:
-            align .5,.5 xoffset i.x yoffset i.y
+            align .5,.5 xoffset i.x yoffset i.y xysize 150,150 background i.img
             text i.name
             at cg_hover
             if i.type == "item":
@@ -100,7 +116,19 @@ screen cgscr(g):
                 action Function(g.replace, i)
             elif i.type == "motion":
                 action Function(g.replace, i)
-
+            alternate Function(g.reserve, i)
+    hbox:
+        align .5,.99 box_wrap True spacing 10 box_wrap_spacing -310 order_reverse True
+        for i in g.reserved:
+            button:
+                xysize 150,150 background i.img
+                text i.name
+                if i.type == "item":
+                    action Function(g.clicked, i, True)
+                elif i.type == "expression":
+                    action Function(g.replace, i, True)
+                elif i.type == "motion":
+                    action Function(g.replace, i, True)
     button:
         align 1.0,1.0 offset -40,-40
         text _("Skip")

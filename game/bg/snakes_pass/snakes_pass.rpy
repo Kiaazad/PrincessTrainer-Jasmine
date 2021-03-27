@@ -143,7 +143,7 @@ default jasmine_dream_angry = cg_obj(
     )
 default jasmine_dream_default = cg_obj(
     _("Default"),
-    "cg/jasmine dream/default.png",
+    "cg/jasmine dream/neutral.png",
     "default",
     type = "expression"
     )
@@ -151,21 +151,21 @@ default jasmine_dream_default = cg_obj(
 
 default jasmine_dream_scene1_fx = cg_obj(
     _("Scene1_fx"),
-    "cg/jasmine dream/shocked.png",
+    "cg/jasmine dream/sex1.png",
     "scene1_fx",
     0,0,2,
     type = "motion"
     )
 default jasmine_dream_scene2_fx = cg_obj(
     _("Scene2_fx"),
-    "cg/jasmine dream/shocked.png",
+    "cg/jasmine dream/sex2.png",
     "scene2_fx",
     0,0,4,
     type = "motion"
     )
 default jasmine_dream_scene3_fx = cg_obj(
     _("Scene3_fx"),
-    "cg/jasmine dream/shocked.png",
+    "cg/jasmine dream/sex3.png",
     "scene3_fx",
     0,0,8,
     type = "motion"
