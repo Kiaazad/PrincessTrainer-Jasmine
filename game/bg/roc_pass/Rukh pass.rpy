@@ -3,21 +3,21 @@
 
 default des_0_1 = pnco(
     "thorns",
-    "bg/rock_pass/01.png",
+    "bg/roc_pass/01.png",
     (188, 598),
     items = [[thorns, 1]],
     regen = 10,
     )
 default des_0_2 = pnco(
     "thorns",
-    "bg/rock_pass/02.png",
+    "bg/roc_pass/02.png",
     (1713, 559),
     items = [[thorns, 1]],
     regen = 10,
     )
 default des_0_3 = pnco(
     "thorns",
-    "bg/rock_pass/03.png",
+    "bg/roc_pass/03.png",
     (173, 842),
     items = [[thorns, 1]],
     tut = True,
@@ -25,7 +25,7 @@ default des_0_3 = pnco(
     )
 default des_0_4 = pnco(
     "thorns",
-    "bg/rock_pass/04.png",
+    "bg/roc_pass/04.png",
     (411, 729),
     items = [[thorns, 1]],
     tut = True,
@@ -33,14 +33,14 @@ default des_0_4 = pnco(
     )
 default des_0_5 = pnco(
     "thorns",
-    "bg/rock_pass/05.png",
+    "bg/roc_pass/05.png",
     (1222, 634),
     items = [[thorns, 1]],
     regen = 10,
     )
 default des_0_6 = pnco(
     "thorns",
-    "bg/rock_pass/06.png",
+    "bg/roc_pass/06.png",
     (1658, 774),
     items = [[thorns, 1]],
     tut = True,
@@ -48,7 +48,7 @@ default des_0_6 = pnco(
     )
 default des_0_7 = pnco(
     "thorns",
-    "bg/rock_pass/07.png",
+    "bg/roc_pass/07.png",
     (632, 612),
     items = [[thorns, 1]],
     regen = 10,
@@ -63,7 +63,7 @@ default empty_chest = item(
     )
 default des_0_chest = pnco(
     "Empty chest",
-    "bg/rock_pass/chest.png",
+    "bg/roc_pass/chest.png",
     (1524, 744),
     items = [[empty_chest, 1]],
     )
@@ -77,7 +77,7 @@ default rusty_sword = item(
     )
 default des_0_sword = pnco(
     "Rusty sword",
-    "bg/rock_pass/sword.png",
+    "bg/roc_pass/sword.png",
     (1399, 715),
     items = [[rusty_sword, 1]],
     )
@@ -112,10 +112,10 @@ default des_0_col = pncs("Roc pass",
         [[des_0_3, des_0_4, des_0_6], Jump("intro_0_1")]
     ]
     )
-image bg rock_pass = "bg/rock_pass/bg.jpg"
+image bg roc_pass = "bg/roc_pass/bg.jpg"
 label desert_0:
     scene 
-    show bg rock_pass onlayer bg
+    show bg roc_pass onlayer bg
     show screen pnc(abdul, des_0_col)
     with dissolve
     pause
