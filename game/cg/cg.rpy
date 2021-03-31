@@ -34,6 +34,17 @@ init python:
             self.reserved = []
             self.replace(clicks[0])
             self.tick_pleasure = 0
+            self.show_bars = True
+            self.show_options = False
+            self.hover_game = True
+
+        def settings(self, set):
+            if set == "bars":
+                self.show_bars = not self.show_bars
+            if set == "gamify":
+                self.hover_game = not self.hover_game
+            if set == "side":
+                self.show_options = not self.show_options
 
         def add_hover(self):
             r = renpy.random.choice(self.clicks)
@@ -99,36 +110,79 @@ screen cgscr(g):
     tag cg
     if g.img():
         add g.img()
-
-    vbar value hero.pleasure range 1000 left_bar "0GUI/bar2.png" right_bar "0GUI/bar1.png" align(0.0,.5) xysize(63,688) left_gutter 44 right_gutter 44
-    vbar value g.target.pleasure range 1000 left_bar "0GUI/bar4.png" right_bar "0GUI/bar3.png" align(1.0,.5) xysize(63,688) left_gutter 44 right_gutter 44
     if g.tick_pleasure:
         timer renpy.random.random()+.5 repeat True action Function(g.tick)
     timer renpy.random.randint(4, 10) repeat True action Function(g.add_hover)
-    for i in g.hovering:
-        button:
-            align .5,.5 xoffset i.x yoffset i.y xysize 150,150 background i.img
-            text i.name
-            at cg_hover
-            if i.type == "item":
-                action Function(g.clicked, i)
-            elif i.type == "expression":
-                action Function(g.replace, i)
-            elif i.type == "motion":
-                action Function(g.replace, i)
-            alternate Function(g.reserve, i)
-    hbox:
-        align .5,.99 box_wrap True spacing 10 box_wrap_spacing -310 order_reverse True
-        for i in g.reserved:
+
+    if g.show_bars:
+        vbar value hero.pleasure range 1000 left_bar "0GUI/bar2.png" right_bar "0GUI/bar1.png" align(0.0,.5) xysize(63,688) left_gutter 44 right_gutter 44
+        vbar value g.target.pleasure range 1000 left_bar "0GUI/bar4.png" right_bar "0GUI/bar3.png" align(1.0,.5) xysize(63,688) left_gutter 44 right_gutter 44
+    
+    if g.hover_game:
+        for i in g.hovering:
             button:
-                xysize 150,150 background i.img
+                align .5,.5 xoffset i.x yoffset i.y xysize 150,150 background i.img
                 text i.name
+                at cg_hover
                 if i.type == "item":
-                    action Function(g.clicked, i, True)
+                    action Function(g.clicked, i)
                 elif i.type == "expression":
-                    action Function(g.replace, i, True)
+                    action Function(g.replace, i)
                 elif i.type == "motion":
-                    action Function(g.replace, i, True)
+                    action Function(g.replace, i)
+                alternate Function(g.reserve, i)
+        hbox:
+            align .5,.99 box_wrap True spacing 10 box_wrap_spacing -310 order_reverse True
+            for i in g.reserved:
+                button:
+                    xysize 150,150 background i.img
+                    text i.name
+                    if i.type == "item":
+                        action Function(g.clicked, i, True)
+                    elif i.type == "expression":
+                        action Function(g.replace, i, True)
+                    elif i.type == "motion":
+                        action Function(g.replace, i, True)
+    
+    if g.show_options:
+        drag:
+            xalign 0.0
+            frame:
+                at zoom(.6)
+                vbox:
+                    box_wrap True spacing 10 box_wrap_spacing 10
+                    for i in g.clicks:
+                        button:
+                            xysize 150,150 background i.img
+                            text i.name
+                            if i.type == "item":
+                                action Function(g.clicked, i, True)
+                            elif i.type == "expression":
+                                action Function(g.replace, i, True)
+                            elif i.type == "motion":
+                                action Function(g.replace, i, True)
+
+    drag:
+        align .9,.1
+        frame:
+            
+            vbox:
+                text _("Settings")
+                hbox:
+                    button:
+                        at btn
+                        text _("Side bar")
+                        action Function(g.settings, "side"), SelectedIf(g.show_options)
+                    button:
+                        at btn
+                        text _("Gamify")
+                        action Function(g.settings, "gamify"), SelectedIf(g.hover_game)
+                    button:
+                        at btn
+                        text _("Bars")
+                        action Function(g.settings, "bars"), SelectedIf(g.show_bars)
+
+
     button:
         align 1.0,1.0 offset -40,-40
         text _("Skip")
