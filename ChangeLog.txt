@@ -1,4 +1,12 @@
 
+
+>> 0.18
+New characters (not available in the storyline yet)
+Added few temporary night version of the main locations
+CG scenes are spices up with some interactivity
+The first animated CG is converted into live2D
+Migrating to renpy version 7.4.4
+Live2D integration for CG scenes
 Live2D integration into the point and click system
 Migrating to renpy version 7.4.3
 

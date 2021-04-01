@@ -81,6 +81,9 @@ screen clock:
             add "clock/c1.png" at clock_rot(calendar.minute)
             add "clock/c2.png"
             text "Day: [calendar.day]" color "#fff" yoffset 30
+            button:
+                xysize 20,20
+                action Function(calendar.tick, 4)
             hbox:
                 button:
                     xysize 20,20
