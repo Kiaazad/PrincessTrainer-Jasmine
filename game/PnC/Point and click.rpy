@@ -18,6 +18,7 @@ init python:
         ):
             self.name = name
             self.img = img
+            
             self.pos = pos
             self.act = act
             self.enabled = enabled
@@ -38,13 +39,13 @@ init python:
 
     class pncs:
         def __init__(self, name, clicks = [],
-            cond = []):
+            cond = [], night = None):
             self.name = name
             self.clicks = clicks
             self.cond = cond
             self.command = None
             self.tuts = []
-
+            self.night = night
             self.idle = 0
         def clicked(self, click, p):
             self.idle = 0
@@ -150,7 +151,10 @@ screen pnc(p , g):
                         background Frame("0GUI/scroll.png", 20, 0)
                         text i.name color "#000"
     # daytime
-    add "#000008" at baddition(calendar.night)
+    if g.night:
+        add g.night at baddition(calendar.night)
+    else:
+        add "#000008" at baddition(calendar.night)
     # vbox:
     #     text str(calendar.minute)
     #     text str(calendar.night)

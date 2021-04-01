@@ -95,7 +95,7 @@ default street_map = pncs(
         street_beggar,
         street_jamal,
         street_shepard,
-    ]
+    ], night = "bg/street/night.jpg"
     )
 image bg street = "bg/street/bg.png"
 label street:

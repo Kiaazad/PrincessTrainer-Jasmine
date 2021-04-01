@@ -82,7 +82,7 @@ default bazaar_map = pncs(
         alley_loc,
         bazaar_poor_loc,
         bazaar_fatti,
-    ]
+    ], night = "bg/bazaar/night.jpg"
     )
 
 image bg bazaar = "bg/bazaar/bg.jpg"

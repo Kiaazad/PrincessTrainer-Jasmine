@@ -92,7 +92,7 @@ default agrabah_map = pncs(
         bed_loc,
         agrabah_lamp,
         agrabah_coins,
-    ]
+    ], night = "bg/agrabah/night.jpg"
     )
 
 image bg agrabah = "bg/agrabah/bg.jpg"
