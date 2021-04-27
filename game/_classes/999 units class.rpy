@@ -13,51 +13,58 @@
             self.wishes = 3
             self.sand = 0
             self.bottles = 0
+            self.fishing_skill = 0.3
 
             self.interests = interests
             self.reject = reject
             self.flags = []
             self.affection = 0
 
-            self.water = 240
-            self.food = 260
+            self.water = 670
+            self.food = 789
             self.pleasure = 0
 
             self.stat = "Normal"
             self.location = None
         def drink(self, salt, filth):
+            if self.water < -500:
+                self.water = -500
             if salt == 1:
                 msg.msg("A bit salty.")
-                self.water += 40
+                self.water += 600
             elif salt == 2:
                 msg.msg("salty!")
-                self.water += 30
+                self.water += 500
             elif salt == 3:
                 msg.msg("very salty!!")
-                self.water += 20
+                self.water += 300
             elif salt == 4:
                 msg.msg("It's practically brine!!!")
-                self.water += 10
+                self.water += 200
             elif salt > 4:
                 msg.msg("Enough salt to kill.")
-                self.water += 10
+                self.water += 200
             
             r = renpy.random.randint(0, 100)
             if r < filth:
                 msg.msg("You'll get sick.")
-            if self.water > 300:
-                    self.water = 300
+            if self.water > 1000:
+                self.water = 1000
 
 
         def eat(self, item):
+            if self.water < -500:
+                self.water = -500
+            if self.food < -500:
+                self.food = -500
             if "food" in item.tags:
                 self.water += item.water
-                if self.water > 300:
-                    self.water = 300
+                if self.water > 1000:
+                    self.water = 1000
 
                 self.food += item.food
-                if self.food > 280:
-                    self.food = 280
+                if self.food > 1080:
+                    self.food = 1080
                 
                 self.drop(item, 1, False)
             else:

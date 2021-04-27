@@ -22,7 +22,7 @@ init python:
 
 screen show_bag(p = abdul, xside = 0.5):
     default mode = "stack"
-    default options = 0
+    default options = 1
     default selected_bag = p.bags[0]
     drag:
         xalign xside
@@ -92,6 +92,10 @@ screen show_bag(p = abdul, xside = 0.5):
                         text "Eat / drink"
                         at btn
                         action SetScreenVariable("mode", "eat"), SelectedIf(mode == "eat")
+                    button:
+                        text "Close"
+                        at btn
+                        action Hide("show_bag")
 
     default mouse = (0,0)
     if p.holding:

@@ -75,6 +75,7 @@ default agrabah_lamp = pnco(
     (10, 854),
     Jump('lamp_visit'),
     hoffset = (340,100),
+    hidden = True
     )
 
 

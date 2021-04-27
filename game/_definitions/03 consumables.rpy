@@ -119,6 +119,7 @@ default saffron = item(
     food = 2,
     water = -5,
     )
+
 default fish = item(
     _("Fish"),
     _("An ordinary fish."),
@@ -128,6 +129,27 @@ default fish = item(
     food = 120,
     water = 30,
     )
+
+default small_fish = item(
+    _("Small fish"),
+    _("A small one."),
+    "items/fish.png",
+    50,
+    ["food", "raw"],
+    food = 50,
+    water = 10,
+    )
+
+default big_fish = item(
+    _("Big fish"),
+    _("The big one."),
+    "items/fish.png",
+    350,
+    ["food", "raw"],
+    food = 160,
+    water = 40,
+    )
+
 
 # Fruits
 default dates = item(

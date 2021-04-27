@@ -1,10 +1,10 @@
 ﻿label ch1:
-    scene black with Dissolve(2)
-    show bg street with Dissolve(2)
+    show black with Dissolve(2)
+    show bg street onlayer bg
+    show screen pnc(abdul, street_map)
     show abd normal at left
-    with dissolve
     show jaf normal at right
-    with dissolve
+    hide black with Dissolve(2)
     show jaf smile at right
     jaf "Ah, my beloved Agrabah."
     show jaf normal at right

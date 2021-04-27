@@ -88,15 +88,18 @@ screen quick_menu():
         add "0gui/frm.png" yalign 0.0
         fixed:
             align .0,.0 offset 214,4 fit_first True
-            bar value abdul.food range 280:
+            bar value hero.food range 1000:
                 xysize 280,20 right_bar "0GUI/food_1.png" left_bar "0GUI/food_2.png"
             add "0GUI/food_4.png" xalign 0.0 xoffset -10
         fixed:
             align 1.0,.0 offset -214,4 fit_first True
-            bar value abdul.water range 280:
+            bar value hero.water range 1000:
                 xysize 280,20 right_bar "0GUI/food_3.png" left_bar "0GUI/food_1.png" bar_invert True
             add "0GUI/food_5.png" xalign 1.0 xoffset 10
-
+        # vbox:
+        #     align .2,.2
+        #     text str(hero.food)
+        #     text str(hero.water)
         if quick_menu:
             hbox:
                 style_prefix "q"

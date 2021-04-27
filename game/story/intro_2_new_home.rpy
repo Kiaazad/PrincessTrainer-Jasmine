@@ -15,12 +15,12 @@ default master_swordsman = quest(
 
 label ch2:
     $ street_home_loc.enabled = True
-    scene black with Dissolve(2)
-    show bg agrabah with Dissolve(2)
+    show black with Dissolve(2)
+    show bg agrabah onlayer bg
+    show screen pnc(abdul, agrabah_map)
     show abd normal at left
-    with dissolve
     show jaf normal at right
-    with dissolve
+    hide black with Dissolve(2)
     show jaf smile at right
     jaf "Welcome to your new luxurious home, my friend."
     show abd confused at left
@@ -299,10 +299,25 @@ label ch2_1:
     jaf "Put the lamp in that corner."
     abd "Alright..."
     # ---------- lamp animation
+    "{nw}"
+    show abd normal at left:
+        ease .6 xalign .2
+        ease .4 xzoom -1
+    pause 1
+    show abd bent at left:
+        xalign .2
+    pause .2
+    $ agrabah_lamp.hidden = False
+    show abd normal at left:
+        ease .6 xalign .2
     jaf "Excellent."
     jaf "It means I can do this!"
     # ------ lamp hide
-    show abd concerned at left
+    $ agrabah_lamp.hidden = True
+    
+    show abd concerned at left with move
+    show abd concerned at left:
+        ease .2 xzoom 1
     abd "Hey! Where's the lamp?"
     jaf "Or this!"
     hide jaf
@@ -336,6 +351,7 @@ label ch2_1:
     abd "But you took it away."
     # show screen lamp_get
     show jaf magic at right
+    $ agrabah_lamp.hidden = False
     jaf "Here"
     show jaf normal at right
     # ------------ lamp appear

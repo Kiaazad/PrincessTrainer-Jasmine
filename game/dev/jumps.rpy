@@ -12,11 +12,11 @@
 label dev_jumps:
     menu:
         "jump to the city":
-
+            $ street_home_loc.enabled = True
             $ des_0_col.add(des_0_return)
             jump agrabah
         "jump to the lamp":
-            
+            $ street_home_loc.enabled = True
             $ des_0_col.add(des_0_return)
             jump lamp_visit
 

@@ -1,14 +1,14 @@
 ﻿default barracks_agrabah = pnco(
-    "Agrabah",
+    "Poor section",
     None,
-    (924, 77),
-    Jump('agrabah'),
+    (924, 929),
+    Jump('poor'),
     )
 
 default barracks_guard = pnco(
     "Guard",
-    None,
-    (400, 300),
+    "bg/barracks/guard.png",
+    (900, 640),
     Jump('barracks_guard'),
     )
 
@@ -23,7 +23,7 @@ default barracks_map = pncs(
     ]
     )
 
-# image bg barracks = "bg/barracks/bg.jpg"
+image bg barracks = "bg/barracks/bg.jpg"
 label barracks:
     scene
     show bg barracks onlayer bg

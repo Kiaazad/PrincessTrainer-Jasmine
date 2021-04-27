@@ -123,21 +123,44 @@ label the_viking:
     
     vik "Come browse my stuff."
     # I'll add a shop here later
-
-
-
     jump heaven_oasis
 
-
+default heaven_oasis_pound = fishing_class(
+    100,
+    87,
+    [fish, small_fish, big_fish],
+)
 label heaven_oasis_fishing:
     scene
-    show viking normal at right
-    vik "Trying to fish with your hands?"
-    show abd normal at left
-    abd "Well..."
-    vik "Don't bother, it's not ready yet."
-    vik "Here, have this fish instead."
-    $ abdul.got(fish,1)
+    if not "don't bother" in viking_u.flags and heaven_oasis_pound.population == 0:
+        show viking normal at right
+        vik "Don't bother, there's no fish to catch."
+        show abd normal at left
+        "..."
+        $ viking_u.add_flag("don't bother")
+    
+    call screen fishing(heaven_oasis_pound)
+
+    if not "first fish warning" in viking_u.flags and 30 < heaven_oasis_pound.population < 50:
+        show viking normal at right
+        vik "Slow down Abdul?"
+        show abd normal at left
+        abd "What?"
+        vik "If you catch too many fish too fast, they'll have a hard time replacing the fish you've caught."
+        abd "I know that, I sold fish my whole life.."
+        vik "Just saying."
+        abd "Alright."
+        $ viking_u.add_flag("first fish warning")
+    if not "second fish warning" in viking_u.flags and heaven_oasis_pound.population < 30:
+        show viking normal at right
+        vik "Abdul my friend, You're fishing this pound dry."
+        show abd normal at left
+        abd "You fish here too."
+        vik "True, but I catch a fish each day. That hardly puts a dent in their numbers."
+        abd "Well, I need the money."
+        vik "Alright, it's your land, but don't say I didn't warn you."
+        abd "Sure, sure."
+        $ viking_u.add_flag("second fish warning")
     jump heaven_oasis
 
 label heaven_oasis_drink:

@@ -1,14 +1,23 @@
 
 
+
+
+
+No more annoying bombardment of notifications "You've died of xx" either
+Adjusted the food and hunger to the rule of 3's, it takes roughly 3 days without water to die, and a week without food
+Bag options are visible by default now
+Fishing minigame, no more free fish!
+
 >> 0.18
-New characters (not available in the storyline yet)
+New characters (not available in the story line yet)
 Added few temporary night version of the main locations
-CG scenes are spices up with some interactivity
+CG scenes are spiced up with some interactivity
 The first animated CG is converted into live2D
 Migrating to renpy version 7.4.4
 Live2D integration for CG scenes
 Live2D integration into the point and click system
 Migrating to renpy version 7.4.3
+
 
 >> 0.17
 Disabled clicking on things while speaking (this caused a small bug with shops that will b fixed later)

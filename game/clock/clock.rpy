@@ -10,26 +10,26 @@
         def tick(self, n = 1):
             for i in range(n):
                 self.minute += 1
+                if hero.food > -8010 and hero.water > -4010:
+                    if hero.stat in ["Resting", "Chatting"]:
+                        hero.food -= 1
+                        hero.water -= 1
+                    else:
+                        hero.food -= 4
+                        hero.water -= 6
+                    if hero.food in range(0,5):
+                        msg.msg("You feel hungry.")
+                    elif hero.food in range(-4005,-4000):
+                        msg.msg("You're starving.")
+                    elif hero.food in range(-8005,-8000):
+                        msg.msg("You've died of starvation.")
 
-                if hero.stat in ["Resting", "Chatting"]:
-                    hero.food -= 1
-                    hero.water -= 1
-                else:
-                    hero.food -= 2
-                    hero.water -= 2
-                if hero.food in [10, 20, 30, 40]:
-                    msg.msg("You feel hungry.")
-                elif hero.food in [-100, -200, -300, -400]:
-                    msg.msg("You're starving.")
-                elif hero.food < -1000:
-                    msg.msg("You've died of starvation.")
-
-                if hero.water in [10, 20, 30, 40]:
-                    msg.msg("You feel thirsty.")
-                elif hero.water in [-100, -200, -300, -400]:
-                    msg.msg("You're very thirsty.")
-                elif hero.water < -1000:
-                    msg.msg("You've died of thirst.")
+                    if hero.water in range(0,8):
+                        msg.msg("You feel thirsty.")
+                    elif hero.water in range(-2008,-2000):
+                        msg.msg("You're very thirsty.")
+                    elif hero.water in range(-4008,-4000):
+                        msg.msg("You've died of thirst.")
 
                 if hero.location:
                     hero.location.tick()

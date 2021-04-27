@@ -1,7 +1,7 @@
 ﻿default poor_bazaar = pnco(
     "Bazaar",
     None,
-    (700, 700),
+    (780, 980),
     Jump('bazaar'),
     )
 default poor_thief = pnco(
@@ -11,7 +11,12 @@ default poor_thief = pnco(
     Jump('poor_thief'),
     shifts = [[100,180], [190, 250]]
     )
-
+default poor_barracks = pnco(
+    "Barracks",
+    None,
+    (800, 600),
+    Jump('barracks'),
+    )
 
 
 
@@ -20,7 +25,8 @@ default poor_map = pncs(
     [
         poor_bazaar,
         poor_thief,
-    ]
+        poor_barracks,
+    ], night = "bg/poor/night.jpg"
     )
 
 image bg poor = "bg/poor/bg.png"
