@@ -123,7 +123,7 @@ default saffron = item(
 default fish = item(
     _("Fish"),
     _("An ordinary fish."),
-    "items/fish.png",
+    "items/fish_med.png",
     250,
     ["food", "raw"],
     food = 120,
@@ -133,7 +133,7 @@ default fish = item(
 default small_fish = item(
     _("Small fish"),
     _("A small one."),
-    "items/fish.png",
+    "items/fish_small.png",
     50,
     ["food", "raw"],
     food = 50,
@@ -143,7 +143,7 @@ default small_fish = item(
 default big_fish = item(
     _("Big fish"),
     _("The big one."),
-    "items/fish.png",
+    "items/fish_big.png",
     350,
     ["food", "raw"],
     food = 160,

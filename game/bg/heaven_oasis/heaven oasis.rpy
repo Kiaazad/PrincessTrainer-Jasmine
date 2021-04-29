@@ -128,7 +128,7 @@ label the_viking:
 default heaven_oasis_pound = fishing_class(
     100,
     87,
-    [fish, small_fish, big_fish],
+    [fish, small_fish, big_fish, fish_spirit],
 )
 label heaven_oasis_fishing:
     scene

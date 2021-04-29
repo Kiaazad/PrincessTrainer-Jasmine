@@ -74,8 +74,15 @@ default cork = item(
     10,
     )
 
+default fish_spirit = item(
+    _("Spirit fish"),
+    _("Amazing astral creature. A rare trophy for the luckiest fishermen."),
+    "items/fish_spirit.png",
+    5000,
+    )
+
 default list_of_ingredients = [
-    thorns, wood, feather, stick, string, arrowhead, bottle, rope, cork,
+    thorns, wood, feather, stick, string, arrowhead, bottle, rope, cork, fish_spirit,
 ]
 
 
