@@ -8,7 +8,7 @@
 default barracks_guard = pnco(
     "Guard",
     "bg/barracks/guard.png",
-    (900, 640),
+    (1100, 640),
     Jump('barracks_guard'),
     )
 

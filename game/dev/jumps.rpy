@@ -12,10 +12,12 @@
 label dev_jumps:
     menu:
         "jump to the city":
+            $ calendar.day = 1
             $ street_home_loc.enabled = True
             $ des_0_col.add(des_0_return)
             jump agrabah
         "jump to the lamp":
+            $ calendar.day = 1
             $ street_home_loc.enabled = True
             $ des_0_col.add(des_0_return)
             jump lamp_visit
