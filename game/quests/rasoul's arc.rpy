@@ -86,7 +86,7 @@ label rasoul_arc_1:
     show bg bazaar onlayer bg
     show screen pnc(abdul, bazaar_map)
     show ras normal at midright with dissolve
-    ras "Walk aster!"
+    ras "Walk faster!"
     "{nw}"
     show abd normal at midleft with dissolve
     scene
@@ -165,7 +165,7 @@ label rasoul_arc_3:
                     abd "Guard!"
                     "..."
                     show guard_2 normal at right with dissolve
-                    guard_2 "Wil you shut up?"
+                    guard_2 "Will you shut up?"
                     abd "Guard...{w=.2} please...{w=.2} I can't stay here..."
                     guard_2 "Why didn't you say so?{w=.2} Let me release you."
                     "..."
