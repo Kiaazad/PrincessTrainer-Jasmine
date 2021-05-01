@@ -7,6 +7,11 @@
             self.rewards = rewards
             self.img = img
             self.stat = "Active"
+        def complete(self):
+            self.stat = "Completed"
+        def finish(self):
+            self.stat = "Finished"
+
 
     class quest_log:
         def __init__(self):

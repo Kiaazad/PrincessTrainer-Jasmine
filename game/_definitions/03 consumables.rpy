@@ -11,6 +11,14 @@ default beer = item(
     food = 3,
     water = 45,
     )
+default beer_keg = item(
+    _("Beer keg"),
+    _("A keg of beer containing around 40 pints of beer."),
+    "items/beer.png",
+    2400,
+    ["drug"],
+
+    )
 
 default liquor = item(
     _("Doggy liquor"),

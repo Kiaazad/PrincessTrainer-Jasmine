@@ -335,6 +335,8 @@ label rugs_shop:
 define pet = Character("Petros", color="#4ff", what_text_color="#dff")
 image petros normal = "char/petros/normal.png"
 
+
+
 default petros_u = unit(
     "Petros",
     "char/petros",
@@ -354,11 +356,42 @@ default petros_u = unit(
     )
 label shady_alley:
     scene
-    show petros normal at right
-    pet "Hey... Dabul... know any women to hook me up with?"
-    show abd normal at left
-    abd "It's Abdul, and no."
-    pet "Came here to sin then? What's your choice?"
+    if not "first" in petros_u.flags:
+        show petros normal at right
+        pet "Hey... Dabul... know any women to hook me up with?"
+        show abd normal at left
+        abd "It's Abdul, and no."
+        pet "Came here to sin then? What's your choice?"
+        $ petros_u.add_flag("first")
+    else:
+        show petros normal at right
+        pet "Abully the sinner. What do you need this time?"
+        show abd normal at left
+    if qlog.has(beer_for_the_viking) and beer_for_the_viking.stat == "Active":
+        abd "I need a keg of beer."
+        pet "Ohohohoh, what for? having friends over?"
+        pet "Any women? I'm coming too."
+        abd "It's for somebody."
+        pet "Ah, the guy at oasis?"
+        abd "Yes."
+        pet "I was wondering when he'll run out."
+        pet "A keg costs 2400 Dinars."
+        $ hero.paidcash(2400)
+        $ petros_u.gotcash(2400)
+        abd "Here."
+        pet "Alright, wait here."
+        hide petros with moveoutright
+        pause 4
+        show petros normal at right with moveinright
+        pet "Here you go, a keg of the best beer in Agrabah."
+        $ hero.got(beer_keg)
+        $ beer_for_the_viking.complete()
+        pet "Don't get caught."
+        abd "Thanks"
+        pet "And you don't know me if they catch you."
+        "..."
+        jump bazaar
+
     call screen shop(s = petros_u)
     jump bazaar
 

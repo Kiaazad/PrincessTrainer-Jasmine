@@ -67,7 +67,7 @@
                 pass
             else:
                 self.cash += a
-                msg.msg("You've got {} dinars.".format(a))
+                msg.msg("{} got {} dinars.".format(self.name, a))
         def paidcash(self, a):
             self.cash -= a
 
@@ -76,7 +76,7 @@
                 if i:
                     self.got(i.item, i.qtt)
             self.togos.clear()
-        def got(self, item, quantity, uniqueID = None):
+        def got(self, item, quantity = 1, uniqueID = None):
             if uniqueID and uniqueID in self.uniqueID:
                 pass
             elif len(self.bags) == 0:
@@ -84,7 +84,7 @@
             else:
                 for i in self.bags:
                     if i.add(item,quantity):
-                        msg.msg("{} have got {} {}".format(self.name, quantity, item.name))
+                        msg.msg("{} got {} {}".format(self.name, quantity, item.name))
                         self.uniqueID.append(uniqueID)
                         break
                 else:

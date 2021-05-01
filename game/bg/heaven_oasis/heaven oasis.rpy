@@ -74,8 +74,8 @@ default viking_u = unit( # we use a unit class to manage every character that ha
 
 
 default beer_for_the_viking = quest( 
-    _("Beer for the Viking"),
-    _("The Viking in the oasis wants me to buy him some beer."),
+    _("A viking's keg"),
+    _("The Viking in the oasis wants me to buy him some beer. A keg of beer."),
     )
 
 
@@ -110,16 +110,21 @@ label the_viking:
         abd "Alright!"
         vik "Thank you. You're a savior."
         $ qlog.got(beer_for_the_viking) # add the quest
-        $ abdul.gotcash(1000) # Giving somebody some money
+        $ abdul.gotcash(2500) # Giving somebody some money
         vik "Here, take this money and buy as many as you can."
         abd "Sure, do you need any food?"
         vik "No I'm all set on that front."
         jump heaven_oasis
-    elif qlog.has(beer_for_the_viking) == "Active" and abdul.has(beer): # If the quest is active
+    elif qlog.has(beer_for_the_viking) == "Completed" and abdul.has(beer_keg): # If the quest is active
         vik "Got the beer?"
         abd "Yes, here!"
-        $ beer_for_the_viking.complete()
-        # I'll code this part properly
+        $ hero.drop(beer_keg, 1)
+        $ beer_for_the_viking.finish()
+        vik "Thank you my friend, you're a savior."
+        # keg noises
+        vik "Here, have one on me."
+        $hero.got(beer)
+        jump heaven_oasis
     
     vik "Come browse my stuff."
     # I'll add a shop here later

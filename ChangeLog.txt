@@ -1,6 +1,9 @@
 
 
-
+>> 0.19
+beer delivery quest done, now we have a fully functional quest system
+the small bug with the shops is fixed
+improvement in bag system that was necessary for some of the future features
 The start if Rasoul's arc is added
 No more annoying bombardment of notifications "You've died of xx" either
 Adjusted the food and hunger to the rule of 3's, it takes roughly 3 days without water to die, and a week without food

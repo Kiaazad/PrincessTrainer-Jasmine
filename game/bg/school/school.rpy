@@ -85,8 +85,7 @@ label school_teacher:
         show abd normal at left
         abd "It's about books."
         tea "Alright."
-        show screen shop(s = teacher_u, c = abdul)
-        pause
+        call screen shop(s = teacher_u)
 
 
     jump school
