@@ -135,8 +135,7 @@ label blacksmith:
     show abd normal at left
     abd "Maybe later Rahman."
     rah "Alright."
-    show screen shop(s = rahman_u, c = abdul)
-    pause
+    call screen shop(s = rahman_u)
     jump street
 
 
@@ -196,8 +195,7 @@ label karim:
     show abd normal at left
     abd "I didn't ask for any."
     kar "Just saying, what do you want?"
-    show screen shop(s = karim_u, c = abdul)
-    pause
+    call screen shop(s = karim_u)
     jump street
 
 image beggar = "char/pedestrians/beggar.png"

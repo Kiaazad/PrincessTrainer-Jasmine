@@ -120,8 +120,7 @@ label fruit_shack:
     show simin normal at right
     sim "Dates?"
     show abd normal at left
-    show screen shop(s = simin_u, c = abdul)
-    pause
+    call screen shop(s = simin_u)
     jump bazaar
 
 # Jeweler
@@ -164,8 +163,7 @@ label jewelry_shop:
         show jeweler normal at right
         jew "What do you want?"
         show abd normal at left
-        show screen shop(s = jeweler_u, c = abdul)
-        pause
+        call screen shop(s = jeweler_u)
     jump bazaar
 
 
@@ -206,9 +204,7 @@ label akbars_shack:
     show abd normal at left
     abd "Do you need firewood today?"
     akb "Yes. How much are you selling."
-    show screen shop(s = akbar, c = abdul)
-    pause
-
+    call screen shop(s = akbar)
     jump bazaar
 
 # hakim
@@ -280,8 +276,7 @@ label hakim:
         show abd normal at left
     #just added a cue from the seller, otherwise Abdul continues to slap his lips.
     # since we might add lip flip to vendors, "{nw}" should do the job as well
-    show screen shop(s = hakim_u, c = abdul)
-    pause
+    call screen shop(s = hakim_u)
     jump bazaar
 
 # Tailor
@@ -322,8 +317,7 @@ label tailor:
             abd "I've found this lamp in the desert."
             far "Hmmm... show it to Akbar. Or Hakim."
             far "I'll end up selling it to them if I buy it."
-    show screen shop(s = tailor_u, c = abdul)
-    pause
+    call screen shop(s = tailor_u)
     jump bazaar
 
 # Rugs shop
@@ -365,8 +359,7 @@ label shady_alley:
     show abd normal at left
     abd "It's Abdul, and no."
     pet "Came here to sin then? What's your choice?"
-    show screen shop(s = petros_u, c = abdul)
-    pause
+    call screen shop(s = petros_u)
     jump bazaar
 
 # fat

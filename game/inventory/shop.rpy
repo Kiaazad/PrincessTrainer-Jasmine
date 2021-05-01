@@ -55,7 +55,7 @@
                 c.bags[0].add(item.item, item.qtt)
                 s.bags[0].rem(item.item, item.qtt)
             
-screen shop(s, c):
+screen shop(s, c = hero):
     modal True
     default selling = True
     button:
