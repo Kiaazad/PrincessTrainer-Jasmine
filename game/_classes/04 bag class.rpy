@@ -7,7 +7,6 @@
             if items:
                 for ii,i in enumerate(items):
                     self.add(i[0], i[1])
-            self.dropped_x = 0
         def shuffle(self):
             renpy.random.shuffle(self.items)
         def clear(self):
@@ -40,9 +39,7 @@
 
         def stack(self):
             pass
-        def drop(self, drags, drop):
-            self.dropped_x = drags[0].x
-            renpy.restart_interaction()
+
         def swap(self, slot, who):
             r = self.items[slot]
             self.items[slot] = who.holding

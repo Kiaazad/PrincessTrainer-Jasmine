@@ -6,7 +6,12 @@
     )
     config.underlay.append(
         renpy.Keymap(
-            K_F10=lambda: renpy.show_screen("btl_arc")
+            K_F10=lambda: ToggleScreen("btl_arc")()
+        )
+    )
+    config.underlay.append(
+        renpy.Keymap(
+            K_F9=lambda: ToggleScreen("show_loot")()
         )
     )
 label dev_jumps:

@@ -1,34 +1,18 @@
 ﻿
-default test_bag = bag(
-    "test bag",
-    20,
-    [
-        (wood, 20),
-        (snake_bite_remedy, 2),
-        (scorpion_bite_remedy, 5),
-        (small_sword, 1),
-        (bow, 1),
-        (book1, 1),
-        (book4, 1),
-        (book2, 1),
-        (book3, 1),
-        (arrows, 6),
-    ],
-)
 
 init python:
     def return_mouse_pos():
         return renpy.get_mouse_pos()
 
-screen show_bag(p = abdul, xside = 0.5):
+screen show_bag(p = hero, xside = 0.5):
     default mode = "stack"
     default options = 1
-    default selected_bag = p.bags[0]
+    modal True
     drag:
         xalign xside
-        dragged selected_bag.drop
+        dragged p.dragged
         hbox:
-            if selected_bag.dropped_x > 650:
+            if p.bag_x > 650:
                 box_reverse True
             frame:
                 padding 0,0 xsize 660
@@ -39,7 +23,7 @@ screen show_bag(p = abdul, xside = 0.5):
                             button:
                                 text i.name
                                 at btn
-                                action SetScreenVariable("selected_bag", i), SelectedIf(i==selected_bag)
+                                action Function(p.change, i), SelectedIf(i==p.selected)
                         hbox:
                             text "[p.cash]"
                             add "inventory/coin.png"
@@ -52,11 +36,11 @@ screen show_bag(p = abdul, xside = 0.5):
 
                     hbox:
                         spacing 4 box_wrap True box_wrap_spacing 4
-                        for ii,i in enumerate(selected_bag.items):
+                        for ii,i in enumerate(p.selected.items):
                             if i == None:
                                 button:
                                     xysize 128,128 padding 0,0
-                                    action Function(selected_bag.pick, ii, abdul)
+                                    action Function(p.selected.pick, ii, p)
                             else:
                                 button:
                                     xysize 128,128 padding 0,0
@@ -65,9 +49,9 @@ screen show_bag(p = abdul, xside = 0.5):
                                         text "[i.qtt]" color "#fff" align(.9,.9)
                                     tooltip i
                                     if mode == "stack":
-                                        action Function(selected_bag.pick, ii, p)
+                                        action Function(p.selected.pick, ii, p)
                                     elif mode == "single":
-                                        action Function(selected_bag.pickOne, ii, p)
+                                        action Function(p.selected.pickOne, ii, p)
                                     elif mode == "eat":
                                         action Function(p.eat, i.item)
             if options:
@@ -87,7 +71,7 @@ screen show_bag(p = abdul, xside = 0.5):
                     button:
                         text "Shuffle"
                         at btn
-                        action Function(selected_bag.shuffle)
+                        action Function(p.selected.shuffle)
                     button:
                         text "Eat / drink"
                         at btn
@@ -113,3 +97,93 @@ transform holding_item_anim:
     alpha 0
     pause .05
     ease .1 alpha 1
+
+
+
+default test_chest = inventory(
+    12,
+    [
+        [wood, 2],
+        [string, 5],
+        [book2, 1]
+    ],
+    1.0
+)
+
+
+
+screen show_loot(e = test_chest, p = hero):
+    default mode = "stack"
+    modal True
+    drag:
+        hbox:
+            frame: # Your bag
+                padding 0,0 xsize 660
+                vbox:
+                    hbox:
+                        # text "[p.name]"
+                        for i in p.bags:
+                            button:
+                                text i.name
+                                at btn
+                                action Function(p.change, i), SelectedIf(i==p.selected)
+                        hbox:
+                            text "[p.cash]"
+                            add "inventory/coin.png"
+
+                    hbox:
+                        spacing 4 box_wrap True box_wrap_spacing 4
+                        for ii,i in enumerate(p.selected.items):
+                            if i == None:
+                                button:
+                                    xysize 128,128 padding 0,0
+                                    action Function(p.selected.pick, ii, p)
+                            else:
+                                button:
+                                    xysize 128,128 padding 0,0
+                                    background i.item.icon
+                                    if i.qtt > 1:
+                                        text "[i.qtt]" color "#fff" align(.9,.9)
+                                    tooltip i
+                                    if mode == "stack":
+                                        action Function(p.selected.pick, ii, p)
+                                    elif mode == "single":
+                                        action Function(p.selected.pickOne, ii, p)
+                                    elif mode == "eat":
+                                        action Function(p.eat, i.item)
+
+            frame: # Enemies bag
+                padding 0,0 xsize 660
+                vbox:
+                    hbox:
+                        # text "[e.name]"
+                        for i in e.bags:
+                            button:
+                                text i.name
+                                at btn
+                                action Function(e.change, i), SelectedIf(i==e.selected)
+                        hbox:
+                            text "[e.cash]"
+                            add "inventory/coin.png"
+
+                    hbox:
+                        spacing 4 box_wrap True box_wrap_spacing 4
+                        for ii,i in enumerate(e.selected.items):
+                            if i == None:
+                                button:
+                                    xysize 128,128 padding 0,0
+                                    action Function(e.selected.pick, ii, e)
+                            else:
+                                button:
+                                    xysize 128,128 padding 0,0
+                                    background i.item.icon
+                                    if i.qtt > 1:
+                                        text "[i.qtt]" color "#fff" align(.9,.9)
+                                    tooltip i
+                                    if mode == "stack":
+                                        action Function(e.selected.pick, ii, e)
+                                    elif mode == "single":
+                                        action Function(e.selected.pickOne, ii, e)
+                                    elif mode == "eat":
+                                        action Function(p.eat, i.item)
+

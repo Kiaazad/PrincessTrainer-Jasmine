@@ -14,9 +14,18 @@
 
             self.uniqueID = []
             self.holding = None
-
+            self.selected = self.bags[0]
             self.pick_pocket_skill = 0
 
+
+            self.bag_x = 0
+        def dragged(self, drags, drop):
+            self.bag_x = drags[0].x
+            renpy.restart_interaction()
+
+
+        def change(self, slot):
+            self.selected = slot
         def pick_pocket(self, target):
             amount = renpy.random.randint(0, target.cash)
             chance = renpy.random.randint(0,100)
@@ -93,3 +102,5 @@
                 buyer.cash -= price
                 self.cash += price
                 msg.msg("You have sold {} of {} to {} for {}".format(q, x.name, buyer.name, price))
+
+
