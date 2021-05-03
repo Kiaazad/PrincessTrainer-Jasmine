@@ -52,10 +52,10 @@
                                     hal "For the dead!"
                                     hide abd
                                     hide hal
-                                    
-                                    window hide
-                                    call screen btl_scr(team([abdul]), team([halia]))
-                                    pause
+                                    "This fight is temporary disabled due to lag issues."
+                                    # window hide
+                                    # call screen btl_scr(team([abdul]), team([halia]))
+                                    # pause
 
                                     jump lamp_visit_back_to_jafar
                 "Go to the angry one.":

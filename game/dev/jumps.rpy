@@ -11,7 +11,7 @@
     )
     config.underlay.append(
         renpy.Keymap(
-            K_F9=lambda: ToggleScreen("show_loot")()
+            K_F8=lambda: ToggleScreen("show_loot")()
         )
     )
 label dev_jumps:
