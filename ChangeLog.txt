@@ -1,5 +1,11 @@
 
 
+
+
+>> 0.19.1
+Errors while pressing [F], [Q], [R], or [T] keys are fixed
+The shine error fixed
+
 >> 0.19
 beer delivery quest is done, now we have a fully functional quest system
 the small bug with the shops is fixed
