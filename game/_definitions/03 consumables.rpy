@@ -14,7 +14,7 @@ default beer = item(
 default beer_keg = item(
     _("Beer keg"),
     _("A keg of beer containing around 40 pints of beer."),
-    "items/beer.png",
+    "items/beer_keg.png",
     2400,
     ["drug"],
 
