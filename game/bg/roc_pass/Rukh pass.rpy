@@ -91,7 +91,7 @@ default des_0_return = pnco(
 
 # Lamp shine
 image des_0_shine:
-    "bg/ev/shine.png"
+    "bg/roc_pass/Glimmer.png"
     ease .3 zoom .1 rotate -20
     ease .3 zoom 1 rotate 20
     repeat
