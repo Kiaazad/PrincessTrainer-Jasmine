@@ -1,0 +1,156 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "up_down",
+			"GroupId": "",
+			"Name": "up_down"
+		},
+		{
+			"Id": "all_alpha",
+			"GroupId": "",
+			"Name": "all_alpha"
+		},
+		{
+			"Id": "scroll_open",
+			"GroupId": "",
+			"Name": "scroll_open"
+		},
+		{
+			"Id": "all_rotation",
+			"GroupId": "",
+			"Name": "all_rotation"
+		},
+		{
+			"Id": "all_scale",
+			"GroupId": "",
+			"Name": "all_scale"
+		},
+		{
+			"Id": "blik_run",
+			"GroupId": "",
+			"Name": "blik_run"
+		},
+		{
+			"Id": "shine_rotation",
+			"GroupId": "",
+			"Name": "shine_rotation"
+		},
+		{
+			"Id": "shine_scale",
+			"GroupId": "",
+			"Name": "shine_scale"
+		},
+		{
+			"Id": "shine_alpha",
+			"GroupId": "",
+			"Name": "shine_alpha"
+		},
+		{
+			"Id": "dirt_fx",
+			"GroupId": "",
+			"Name": "dirt_fx"
+		},
+		{
+			"Id": "txt_accepted",
+			"GroupId": "ParamGroup2",
+			"Name": "txt_accepted"
+		},
+		{
+			"Id": "txt_completed",
+			"GroupId": "ParamGroup2",
+			"Name": "txt_completed"
+		},
+		{
+			"Id": "txt_failed",
+			"GroupId": "ParamGroup2",
+			"Name": "txt_failed"
+		},
+		{
+			"Id": "txt_canceled",
+			"GroupId": "ParamGroup2",
+			"Name": "txt_canceled"
+		},
+		{
+			"Id": "completed_fx",
+			"GroupId": "ParamGroup3",
+			"Name": "completed_fx"
+		},
+		{
+			"Id": "failed_fx",
+			"GroupId": "ParamGroup3",
+			"Name": "failed_fx"
+		},
+		{
+			"Id": "canceled_fx",
+			"GroupId": "ParamGroup3",
+			"Name": "canceled_fx"
+		},
+		{
+			"Id": "accepted_fx",
+			"GroupId": "ParamGroup3",
+			"Name": "accepted_fx"
+		},
+		{
+			"Id": "ropes_fx",
+			"GroupId": "ParamGroup",
+			"Name": "ropes_fx"
+		},
+		{
+			"Id": "Param_Angle_Rotation",
+			"GroupId": "ParamGroup",
+			"Name": "[0]rope_move"
+		},
+		{
+			"Id": "Param_Angle_Rotation2",
+			"GroupId": "ParamGroup",
+			"Name": "[1]rope_move"
+		},
+		{
+			"Id": "Param_Angle_Rotation3",
+			"GroupId": "ParamGroup",
+			"Name": "[2]rope_move"
+		},
+		{
+			"Id": "Param_Angle_Rotation4",
+			"GroupId": "ParamGroup",
+			"Name": "[3]rope_move"
+		},
+		{
+			"Id": "Param_Angle_Rotation5",
+			"GroupId": "ParamGroup",
+			"Name": "[4]rope_move"
+		}
+	],
+	"ParameterGroups": [
+		{
+			"Id": "ParamGroup2",
+			"GroupId": "",
+			"Name": "text field"
+		},
+		{
+			"Id": "ParamGroup3",
+			"GroupId": "",
+			"Name": "text_field_fx"
+		},
+		{
+			"Id": "ParamGroup",
+			"GroupId": "",
+			"Name": "rope_move"
+		}
+	],
+	"Parts": [
+		{
+			"Id": "Part2",
+			"Name": "L scroll"
+		},
+		{
+			"Id": "Part",
+			"Name": "text layers(2)"
+		},
+		{
+			"Id": "Layer13_Skinning",
+			"Name": "Layer13(Skinning)"
+		}
+	]
+}

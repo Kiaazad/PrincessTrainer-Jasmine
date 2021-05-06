@@ -1,0 +1,48 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "quest_menu.moc3",
+		"Textures": [
+			"quest_menu.2048/texture_00.png"
+		],
+		"Physics": "quest_menu.physics3.json",
+		"DisplayInfo": "quest_menu.cdi3.json",
+		"Motions": {
+			"": [
+				{
+					"File": "qst_accepted.motion3.json",
+					"FadeInTime": 0,
+					"FadeOutTime": 0
+				},
+				{
+					"File": "qst_canceled.motion3.json",
+					"FadeInTime": 0,
+					"FadeOutTime": 0
+				},
+				{
+					"File": "qst_completed.motion3.json",
+					"FadeInTime": 0,
+					"FadeOutTime": 0
+				},
+				{
+					"File": "qst_failed.motion3.json",
+					"FadeInTime": 0,
+					"FadeOutTime": 0
+				}
+			]
+		}
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		}
+	],
+	"HitAreas": []
+}
