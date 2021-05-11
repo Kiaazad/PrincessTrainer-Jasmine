@@ -30,6 +30,30 @@ label school:
     pause
     jump school
 
+
+default skin_scroll = item(
+    _("Skin scroll"),
+    _("A scroll made of goat skin."),
+    "items/skin_scroll.png",
+    1400,
+    ["stationery"],
+    )
+default paper = item(
+    _("Paper"),
+    _("A blank sheet of paper."),
+    "items/paper.png",
+    100,
+    ["stationery"],
+    )
+default black_ink = item(
+    _("ink"),
+    _("Black ink made of some black stuff."),
+    "items/black_ink.png",
+    800,
+    ["stationery"],
+    )
+
+
 define tea = Character("Teacher", color="#4ff", what_text_color="#dff")
 image teacher normal = "char/teacher/normal.png"
 default teacher_u = unit(
@@ -38,7 +62,9 @@ default teacher_u = unit(
 
     2441,
     [
-
+        (skin_scroll, 6),
+        (paper, 22),
+        (black_ink, 4),
     ],
     1.1,
 
@@ -50,7 +76,7 @@ default teacher_u = unit(
 
 default books_for_school = quest(
     _("Books for school"),
-    _("The school teacher needs books, Jafar's books."),
+    _("The school teacher needs books, Jafar's books are preferred."),
     )
 
 
@@ -81,11 +107,13 @@ label school_teacher:
 
     else:
         show teacher normal at right
-        tea "You again?"
+        tea "Got some books for me??"
         show abd normal at left
-        abd "It's about books."
-        tea "Alright."
-        call screen shop(s = teacher_u)
+        menu:
+            "Not yet.":
+                abd "Not yet but I need something."
+                tea "Alright."
+                call screen shop(s = teacher_u)
 
 
     jump school

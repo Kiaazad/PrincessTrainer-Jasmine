@@ -199,6 +199,11 @@ label lamp_visit_library:
     show abd normal at left
     jaf "I'll keep track of your progress...{nw}"
 
+default my_to_do_list = quest(
+    _("A to-do list"),
+    _("Jafar wants to write you a to-do list and he needs a blank skin scroll."),
+    )
+
 label lamp_visit_quests:
     # quest
     show bg quest
@@ -206,7 +211,14 @@ label lamp_visit_quests:
     abd "A mirror?"
     jaf "Through this mirror, I can watch you outside of the lamp. I can also guide you and give you information."
     show abd concerned at left
-    abd "You can see me all the time?"
+    abd "All the time?"
+    show jaf thinking at right
+    jaf "You're right, I have much better things to do than sitting here controlling your every move."
+    "..."
+    show jaf normal at right
+    jaf "Get me a skin scroll, I'll make a to do list for you.{w=.4} Make it your first priority."
+    $ qlog.got(my_to_do_list)
+    abd "Um...{w=.2} my concern was something else."
     show jaf probing at right
     jaf "What's the matter?"
     abd "What about my privacy?"
@@ -288,9 +300,8 @@ label lamp_visit_fight:
             hide abd
             hide jaf
             window hide
-            "Battle is currently disabled due to lag issues."
-            # show screen btl_scr(team([abdul]), team([training_dummy]))
-            # pause
+            show screen btl_scr(team([abdul]), team([training_dummy]))
+            pause
 
             show abd normal at left
             with dissolve
@@ -382,9 +393,8 @@ label ch3_mirror:
 
 label ch3_fight(j=False):
     window hide
-    "Battle is currently disabled due to lag issues."
-    # show screen btl_scr(team([abdul]), team([unit("Training dummy", "char/training_dummy", lvl = 1, type = "Dummy")]))
-    # pause
+    show screen btl_scr(team([abdul]), team([unit("Training dummy", "char/training_dummy", lvl = 1, type = "Dummy")]))
+    pause
     if j:
         return
     else:

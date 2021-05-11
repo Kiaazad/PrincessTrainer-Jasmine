@@ -2,6 +2,9 @@
 
 
 
+
+The fights are back (not sure what caused the lags, I assume it was my computer)
+
 >> 0.19.1
 Errors while pressing [F], [Q], [R], or [T] keys are fixed
 The shine error fixed

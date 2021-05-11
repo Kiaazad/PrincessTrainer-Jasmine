@@ -58,7 +58,7 @@ screen navigation(ii=0):
         action MainMenu()
 
 init python:
-     config.game_menu_action = [None]
+    config.game_menu_action = [None]
 style nav_button:
     background None
 
@@ -69,7 +69,13 @@ default learn_pick_pocket = quest(
 )
 
 
-
+default lamp_quest = pnco(
+    "Jafar's den",
+    "bg/lamp/quest.png",
+    (1272, 828),
+    Jump('lamp_quest'),
+    hidden = False, hoffset = (114,80),
+    )
 
 default lamp_jafar = pnco(
     "Jafar's den",
@@ -134,6 +140,8 @@ default lamp_map = pncs(
         lamp_harem,
         lamp_fight,
 
+        lamp_quest,
+
         lamp_save,
         lamp_settings,
         lamp_gate,
@@ -147,6 +155,10 @@ label inside_lamp:
     show bg lamp onlayer bg
     show screen pnc(abdul, lamp_map)
     pause
+    jump inside_lamp
+
+label lamp_quest:
+    call screen quests
     jump inside_lamp
 
 label lamp_fight:
