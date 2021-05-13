@@ -196,7 +196,7 @@ label lamp_jafar:
     menu:
         "Chit chat.":
             jaf "No time for chit chat."
-        "I've got the money." if qlog.has(fast_cash) == "Active" and abdul.cash > 2000:
+        "I've got the money." if qlog.has(fast_cash) == "Active" and hero.cash > 2000:
             abd "I've got the money."
             jaf "Excellent!"
             $ abdul.got(ring_recipe, 1)
@@ -241,6 +241,18 @@ label lamp_jafar:
             jaf "Don't stand around, go!"
             abd "Alright."
             jump agrabah
+        "I got the scroll." if qlog.has(my_to_do_list) == "Active" and hero.has(skin_scroll):
+            abd "I got the scroll Jafar."
+            jaf "Excellent!{W=.2} Hold it up."
+            show jaf magic at right
+            pause 1
+            show jaf normal at right
+            jaf "There."
+            jaf "It keeps track of your tasks, now go do them."
+            $ my_to_do_list.finish()
+            abd "But...{w=.2}{NW}"
+            jaf "Go figure it out.{w=.2} I can't explain everything to you."
+
     jump inside_lamp
 
 

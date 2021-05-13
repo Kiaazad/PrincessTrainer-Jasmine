@@ -150,7 +150,7 @@ label jewelry_shop:
         show jeweler normal at right
         jew "You don't look like you belong here! Did you find something valuable to sell?"
         show abd normal at left
-        if abdul.has(black_lamp) and not "shown lamp" in jeweler_u.flags:
+        if hero.has(black_lamp) and not "shown lamp" in jeweler_u.flags:
             $ jeweler_u.add_flag("shown lamp")
             abd "I've found this lamp in the desert."
             abd "Do you look like a junk trader?"
