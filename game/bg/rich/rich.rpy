@@ -65,7 +65,7 @@ label rich_laila:
         kam "Before I report you to the guards."
         abd "alright..."
         $ abdul.flags.append("kamal's warning")
-        jump street
+        jump rich
     elif not "kamal's second warning" in abdul.flags:
         show laila normal at right with dissolve
         show abd normal at left with dissolve
@@ -73,8 +73,8 @@ label rich_laila:
         kam "What did I tell you?"
         kam "Get lost!"
         $ abdul.flags.append("kamal's second warning")
-        jump street
-    else:
+        jump rich
+    elif not "got arrested" in abdul.flags:
         show laila normal at right with dissolve
         show abd normal at left with dissolve
         show kamal normal at midright with moveinright
@@ -92,6 +92,13 @@ label rich_laila:
         abd "But...{w=.2}{nw}"
         ras "{size=44}Move!{w=.2}{nw}" with hpunch
         "{nw}"
+        $ abdul.flags.append("got arrested")
         jump rasoul_arc_1
-
+    else:
+        show laila normal at right with dissolve
+        show abd normal at left with dissolve
+        show kamal normal at midright with moveinright
+        kam "You're here again?"
+        kam "Rasoul will pay for this."
+        jump rich
 
