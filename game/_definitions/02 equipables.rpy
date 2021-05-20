@@ -41,7 +41,7 @@ default bracers_of_agility = item(
     _("The vendor says: it Gives you 15 agility."),
     "items/bracers_of_agility.png",
     1200,
-    ["Wrist", "armor"],
+    ["Wrist", "Armor"],
     )
 
 default simple_hat = item(

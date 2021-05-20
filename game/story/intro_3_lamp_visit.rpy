@@ -300,8 +300,7 @@ label lamp_visit_fight:
             hide abd
             hide jaf
             window hide
-            show screen btl_scr(team([abdul]), team([training_dummy]))
-            pause
+            call screen btl_scr(team([abdul]), team([training_dummy]))
 
             show abd normal at left
             with dissolve
@@ -393,8 +392,8 @@ label ch3_mirror:
 
 label ch3_fight(j=False):
     window hide
-    show screen btl_scr(team([abdul]), team([unit("Training dummy", "char/training_dummy", lvl = 1, type = "Dummy")]))
-    pause
+    call screen btl_scr(team([abdul]), team([unit("Training dummy", "char/training_dummy", lvl = 1, type = "Dummy")]))
+
     if j:
         return
     else:

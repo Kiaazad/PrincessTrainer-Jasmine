@@ -41,7 +41,6 @@ default street_blacksmith_loc = pnco(
     hidden = False, hoffset = (20,20),
     )
 
-
 default street_desert_loc = pnco(
     "Desert",
     "bg/street/desert.png",
@@ -97,6 +96,7 @@ default street_map = pncs(
         street_shepard,
     ], night = "bg/street/night.jpg"
     )
+
 image bg street = "bg/street/bg.png"
 label street:
     scene
@@ -108,6 +108,23 @@ label street:
 # Blacksmith
 define rah = Character("Rahman", color="#4ff", what_text_color="#dff")
 image rahman normal = "char/rahman/normal.png"
+
+default damascus_steel = item(
+    _("Damascus steel"),
+    _("Very high quality steel from India."),
+    "items/damascus_steel.png",
+    1400,
+    ["Material", "Metal"],
+    )
+default damascus_sword = item(
+    _("Damascus sword"),
+    _("A sword so sharp it can cut silk in mid air."),
+    "items/damascus_sword.png",
+    1400,
+    ["Weapon"],
+    )
+
+
 
 default rahman_u = unit(
     "Rahman",
@@ -125,7 +142,7 @@ default rahman_u = unit(
 
     14,
     "Peasant",
-    interests = ["Weapon", "armor", "fuel"],
+    interests = ["Weapon", "Armor", "Fuel"],
     reject = ["hard drug"]
     )
 label blacksmith:
