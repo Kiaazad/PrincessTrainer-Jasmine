@@ -331,6 +331,7 @@ label ch3_1:
     scene black
     show screen lamp_visit_menu
     pause
+    jump ch3_1
 
 screen lamp_visit_menu:
     style_prefix "nav"
@@ -338,7 +339,7 @@ screen lamp_visit_menu:
     button:
         at lampoff(-350, 150)
         add "bg/lamp/fight.png"
-        action Hide("lamp_visit_menu"), Call("ch3_fight")
+        action Hide("lamp_visit_menu"), Jump("ch3_fight")
     button:
         at lampoff(350, 150)
         add "bg/lamp/harem.png"

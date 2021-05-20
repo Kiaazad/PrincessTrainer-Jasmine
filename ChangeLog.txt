@@ -1,8 +1,10 @@
 
 
 
-
-
+We have a new jailer
+added quest notification animations
+some new items for future quests
+fixed the return stack error (appearing in the middle of the screen)
 The fights are back (not sure what caused the lags, I assume it was my computer)
 
 >> 0.19.1

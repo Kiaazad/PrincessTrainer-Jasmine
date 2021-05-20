@@ -63,7 +63,6 @@ image quest_notification = Live2D("quests/quest_menu_l2d/quest_menu.model3.json"
     )
 
 screen quest_notif(s):
-    modal True
     add "quest_notification [s]":
         yalign 0.9
     timer 5 action Hide("quest_notif")
