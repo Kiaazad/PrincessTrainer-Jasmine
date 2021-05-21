@@ -129,7 +129,7 @@ default axe = item(
 default saw = item(
     _("Saw"),
     _("A single handle saw."),
-    "items/bracers_of_agility.png", ##
+    "items/saw.png", ##
     1600,
     ["tools"],
     )

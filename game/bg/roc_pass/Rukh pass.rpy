@@ -58,7 +58,7 @@ default des_0_7 = pnco(
 default empty_chest = item(
     _("Empty chest"),
     _("It's too beat up to keep stuff."),
-    "items/wood.png",
+    "items/empty_chest.png",
     220,
     )
 default des_0_chest = pnco(
@@ -72,7 +72,7 @@ default des_0_chest = pnco(
 default rusty_sword = item(
     _("Rusty sword"),
     _("Can it be restored?"),
-    "items/wood.png",
+    "items/rusty_sword.png",
     220,
     )
 default des_0_sword = pnco(

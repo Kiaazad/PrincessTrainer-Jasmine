@@ -308,6 +308,7 @@ label ch2_1:
         xalign .2
     pause .2
     $ agrabah_lamp.hidden = False
+    $ hero.drop(black_lamp, 1)
     show abd normal at left:
         ease .6 xalign .2
     jaf "Excellent."

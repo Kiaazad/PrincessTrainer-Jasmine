@@ -175,7 +175,7 @@ label lamp_harem:
 default ring_recipe = item(
     _("Ring recipe"),
     _("A recipe for an odd looking copper ring. Jafar drawn and wrote it."),
-    "items/wood.png",
+    "items/ring_recipe.png",
     0,
     ["Finger", "jewelry"],
     )
