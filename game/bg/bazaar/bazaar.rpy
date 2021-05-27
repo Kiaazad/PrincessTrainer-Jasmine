@@ -181,9 +181,6 @@ default akbar = unit(
         (wood, 20),
         (small_sword, 1),
         (bow, 1),
-        (book1, 1),
-        (book4, 1),
-        (book2, 1),
         (arrows, 6),
         (water, 7),
         (prayer_beads, 12),
@@ -289,7 +286,6 @@ default tailor_u = unit(
 
     3410,
     [
-        (book1, 1),
         (simple_hat, 2),
         (simple_shirt, 3),
         (simple_pants, 2),

@@ -68,3 +68,4 @@
                     who.holding.qtt += 1
             else:
                 self.pick(slot, who)
+

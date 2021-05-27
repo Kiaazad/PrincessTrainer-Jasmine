@@ -87,20 +87,20 @@ default list_of_ingredients = [
 
 
 # Books
-default book1 = item(
-    _("Red book"),
-    _("It's a red book. I'm sure it's one of Jafar's works."),
-    "items/book1.png",
-    3100,
-    ["book"],
-    )
+# default book1 = item(
+#     _("Red book"),
+#     _("It's a red book. I'm sure it's one of Jafar's works."),
+#     "items/book1.png",
+#     3100,
+#     ["Book"],
+#     )
 
 default book2 = item(
     _("Book of Err"),
     _("The facetting tale of Err. It's about an errrr man that went errrr."),
     "items/book2.png",
     5300,
-    ["book"],
+    ["Book"],
     )
 
 default book3 = item(
@@ -108,7 +108,7 @@ default book3 = item(
     _("It seems to be written in code."),
     "items/book3.png",
     9500,
-    ["book"],
+    ["Book"],
     )
 
 default book4 = item(
@@ -116,11 +116,11 @@ default book4 = item(
     _("This book looks old. The cover the worn out and the papers are completely brown"),
     "items/book4.png",
     2200,
-    ["book"],
+    ["Book"],
     )
 
 default list_of_books = [
-    book1, book2, book3, book4,
+    book2, book3, book4,
 ]
 
 

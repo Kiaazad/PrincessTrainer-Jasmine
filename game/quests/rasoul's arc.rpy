@@ -112,27 +112,111 @@ label rasoul_arc_1:
 
 image bg jail = "bg/jail/bg.jpg"
 image bg jail cell = "bg/jail/cell.jpg"
+
+define qasim = Character("Qasim", color="#4ff", what_text_color="#dff")
+# Normal
+image qasim_normal_blink:
+    "char/qasim/normal_blink.png"
+    alpha 0
+    choice:
+        2
+    choice:
+        3
+
+    alpha 1
+    .1
+    repeat
+image qasim_normal_mouth_moving:
+    "char/qasim/normal_bla.png"
+    .1
+    alpha 0
+    .2
+    alpha 1
+    repeat
+
+image qasim_normal_mouth = ConditionSwitch(
+    "_last_say_who == 'qasim'", "qasim_normal_mouth_moving",
+    "not _last_say_who == 'qasim'", "char/qasim/normal.png")
+
+image qasim normal = Composite((957, 871),
+    (0,0), "char/qasim/normal.png",
+    (0,0), "qasim_normal_mouth",
+    (0,0), "qasim_normal_blink",
+)
+
+init python:
+    class book:
+        def __init__(self, name, inf, paragraphs):
+            self.name = name
+            self.inf = inf
+            self.paragraphs = paragraphs
+
+screen book_reader(b):
+    modal True
+
+
+default the_free_lie = book(
+    _("The free lie"),
+    _("By Jafar Barmaki"),
+    [
+        _("In a grad scale, free doesn't exist. Everything has it's own cost and somebody is paying that cost, that somebody is often you."),
+        _("The iron in the ground is free, but you need to pay for an iron axe simply because somebody had to dig the iron out of the ground, somebody had to gather wood for the bloomery, somebody had to hammer the bloom into iron and somebody had to shape it into an axe.\nIt's useless to you when it's free and even if you do all of those yourself, it wouldn't be free, you had to pay for it with your labor and time."),
+        _("When you find a sack of coins on the ground, it looks like free money for you, but comes as a heavy cost to somebody else."),
+        _("When a merchant feels generous with votive offerings, it might look like a free meal that comes out of his pockets to the commoners, but the cost often comes out of the pockets of his customers.\nHe kept his house, his shop, his wealth and his social status. Nothing changes for him, if anything, this show of duplicity was a ploy to push him upwards in the social ranks."),
+        _("In other hand, he cover his costs by selling his merchandise for a little more. A cost that everybody else has to pay for him."),
+        _("You can't think of anything that comes free of cost, some effort had to go into collecting, moving or shaping it. Therefore, next time you're offered something for free, ask, what's the catch?")
+    ]
+)
+default the_free_lie_book = item(
+    _("The free lie"),
+    _("One of Jafar's books."),
+    "items/the_free_lie_book.png",
+    2300,
+    ["Book", "By Jafar", "Forbidden"],
+    the_free_lie,
+    )
+
+default jail_chest = inventory(
+    0,
+    [
+
+    ],
+    1.0
+)
 label rasoul_arc_2:
     scene
     show bg jail onlayer bg
     # show screen pnc(abdul, barracks_map)
     show abd normal at midleft with dissolve
     show guard_2 normal at midright with dissolve
-    guard_2 "You're pretty lucky to get in.{w=.2} We're fully booked."
-    guard_2 "Now give me your belongings.{w=.2} I'll keep them safe."
-    "{w=2}{nw}"
-    # stripped of items and money
-    abd "A pile of books?"
-    guard_2 "They're illegal books we confiscated, not for the prisoners."
+    guard_2 "I've got a guest for you Qasim."
+    qasim "Coming..."
+    show abd normal at left with dissolve
+    show guard_2 normal at center with dissolve
+    show qasim normal at right with dissolve
+    qasim "Go!"
+    guard_2 "Right!"
+    hide guard_2 with dissolve
+    show qasim normal at midright with move
+    qasim "You're pretty lucky to get in.{w=.2} We're fully booked."
+    qasim "Now give me your belongings.{w=.2} I'll keep them safe."
+    abd "But...{w=.2}{nw}"
+    qasim "It's the law." with hpunch
+    call screen show_loot(jail_chest, mandatory = "give")
+    qasim "Your money too."
+    "..."
+    call screen show_loot(jail_chest, mandatory = "give_cash")
+    abd "Is that...{w=.2} pile of books?"
+    qasim "They're illegal books we confiscated, not for the prisoners."
     show bg jail cell onlayer bg
     show abd normal at midleft with dissolve
-    show guard_2 normal at midright with dissolve
-    guard_2 "Here's your room..."
-    guard_2 "No bed but the shackles are pretty comfy.{w=.2} Just yell if you want me to put them on you."
+    show qasim normal at midright with dissolve
+    qasim "Here's your room..."
+    qasim "No bed but the shackles are pretty comfy.{w=.2} Just yell if you want me to put them on you."
     "..."
-    guard_2 "Enjoy your stay in the palace."
+    qasim "Enjoy your stay in the palace."
     show abd normal at left with dissolve
-    hide guard_2 with dissolve
+    hide qasim with dissolve
 
 default planted_evidence = quest(
     _("Planted evidence"),
@@ -150,76 +234,77 @@ label rasoul_arc_3:
             abd "Guard...{w=.2} guard!"
             "..."
             abd "Guard!"
-            show guard_2 normal at right with dissolve
-            guard_2 "What is it?"
+            show qasim normal at right with dissolve
+            qasim "What is it?"
             abd "I'm hungry."
-            guard_2 "Where do you think you are?{w=.2} A tavern?"
+            qasim "Where do you think you are?{w=.2} A tavern?"
             if (calendar.day % 2):
-                guard_2 "You'll get your piece of bread every other day.{w=.2} Today isn't the other day."
+                qasim "You'll get your piece of bread every other day.{w=.2} Today isn't the other day."
             else:
-                guard_2 "You'll get your piece of bread every other day.{w=.2} Lucky for you, today is an other day."
-            guard_2 "Now shut up!"
-            hide guard_2 with dissolve
+                qasim "You'll get your piece of bread every other day.{w=.2} Lucky for you, today is an other day."
+            qasim "Now shut up!"
+            hide qasim with dissolve
             menu:
                 "I can't stay here...":
                     abd "Guard!"
                     "..."
-                    show guard_2 normal at right with dissolve
-                    guard_2 "Will you shut up?"
-                    abd "Guard...{w=.2} please...{w=.2} I can't stay here..."
-                    guard_2 "Why didn't you say so?{w=.2} Let me release you."
-                    "..."
-                    abd "Really?"
-                    guard_2 "Of course not.{w=.2} You idiot."
-                    abd "Come on,{w=.2} there must be a way,{w=.2} I didn't do anything wrong."
-                    guard_2 "Why didn't yo...{w=.2}{nw}"
-                    ras "There is a way."
-                    show ras normal at center with moveinright
-                    ras "You can pay the fine."
-                    abd "But you took all of my money."
-                    guard_2 "You have some money stashed somewhere don't you?"
-                    ras "Do you?"
-                    abd "I'm a wood collector sleeping on the streets Rasoul."
-                    ras "Then this is an improvement for you, isn't it?"
-                    abd "Please Rasoul, you know I'm innocent."
-                    ras "Hmmm...{w=.2} Maybe you can do something for me."
-                    abd "Anything Rasoul."
-                    ras "Bring me the book!"
-                    guard_2 "Yes sir."
-                    hide guard_2 with moveoutright
-                    "..."
-                    show guard_2 normal at right with moveinright
-                    guard_2 "Sir."
-                    ras "Take this!"
-                    # Receive jafar's book
-                    ras "Plant this book on Hakim's shelf and I'll forgive you."
-                    abd "Alright...{w=.2} But why."
-                    $ qlog.got(planted_evidence)
-                    ras "Because I said so."
-                    abd "Hakim is my friend Rasoul.{w=.2} What are you planning to do to him."
-                    ras "Do you want to get out of here or not?"
-                    abd "Yes."
-                    ras "Then do as I say."
-                    abd "well...{w=.2} If I have to."
-                    ras "Good.{w=.2} Release him!"
-                    hide ras with moveoutright
-                    guard_2 "Yes sir!"
-                    "..."
-                    scene
-                    show bg jail onlayer bg
-                    # show screen pnc(abdul, barracks_map)
-                    show abd normal at midleft with dissolve
-                    show guard_2 normal at midright with dissolve
-                    abd "Can I have my belongings back?"
-                    guard_2 "What belongings?"
-                    abd "The ones you took from me."
-                    guard_2 "Alright, here are your junk."
-                    abd "And my money?"
-                    guard_2 "You didn't have any."
-                    abd "But...{w=.2}{nw}"
-                    guard_2 "Do you want to go back to your cell?"
-                    abd "No."
-                    guard_2 "Then get out!"
-                    "..."
-                    guard_2 "Go!"
-                    jump barracks
+    show qasim normal at right with dissolve
+    qasim "Will you shut up?"
+    abd "Guard...{w=.2} please...{w=.2} I can't stay here..."
+    qasim "Why didn't you say so?{w=.2} Let me release you."
+    "..."
+    abd "Really?"
+    qasim "Of course not.{w=.2} You idiot."
+    abd "Come on,{w=.2} there must be a way,{w=.2} I didn't do anything wrong."
+    qasim "Why didn't yo...{w=.2}{nw}"
+    ras "There is a way."
+    show ras normal at center with moveinright
+    ras "You can pay the fine."
+    abd "But you took all of my money."
+    qasim "You have some money stashed somewhere don't you?"
+    ras "Do you?"
+    abd "I'm a wood collector sleeping on the streets Rasoul."
+    ras "Then this is an improvement for you, isn't it?"
+    abd "Please Rasoul, you know I'm innocent."
+    ras "Hmmm...{w=.2} Maybe you can do something for me."
+    abd "Anything Rasoul."
+    ras "Bring me the book!"
+    qasim "Yes sir."
+    hide qasim with moveoutright
+    "..."
+    show qasim normal at right with moveinright
+    qasim "Sir."
+    ras "Take this!"
+    $ hero.got(the_free_lie_book, 1)
+    ras "Plant this book on Hakim's shelf and I'll forgive you."
+    abd "Alright...{w=.2} But why."
+    $ qlog.got(planted_evidence)
+    ras "Because I said so."
+    abd "Hakim is my friend Rasoul.{w=.2} What are you planning to do to him."
+    ras "Do you want to get out of here or not?"
+    abd "Yes."
+    ras "Then do as I say."
+    abd "well...{w=.2} If I have to."
+    ras "Good.{w=.2} Release him!"
+    hide ras with moveoutright
+    qasim "Yes sir!"
+    "..."
+    scene
+    show bg jail onlayer bg
+    # show screen pnc(abdul, barracks_map)
+    show abd normal at midleft with dissolve
+    show qasim normal at midright with dissolve
+    abd "Can I have my belongings back?"
+    qasim "What belongings?"
+    abd "The ones you took from me."
+    qasim "Alright, here are your junk."
+    call screen show_loot(jail_chest, mandatory = "take")
+    abd "And my money?"
+    qasim "You didn't have any."
+    abd "But...{w=.2}{nw}"
+    qasim "Do you want to go back to your cell?"
+    abd "No."
+    qasim "Then get out!"
+    "..."
+    qasim "Go!"
+    jump barracks
