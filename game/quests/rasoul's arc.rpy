@@ -329,6 +329,7 @@ label rasoul_arc_end:
     abd "Yes, I've planted the book in his bookshelf."
     ras "Excellent, you can go."
     $ planted_evidence.finish()
+    $ hakim_loc.enabled = False
     if len(planted_evidence.inf) < 2:
         jump barracks
     abd "There's one more thing."
