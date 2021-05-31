@@ -138,7 +138,7 @@ image qasim_normal_mouth = ConditionSwitch(
     "_last_say_who == 'qasim'", "qasim_normal_mouth_moving",
     "not _last_say_who == 'qasim'", "char/qasim/normal.png")
 
-image qasim normal = Composite((957, 871),
+image qasim normal = Composite((840, 700),
     (0,0), "char/qasim/normal.png",
     (0,0), "qasim_normal_mouth",
     (0,0), "qasim_normal_blink",
@@ -328,6 +328,7 @@ label rasoul_arc_end:
     ras "Well?"
     abd "Yes, I've planted the book in his bookshelf."
     ras "Excellent, you can go."
+    $ planted_evidence.finish()
     if len(planted_evidence.inf) < 2:
         jump barracks
     abd "There's one more thing."
@@ -337,7 +338,6 @@ label rasoul_arc_end:
     abd "Well, Since Hakim often reads books, it's possible he would spot the book and destroys it before you get there."
     ras "Good point. You're not as dum as you look."
     ras "I better move fast before that happens."
-    $ planted_evidence.finish()
     abd "Wait?"
     ras "What now?"
     menu:
@@ -359,8 +359,7 @@ label rasoul_arc_end:
             qasim "So... How much are we talking about?"
             $ money_amount_barter = 0
             jump rasoul_arc_end_barter
-
-                 
+ 
         "I've paid money for the wine.":
             abd "I've paid money for the wine, can you pay me for it please?"
             ras "How dare you ask for money?"
