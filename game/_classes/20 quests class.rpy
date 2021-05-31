@@ -17,7 +17,9 @@
             Show("quest_notif", s = "qst_canceled")()
         def fail(self):
             Show("quest_notif", s = "qst_failed")()
-
+        def extend(self, text):
+            self.inf.append(text)
+            msg.msg("Changed quest: {}".format(self.name))
     class quest_log:
         def __init__(self):
             self.log = []

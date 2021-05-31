@@ -232,49 +232,173 @@ default hakim_u = unit(
 
 label hakim:
     scene
-    if not "erect old" in hakim_u.flags or not "shown lamp" in hakim_u.flags:
-        show hakim normal at right
+    show hakim normal at right
+    if not "first" in hakim_u.flags:
         hak "Ah, Abdul, how are you today, are you feeling sick again?"
-        show abd normal at left
-        menu:
-            "Not today...":
-                abd "Not today Hakim."
-                hak "Have you come to buy a remedy?"
-                abd "Let me see what you have."
-            "Found anything to erect old men yet Hakim?" if not "erect old" in hakim_u.flags:
-                $ hakim_u.add_flag("erect old")
-                abd "Found anything to erect old men yet Hakim?"
-                hak "Ah hahaha, This joke again? Let me know if there's anything I can do for you."
-                abd "Sure. I'll take a look."
-            "I've found this lamp..." if abdul.has(black_lamp) and not "shown lamp" in hakim_u.flags:
-                $ hakim_u.add_flag("shown lamp")
-                abd "I've found this lamp hakim."
-                abd "Do you want to buy it?"
-                hak "Hmmm... I do need a good old lamp for my nightly reading sessions."
-                hak "Looks fine... How much are you selling it?"
-                abd "For you hakim, 2000!"
-                hak "You know I can't afford that abdul."
-                hak "1500?"
-                menu:
-                    "Sure":
-                        abd "Sure"
-                        hak "Thank you abdul. I'll make it up to you"
-                        $ abdul.sell(black_lamp, 1, hakim_u, 1500)
-                        hak "Do you want to buy something as well?"
-                        abd "Sure."
-                    "Too low!":
-                        abd "That's too low hakim."
-                        hak "Alright, buy something and I might be able to buy it from you."
-                        abd "Sure."
-        hak "Choose wisely."
+        $ hakim_u.add_flag("first")
     else:
-        show hakim normal at right
-        hak "Ah, Abdul, nice to see you again."
-        show abd normal at left
+        hak "Abdul, you're back."
+    show abd normal at left
+    menu:
+        # planted_evidence
+        "I just came to say hi." if qlog.has(planted_evidence) == "Active" and hero.has(the_free_lie_book):
+            abd "No, I just came to say hi Hakim."
+            hak "Ah, so nice of you. Let me put my grind away and come back to you."
+            hide hakim with moveoutright
+            abd "No no! I'm leaving, don't let me interrupt your work."
+            menu:
+                "Leave the book.":
+                    $ hero.drop(the_free_lie_book, 1)
+                    $ planted_evidence.complete()
+            abd "Goodby hakim."
+            jump bazaar
+        "I have some bad news." if qlog.has(planted_evidence) == "Active" and len(planted_evidence.inf) == 1:
+            abd "I have some bad news hakim."
+            hak "What's the matter? Something happened to you? Are you in pain?"
+            abd "It's Rasoul."
+            hak "Oh man, is he up to no good again?"
+            abd "Yes, and this time he's targeting you."
+            hak "Me?"
+            abd "He forcing me to plant this book in your shop."
+            hak "This is bad"
+            "..."
+            hak "He wants me in jail.."
+            abd "I can refuse and throw the book back to him."
+            hak "There's no point."
+            hak "He'll throw you in jail and comes for me some other way."
+            abd "What should we do?"
+            hak "I would run to Jafar, he was the wise man to know what to do, but he's g...{w=.2}{nw}"
+            abd "Yes! I can ask him!"
+            hak "He's no more Abdul."
+            abd "Emmmm..."
+            abd "I know somebody as wise as Jafar. I can ask him."
+            hak "Who?"
+            abd "I'll be right back."
+            $ planted_evidence.extend(_("Talk to jafar and find a solution to Hakim's predicament."))
+            jump bazaar
+        "I have a solution." if qlog.has(planted_evidence) == "Active" and planted_evidence.inf[-1] in ["Plant a bottle of wine in Hakim's shop.", "Ask hakim for some money for the wine."] and "Talk to jafar and find a solution to Hakim's predicament." in planted_evidence.inf:
+            abd "I have the solution Hakim."
+            hak "Really? do tell."
+            abd "I'll hide a bottle of wine in your shop, tell Rasoul that I've planted the book and the wine."
+            abd "He can only find the wine and arrest you for it instead."
+            hak "hmmm..."
+            hak "If Rasoul doesn't bring another book to plant on me, That can actually work."
+            hak "This friend of yours is a genius. Anyone I know?"
+            abd "Maybe."
+            hak "Interesting, can I meet him?"
+            abd "Maybe later."
+            hak "Right, let's deal with the situation at hand first."
+            hak "Do you have the bottle of wine?"
+            if hero.has(wine):
+                abd "Yes."
+                abd "Here."
+                abd "Put it among your remedies."
+                $ planted_evidence.complete()
+            else:
+                menu:
+                    "I'll buy one...":
+                        abd "No, but I'll buy one right away."
+                    "I didn't have money.":
+                        abd "No, They took my money, I didn't have any."
+                        hak "I see, here..."
+                        $ hero.gotcash(700)
+                        hak "This should be enough."
+                        abd "I'll be right back."
+                $ planted_evidence.extend(_("Buy a bottle of wine for Hakim."))
+            hak "Thank you, you're a savior Abdul."
+            jump bazaar
+        "I got the wine." if qlog.has(planted_evidence) == "Active" and planted_evidence.inf[-1] in ["Buy a bottle of wine for Hakim."] and hero.has(wine):
+            abd "I got the wine Hakim."
+            abd "Here..."
+            hak "Thank you."
+            abd "Put it among your remedies."
+            hak "I will."
+            $ planted_evidence.complete()
+            "..."
+            abd "I should go."
+            hak "For sure, let's hope for the best."
+            jump bazaar
+
+        "I have bad news and good news..." if qlog.has(planted_evidence) == "Active" and planted_evidence.inf[-1] in ["Plant a bottle of wine in Hakim's shop.", "Ask hakim for some money for the wine."] and not "Talk to jafar and find a solution to Hakim's predicament." in planted_evidence.inf:
+            abd "I have bad news and good news hakim."
+            hak "oh? What about?"
+            abd "THe bad news is... Rasoul is targeting you and tried to force me to plant one of Jafar's books in your shop or go to jail."
+            hak "He didn't..."
+            hak "That is indeed bad news. What's the good news?"
+            abd "I already have a solution."
+            hak "What's the solution?"
+            abd "We'll plant a bottle of wine instead and you can make an excuse for it and both of us escape this predicament."
+            "..."
+            abd "What do you think?"
+            hak "That certainty is a solution."
+            hak "And he wouldn't back off until they get me behind the bars."
+            abd "Who is him:"
+            hak "The doctor of the palace."
+            abd "Why he wants you locked up?"
+            hak "He doesn't like cheap medicine available to the poor and accused me of stealing his patients."
+            abd "I see."
+            hak "In any case, let's proceed with your plan. I can't think of anything better."
+            hak "Do you have the bottle of wine?"
+            if hero.has(wine):
+                abd "Yes."
+                abd "Here."
+                abd "Put it among your remedies."
+                $ planted_evidence.complete()
+            else:
+                menu:
+                    "I'll buy one...":
+                        abd "No, but I'll buy one right away."
+                    "I didn't have money.":
+                        abd "No, They took my money, I didn't have any."
+                        hak "I see, here..."
+                        $ hero.gotcash(700)
+                        hak "This should be enough."
+                        abd "I'll be right back."
+                $ planted_evidence.extend(_("Buy a bottle of wine for Hakim."))
+            hak "Thank you, you're a savior Abdul."
+            jump bazaar
+
+        "Not today..." if not "not today" in hakim_u.flags:
+            $ hakim_u.add_flag("not today")
+            abd "Not today Hakim."
+            hak "Have you come to buy a remedy?"
+            abd "Let me see what you have."
+        "Found anything to erect old men yet Hakim?" if not "erect old" in hakim_u.flags:
+            $ hakim_u.add_flag("erect old")
+            abd "Found anything to erect old men yet Hakim?"
+            hak "Ah hahaha, This joke again? Let me know if there's anything I can do for you."
+            abd "Sure. I'll take a look."
+        "I've found this lamp..." if abdul.has(black_lamp) and not "shown lamp" in hakim_u.flags:
+            $ hakim_u.add_flag("shown lamp")
+            abd "I've found this lamp hakim."
+            abd "Do you want to buy it?"
+            hak "Hmmm... I do need a good old lamp for my nightly reading sessions."
+            hak "Looks fine... How much are you selling it?"
+            abd "For you hakim, 2000!"
+            hak "You know I can't afford that abdul."
+            hak "1500?"
+            menu:
+                "Sure":
+                    abd "Sure"
+                    hak "Thank you abdul. I'll make it up to you"
+                    $ abdul.sell(black_lamp, 1, hakim_u, 1500)
+                    hak "Do you want to buy something as well?"
+                    abd "Sure."
+                "Too low!":
+                    abd "That's too low hakim."
+                    hak "Alright, buy something and I might be able to buy it from you."
+                    abd "Sure."
+    hak "Choose wisely."
+
     #just added a cue from the seller, otherwise Abdul continues to slap his lips.
     # since we might add lip flip to vendors, "{nw}" should do the job as well
+    "{nw}"
     call screen shop(s = hakim_u)
     jump bazaar
+
+
+
+
 
 # Tailor
 define far = Character("Farrokh the tailor", color="#4ff", what_text_color="#dff")

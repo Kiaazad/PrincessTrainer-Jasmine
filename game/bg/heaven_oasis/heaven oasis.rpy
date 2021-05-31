@@ -75,7 +75,7 @@ default viking_u = unit( # we use a unit class to manage every character that ha
 
 default beer_for_the_viking = quest( 
     _("A viking's keg"),
-    _("The Viking in the oasis wants me to buy him some beer. A keg of beer."),
+    [_("The Viking in the oasis wants me to buy him some beer. A keg of beer.")],
     )
 
 

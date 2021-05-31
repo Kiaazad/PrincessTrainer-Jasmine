@@ -1,16 +1,16 @@
 ﻿default visit_malik = quest(
     _("Visit Malik"),
-    _("Visit Malik and find something you can use against him."),
+    [_("Visit Malik and find something you can use against him.")],
     )
 
 default visit_hosein = quest(
     _("Visit Hosein"),
-    _("Visit Hosein and find something you can use against him."),
+    [_("Visit Hosein and find something you can use against him.")],
     )
 
 default master_swordsman = quest(
     _("Master Swordsman"),
-    _("Become a master swordsman, the best in Agrabah."),
+    [_("Become a master swordsman, the best in Agrabah.")],
     )
 
 label ch2:

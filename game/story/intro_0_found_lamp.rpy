@@ -3,12 +3,12 @@
 
 default sell_lamp = quest(
     _("Sell the Lamp"),
-    _("Go to the bazaar and sell the lamp you have found."),
+    [_("Go to the bazaar and sell the lamp you have found.")],
     )
 
 default jafars_revenge = quest(
     _("Jafar's revenge"),
-    _("Assist Jafar in getting his revenge from Aladdin, Jasmine and the Sultan."),
+    [_("Assist Jafar in getting his revenge from Aladdin, Jasmine and the Sultan.")],
     )
 
 

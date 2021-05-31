@@ -74,7 +74,7 @@ label lamp_visit_back_to_jafar:
 
 define fast_cash = quest(
     _("Cash in hand"),
-    _("We need 2000 dinars for some jewelry Jafar wants to order.")
+    [_("We need 2000 dinars for some jewelry Jafar wants to order.")]
 )
 
 label lamp_visit_back_to_agrabah:

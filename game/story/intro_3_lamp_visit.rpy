@@ -146,7 +146,7 @@ label lamp_visit_settings:
 
 default books_for_jafar = quest(
     _("Books for jafar"),
-    _("Jafar wants books, lots of them."),
+    [_("Jafar wants books, lots of them.")],
     )
 
 label lamp_visit_library:
@@ -201,7 +201,7 @@ label lamp_visit_library:
 
 default my_to_do_list = quest(
     _("A to-do list"),
-    _("Jafar wants to write you a to-do list and he needs a blank skin scroll."),
+    [_("Jafar wants to write you a to-do list and he needs a blank skin scroll.")],
     )
 
 label lamp_visit_quests:

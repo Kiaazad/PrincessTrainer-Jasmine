@@ -18,25 +18,35 @@ screen quests(q = qlog):
                         xsize 300
                         text "Filter: {}".format(filters[q.filt])
                         action Function(q.filter)
-                    for i in q.log:
-                        if i.stat == filters[q.filt] or filters[q.filt] == "All":
-                            button:
-                                background None selected_foreground Frame("quests/arrow.png", 10,0,32,0) xalign 0.0 padding 10,10,40,10 
-                                text i.name:
-                                    if i.stat == "Completed":
-                                        color colors["Completed"]
-                                    elif i.stat == "Finished":
-                                        color colors["Finished"]
-                                    elif i.stat == "Canceled":
-                                        color colors["Canceled"]
-                                    elif i.stat == "Failed":
-                                        color colors["Failed"]
-                                action Function(q.chose, i), SelectedIf(i == q.slc)
+                    viewport:
+                        xsize 300 draggable True
+                        frame:
+                            
+                            vbox:
+                                for i in q.log:
+                                    if i.stat == filters[q.filt] or filters[q.filt] == "All":
+                                        button:
+                                            background None selected_foreground Frame("quests/arrow.png", 10,0,32,0) xalign 0.0 padding 10,10,40,10 
+                                            text i.name:
+                                                if i.stat == "Completed":
+                                                    color colors["Completed"]
+                                                elif i.stat == "Finished":
+                                                    color colors["Finished"]
+                                                elif i.stat == "Canceled":
+                                                    color colors["Canceled"]
+                                                elif i.stat == "Failed":
+                                                    color colors["Failed"]
+                                            action Function(q.chose, i), SelectedIf(i == q.slc)
                 
                 frame:
                     yfill True xsize 400
                     if q.slc:
-                        text q.slc.inf yalign 0.0
+                        viewport:
+                            draggable True
+                            vbox:
+                                yalign 0.0
+                                for i in q.slc.inf:
+                                    text i 
                         hbox:
                             yalign 1.0
                             text "Status:"

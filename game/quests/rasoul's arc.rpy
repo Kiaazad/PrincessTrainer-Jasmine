@@ -220,7 +220,7 @@ label rasoul_arc_2:
 
 default planted_evidence = quest(
     _("Planted evidence"),
-    _("Rasoul wants you to plant one of Jafar's books in Hakim's shop."),
+    [_("Rasoul wants you to plant one of Jafar's books in Hakim's shop.")],
     )
 
 
@@ -308,3 +308,137 @@ label rasoul_arc_3:
     "..."
     qasim "Go!"
     jump barracks
+
+label rasoul_arc_end:
+    scene
+    hide screen pnc
+    show bg jail onlayer bg
+    # show screen pnc(abdul, barracks_map)
+    show abd normal at left with dissolve
+    show qasim normal at right with dissolve
+    qasim "Give me your belongings."
+    abd "Why?"
+    qasim "Don't argue with...{w=.2}{nw}"
+    ras "Ehmmm.{w=.2}{nw}"
+    show ras normal at center with moveinright
+    ras "Get lost."
+    qasim "Yes sir."
+    hide qasim with moveoutright
+    show ras normal at midright with move
+    ras "Well?"
+    abd "Yes, I've planted the book in his bookshelf."
+    ras "Excellent, you can go."
+    if len(planted_evidence.inf) < 2:
+        jump barracks
+    abd "There's one more thing."
+    ras "What?"
+    abd "I've also planted a bottle of wine in his remedies."
+    ras "Why?"
+    abd "Well, Since Hakim often reads books, it's possible he would spot the book and destroys it before you get there."
+    ras "Good point. You're not as dum as you look."
+    ras "I better move fast before that happens."
+    $ planted_evidence.finish()
+    abd "Wait?"
+    ras "What now?"
+    menu:
+        "I can assist you...":
+            abd "I can assist you with these type of things if you want."
+            ras "Really."
+            ras "But why?"
+            abd "You're a powerful man and I want to be on your good side."
+            ras "Am I? I mean, I am! That's a smart move."
+            ras "I'm sure I can use you for something later."
+            abd "Sure, hopefully not anything that needs money, I had a hard time finding money to buy the wine."
+            "..."
+            ras "Qasim!"
+            show qasim normal at right with dissolve
+            qasim "Yes sir?"
+            ras "Give him some money."
+            qasim "Yes sir!"
+            hide ras with moveoutright
+            qasim "So... How much are we talking about?"
+            $ money_amount_barter = 0
+            jump rasoul_arc_end_barter
+
+                 
+        "I've paid money for the wine.":
+            abd "I've paid money for the wine, can you pay me for it please?"
+            ras "How dare you ask for money?"
+            ras "Qasim!"
+            show qasim normal at right with dissolve
+            qasim "Yes sir?"
+            ras "Throw him back in the jail."
+            abd "wait...{w=.2}{nw}"
+            hide ras with moveoutright
+            qasim "Huh... You're so stupid."
+            abd "but...{w=.2}{nw}"
+            qasim "Silence! You know the drill, cough up your belongings."
+            "..."
+            call screen show_loot(jail_chest, mandatory = "give")
+            qasim "And my money."
+            call screen show_loot(jail_chest, mandatory = "give_cash")
+            qasim "Now move!"
+            show bg jail cell onlayer bg
+            show abd normal at midleft with dissolve
+            show qasim normal at midright with dissolve
+            "..."
+            qasim "Enjoy your stay in the palace."
+            show abd normal at left with dissolve
+            hide qasim with dissolve
+            jump rasoul_arc_end_jail
+
+label rasoul_arc_end_jail:
+    menu:
+        "Sleep":
+            show screen time_pass(renpy.random.randint(3,10))
+            "Resting for a while."
+        "Guard.":
+            abd "Guard...{w=.2} guard!"
+            qasim "Shut up!"
+    jump rasoul_arc_end_jail
+
+label rasoul_arc_end_barter:
+    menu:
+        "500":
+            abd "500"
+            $ money_amount = 500
+        "700":
+            abd "700"
+            $ money_amount = 700
+        "1000":
+            abd "1000"
+            $ money_amount = 1000
+        "2000":
+            abd "2000"
+            $ money_amount = 2000
+        "3000":
+            abd "3000"
+            $ money_amount = 3000
+        "4000":
+            abd "4000"
+            $ money_amount = 4000
+    if money_amount == 500:
+        qasim "Here's 300, now get lost!"
+        $ hero.gotcash(300)
+        jump barracks
+    elif money_amount == 4000:
+        qasim "Not a chance!"
+        jump rasoul_arc_end_barter
+    else:
+        if money_amount_barter < 2:
+            if money_amount < renpy.random.randint(500, 3050):
+                qasim "Fine, take the money and get lost."
+                $ hero.gotcash(money_amount)
+                jump barracks
+            else:
+                "..."
+                $ money_amount_barter += 1
+                jump rasoul_arc_end_barter
+        else:
+            qasim "You get 500 and that's it."
+            $ hero.gotcash(500)
+            qasim "Now get lost."
+            jump barracks
+
+
+

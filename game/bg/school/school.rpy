@@ -76,7 +76,7 @@ default teacher_u = unit(
 
 default books_for_school = quest(
     _("Books for school"),
-    _("The school teacher needs books, Jafar's books are preferred."),
+    [_("The school teacher needs books, Jafar's books are preferred.")],
     )
 
 

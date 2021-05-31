@@ -65,7 +65,7 @@ style nav_button:
 
 default learn_pick_pocket = quest(
     _("Learn pick pocket"),
-    _("Jafar wants you to learn pick pocket from Ahmad.")
+    [_("Jafar wants you to learn pick pocket from Ahmad.")]
 )
 
 
@@ -182,7 +182,7 @@ default ring_recipe = item(
 
 default make_a_copper_ring = quest(
     _("Make a copper ring"),
-    _("Jafar wants a copper ring made."),
+    [_("Jafar wants a copper ring made.")],
     )
 
 
@@ -196,6 +196,7 @@ label lamp_jafar:
     menu:
         "Chit chat.":
             jaf "No time for chit chat."
+        # Craft a ring chain
         "I've got the money." if qlog.has(fast_cash) == "Active" and hero.cash > 2000:
             abd "I've got the money."
             jaf "Excellent!"
@@ -218,7 +219,51 @@ label lamp_jafar:
 
         "I have some books" if qlog.has(books_for_jafar) and False:
             jaf "Bating, go away."
-
+        # Planted evidence chain
+        "About Hakim." if qlog.has(planted_evidence) == "Active" and planted_evidence.inf[-1] in ["Talk to jafar and find a solution to Hakim's predicament.", "Rasoul wants you to plant one of Jafar's books in Hakim's shop."]:
+            abd "There's a situation with hakim, Jafar."
+            jaf "What's wrong?"
+            abd "Rasoul is after him."
+            jaf "How so?"
+            abd "He gave me this book."
+            $ hero.drop(the_free_lie_book, 1)
+            jaf "It's one of my books."
+            jaf "What doe it have to do with Hakim?"
+            abd "Rasoul told me to hide it in Hakim's shop."
+            jaf "Why? It's nothing out of ordinary to have one of my books."
+            jaf "Lots of people have them."
+            abd "Not anymore, they made your books illegal and collected them all in the barracks."
+            jaf "I see..."
+            jaf "They made it a crime and using that excuse to persecute the dissidents."
+            "..."
+            jaf "Those whom oppose them."
+            abd "Aha! I see."
+            abd "What should we do?"
+            jaf "Let me think."
+            "..."
+            jaf "I know it, buy a bottle of wine and plant in in Hakim's shop."
+            abd "With the book?"
+            jaf "No the book stays here with me."
+            abd "But Rasoul will throw me in jail when he doesn't find the book."
+            jaf "Tell him that you've planted the book and a bottle of wine just in case Hakim finds the book and destroys it."
+            abd "But he will still arrest Hakim for the wine."
+            jaf "That's the outcome we're hopping for."
+            abd "I don't get it."
+            jaf "This way Rasoul gets to sink his teeth into Hakim by arresting him for the wine."
+            jaf "But Hakim is a man of medicine, he can explain owning a bottle of wine and get himself out of this situation mostly unharmed."
+            jaf "And you'll be off the hook since it seems you did what he told you."
+            abd "I see."
+            $ planted_evidence.extend(_("Plant a bottle of wine in Hakim's shop."))
+            jaf "Now hurry back and save our friend."
+            if hero.cash < 100:
+                abd "Um..."
+                jaf "What now?"
+                abd "They took all of my money at the jail."
+                jaf "Ask hakim, he will gladly chip in."
+                $ planted_evidence.extend(_("Ask hakim for some money for the wine."))
+            abd "Sure."
+            jump inside_lamp
+        # Pick pocket chain
         "I think I've got rubbed." if "something is missing" in abdul.flags:
             abd "I think I've got rubbed Jafar."
             jaf "Let me guess, Ahmad?"
