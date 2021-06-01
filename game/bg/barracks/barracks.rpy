@@ -8,12 +8,16 @@
 default barracks_guard = pnco(
     "Guard",
     "bg/barracks/guard.png",
-    (1100, 640),
+    (1300, 640),
     Jump('barracks_guard'),
     )
 
 
-
+"""
+Background design notes:
+There are two entrances guarded by the same guard, one goes into the jail and one to the barracks.
+preferably both entrances are in the palaces wall, but the barracks can be some shacks attached to the palace wall instead.
+"""
 
 default barracks_map = pncs(
     "Barracks",
@@ -44,8 +48,35 @@ label barracks_guard:
         guard_2 "Oh it's like that? You can go in."
         "..."
         jump rasoul_arc_end
-                
-                 
+    if qlog.has(planted_evidence) == "Finished":
+        guard_2 "What do you want?"
+        menu:
+            "I need to talk to Rasoul.":
+                abd "I need to talk to Rasoul."
+                guard_2 "He's inside."
+                jump inside_barracks
+            "I need to talk to Qasim.":
+                abd "I need to talk to Qasim."
+                guard_2 "Alright, Go in."
+                jump jail
     guard_2 "If you came to turn yourself in, the jail is full, get lost!"
     guard_2 "We're not in the business of feeding lazy poor people."
     jump barracks
+
+label inside_barracks:
+    scene
+    show abd normal at left with dissolve
+    show ras normal at midright with move
+    ras "What do you want?"
+    abd "I'm ready for more tasks."
+    ras "Not now, I'm busy."
+    jump barracks
+
+
+
+
+
+
+
+
+

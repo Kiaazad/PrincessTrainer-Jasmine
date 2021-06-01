@@ -17,9 +17,25 @@
 label dev_jumps:
     menu:
         "jump to the city":
+            $ qlog.got(sell_lamp)
+            $ abdul.add_flag("Meet Jafar")
+            $ persistent.theme_change = 1
             $ calendar.day = 1
+            $ qlog.got(jafars_revenge)
+            $ qlog.cancel(sell_lamp)
             $ street_home_loc.enabled = True
             $ des_0_col.add(des_0_return)
+            $ qlog.got(visit_malik)
+            $ qlog.got(visit_hosein)
+            $ abdul.gotskill(kick)
+            $ abdul.gotskill(punch)
+            $ qlog.got(master_swordsman)
+            $ agrabah_lamp.hidden = False
+            $ agrabah_lamp.act = Jump('inside_lamp')
+            $ qlog.got(fast_cash)
+
+            $ renpy.take_screenshot()
+            $ renpy.save("1-1", extra_info='')
             jump agrabah
         "jump to the lamp":
             $ calendar.day = 1
