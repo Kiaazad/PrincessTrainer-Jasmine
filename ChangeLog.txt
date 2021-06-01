@@ -1,6 +1,8 @@
 
 
-
+>> 0.20
+the planted evidence quest is done and can be completed
+Petros relocated to the poor section
 We have a new jailer
 added quest notification animations
 some new items for future quests

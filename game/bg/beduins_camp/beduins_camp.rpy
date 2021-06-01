@@ -6,12 +6,17 @@ default beduins_camp_back = pnco(
     Jump('desert'),
     hidden = False, hoffset = (83,-40),
     )
-
+default beduins_camp_ruins = pnco(
+    "The ruins",
+    None,
+    (560, 467),
+    Jump('ruins'),
+    )
 default beduins_camp_loc = pncs(
     "Main street",
     [
         beduins_camp_back,
-
+        beduins_camp_ruins,
     ]
     )
 

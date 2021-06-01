@@ -7,25 +7,20 @@
 default desert_agrabah = pnco(
     "Agrabah",
     "bg/desert/agrabah.png",
-    (900, 800),
+    (720, 880),
     Jump('street'),
     )
 default desert_heaven_oasis = pnco(
     "Heaven oasis",
     None,
-    (300, 500),
+    (932, 601),
     Jump('heaven_oasis'),
     )
-default desert_ruins = pnco(
-    "The ruins",
-    None,
-    (670, 200),
-    Jump('ruins'),
-    )
+
 default desert_beduins_camp = pnco(
     "Beduins camp",
     None,
-    (370, 600),
+    (111, 796),
     Jump('beduins_camp'),
     )
 default desert_map = pncs(
@@ -34,14 +29,18 @@ default desert_map = pncs(
         desert_roc_pass,
         desert_agrabah,
         desert_heaven_oasis,
-        desert_ruins,
         desert_beduins_camp,
     ]
     )
 
+"""
+Background design notes:
+This background is the desert immediately outside of the city's gate, it can be few pathways towards different places. 3 should suffice.
+"""
+image bg desert = "bg/desert/bg.jpg"
 label desert:
     scene
-    show bg bg1 onlayer bg
+    show bg desert onlayer bg
     show screen pnc(abdul, desert_map)
     pause
     jump desert
