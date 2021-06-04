@@ -1,10 +1,15 @@
 ﻿default rich_agrabah = pnco(
     "Agrabah",
     None,
-    (924, 77),
+    (1270, 1009),
     Jump('agrabah'),
     )
-
+default rich_vantage_point = pnco(
+    "Go up the mountain",
+    None,
+    (139, 956),
+    Jump('vantage_point'),
+    )
 default rich_laila = pnco(
     "Laila",
     "bg/rich/laila.png",
@@ -19,6 +24,7 @@ default rich_map = pncs(
     [
         rich_agrabah,
         rich_laila,
+        rich_vantage_point
     ]
     )
 
