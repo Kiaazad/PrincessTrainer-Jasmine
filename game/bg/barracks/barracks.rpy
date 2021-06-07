@@ -24,7 +24,7 @@ default barracks_map = pncs(
     [
         barracks_agrabah,
         barracks_guard,
-    ]
+    ], night = "bg/barracks/night.jpg"
     )
 
 image bg barracks = "bg/barracks/bg.jpg"

@@ -11,3 +11,4 @@ project.json
 game/tl/None/common.rpymc
 game/tl/None/common.rpymc
 game/tl/None/common.rpymc
+*.rpymc

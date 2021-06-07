@@ -77,7 +77,13 @@ default agrabah_lamp = pnco(
     hoffset = (340,100),
     hidden = True
     )
-
+default vantage_point = pnco(
+    "The vantage point",
+    None,
+    (521, 328),
+    Jump('vantage_point'),
+    hoffset = (340,100),
+    )
 
 default agrabah_map = pncs(
     "Agrabah",
@@ -93,6 +99,7 @@ default agrabah_map = pncs(
         bed_loc,
         agrabah_lamp,
         agrabah_coins,
+        vantage_point,
     ], night = "bg/agrabah/night.jpg"
     )
 
@@ -105,14 +112,9 @@ label agrabah:
     jump agrabah
 
 
-
-
 label mid_town:
     "Not ready yet."
     jump agrabah
-
-
-
 
 label sleeping:
     show screen time_pass(renpy.random.randint(3,10))
