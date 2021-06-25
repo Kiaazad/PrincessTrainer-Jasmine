@@ -50,10 +50,18 @@ label heaven_oasis:
     pause
     jump heaven_oasis
 
+
+
+default old_spyglass = item(
+    _("Old spyglass"),
+    _("An old spyglass, the front glass has a crack."),
+    "items/old_spyglass.png",
+    3750,
+    [],
+    )
+
+
 # The viking
-
-
-
 define vik = Character("The Viking", color="#4ff", what_text_color="#dff")
 image viking normal = "char/viking/normal.png"
 default viking_u = unit( # we use a unit class to manage every character that has important data to keep track of like items or money
@@ -62,7 +70,9 @@ default viking_u = unit( # we use a unit class to manage every character that ha
 
     3410,
     [
-        (beer, 1),
+        (old_spyglass, 1),
+        (fish, 1),
+        (big_fish, 2),
     ],
     1.2,
 
@@ -127,7 +137,7 @@ label the_viking:
         jump heaven_oasis
     
     vik "Come browse my stuff."
-    # I'll add a shop here later
+    call screen shop(s = viking_u)
     jump heaven_oasis
 
 default heaven_oasis_pound = fishing_class(

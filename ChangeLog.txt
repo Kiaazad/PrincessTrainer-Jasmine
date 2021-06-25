@@ -1,5 +1,14 @@
 
 
+
+
+
+new CG
+new characters (The virgin hunter, Ali)
+new quest (stolen_spyglass)
+new items (2 spyglasses)
+new locations (caravanserai, vantage point)
+
 >> 0.20
 the planted evidence quest is done and can be completed
 Petros relocated to the poor section

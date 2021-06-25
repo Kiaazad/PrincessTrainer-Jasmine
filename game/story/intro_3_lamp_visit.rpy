@@ -82,6 +82,9 @@
 label lamp_visit_save:
     # save
     # show bg sav
+    show screen save(_layer = "bg")
+    scene
+    show jaf normal at right
     show abd normal at left
     abd "Empty jars?"
     show abd smug at left
@@ -124,6 +127,7 @@ label lamp_visit_save:
     show abd alert at left
     abd "Are you sure it's... {w=.2}{nw}"
     show jaf magic at right
+    $ save_list.add()
     "...{nw}"
     $ renpy.take_screenshot()
     $ renpy.save("1-1", extra_info='')
@@ -132,10 +136,11 @@ label lamp_visit_save:
     jaf "I'm sure we'll find out soon."
     abd "Does that mean I'm going to die soon?"
     jaf "Let's move on."
+    $ renpy.hide_screen("save", layer = "bg")
 
 label lamp_visit_settings:
     # set
-    show bg sett
+    show bg sett behind jaf
     show abd normal at left
     abd "What's this one?"
     show jaf thinking at right
@@ -285,7 +290,10 @@ label lamp_visit_harem:
 
 label lamp_visit_fight:
     # fight
+    scene black
     show bg fight
+    show jaf normal at right
+    show abd normal at left
     jaf "This is my throne. You'll be fighting the creatures I conjure in here."
     jaf "To increase your fighting skill, and maybe for my amusement."
     jaf "You can come here and start fighting any time."

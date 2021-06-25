@@ -30,6 +30,22 @@ label vantage_point:
     pause
     jump vantage_point
 
+image spyglass old = "cg/vantage_point/old_spyglass.png"
+image cg jasmine_on_balcony = "cg/vantage_point/jasmine_on_balcony.png"
+
 label vantage_point_cg:
+    if hero.has(old_spyglass):
+        scene
+        show spyglass old with dissolve
+        show cg jasmine_on_balcony behind spyglass with dissolve
+        abd "Is that princess Jasmine?"
+    elif hero.has(new_spyglass):
+        scene
+        # show spyglass old with dissolve
+        show cg jasmine_on_balcony behind spyglass with dissolve
+        abd "Princess Jasmine."
+        abd "Naughty naughtily girl."
+    else:
+        abd "Can't see much"
     "Under development."
     jump vantage_point

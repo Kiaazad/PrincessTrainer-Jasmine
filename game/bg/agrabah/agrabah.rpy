@@ -47,11 +47,11 @@ default street_loc = pnco(
     Jump('street'),
     hidden = False, hoffset = (300,-40),
     )
-default middle_loc = pnco(
-    "Mid town",
+default caravanserai_loc = pnco(
+    "Caravanserai",
     "bg/agrabah/middle.png",
     (1191, 587),
-    Jump('mid_town'),
+    Jump('caravanserai'),
     hidden = False, hoffset = (300,-80),
     )
 default bed_loc = pnco(
@@ -83,6 +83,7 @@ default vantage_point = pnco(
     (521, 328),
     Jump('vantage_point'),
     hoffset = (340,100),
+    hidden = True,
     )
 
 default agrabah_map = pncs(
@@ -95,7 +96,7 @@ default agrabah_map = pncs(
         school_loc,
         bazaar_loc,
         street_loc,
-        middle_loc,
+        caravanserai_loc,
         bed_loc,
         agrabah_lamp,
         agrabah_coins,
@@ -111,10 +112,6 @@ label agrabah:
     pause
     jump agrabah
 
-
-label mid_town:
-    "Not ready yet."
-    jump agrabah
 
 label sleeping:
     show screen time_pass(renpy.random.randint(3,10))

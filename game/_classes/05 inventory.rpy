@@ -94,7 +94,7 @@
             if len(self.bags):
                 self.bags[0].rem(x, q)
                 if a:
-                    msg.msg("You have dropped {} {}".format(q, x.name))
+                    msg.msg("{} have dropped {} {}".format(self.name, q, x.name))
         def sell(self, x, q, buyer, price):
             if len(self.bags):
                 self.bags[0].rem(x, q)

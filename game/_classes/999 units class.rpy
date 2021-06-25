@@ -24,6 +24,7 @@
             self.food = 789
             self.pleasure = 0
 
+            self.pay = 0
             self.stat = "Normal"
             self.location = None
         def drink(self, salt, filth):

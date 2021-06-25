@@ -30,7 +30,7 @@ default palace_bags = pncc(
     _("bags"),
     "bg/palace/bags.png",
     (748, 997),
-    items = [1000, 700],
+    items = [1000, 700, 5000],
     regen = 10,
     )
 

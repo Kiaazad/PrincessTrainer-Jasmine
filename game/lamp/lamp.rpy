@@ -70,7 +70,7 @@ default learn_pick_pocket = quest(
 
 
 default lamp_quest = pnco(
-    "Jafar's den",
+    "Quest room",
     "bg/lamp/quest.png",
     (1272, 828),
     Jump('lamp_quest'),

@@ -40,8 +40,9 @@ screen save():
 screen load():
     tag menu
     use file_slots(_("Load"))
-    
-screen file_slots(title, s = sav_btl_lst()):
+
+default save_list = sav_btl_lst()
+screen file_slots(title, s = save_list):
     default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
     style_prefix "sav"
     use game_menu(title):
