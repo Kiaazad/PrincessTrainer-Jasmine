@@ -25,10 +25,10 @@ default rich_map = pncs(
         rich_agrabah,
         rich_laila,
         rich_vantage_point
-    ]
+    ], night = "bg/rich/night.webp"
     )
 
-image bg rich = "bg/rich/bg.png"
+image bg rich = "bg/rich/bg.webp"
 label rich:
     scene
     show bg rich onlayer bg

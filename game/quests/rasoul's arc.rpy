@@ -110,8 +110,8 @@ label rasoul_arc_1:
     "{w=.2}{nw}"
     hide screen pnc
 
-image bg jail = "bg/jail/bg.jpg"
-image bg jail cell = "bg/jail/cell.jpg"
+image bg jail = "bg/jail/bg.webp"
+image bg jail cell = "bg/jail/cell.webp"
 
 define qasim = Character("Qasim", color="#4ff", what_text_color="#dff")
 # Normal

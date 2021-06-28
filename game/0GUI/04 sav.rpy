@@ -56,7 +56,7 @@ screen file_slots(title, s = save_list):
             add FileScreenshot(simg) at sav_thmb
             key "save_delete" action FileDelete(simg)
             key "y" action Function(s.delete, simg-1)
-        add "0GUI/sav/fg.png"
+        add "0GUI/sav/fg.webp"
         if s.lst:
             for ii, i in enumerate(s.lst):
                 drag:

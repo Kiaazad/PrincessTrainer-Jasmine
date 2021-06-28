@@ -40,10 +40,10 @@ default poor_map = pncs(
         poor_thief,
         poor_barracks,
         petros_shop,
-    ], night = "bg/poor/night.jpg"
+    ], night = "bg/poor/night.webp"
     )
 
-image bg poor = "bg/poor/bg.png"
+image bg poor = "bg/poor/bg.webp"
 label poor:
     scene
     show bg poor onlayer bg

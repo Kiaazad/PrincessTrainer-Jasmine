@@ -19,10 +19,10 @@ default vantage_point_map = pncs(
     [
         vantage_point_rich,
         vantage_point_cg,
-    ], night = "bg/vantage_point/night.jpg"
+    ], night = "bg/vantage_point/night.webp"
     )
 
-image bg vantage_point = "bg/vantage_point/bg.jpg"
+image bg vantage_point = "bg/vantage_point/bg.webp"
 label vantage_point:
     scene
     show bg vantage_point onlayer bg

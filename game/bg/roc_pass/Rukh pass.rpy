@@ -110,9 +110,9 @@ default des_0_col = pncs("Roc pass",
     ],
     cond = [
         [[des_0_3, des_0_4, des_0_6], Jump("intro_0_1")]
-    ], night = "bg/roc_pass/night.jpg"
+    ], night = "bg/roc_pass/night.webp"
     )
-image bg roc_pass = "bg/roc_pass/bg.jpg"
+image bg roc_pass = "bg/roc_pass/bg.webp"
 label desert_0:
     scene 
     show bg roc_pass onlayer bg

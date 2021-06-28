@@ -17,12 +17,12 @@ default school_map = pncs(
     [
         school_teacher_loc,
         school_agrabah_loc,
-    ]
+    ], night = "bg/school/night.webp"
     )
 
 
 
-image bg school = "bg/school/bg.jpg"
+image bg school = "bg/school/bg.webp"
 label school:
     scene
     show bg school onlayer bg

@@ -30,14 +30,14 @@ default desert_map = pncs(
         desert_agrabah,
         desert_heaven_oasis,
         desert_beduins_camp,
-    ]
+    ], night = "bg/desert/night.webp"
     )
 
 """
 Background design notes:
 This background is the desert immediately outside of the city's gate, it can be few pathways towards different places. 3 should suffice.
 """
-image bg desert = "bg/desert/bg.jpg"
+image bg desert = "bg/desert/bg.webp"
 label desert:
     scene
     show bg desert onlayer bg

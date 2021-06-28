@@ -74,10 +74,10 @@ default bazaar_map = pncs(
         hakim_loc,
         bazaar_poor_loc,
         bazaar_fatti,
-    ], night = "bg/bazaar/night.jpg"
+    ], night = "bg/bazaar/night.webp"
     )
 
-image bg bazaar = "bg/bazaar/bg.jpg"
+image bg bazaar = "bg/bazaar/bg.webp"
 label bazaar:
     scene
     show bg bazaar onlayer bg

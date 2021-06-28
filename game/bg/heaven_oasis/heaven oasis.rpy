@@ -39,10 +39,10 @@ default heaven_oasis_loc = pncs(
         heaven_oasis_fishing,
         heaven_oasis_drink,
 
-    ]
+    ], night = "bg/heaven_oasis/night.webp"
     )
 
-image bg heaven_oasis = "bg/heaven_oasis/bg.png"
+image bg heaven_oasis = "bg/heaven_oasis/bg.webp"
 label heaven_oasis:
     scene
     show bg heaven_oasis onlayer bg

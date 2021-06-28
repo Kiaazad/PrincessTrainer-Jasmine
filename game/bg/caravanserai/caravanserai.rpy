@@ -27,10 +27,10 @@ default caravanserai_map = pncs(
         caravanserai_desert,
         traveler_1,
 
-    ], night = "bg/caravanserai/night.jpg"
+    ], night = "bg/caravanserai/night.webp"
     )
 
-image bg caravanserai = "bg/caravanserai/bg.jpg"
+image bg caravanserai = "bg/caravanserai/bg.webp"
 label caravanserai:
     scene
     show bg caravanserai onlayer bg
@@ -147,7 +147,7 @@ label traveler_1:
                 vir "Its joins are lose."
                 vir "It's garbage!"
                 vir "But it will do for now."
-                $ hero.drop(old_spyglass)
+                $ hero.drop(old_spyglass, 1)
                 $ stolen_spyglass.finish()
                 "..."
                 vir "Ah yes, your reward."

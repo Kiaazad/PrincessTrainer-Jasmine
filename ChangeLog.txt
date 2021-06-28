@@ -1,8 +1,12 @@
 
 
 
-
-
+removed some of unused code
+removed some of the unused files
+converted some of bigger images to webp format to reduce the size of the game
+the night placeholders are added to the places that didn't have them
+The inside places no longer get dark if there isn't any windows
+save background for the lamp tour fixed
 new CG
 new characters (The virgin hunter, Ali)
 new quest (stolen_spyglass)

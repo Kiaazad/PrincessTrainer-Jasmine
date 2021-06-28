@@ -24,10 +24,10 @@ default barracks_map = pncs(
     [
         barracks_agrabah,
         barracks_guard,
-    ], night = "bg/barracks/night.jpg"
+    ], night = "bg/barracks/night.webp"
     )
 
-image bg barracks = "bg/barracks/bg.jpg"
+image bg barracks = "bg/barracks/bg.webp"
 label barracks:
     scene
     show bg barracks onlayer bg

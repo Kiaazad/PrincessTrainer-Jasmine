@@ -17,10 +17,10 @@ default beduins_camp_loc = pncs(
     [
         beduins_camp_back,
         beduins_camp_ruins,
-    ]
+    ], night = "bg/beduins_camp/night.webp"
     )
 
-image bg beduins_camp = "bg/beduins_camp/bg.jpg"
+image bg beduins_camp = "bg/beduins_camp/bg.webp"
 label beduins_camp:
     scene
     show bg beduins_camp onlayer bg

@@ -46,7 +46,7 @@ Cells:
 (I Imagined it as a round basement with a series of indentations in the wall that are separated from the middle with bars)
 the middle hosts some torture devices and a set of stairs to the entrance.
 """
-image bg jail = "bg/jail/bg.jpg"
+image bg jail = "bg/jail/bg.webp"
 label jail:
     scene
     show bg jail onlayer bg

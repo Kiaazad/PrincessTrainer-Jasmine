@@ -101,10 +101,10 @@ default agrabah_map = pncs(
         agrabah_lamp,
         agrabah_coins,
         vantage_point,
-    ], night = "bg/agrabah/night.jpg"
+    ], night = "bg/agrabah/night.webp"
     )
 
-image bg agrabah = "bg/agrabah/bg.jpg"
+image bg agrabah = "bg/agrabah/bg.webp"
 label agrabah:
     scene
     show bg agrabah onlayer bg

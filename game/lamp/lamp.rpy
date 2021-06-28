@@ -186,7 +186,7 @@ default make_a_copper_ring = quest(
     )
 
 
-image bg jafars_lab = "bg/lamp/jafars_lab.png"
+image bg jafars_lab = "bg/lamp/jafars_lab.webp"
 label lamp_jafar:
     scene
     "{nw}"

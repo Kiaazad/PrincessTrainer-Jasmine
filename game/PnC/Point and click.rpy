@@ -153,8 +153,7 @@ screen pnc(p , g):
     # daytime
     if g.night:
         add g.night at baddition(calendar.night)
-    else:
-        add "#000008" at baddition(calendar.night)
+
     # vbox:
     #     text str(calendar.minute)
     #     text str(calendar.night)

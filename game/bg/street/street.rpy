@@ -94,10 +94,10 @@ default street_map = pncs(
         street_beggar,
         street_jamal,
         street_shepard,
-    ], night = "bg/street/night.jpg"
+    ], night = "bg/street/night.webp"
     )
 
-image bg street = "bg/street/bg.png"
+image bg street = "bg/street/bg.webp"
 label street:
     scene
     show bg street onlayer bg
