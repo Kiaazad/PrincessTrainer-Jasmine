@@ -168,7 +168,7 @@ image abd_smug_mouth = ConditionSwitch(
     "_last_say_who == 'abd'", "abd_smug_mouth_moving",
     "not _last_say_who == 'abd'", "char/abdul/smug.png")
 
-image abd smug = Composite((429, 895),
+image abd smug = Composite((418, 833),
     (0,0), "char/abdul/smug.png",
     (0,0), "abd_smug_mouth",
     (0,0), "abd_smug_blink",
