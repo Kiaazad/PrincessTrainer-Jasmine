@@ -24,11 +24,16 @@ init python:
         caster.stm -= spell.stmc
         caster.mp -= spell.mpc
 
-        chance = renpy.random.randint(1,100)
+        chance = renpy.random.randint(1,500)
         crit = renpy.random.randint(-30,10)
-        pdbm = renpy.random.randint(0, 3)
-
-        if chance > spell.pdbm[pdbm] + int((float(enemy.agl) / (float(enemy.agl) + float(100))) * 100)/2:
+        total = 0
+        for i in ["Parry", "Dodge", "Block", "Miss"]:
+            if not i in enemy.cant:
+                total += renpy.random.randint(1,100)
+                if chance < total:
+                    msg3(i)
+                    break
+        else:
             enemy.ani = "hit"
             enemy.busy = 30
             if spell.hp:
@@ -43,8 +48,7 @@ init python:
                 breath = (spell.stm + (caster.pwr * spell.stm)/100) + crit
                 enemy.stm += breath
                 msg3(breath)
-        else:
-            msg3("{}".format(["Parry", "Dodge", "Block", "Miss"][pdbm]))
+
         if enemy.hp < 0:
             enemy.alive = False
             enemy.hp = 0

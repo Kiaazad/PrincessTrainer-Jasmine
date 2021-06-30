@@ -401,7 +401,8 @@ label ch3_mirror:
 
 label ch3_fight(j=False):
     window hide
-    call screen btl_scr(team([abdul]), team([unit("Training dummy", "char/training_dummy", lvl = 1, type = "Dummy")]))
+    $ training_dummy.reset()
+    call screen btl_scr(team([abdul]), team([training_dummy]))
 
     if j:
         return

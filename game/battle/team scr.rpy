@@ -108,5 +108,5 @@ screen btl_team(t = me_team):
 
     button:
         align 0.0,0.0 margin 100,100
-        text "Manage"
+        text "Return"
         action ToggleScreen("btl_team")

@@ -46,7 +46,7 @@ image abd_normal_mouth_moving:
 
 image abd_normal_mouth = ConditionSwitch(
     "_last_say_who == 'abd'", "abd_normal_mouth_moving",
-    "not _last_say_who == 'abd'", "char/abdul/normal.png")
+    "not _last_say_who == 'abd'", "char/empty.png")
 
 image abd normal = Composite((425, 833),
     (0,0), "char/abdul/normal.png",
@@ -76,7 +76,7 @@ image abd_smile_mouth_moving:
 
 image abd_smile_mouth = ConditionSwitch(
     "_last_say_who == 'abd'", "abd_smile_mouth_moving",
-    "not _last_say_who == 'abd'", "char/abdul/smile.png")
+    "not _last_say_who == 'abd'", "char/empty.png")
 
 image abd smile = Composite((418, 833),
     (0,0), "char/abdul/smile.png",
@@ -106,7 +106,7 @@ image abd_alert_mouth_moving:
 
 image abd_alert_mouth = ConditionSwitch(
     "_last_say_who == 'abd'", "abd_alert_mouth_moving",
-    "not _last_say_who == 'abd'", "char/abdul/alert.png")
+    "not _last_say_who == 'abd'", "char/empty.png")
 
 image abd alert = Composite((424, 835),
     (0,0), "char/abdul/alert.png",
@@ -136,7 +136,7 @@ image abd_embarrassed_mouth_moving:
 
 image abd_embarrassed_mouth = ConditionSwitch(
     "_last_say_who == 'abd'", "abd_embarrassed_mouth_moving",
-    "not _last_say_who == 'abd'", "char/abdul/embarrassed.png")
+    "not _last_say_who == 'abd'", "char/empty.png")
 
 image abd embarrassed = Composite((424, 774),
     (0,0), "char/abdul/embarrassed.png",
@@ -166,9 +166,9 @@ image abd_smug_mouth_moving:
 
 image abd_smug_mouth = ConditionSwitch(
     "_last_say_who == 'abd'", "abd_smug_mouth_moving",
-    "not _last_say_who == 'abd'", "char/abdul/smug.png")
+    "not _last_say_who == 'abd'", "char/empty.png")
 
-image abd smug = Composite((418, 833),
+image abd smug = Composite((422, 783),
     (0,0), "char/abdul/smug.png",
     (0,0), "abd_smug_mouth",
     (0,0), "abd_smug_blink",
@@ -196,7 +196,7 @@ image abd_concerned_mouth_moving:
 
 image abd_concerned_mouth = ConditionSwitch(
     "_last_say_who == 'abd'", "abd_concerned_mouth_moving",
-    "not _last_say_who == 'abd'", "char/abdul/concerned.png")
+    "not _last_say_who == 'abd'", "char/empty.png")
 
 image abd concerned = Composite((437, 819),
     (0,0), "char/abdul/concerned.png",
@@ -226,7 +226,7 @@ image abd_excited_mouth_moving:
 
 image abd_excited_mouth = ConditionSwitch(
     "_last_say_who == 'abd'", "abd_excited_mouth_moving",
-    "not _last_say_who == 'abd'", "char/abdul/excited.png")
+    "not _last_say_who == 'abd'", "char/empty.png")
 
 image abd excited = Composite((553, 830),
     (0,0), "char/abdul/excited.png",
@@ -267,7 +267,7 @@ image jaf_normal_mouth_moving:
 
 image jaf_normal_mouth = ConditionSwitch(
     "_last_say_who == 'jaf'", "jaf_normal_mouth_moving",
-    "not _last_say_who == 'jaf'", "char/jafar/normal.png")
+    "not _last_say_who == 'jaf'", "char/empty.png")
 
 image jaf normal = Composite((783, 1063),
     (0,0), "char/jafar/normal.png",
@@ -297,7 +297,7 @@ image jaf_thinking_mouth_moving:
 
 image jaf_thinking_mouth = ConditionSwitch(
     "_last_say_who == 'jaf'", "jaf_thinking_mouth_moving",
-    "not _last_say_who == 'jaf'", "char/jafar/thinking.png")
+    "not _last_say_who == 'jaf'", "char/empty.png")
 
 image jaf thinking = Composite((783, 1097),
     (0,0), "char/jafar/thinking.png",
@@ -327,7 +327,7 @@ image jaf_angry_mouth_moving:
 
 image jaf_angry_mouth = ConditionSwitch(
     "_last_say_who == 'jaf'", "jaf_angry_mouth_moving",
-    "not _last_say_who == 'jaf'", "char/jafar/angry.png")
+    "not _last_say_who == 'jaf'", "char/empty.png")
 
 image jaf angry = Composite((783, 1097),
     (0,0), "char/jafar/angry.png",

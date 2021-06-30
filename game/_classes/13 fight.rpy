@@ -26,9 +26,10 @@
                 self.spells[ii] = i
 
     class fight:
-        def __init__(self, lvl, type):
+        def __init__(self, lvl, type, cant):
             self.lvl = lvl
             self.type = type
+            self.cant = cant
 
             self.pts = 0
             self.used_pts = 0
@@ -56,6 +57,15 @@
             self.ani = "idle"
             self.busy = 0
             self.elapsed = 0
+        def reset(self):
+            self.hp = self.mhp
+            self.mp = self.mmp
+            self.stm = self.mstm
+            self.ani = "idle"
+            self.busy = 0
+            self.elapsed = 0
+            self.buffs = []
+            self.alive = True
 
         def tick(self):
             self.elapsed += 1

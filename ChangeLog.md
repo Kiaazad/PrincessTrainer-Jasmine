@@ -1,6 +1,9 @@
 
 
-
+# 0.21
+revamped how the fight system calculates attacks, it should be easier to vail on an enemy now, specially the defenseless ones
+the training dummy cant "Parry", "Dodge" or "Block" anymore
+fixed double layered images in characters causing alpha problem in semi transparent areas, and hopefully save some resources
 removed some of unused code
 removed some of the unused files
 converted some of bigger images to webp format to reduce the size of the game
@@ -13,7 +16,7 @@ new quest (stolen_spyglass)
 new items (2 spyglasses)
 new locations (caravanserai, vantage point)
 
->> 0.20
+# 0.20
 the planted evidence quest is done and can be completed
 Petros relocated to the poor section
 We have a new jailer
@@ -23,11 +26,11 @@ fixed the return stack error (appearing in the middle of the screen)
 The fights are back (not sure what caused the lags, I assume it was my computer)
 you can see your quests inside the lamp now
 
->> 0.19.1
+# 0.19.1
 Errors while pressing [F], [Q], [R], or [T] keys are fixed
 The shine error fixed
 
->> 0.19
+# 0.19
 beer delivery quest is done, now we have a fully functional quest system
 the small bug with the shops is fixed
 improvement in the bag system that was necessary for some of the future features
@@ -37,7 +40,7 @@ Adjusted the food and hunger to the rule of 3's, it takes roughly 3 days without
 Bag options are visible by default now
 Fishing minigame, no more free fish!
 
->> 0.18
+# 0.18
 New characters (not available in the story line yet)
 Added few temporary night version of the main locations
 CG scenes are spiced up with some interactivity
@@ -48,7 +51,7 @@ Live2D integration into the point and click system
 Migrating to renpy version 7.4.3
 
 
->> 0.17
+# 0.17
 Disabled clicking on things while speaking (this caused a small bug with shops that will b fixed later)
 you can complete one quest with no rewards as a test (the rest will be added soon)
 now you can return to the lamp
@@ -57,7 +60,7 @@ You can't eat the lamp, or non food items anymore
 added a rudimentary day/night cycle
 Migrating to renpy version 7.4.2
 
->> 0.16
+# 0.16
 You can eat / drink
 Hunger and thirst bars added
 Migrating to renpy version 7.4.1

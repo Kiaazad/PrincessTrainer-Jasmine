@@ -72,7 +72,7 @@ label lamp_visit_back_to_jafar:
     jaf "Let us get out here and start executing our plan."
     abd "You mean..."
 
-define fast_cash = quest(
+define cash_in_hand = quest(
     _("Cash in hand"),
     [_("We need 2000 dinars for some jewelry Jafar wants to order.")]
 )
@@ -94,8 +94,9 @@ label lamp_visit_back_to_agrabah:
     jaf "I think I know what to do, you need to come up with some serious money for that though."
     show jaf normal at right
     jaf "2000 should suffice."
+    $ qlog.got(cash_in_hand)
     show abd alert at left
     abd "2000?{w=.4} how?."
     jaf "Come up with something,{w=.2} off you go.{w=.2} I'll be in the lamp if you need me."
-    $ qlog.got(fast_cash)
+    
     jump agrabah

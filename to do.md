@@ -5,7 +5,7 @@
 
 - A handful of random places on the desert to gather things explore ruins and fight enemies.
 
-- (inside the lamp) Jarar's library where he writes his books and keeps insanely tall stacks of books, scripts and clay tablets.
+- (inside the lamp) Jafar's library where he writes his books and keeps insanely tall stacks of books, scripts and clay tablets.
 
 - (inside the lamp) The quest room with a magic mirror that shows an image of the quest, a script for the list of quests and one for details on the selected quest.
 

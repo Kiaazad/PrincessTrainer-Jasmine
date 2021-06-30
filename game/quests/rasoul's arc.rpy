@@ -21,7 +21,7 @@ image ras_normal_mouth_moving:
 
 image ras_normal_mouth = ConditionSwitch(
     "_last_say_who == 'ras'", "ras_normal_mouth_moving",
-    "not _last_say_who == 'ras'", "char/rasoul/normal.png")
+    "not _last_say_who == 'ras'", "char/empty.png")
 
 image ras normal = Composite((800, 962),
     (0,0), "char/rasoul/normal.png",
@@ -50,7 +50,7 @@ image ras_angry_mouth_moving:
 
 image ras_angry_mouth = ConditionSwitch(
     "_last_say_who == 'ras'", "ras_angry_mouth_moving",
-    "not _last_say_who == 'ras'", "char/rasoul/angry.png")
+    "not _last_say_who == 'ras'", "char/empty.png")
 
 image ras angry = Composite((800, 962),
     (0,0), "char/rasoul/angry.png",
@@ -82,6 +82,8 @@ label rasoul_arc_1:
             abd "Well I did talk, but...{w=.2}{nw}"
             ras "So you've confessed.{w=.2}{nw}"
             ras "MOVE IT!" with hpunch
+        "Run..." if False:
+            pass
     scene
     show bg bazaar onlayer bg
     show screen pnc(abdul, bazaar_map)
@@ -136,7 +138,7 @@ image qasim_normal_mouth_moving:
 
 image qasim_normal_mouth = ConditionSwitch(
     "_last_say_who == 'qasim'", "qasim_normal_mouth_moving",
-    "not _last_say_who == 'qasim'", "char/qasim/normal.png")
+    "not _last_say_who == 'qasim'", "char/empty.png")
 
 image qasim normal = Composite((840, 700),
     (0,0), "char/qasim/normal.png",

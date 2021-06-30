@@ -32,7 +32,7 @@ label dev_jumps:
             $ qlog.got(master_swordsman)
             $ agrabah_lamp.hidden = False
             $ agrabah_lamp.act = Jump('inside_lamp')
-            $ qlog.got(fast_cash)
+            $ qlog.got(cash_in_hand)
 
             $ renpy.take_screenshot()
             $ renpy.save("1-1", extra_info='')

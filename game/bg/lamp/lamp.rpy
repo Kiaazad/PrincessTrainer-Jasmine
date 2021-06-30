@@ -177,7 +177,7 @@ default ring_recipe = item(
     _("A recipe for an odd looking copper ring. Jafar drawn and wrote it."),
     "items/ring_recipe.png",
     0,
-    ["Finger", "jewelry"],
+    ["Finger", "jewelry", "unsellable"],
     )
 
 default make_a_copper_ring = quest(
@@ -194,10 +194,14 @@ label lamp_jafar:
     show abd normal at left
     show jaf normal at right
     menu:
-        "Chit chat.":
+        "Chit chat....":
             jaf "No time for chit chat."
+            "[hero.cash]"
+            "[cash_in_hand.name]"
+            $ ans = qlog.has(cash_in_hand)
+            "[ans]"
         # Craft a ring chain
-        "I've got the money." if qlog.has(fast_cash) == "Active" and hero.cash > 2000:
+        "I've got the money." if hero.cash > 2000: #  and qlog.has(cash_in_hand) == "Active"
             abd "I've got the money."
             jaf "Excellent!"
             $ abdul.got(ring_recipe, 1)
@@ -205,7 +209,7 @@ label lamp_jafar:
             abd "Why not bronze?"
             jaf "Bronze is too shiny, nobody will steal a copper ring from you."
             abd "Ah, alright."
-            $ qlog.complete(fast_cash)
+            $ cash_in_hand.complete()
             $ qlog.got(make_a_copper_ring)
             jaf "Is there anything else?"
             show abd alert at left

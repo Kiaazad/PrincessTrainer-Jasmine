@@ -82,7 +82,7 @@ screen input(prompt):
 screen quick_menu():
     zorder 100
     if not persistent.theme_change:
-        add "0gui/abdul_frm.png"
+        add "0gui/abdul_frm.webp"
         
     else:
         add "0gui/frm.png" yalign 0.0

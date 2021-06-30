@@ -46,7 +46,8 @@ default training_dummy = unit(
     "char/training_dummy",
 
     lvl = 1,
-    type = "Dummy"
+    type = "Dummy",
+    cant = ["Parry", "Dodge", "Block"]
     )
 
 
