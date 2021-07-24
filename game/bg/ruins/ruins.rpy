@@ -26,7 +26,7 @@ default ruins_back = pnco(
     "Back",
     None,
     (611, 729),
-    Jump('desert'),
+    Jump('beduins_camp'),
     )
 # items
 

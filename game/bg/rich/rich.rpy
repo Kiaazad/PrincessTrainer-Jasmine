@@ -1,8 +1,8 @@
 ﻿default rich_agrabah = pnco(
-    "Agrabah",
+    "Street",
     None,
     (1270, 1009),
-    Jump('agrabah'),
+    Jump('street'),
     )
 default rich_vantage_point = pnco(
     "Go up the mountain",

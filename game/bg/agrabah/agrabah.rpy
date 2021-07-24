@@ -114,6 +114,11 @@ label agrabah:
 
 
 label sleeping:
-    show screen time_pass(renpy.random.randint(3,10))
-    "Resting for a while."
+    menu:
+        "Sleep.":
+            show screen time_pass(renpy.random.randint(3,10))
+            "Resting for a while."
+        "Nap.":
+            show screen time_pass(renpy.random.randint(1,3))
+            "Resting for a while."
     jump agrabah

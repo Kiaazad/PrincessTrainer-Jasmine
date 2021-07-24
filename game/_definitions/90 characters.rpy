@@ -89,7 +89,7 @@ default rasoul = unit(
     "Rasoul",
     "char/rasoul",
 
-    lvl = 3,
+    lvl = 24,
     type = "Warrior"
     )
 

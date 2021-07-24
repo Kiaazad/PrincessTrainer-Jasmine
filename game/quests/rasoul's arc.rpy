@@ -59,6 +59,23 @@ image ras angry = Composite((800, 962),
 )
 
 define ras = Character("Rasoul", color="#f44", what_text_color="#fdd", namebox_align=(1.0, 0.0))
+image Rasoul fight idle:
+    "char/rasoul/fight/idle.png"
+    pause .1
+    "char/rasoul/fight/idle_2.png"
+    pause .1
+    "char/rasoul/fight/idle_3.png"
+    pause .1
+    "char/rasoul/fight/idle_2.png"
+    pause .1
+    repeat
+image Rasoul fight attack:
+    "char/rasoul/fight/attack.png"
+image Rasoul fight hit:
+    "char/rasoul/fight/hit.png"
+image Rasoul fight dead:
+    "char/rasoul/fight/dead.png"
+
 
 label rasoul_arc_1:
     scene
@@ -82,8 +99,18 @@ label rasoul_arc_1:
             abd "Well I did talk, but...{w=.2}{nw}"
             ras "So you've confessed.{w=.2}{nw}"
             ras "MOVE IT!" with hpunch
-        "Run..." if False:
-            pass
+        "Run...":
+            "What's that?{w=.2}{nw}"
+            hide abd with moveoutleft
+            ras "No you won't!{w=.2}{nw}" with vpunch
+            scene
+            hide pnc
+            call screen btl_scr(team([abdul]), team([rasoul]))
+            jump desert
+            pause 2
+            jump beduins_camp
+
+
     scene
     show bg bazaar onlayer bg
     show screen pnc(abdul, bazaar_map)
@@ -441,6 +468,114 @@ label rasoul_arc_end_barter:
             $ hero.gotcash(500)
             qasim "Now get lost."
             jump barracks
+
+
+default widows_house = pnco(
+    "Widow's house",
+    "bg/poor/petros.png",
+    (136, 330),
+    Jump('widows_house'),
+    hidden = False, hoffset = (20,-80),
+    )
+
+image wid normal = "char/widow/normal.png"
+define wid = Character("???", color="#f44", what_text_color="#fdd", namebox_align=(1.0, 0.0))
+
+image bg widows house = "bg/widows_house/bg.webp"
+label visiting_widow:
+    scene
+    show bg poor onlayer bg
+    show screen pnc(abdul, poor_map)
+    show abd normal at midleft with dissolve
+    show ras normal at midright with dissolve
+    ras "So, what can you do for me?"
+    abd "Anything!"
+    ras "Anything you say? Yeah, I guess I can use somebody like you."
+    hide screen pnc
+    show bg widows house onlayer bg
+    show abd normal at midleft with dissolve
+    show ras normal at midright with dissolve
+    ras "Wait here"
+    hide ras with dissolve
+    show abd normal at left with move
+    "{w=3}{nw}"
+    wid "Why are you in my house?"
+    show wid normal at right with dissolve
+    $ wid.name = "Soodeh"
+    abd "Ummm..."
+    ras "He's with me."
+    show wid normal at midright with move
+    show ras normal at right with dissolve
+    ras "Go!{w=.8}{nw}"
+    hide wid with moveoutright
+    "..."
+    ras "Come on, time to go."
+    show abd normal at midleft with dissolve
+    show bg poor onlayer bg with dissolve
+    show screen pnc(abdul, poor_map)
+    $ poor_map.add(widows_house)
+    "..."
+    ras "What?"
+    abd "I didn't say anything."
+    ras "She has a little girl that needs my support."
+    ras "Poor girl lost her dad recently."
+    ras "It's a tragic story."
+    abd "Didn't you execute him?"
+    ras "No... Well... Yes..."
+    abd "It's none of my business though."
+    ras "Yeah... yes, I'm the keeper of law and order in this city."
+    ras "He broke the rules, he had to be punished for it."
+    "..."
+    ras "Let's move."
+    "{nw}"
+    scene
+    show bg bazaar onlayer bg
+    show screen pnc(abdul, bazaar_map)
+    show ras normal at midright with dissolve
+    show abd normal at midleft with dissolve
+    "{w=1}{nw}"
+
+    scene
+    show bg street onlayer bg
+    show screen pnc(abdul, street_map)
+    show abd normal at midleft with dissolve
+    show ras normal at midright with dissolve
+    "{w=1}{nw}"
+
+
+default dirt_on_haji = quest(
+    _("Dirt on Haji"),
+    [_("Rasoul wants some dirt on Haji. Something that land him in jail.")],
+    )
+
+label rasoul_needs_dirt:
+    scene
+    show bg rich onlayer bg
+    show screen pnc(abdul, rich_map)
+    show abd normal at midleft with dissolve
+    show ras normal at midright with dissolve
+    ras "Here we are."
+    abd "You don't want to drag me to jail again do you?"
+    ras "Don't worry. Do what I want right and you'll be safe."
+    abd "alright."
+    abd "What am I doing?"
+    ras "Do you see that fat bastard?"
+    abd "Haji's boy?"
+    ras "yes."
+    ras "I have a bone to pick with his father But he's outside of my reach."
+    ras "Find some dirt on his father."
+    abd "What kind of dirt?"
+    ras "Anything that can land one of them in jail. I don't care what."
+    $ qlog.got(dirt_on_haji)
+    abd "Alright."
+    ras "OW, don't touch their slave girl! She's mine!"
+    $ dirt_on_haji.extend(_("Don't touch their slave girl."))
+    ras "Any questions?"
+    abd "Nope!"
+    hide ras with dissolve
+    jump rich
+
+
 
 
 

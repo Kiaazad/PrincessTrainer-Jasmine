@@ -401,6 +401,7 @@ label ch3_mirror:
 
 label ch3_fight(j=False):
     window hide
+    
     $ training_dummy.reset()
     call screen btl_scr(team([abdul]), team([training_dummy]))
 

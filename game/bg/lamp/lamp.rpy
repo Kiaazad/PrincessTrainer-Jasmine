@@ -162,8 +162,9 @@ label lamp_quest:
     jump inside_lamp
 
 label lamp_fight:
-    scene
-    "Under construction"
+    scene black
+    $ training_dummy.reset()
+    call screen btl_scr(team([abdul]), team([training_dummy]))
     jump inside_lamp
 
 label lamp_harem:

@@ -11,7 +11,8 @@ Lamp Tour Menu:
 
 - In the quest log, the [Filter] button doesn’t really look like a button. I think someone could easily miss the fact that you can click on it to scroll through filter options.
 
-
+"Thanks. It was so dark that I couldn't see where to click to go back to the tower! Admittedly my eyesight isn't very good."
+>> we nee ease of access options
 
 # Explained:
 - You can miss getting the quest “Books for Jafar” if you decided to view the lamp on your own. Is there another way to start the quest?

@@ -126,7 +126,16 @@ screen btl_scr(f, e):
                     action Function(spell_cast, caster, spell, i)
 
     if caster: # Selected caster
+        if spell:
+            text spell.name
         add "battle/spells.png" yalign 1.0
+        key "K_1" action SetScreenVariable("spell", caster.spells[0])
+        key "K_2" action SetScreenVariable("spell", caster.spells[1])
+        key "K_3" action SetScreenVariable("spell", caster.spells[2])
+        key "K_4" action SetScreenVariable("spell", caster.spells[3])
+        key "K_5" action SetScreenVariable("spell", caster.spells[4])
+        key "K_6" action SetScreenVariable("spell", caster.spells[5])
+
         hbox:
             yalign 1.0 spacing 2
             for i in caster.spells:
@@ -136,14 +145,14 @@ screen btl_scr(f, e):
                         at btl_t_b
                         add i.icon
                         tooltip i
-                        action SetScreenVariable("spell", i)
+                        action SetScreenVariable("spell", i), SelectedIf(spell== i)
                 else:
                     button:
                         padding 0,0 background None
                         at btl_t_b
                         add "spells/empty.png"
                         tooltip i
-                        action SetScreenVariable("spell", i)
+                        action SetScreenVariable("spell", i), SelectedIf(spell== i)
 
     hbox:
         align 0.0,0.0 offset 200,200
@@ -174,5 +183,7 @@ screen fight_result(r):
                 button:
                     text "Resurrect"
                     action Show("load")
-
+                button:
+                    text "Let the darkness take ove."
+                    action MainMenu()
 

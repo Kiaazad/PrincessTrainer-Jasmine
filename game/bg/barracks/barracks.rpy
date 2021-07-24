@@ -40,7 +40,8 @@ define guard_2 = Character("Guard", color="#4ff", what_text_color="#dff")
 image guard_2 normal = "char/guard/guy2 normal.png"
 label barracks_guard:
     scene
-    show guard_2 normal at center
+    show abd normal at left with dissolve
+    show guard_2 normal at right
     if qlog.has(planted_evidence) == "Completed":
         guard_2 "You're back?"
         guard_2 "We're full, go away?"
@@ -53,8 +54,21 @@ label barracks_guard:
         menu:
             "I need to talk to Rasoul.":
                 abd "I need to talk to Rasoul."
-                guard_2 "He's inside."
-                jump inside_barracks
+                guard_2 "Alright, Wait here."
+                hide guard_2 with dissolve
+                show ras normal at right with dissolve
+                ras "What do you want?"
+                abd "I'm ready for more tasks."
+                ras "Not now, I'm busy."
+                abd "When should I come back?"
+                "..."
+                abd "It would be an hono...{w=.8}{nw}"
+                ras "Yeah... yeah..."
+                ras "Walk with me."
+                show abd normal at midleft with move
+                show ras normal at midright with move
+                jump visiting_widow
+                
             "I need to talk to Qasim.":
                 abd "I need to talk to Qasim."
                 guard_2 "Alright, Go in."
@@ -63,14 +77,6 @@ label barracks_guard:
     guard_2 "We're not in the business of feeding lazy poor people."
     jump barracks
 
-label inside_barracks:
-    scene
-    show abd normal at left with dissolve
-    show ras normal at midright with move
-    ras "What do you want?"
-    abd "I'm ready for more tasks."
-    ras "Not now, I'm busy."
-    jump barracks
 
 
 

@@ -1,5 +1,9 @@
 
 
+
+
+You can nap
+
 # 0.21
 revamped how the fight system calculates attacks, it should be easier to vail on an enemy now, specially the defenseless ones
 the training dummy cant "Parry", "Dodge" or "Block" anymore

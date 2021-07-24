@@ -373,3 +373,24 @@ label poor_ali:
         show abd normal at left
         "..."
     jump poor
+
+label widows_house:
+    scene
+    show abd normal at left with dissolve
+    show wid normal at right with dissolve
+    "..."
+    menu:
+        "Rasoul sent me.":
+            abd "Rasoul sent me."
+            wid "For what purpose?"
+            abd "He said you'll take care of me."
+        "I have some questions.":
+            abd "I have some questions."
+            wid "I can't answer, please leave."
+        "I came to assist you.":
+            abd "I've came to assist you."
+            wid "I don't need any assistance. please leave."
+    
+    jump poor
+
+

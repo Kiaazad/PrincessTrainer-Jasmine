@@ -45,6 +45,8 @@ label dev_jumps:
 
         "desert_1_dream":
             jump desert_1_dream
+        "visiting_widow":
+            jump visiting_widow
         "main menu":
             jump main_menu_jump
 
