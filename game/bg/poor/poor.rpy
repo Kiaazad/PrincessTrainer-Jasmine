@@ -376,6 +376,8 @@ label poor_ali:
 
 label widows_house:
     scene
+    show bg widows house onlayer bg
+    hide screen pnc
     show abd normal at left with dissolve
     show wid normal at right with dissolve
     "..."

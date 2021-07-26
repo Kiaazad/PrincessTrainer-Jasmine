@@ -472,8 +472,8 @@ label rasoul_arc_end_barter:
 
 default widows_house = pnco(
     "Widow's house",
-    "bg/poor/petros.png",
-    (136, 330),
+    "bg/poor/widows_house.png",
+    (679, 462),
     Jump('widows_house'),
     hidden = False, hoffset = (20,-80),
     )
