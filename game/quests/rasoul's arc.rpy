@@ -389,7 +389,7 @@ label rasoul_arc_end:
             qasim "So... How much are we talking about?"
             $ money_amount_barter = 0
             jump rasoul_arc_end_barter
- 
+
         "I've paid money for the wine.":
             abd "I've paid money for the wine, can you pay me for it please?"
             ras "How dare you ask for money?"
@@ -517,16 +517,18 @@ label visiting_widow:
     "..."
     ras "What?"
     abd "I didn't say anything."
-    ras "She has a little girl that needs my support."
-    ras "Poor girl lost her dad recently."
-    ras "It's a tragic story."
-    abd "Didn't you execute him?"
-    ras "No... Well... Yes..."
-    abd "It's none of my business though."
-    ras "Yeah... yes, I'm the keeper of law and order in this city."
-    ras "He broke the rules, he had to be punished for it."
+    ras "Look, she has a daughter who needs my support."
+    ras "The poor girl just lost her father, you see."
+    ras "Such a tragedy."
+    abd "Wasn't it you who executed him?"
+    ras "What, No!? I mean... Well, If you want to get all technical about it..."
+    ras "Then, yes."
+    ras "But that's not the point!"
+    abd "Of course, It's none of my business."
+    ras "Look, It's my job to maintain order within the city."
+    ras "He broke the law and the heavy, er... burden, fell to me to deal with it."
     "..."
-    ras "Let's move."
+    ras "Let's keep moving."
     "{nw}"
     scene
     show bg bazaar onlayer bg
@@ -545,7 +547,7 @@ label visiting_widow:
 
 default dirt_on_haji = quest(
     _("Dirt on Haji"),
-    [_("Rasoul wants some dirt on Haji. Something that land him in jail.")],
+    [_("Rasoul wants some dirt on Haji. Something that'll land him in jail.")],
     )
 
 label rasoul_needs_dirt:
@@ -555,27 +557,22 @@ label rasoul_needs_dirt:
     show abd normal at midleft with dissolve
     show ras normal at midright with dissolve
     ras "Here we are."
-    abd "You don't want to drag me to jail again do you?"
-    ras "Don't worry. Do what I want right and you'll be safe."
-    abd "alright."
-    abd "What am I doing?"
-    ras "Do you see that fat bastard?"
+    abd "You're not planning to drag me off to jail again, are you?"
+    ras "Don't worry. Just follow my instructions and you'll be fine."
+    abd "Alright."
+    abd "What do you need me to do?"
+    ras "Do you see that fat bastard over there?"
     abd "Haji's boy?"
-    ras "yes."
-    ras "I have a bone to pick with his father But he's outside of my reach."
-    ras "Find some dirt on his father."
-    abd "What kind of dirt?"
+    ras "Yes."
+    ras "I have a bone to pick with his father, but he's outside my err... {i}official{/i}, reach."
+    ras "I need you to find some dirt on his father."
+    abd "What kind of {i}dirt{/i}?"
     ras "Anything that can land one of them in jail. I don't care what."
     $ qlog.got(dirt_on_haji)
     abd "Alright."
-    ras "OW, don't touch their slave girl! She's mine!"
+    ras "Oh, and don't touch their slave girl! She's mine!"
     $ dirt_on_haji.extend(_("Don't touch their slave girl."))
     ras "Any questions?"
     abd "Nope!"
     hide ras with dissolve
     jump rich
-
-
-
-
-
