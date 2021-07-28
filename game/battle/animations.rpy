@@ -35,25 +35,6 @@ image Halia fight dead:
     "char/halia/fight/dead.png"
 
 
-
-image warrior_man fight idle:
-    "char/warrior_man/fight/idle.png"
-    pause .1
-    "char/warrior_man/fight/idle_2.png"
-    pause .1
-    "char/warrior_man/fight/idle_3.png"
-    pause .1
-    "char/warrior_man/fight/idle_2.png"
-    pause .1
-    repeat
-image warrior_man fight attack:
-    "char/warrior_man/fight/hit.png"
-image warrior_man fight hit:
-    "char/warrior_man/fight/hit.png"
-image warrior_man fight dead:
-    "char/warrior_man/fight/hit.png"
-
-
 image Training dummy fight idle:
     "char/training_dummy/fight/idle.png"
     pause .1
@@ -70,3 +51,40 @@ image Training dummy fight hit:
     "char/training_dummy/fight/hit.png"
 image Training dummy fight dead:
     "char/training_dummy/fight/dead.png"
+
+image Ogre fight idle:
+    "char/ogre/fight/idle_1.webp"
+    pause .1
+    "char/ogre/fight/idle_2.webp"
+    pause .1
+    "char/ogre/fight/idle_3.webp"
+    pause .1
+    "char/ogre/fight/idle_2.webp"
+    pause .1
+    repeat
+image Ogre fight attack:
+    "char/ogre/fight/attack.webp"
+image Ogre fight hit:
+    "char/ogre/fight/hit.webp"
+image Ogre fight dead:
+    "char/ogre/fight/dead.webp"
+
+image Sand warrior fight idle:
+    "char/sand_warrior/fight/idle_1.png"
+    pause .1
+    "char/sand_warrior/fight/idle_2.png"
+    pause .1
+    "char/sand_warrior/fight/idle_3.png"
+    pause .1
+    "char/sand_warrior/fight/idle_2.png"
+    pause .1
+    repeat
+image Sand warrior fight attack:
+    "char/sand_warrior/fight/hit.png"
+image Sand warrior fight hit:
+    "char/sand_warrior/fight/hit.png"
+image Sand warrior fight dead:
+    "char/sand_warrior/fight/hit.png"
+
+
+

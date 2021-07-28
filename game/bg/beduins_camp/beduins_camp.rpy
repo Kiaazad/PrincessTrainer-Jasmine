@@ -22,6 +22,8 @@ default beduins_camp_loc = pncs(
 
 image bg beduins_camp = "bg/beduins_camp/bg.webp"
 label beduins_camp:
+    if not beduins_camp_loc in all_places:
+        $ all_places.append(beduins_camp_loc)
     scene
     show bg beduins_camp onlayer bg
     show screen pnc(abdul, beduins_camp_loc)

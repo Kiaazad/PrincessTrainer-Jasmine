@@ -31,6 +31,25 @@ default ruins_back = pnco(
 # items
 
 
+# Fights
+default ogre = unit(
+    "Ogre",
+    "char/ogre",
+    lvl = 5,
+    type = "Demon",
+    )
+default ruins_ogre = pnco(
+    "thorns",
+    "bg/ruins/ogre.png",
+    (182, 660),
+    Jump('ruins_ogre'),
+    )
+label ruins_ogre:
+    call screen btl_scr(team([abdul]), team([ogre]))
+    jump ruins
+
+
+
 default ruins_loc = pncs("Roc pass",
     [
         ruins_0,
@@ -38,14 +57,16 @@ default ruins_loc = pncs("Roc pass",
         ruins_2,
         ruins_3,
         ruins_back,
+        ruins_ogre,
 
     ], night = "bg/ruins/night.webp"
 
     )
 
 image bg ruins = "bg/ruins/bg.webp"
-
 label ruins:
+    if not ruins_loc in all_places:
+        $ all_places.append(ruins_loc)
     scene 
     show bg ruins onlayer bg
     show screen pnc(abdul, ruins_loc)

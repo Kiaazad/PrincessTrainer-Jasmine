@@ -39,6 +39,8 @@ This background is the desert immediately outside of the city's gate, it can be 
 """
 image bg desert = "bg/desert/bg.webp"
 label desert:
+    if not desert_map in all_places:
+        $ all_places.append(desert_map)
     scene
     show bg desert onlayer bg
     show screen pnc(abdul, desert_map)

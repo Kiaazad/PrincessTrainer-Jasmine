@@ -12,42 +12,37 @@
     type = "Peasant", # Archetype ##(optional - default is: Peasant)
     )
 default hero = abdul # Set our hero to someone
-default jafar = unit(
-    "Jafar",
-    "char/jafar",
-
-    lvl = 650,
-    type = "Wizard"
-    )
-
 default halia = unit(
     "Halia",
     "char/halia",
-
     lvl = 2,
     type = "Dancer"
-    )
-default jasmine = unit(
-    "Jasmine",
-    "char/jasmine",
-
-    lvl = 3,
-    type = "Princess"
-    )
-default snake = unit(
-    "Snake",
-    "char/snake",
-
-    lvl = 2,
-    type = "Beast"
     )
 default training_dummy = unit(
     "Training dummy",
     "char/training_dummy",
-
     lvl = 1,
     type = "Dummy",
     cant = ["Parry", "Dodge", "Block"]
+    )
+default rasoul = unit(
+    "Rasoul",
+    "char/rasoul",
+    lvl = 24,
+    type = "Warrior"
+    )
+
+default jafar = unit(
+    "Jafar",
+    "char/jafar",
+    lvl = 650,
+    type = "Wizard"
+    )
+default jasmine = unit(
+    "Jasmine",
+    "char/jasmine",
+    lvl = 3,
+    type = "Princess"
     )
 
 
@@ -59,7 +54,6 @@ default snake_dancer = unit(
     lvl = 100,
     type = "Dancer"
     )
-
 
 default snake_dancing_girl_1 = unit(
     "Snake Dancer",
@@ -85,13 +79,7 @@ default orphans_and_monkeys = unit(
     type = "Peasant"
     )
 
-default rasoul = unit(
-    "Rasoul",
-    "char/rasoul",
 
-    lvl = 24,
-    type = "Warrior"
-    )
 
 default warrior_man = unit(
     "Desert warrior",
@@ -117,13 +105,6 @@ default undead_guard = unit(
     type = "Warrior"
     )
 
-default skeleton_rogue = unit(
-    "Skeleton rogue",
-    "char/skeleton_rogue",
-
-    lvl = 18,
-    type = "Rogue"
-    )
 
 
 

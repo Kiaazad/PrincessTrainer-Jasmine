@@ -15,7 +15,7 @@ init python:
             hits = 1, items = [], tools = [],
             tut = False, hidden = False, hoffset = None, highlight = False, regen = 0,
             shifts = None,
-        ):
+            ):
             self.name = name
             self.img = img
             
@@ -39,7 +39,7 @@ init python:
 
     class pncs:
         def __init__(self, name, clicks = [],
-            cond = [], night = None):
+            cond = [], night = None, enemies = []):
             self.name = name
             self.clicks = clicks
             self.cond = cond
@@ -47,6 +47,7 @@ init python:
             self.tuts = []
             self.night = night
             self.idle = 0
+            self.enemies = enemies
         def clicked(self, click, p):
             self.idle = 0
             if click.items:

@@ -114,6 +114,8 @@ default des_0_col = pncs("Roc pass",
     )
 image bg roc_pass = "bg/roc_pass/bg.webp"
 label desert_0:
+    if not des_0_col in all_places:
+        $ all_places.append(des_0_col)
     scene 
     show bg roc_pass onlayer bg
     show screen pnc(abdul, des_0_col)

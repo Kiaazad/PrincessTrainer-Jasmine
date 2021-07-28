@@ -44,6 +44,8 @@ default heaven_oasis_loc = pncs(
 
 image bg heaven_oasis = "bg/heaven_oasis/bg.webp"
 label heaven_oasis:
+    if not heaven_oasis_loc in all_places:
+        $ all_places.append(heaven_oasis_loc)
     scene
     show bg heaven_oasis onlayer bg
     show screen pnc(abdul, heaven_oasis_loc)

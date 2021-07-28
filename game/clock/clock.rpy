@@ -10,6 +10,7 @@
         def tick(self, n = 1):
             for i in range(n):
                 self.minute += 1
+
                 if hero.food > -8010 and hero.water > -4010:
                     if hero.stat in ["Resting", "Chatting"]:
                         hero.food -= 1

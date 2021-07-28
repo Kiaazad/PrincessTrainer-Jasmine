@@ -31,17 +31,36 @@ default des_1_5 = pnco(
     items = [[thorns, 1]],
     )
 
+# Fights
+default snake = unit(
+    "Snake",
+    "char/snake",
+    lvl = 2,
+    type = "Beast"
+    )
+default snakes_pass_snake = pnco(
+    "Snake",
+    "bg/snakes_pass/snake.png",
+    (182, 660),
+    Jump('snakes_pass_snake'),
+    )
+label snakes_pass_snake:
+    call screen btl_scr(team([abdul]), team([ogre]))
+    jump ruins
+
 default des_1_col = pncs("Gate's view",
     [
         des_1_1,
         des_1_2,
         des_1_3,
         des_1_4,
-        des_1_5
+        des_1_5,
     ], night = "bg/snakes_pass/night.webp"
     )
 image bg snakes_pass = "bg/snakes_pass/bg.webp"
 label desert_1:
+    if not des_1_col in all_places:
+        $ all_places.append(des_1_col)
     scene
     show bg snakes_pass onlayer bg
     show screen pnc(abdul, des_1_col)
