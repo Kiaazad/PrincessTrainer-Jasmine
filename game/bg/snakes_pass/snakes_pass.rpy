@@ -1,4 +1,5 @@
-﻿default des_1_1 = pnco(
+﻿# Items
+default des_1_1 = pnco(
     "Dried Tree",
     "bg/snakes_pass/01.png",
     (1357, 596),
@@ -31,6 +32,8 @@ default des_1_5 = pnco(
     items = [[thorns, 1]],
     )
 
+# Exists
+
 # Fights
 default snake = unit(
     "Snake",
@@ -45,7 +48,7 @@ default snakes_pass_snake = pnco(
     Jump('snakes_pass_snake'),
     )
 label snakes_pass_snake:
-    call screen btl_scr(team([abdul]), team([ogre]))
+    call screen btl_scr(team([abdul]), team([snake]))
     jump ruins
 
 default des_1_col = pncs("Gate's view",

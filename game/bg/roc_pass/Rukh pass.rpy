@@ -82,12 +82,31 @@ default des_0_sword = pnco(
     items = [[rusty_sword, 1]],
     )
 
+# Exists
 default des_0_return = pnco(
     "Return",
     None,
     (300, 800),
     Jump('desert'),
     )
+
+# Fights
+default little_thief = unit(
+    "Little thief",
+    "char/little_thief",
+    lvl = 5,
+    type = "Demon",
+    )
+default roc_pass_little_thief = pnco(
+    "Little thief",
+    "bg/roc_pass/little_thief.png",
+    (152 , 586),
+    Jump('roc_pass_little_thief'),
+    )
+label roc_pass_little_thief:
+    call screen btl_scr(team([abdul]), team([little_thief]))
+    jump desert_0
+
 
 # Lamp shine
 image des_0_shine:
@@ -107,6 +126,7 @@ default des_0_col = pncs("Roc pass",
         des_0_7,
         des_0_chest,
         des_0_sword,
+        roc_pass_little_thief,
     ],
     cond = [
         [[des_0_3, des_0_4, des_0_6], Jump("intro_0_1")]
@@ -114,8 +134,8 @@ default des_0_col = pncs("Roc pass",
     )
 image bg roc_pass = "bg/roc_pass/bg.webp"
 label desert_0:
-    if not des_0_col in all_places:
-        $ all_places.append(des_0_col)
+    # if not des_0_col in all_places:
+    #     $ all_places.append(des_0_col)
     scene 
     show bg roc_pass onlayer bg
     show screen pnc(abdul, des_0_col)

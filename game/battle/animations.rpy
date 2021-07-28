@@ -70,21 +70,37 @@ image Ogre fight dead:
     "char/ogre/fight/dead.webp"
 
 image Sand warrior fight idle:
-    "char/sand_warrior/fight/idle_1.png"
+    "char/sand_warrior/fight/idle_1.webp"
     pause .1
-    "char/sand_warrior/fight/idle_2.png"
+    "char/sand_warrior/fight/idle_2.webp"
     pause .1
-    "char/sand_warrior/fight/idle_3.png"
+    "char/sand_warrior/fight/idle_3.webp"
     pause .1
-    "char/sand_warrior/fight/idle_2.png"
+    "char/sand_warrior/fight/idle_2.webp"
     pause .1
     repeat
 image Sand warrior fight attack:
-    "char/sand_warrior/fight/hit.png"
+    "char/sand_warrior/fight/attack.webp"
 image Sand warrior fight hit:
-    "char/sand_warrior/fight/hit.png"
+    "char/sand_warrior/fight/hit.webp"
 image Sand warrior fight dead:
-    "char/sand_warrior/fight/hit.png"
+    "char/sand_warrior/fight/dead.webp"
 
+image Little thief fight idle:
+    "char/little_thief/fight/idle_1.webp"
+    pause .1
+    "char/little_thief/fight/idle_2.webp"
+    pause .1
+    "char/little_thief/fight/idle_3.webp"
+    pause .1
+    "char/little_thief/fight/idle_2.webp"
+    pause .1
+    repeat
+image Little thief fight attack:
+    "char/little_thief/fight/attack.webp"
+image Little thief fight hit:
+    "char/little_thief/fight/hit.webp"
+image Little thief fight dead:
+    "char/little_thief/fight/dead.webp"
 
 
