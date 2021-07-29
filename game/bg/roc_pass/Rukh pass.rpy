@@ -83,11 +83,11 @@ default des_0_sword = pnco(
     )
 
 # Exists
-default des_0_return = pnco(
-    "Return",
+default roc_pass_snakes_pass = pnco(
+    "Snake's pass",
     None,
     (300, 800),
-    Jump('desert'),
+    Jump('snakes_pass'),
     )
 
 # Fights

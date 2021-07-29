@@ -24,7 +24,9 @@ label dev_jumps:
             $ qlog.got(jafars_revenge)
             $ qlog.cancel(sell_lamp)
             $ street_home_loc.enabled = True
-            $ roc_pass_map.add(des_0_return)
+            $ roc_pass_map.add(roc_pass_snakes_pass)
+            $ snake_pass_map.add(snake_pass_desert)
+            $ snake_pass_map.add(snake_pass_roc_pass)
             $ qlog.got(visit_malik)
             $ qlog.got(visit_hosein)
             $ abdul.gotskill(kick)
@@ -40,7 +42,7 @@ label dev_jumps:
         "jump to the lamp":
             $ calendar.day = 1
             $ street_home_loc.enabled = True
-            $ roc_pass_map.add(des_0_return)
+            $ roc_pass_map.add(roc_pass_snakes_pass)
             jump lamp_visit
 
         "desert_1_dream":

@@ -47,6 +47,8 @@ label intro_0_1:
     "{nw}"
     menu:
         "Rub the lamp!":
+            $ snake_pass_map.add(snake_pass_desert)
+            $ snake_pass_map.add(snake_pass_roc_pass)
             $ abdul.add_flag("Meet Jafar")
             show cg found_lamp with Dissolve(2)
             $ renpy.pause(6)
@@ -240,7 +242,7 @@ label intro_0_1:
                     $ qlog.cancel(sell_lamp)
                     jaf "Bring the thorns. {w=.5}We need all the money we can get."
                     $ msg.msg("You got CamelThorns")
-                    $ roc_pass_map.add(des_0_return)
+                    $ roc_pass_map.add(roc_pass_snakes_pass)
                     "{nw}"
                     jump ch1
                 "No! I want my wishes":
@@ -263,7 +265,7 @@ label intro_0_1:
                             abd "What?"
                             jaf "Something I heard- {w=.5}you know what, never mind."
                             "{nw}"
-                            $ roc_pass_map.add(des_0_return)
+                            $ roc_pass_map.add(roc_pass_snakes_pass)
                             jump ch1
         "Don't be naive, search for more firewood.":
             show abd alert at left
@@ -272,6 +274,6 @@ label intro_0_1:
             show abd tired at left
             abd "It's unusually hot today."
             "..."
-            $ roc_pass_map.add(des_0_return)
+            $ roc_pass_map.add(roc_pass_snakes_pass)
             jump desert_1
 

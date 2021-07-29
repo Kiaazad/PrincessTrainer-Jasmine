@@ -33,7 +33,18 @@ default des_1_5 = pnco(
     )
 
 # Exists
-
+default snake_pass_desert = pnco(
+    "Desert",
+    None,
+    (182, 960),
+    Jump('desert'),
+    )
+default snake_pass_roc_pass = pnco(
+    "Roc pass",
+    None,
+    (882, 460),
+    Jump('roc_pass'),
+    )
 # Fights
 default snake = unit(
     "Snake",
@@ -51,7 +62,7 @@ label snakes_pass_snake:
     call screen btl_scr(team([abdul]), team([snake]))
     jump ruins
 
-default des_1_col = pncs("Gate's view",
+default snake_pass_map = pncs("Snake's pass",
     [
         des_1_1,
         des_1_2,
@@ -61,12 +72,20 @@ default des_1_col = pncs("Gate's view",
     ], night = "bg/snakes_pass/night.webp"
     )
 image bg snakes_pass = "bg/snakes_pass/bg.webp"
-label desert_1:
-    if not des_1_col in all_places:
-        $ all_places.append(des_1_col)
+label snakes_pass:
     scene
     show bg snakes_pass onlayer bg
-    show screen pnc(abdul, des_1_col)
+    show screen pnc(abdul, snake_pass_map)
+    pause
+    jump snakes_pass
+
+
+label desert_1:
+    if not snake_pass_map in all_places:
+        $ all_places.append(snake_pass_map)
+    scene
+    show bg snakes_pass onlayer bg
+    show screen pnc(abdul, snake_pass_map)
     with dissolve
 
     show screen mirage_1
@@ -217,7 +236,6 @@ default jasmine_dream_cg = l2dcg(
     )
 
 
-
 label desert_1_dream:
     scene black with dissolve
 
@@ -231,4 +249,6 @@ label desert_1_dream:
     abd "Woah..."
     abd "That was weird."
     abd "I need to got to the city before I die from heat."
+    $ snake_pass_map.add(snake_pass_desert)
+    $ snake_pass_map.add(snake_pass_roc_pass)
     jump street

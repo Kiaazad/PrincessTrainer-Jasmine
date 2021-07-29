@@ -3,7 +3,7 @@ default desert_roc_pass = pnco(
     "Roc pass",
     "bg/desert/roc pass.png",
     (1600, 576),
-    Jump('roc_pass'),
+    Jump('snakes_pass'),
     )
 default desert_agrabah = pnco(
     "Agrabah",
