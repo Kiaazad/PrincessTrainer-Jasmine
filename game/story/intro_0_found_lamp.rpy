@@ -14,10 +14,10 @@ default jafars_revenge = quest(
 
 label intro_0:
     $ calendar.minute = 69
-    jump desert_0
+    jump roc_pass
 label intro_0_1:
-    $ des_0_col.command = None
-    $ all_places.append(des_0_col)
+    $ roc_pass_map.command = None
+    $ all_places.append(roc_pass_map)
     show abd tired at left with dissolve
     abd "Phew..."
     abd "There's nothing left here but sand."
@@ -240,7 +240,7 @@ label intro_0_1:
                     $ qlog.cancel(sell_lamp)
                     jaf "Bring the thorns. {w=.5}We need all the money we can get."
                     $ msg.msg("You got CamelThorns")
-                    $ des_0_col.add(des_0_return)
+                    $ roc_pass_map.add(des_0_return)
                     "{nw}"
                     jump ch1
                 "No! I want my wishes":
@@ -263,7 +263,7 @@ label intro_0_1:
                             abd "What?"
                             jaf "Something I heard- {w=.5}you know what, never mind."
                             "{nw}"
-                            $ des_0_col.add(des_0_return)
+                            $ roc_pass_map.add(des_0_return)
                             jump ch1
         "Don't be naive, search for more firewood.":
             show abd alert at left
@@ -272,6 +272,6 @@ label intro_0_1:
             show abd tired at left
             abd "It's unusually hot today."
             "..."
-            $ des_0_col.add(des_0_return)
+            $ roc_pass_map.add(des_0_return)
             jump desert_1
 

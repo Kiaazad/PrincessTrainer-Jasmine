@@ -105,7 +105,7 @@ default roc_pass_little_thief = pnco(
     )
 label roc_pass_little_thief:
     call screen btl_scr(team([abdul]), team([little_thief]))
-    jump desert_0
+    jump roc_pass
 
 
 # Lamp shine
@@ -115,7 +115,7 @@ image des_0_shine:
     ease .3 zoom 1 rotate 20
     repeat
 
-default des_0_col = pncs("Roc pass",
+default roc_pass_map = pncs("Roc pass",
     [
         des_0_1,
         des_0_2,
@@ -133,12 +133,12 @@ default des_0_col = pncs("Roc pass",
     ], night = "bg/roc_pass/night.webp"
     )
 image bg roc_pass = "bg/roc_pass/bg.webp"
-label desert_0:
-    # if not des_0_col in all_places:
-    #     $ all_places.append(des_0_col)
+label roc_pass:
+    # if not roc_pass_map in all_places:
+    #     $ all_places.append(roc_pass_map)
     scene 
     show bg roc_pass onlayer bg
-    show screen pnc(abdul, des_0_col)
+    show screen pnc(abdul, roc_pass_map)
     with dissolve
     pause
-    jump desert_0
+    jump roc_pass
