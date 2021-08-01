@@ -33,34 +33,31 @@ default des_1_5 = pnco(
     )
 
 # Exists
-default snake_pass_desert = pnco(
-    "Desert",
-    None,
-    (182, 960),
-    Jump('desert'),
-    )
+
 default snake_pass_roc_pass = pnco(
     "Roc pass",
     None,
-    (882, 460),
+    (882, 960),
     Jump('roc_pass'),
     )
+
 # Fights
 default snake = unit(
     "Snake",
-    "char/snake",
+    "char/foes/snake",
     lvl = 2,
-    type = "Beast"
+    type = "Beast",
+    items = [(dead_snake, 1)]
     )
 default snakes_pass_snake = pnco(
     "Snake",
     "bg/snakes_pass/snake.png",
-    (182, 660),
+    (434, 653),
     Jump('snakes_pass_snake'),
     )
 label snakes_pass_snake:
     call screen btl_scr(team([abdul]), team([snake]))
-    jump ruins
+    jump snakes_pass
 
 default snake_pass_map = pncs("Snake's pass",
     [
@@ -69,6 +66,7 @@ default snake_pass_map = pncs("Snake's pass",
         des_1_3,
         des_1_4,
         des_1_5,
+        snakes_pass_snake,
     ], night = "bg/snakes_pass/night.webp"
     )
 image bg snakes_pass = "bg/snakes_pass/bg.webp"
@@ -249,6 +247,5 @@ label desert_1_dream:
     abd "Woah..."
     abd "That was weird."
     abd "I need to got to the city before I die from heat."
-    $ snake_pass_map.add(snake_pass_desert)
     $ snake_pass_map.add(snake_pass_roc_pass)
     jump street

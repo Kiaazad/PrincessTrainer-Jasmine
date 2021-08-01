@@ -3,7 +3,7 @@ default desert_roc_pass = pnco(
     "Roc pass",
     "bg/desert/roc pass.png",
     (1600, 576),
-    Jump('snakes_pass'),
+    Jump('roc_pass'),
     )
 default desert_agrabah = pnco(
     "Agrabah",
@@ -30,6 +30,7 @@ default black_scorpion = unit(
     "char/foes/black_scorpion",
     lvl = 6,
     type = "Beast",
+    items = [(scorpion_tail, 1)]
     )
 default desert_black_scorpion = pnco(
     "Black scorpion",

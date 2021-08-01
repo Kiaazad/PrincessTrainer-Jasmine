@@ -235,3 +235,21 @@ default list_of_remedies = [
     snake_bite_remedy, scorpion_bite_remedy,
 ]
 
+# Remedy ingredients
+default scorpion_tail = item(
+    _("Scorpion's tail"),
+    _("The pointy end of scorpion."),
+    "items/scorpion_tail.png",
+    100,
+    ["remedy"],
+    )
+
+default dead_snake = item(
+    _("Dead snake"),
+    _("It's dead."),
+    "items/dead_snake.png",
+    100,
+    ["remedy"],
+    )
+
+

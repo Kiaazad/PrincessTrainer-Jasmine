@@ -20,7 +20,7 @@ default halia = unit(
     )
 default training_dummy = unit(
     "Training dummy",
-    "char/training_dummy",
+    "char/foes/training_dummy",
     lvl = 1,
     type = "Dummy",
     cant = ["Parry", "Dodge", "Block"]

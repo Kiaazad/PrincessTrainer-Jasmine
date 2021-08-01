@@ -49,10 +49,15 @@ init python:
                 enemy.stm += breath
                 msg3(breath)
 
-        if enemy.hp < 0:
+        if enemy.hp < 0 and enemy.alive:
             enemy.alive = False
             enemy.hp = 0
             enemy.ani = "dead"
+            global btl_xp
+            btl_xp += 100
+            for i in enemy.bags[0].items:
+                if i:
+                    btl_loot.append(i)
 
     def fight_ai(f, e):
         caster = None
@@ -83,10 +88,12 @@ init python:
 
             fight_cast(caster, spell, target)
 
-
+default btl_xp = 0
+default btl_loot = []
 screen btl_scr(f, e):
     modal True
-    default caster = None
+
+    default caster = f.team[0]
     default spell = None
     default fp = [(-200,-150), (-550,-140),
                     (-350,-40), (-700,-40)]
@@ -126,8 +133,6 @@ screen btl_scr(f, e):
                     action Function(spell_cast, caster, spell, i)
 
     if caster: # Selected caster
-        if spell:
-            text spell.name
         add "battle/spells.png" yalign 1.0
         key "K_1" action SetScreenVariable("spell", caster.spells[0])
         key "K_2" action SetScreenVariable("spell", caster.spells[1])
@@ -166,16 +171,37 @@ screen btl_scr(f, e):
     use stats(f, e)
     # if caster:
     #     use fine_tune(caster)
+    text str(btl_xp)
 
+init python:
+    def collect_loot():
+        global btl_loot
+        for i in btl_loot:
+            hero.got(i.item, i.qtt)
+        btl_loot = []
+        Hide("btl_scr")()
+        Hide("fight_result")()
+        Return()()
 screen fight_result(r):
     modal True
     if r == "win":
         frame:
             vbox:
                 text "You won this fight!"
+                text "Gained [btl_xp] Exp."
+                text "And"
+                hbox:
+                    for i in btl_loot:
+                        button:
+                            xysize 128,128 padding 0,0
+                            background i.item.icon
+                            if i.qtt > 1:
+                                text "[i.qtt]" color "#fff" align(.9,.9)
+                            tooltip i
+                            action NullAction()
                 button:
-                    text "Done"
-                    action Hide("btl_scr"), Hide("fight_result"), Return()
+                    text "Collect"
+                    action Function(collect_loot)
     if r == "lose":
         frame:
             vbox:

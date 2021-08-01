@@ -17,9 +17,10 @@ default beduins_camp_ruins = pnco(
 # Fights
 default sand_warrior = unit(
     "Sand warrior",
-    "char/sand_warrior",
+    "char/foes/sand_warrior",
     lvl = 5,
     type = "Warrior",
+    items = [(stick, 2)]
     )
 default beduins_camp_sand_warrior = pnco(
     "Sand warrior",

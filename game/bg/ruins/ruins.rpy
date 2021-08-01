@@ -34,9 +34,10 @@ default ruins_back = pnco(
 # Fights
 default ogre = unit(
     "Ogre",
-    "char/ogre",
+    "char/foes/ogre",
     lvl = 5,
     type = "Demon",
+    items = [(coal, 11)]
     )
 default ruins_ogre = pnco(
     "thorns",

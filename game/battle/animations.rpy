@@ -136,3 +136,31 @@ image Tiger scorpion fight hit:
 image Tiger scorpion fight dead:
     "char/foes/tiger_scorpion/fight/dead.webp"
 
+
+image Snake fight idle:
+    "char/foes/snake/fight/idle_1.webp"
+    pause .1
+    "char/foes/snake/fight/idle_2.webp"
+    pause .1
+    "char/foes/snake/fight/idle_3.webp"
+    pause .1
+    "char/foes/snake/fight/idle_2.webp"
+    pause .1
+    repeat
+image Snake fight attack:
+    "char/foes/snake/fight/attack.webp"
+image Snake fight hit:
+    "char/foes/snake/fight/hit.webp"
+image Snake fight dead:
+    "char/foes/snake/fight/dead.webp"
+
+
+
+
+
+
+
+
+
+
+

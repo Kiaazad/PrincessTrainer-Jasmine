@@ -86,16 +86,22 @@ default des_0_sword = pnco(
 default roc_pass_snakes_pass = pnco(
     "Snake's pass",
     None,
-    (300, 800),
+    (400, 500),
     Jump('snakes_pass'),
     )
-
+default roc_pass_desert = pnco(
+    "Desert",
+    None,
+    (400, 900),
+    Jump('desert'),
+    )
 # Fights
 default little_thief = unit(
     "Little thief",
-    "char/little_thief",
+    "char/foes/little_thief",
     lvl = 5,
     type = "Demon",
+    items = [(small_sword, 2), (water, 1)]
     )
 default roc_pass_little_thief = pnco(
     "Little thief",
@@ -134,8 +140,6 @@ default roc_pass_map = pncs("Roc pass",
     )
 image bg roc_pass = "bg/roc_pass/bg.webp"
 label roc_pass:
-    # if not roc_pass_map in all_places:
-    #     $ all_places.append(roc_pass_map)
     scene 
     show bg roc_pass onlayer bg
     show screen pnc(abdul, roc_pass_map)
