@@ -74,7 +74,7 @@
 
         def add_flag(self, flag):
             self.flags.append(flag)
-        def add_interest(self, interest):
-            self.interests.append(interest)
+
+
 
 

@@ -2,6 +2,23 @@
 
 
 
+
+frequently used screens have their buttons on the top of interface
+fixed the errors at the end of `to_do_list` quest
+you will level up every 100 exp you gain
+the combat text now differentiates between damage dealt and damage taken
+the training dummy doesn't kill you anymore
+managing the team and arranging the spells is a bit more coherent now
+you gain experience for defeating enemies now
+skipping the fights is an ability now
+Fixed getting stuck after battling the training dummy
+Migrated to renpy version 7.4.8
+
+
+# 0.22
+This month I couldn't keep track of all changes, the majority of changes where focused on the fighting system though.
+A number of fights are added to the game to work as test cases, I'm still working on how to handle the amount of exp given by the enemies so there's no level-up yet, but the new fights yield loot now, basically you can take anything that the enemies had in their inventory.
+A number of new locations and characters are added, you can continue Rasoul's quest chain to unlock the widow's house, it will become a new source of quests and fun soon.
 You can nap
 
 # 0.21

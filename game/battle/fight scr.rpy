@@ -18,7 +18,7 @@ init python:
         else:
             msg.msg("You're dead.")
 
-    def fight_cast(caster, spell, enemy):
+    def fight_cast(caster, spell, enemy, is_enemy = False):
         caster.ani = "attack"
         caster.busy = 30
         caster.stm -= spell.stmc
@@ -31,7 +31,10 @@ init python:
             if not i in enemy.cant:
                 total += renpy.random.randint(1,100)
                 if chance < total:
-                    msg3(i)
+                    if not is_enemy:
+                        msg3(i)
+                    else:
+                        msg3(i, d = False)
                     break
         else:
             enemy.ani = "hit"
@@ -39,22 +42,29 @@ init python:
             if spell.hp:
                 damage = (spell.hp + (caster.pwr * spell.hp)/100) + crit
                 enemy.hp += damage
-                msg3(damage)
+                if not is_enemy:
+                    msg3(damage)
+                else:
+                    msg3(damage, d = False)
             if spell.mp:
                 burn = (spell.mp + (caster.pwr * spell.mp)/100) + crit
                 enemy.mp += burn
-                msg3(burn)
+                if not is_enemy:
+                    msg3(burn)
+                else:
+                    msg3(burn, d = False)
             if spell.stm:
                 breath = (spell.stm + (caster.pwr * spell.stm)/100) + crit
                 enemy.stm += breath
-                msg3(breath)
+                if not is_enemy:
+                    msg3(breath)
+                else:
+                    msg3(breath, d = False)
 
         if enemy.hp < 0 and enemy.alive:
             enemy.alive = False
             enemy.hp = 0
             enemy.ani = "dead"
-            global btl_xp
-            btl_xp += 100
             for i in enemy.bags[0].items:
                 if i:
                     btl_loot.append(i)
@@ -83,12 +93,21 @@ init python:
         else:
             return
 
-        
         if caster and spell and target:
+            fight_cast(caster, spell, target, True)
 
-            fight_cast(caster, spell, target)
+    def calculate_exp(f, e):
+        f_levels = 0
+        e_levels = 0
+        for i in f.team:
+            f_levels += i.lvl
+        for i in e.team:
+            e_levels += i.lvl
+        exp = 5 - (f_levels - e_levels)
+        if exp < 1:
+            exp = 1
+        return exp
 
-default btl_xp = 0
 default btl_loot = []
 screen btl_scr(f, e):
     modal True
@@ -99,15 +118,6 @@ screen btl_scr(f, e):
                     (-350,-40), (-700,-40)]
     default ep = [(200,-150), (550,-140),
                     (350,-40), (700,-40)]
-    # ticker
-    if f.defeated():
-        timer 1 action Show("fight_result", r="lose")
-    else:
-        timer .016 repeat True action Function(f.tick), Function(e.tick)
-    if e.defeated():
-        timer 1 action Show("fight_result", r="win")
-    else:
-        timer renpy.random.random()*4 repeat True action Function(fight_ai, f, e)
 
     vbar value f.team[0].hp range f.team[0].mhp left_bar "0GUI/bar2.png" right_bar "0GUI/bar1.png" align(0.0,.5) xysize(63,688) left_gutter 44 right_gutter 44
     vbar value e.team[0].hp range e.team[0].mhp left_bar "0GUI/bar4.png" right_bar "0GUI/bar3.png" align(1.0,.5) xysize(63,688) left_gutter 44 right_gutter 44
@@ -159,36 +169,37 @@ screen btl_scr(f, e):
                         tooltip i
                         action SetScreenVariable("spell", i), SelectedIf(spell== i)
 
+    use stats(f, e)
     hbox:
-        align 0.0,0.0 offset 200,200
+        align 1.0,1.0 offset -40,-40
         button:
             text "Manage"
             action ToggleScreen("btl_team", t = f)
 
-        button:
-            text "Skip"
-            action Hide("btl_scr"), Return()
-    use stats(f, e)
-    # if caster:
-    #     use fine_tune(caster)
-    text str(btl_xp)
+        # button:
+        #     text "Skip"
+        #     action Hide("btl_scr"), Return()
 
-init python:
-    def collect_loot():
-        global btl_loot
-        for i in btl_loot:
-            hero.got(i.item, i.qtt)
-        btl_loot = []
-        Hide("btl_scr")()
-        Hide("fight_result")()
-        Return()()
-screen fight_result(r):
-    modal True
-    if r == "win":
+    text str(hero.exp) yoffset -400
+    if spell == run_away: # Run away
+        timer .1 action Return("Ran Away")
+    if f.defeated(): # Defeated
+        frame:
+            vbox:
+                text "You're dead!"
+                button:
+                    text "Resurrect"
+                    action Show("load")
+                button:
+                    text "Let the darkness take ove."
+                    action MainMenu()
+    else:
+        timer .016 repeat True action Function(f.tick), Function(e.tick)
+    if e.defeated(): # Won
         frame:
             vbox:
                 text "You won this fight!"
-                text "Gained [btl_xp] Exp."
+                text "Gained {} Exp.".format(calculate_exp(f, e))
                 text "And"
                 hbox:
                     for i in btl_loot:
@@ -201,15 +212,16 @@ screen fight_result(r):
                             action NullAction()
                 button:
                     text "Collect"
-                    action Function(collect_loot)
-    if r == "lose":
-        frame:
-            vbox:
-                text "You're dead!"
-                button:
-                    text "Resurrect"
-                    action Show("load")
-                button:
-                    text "Let the darkness take ove."
-                    action MainMenu()
+                    action Function(collect_loot, calculate_exp(f, e)), Return("won")
+    else:
+        timer renpy.random.random()*4 repeat True action Function(fight_ai, f, e)
+
+init python:
+    def collect_loot(exp):
+        global btl_loot
+        for i in btl_loot:
+            hero.got(i.item, i.qtt)
+        btl_loot = []
+        hero.got_exp(exp)
+
 

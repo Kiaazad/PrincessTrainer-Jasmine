@@ -14,6 +14,7 @@ default jafars_revenge = quest(
 
 label intro_0:
     $ calendar.minute = 69
+    $ abdul.got_skill(run_away)
     jump roc_pass
 label intro_0_1:
     $ roc_pass_map.command = None

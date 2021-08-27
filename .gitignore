@@ -1,4 +1,5 @@
 *.rpyc
+*.rpymc
 cache/
 saves/
 traceback.txt
@@ -8,7 +9,4 @@ game/0GUI dev tools
 *.7z
 *.bak
 project.json
-game/tl/None/common.rpymc
-game/tl/None/common.rpymc
-game/tl/None/common.rpymc
-*.rpymc
+

@@ -49,8 +49,8 @@ label ch2:
     $ qlog.got(visit_hosein)
     jaf "Abdul!"
     show abd alert at left
-    $ abdul.gotskill(kick)
-    $ abdul.gotskill(punch)
+    $ abdul.got_skill(kick)
+    $ abdul.got_skill(punch)
     menu:
         jaf "How are you with swords?"
         "Never used one.":
@@ -175,8 +175,8 @@ label ch2:
                     jump ch2_1
                 "I can defend myself if I have to.":
                     $ abdul.levelup(1)
-                    $ abdul.gotskill(slash)
-                    $ abdul.gotskill(pierce)
+                    $ abdul.got_skill(slash)
+                    $ abdul.got_skill(pierce)
                     show abd smug at left
                     abd "I can defend myself if I have to."
                     show jaf thinking at right
@@ -191,8 +191,8 @@ label ch2:
                     jump ch2_1
         "Ohohoho... I've cut a hand or two.":
             $ abdul.levelup(3)
-            $ abdul.gotskill(slash)
-            $ abdul.gotskill(pierce)
+            $ abdul.got_skill(slash)
+            $ abdul.got_skill(pierce)
             show abd smug at left
             abd "Ohohoho... I've cut a hand or two."
             show jaf disappointed at right

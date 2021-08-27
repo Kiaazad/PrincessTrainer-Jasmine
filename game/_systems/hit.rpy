@@ -8,7 +8,7 @@
 
 transform fight_notif_trans(y = -200):
     parallel:
-        ease 1.2 yoffset -200
+        ease 1.2 yoffset y
     parallel:
         pause .2
         ease 1 alpha 0

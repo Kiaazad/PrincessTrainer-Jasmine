@@ -34,10 +34,12 @@ transform sav_thmb:
     ease .4 alpha .5
 
 screen save():
+    modal True
     tag menu
     use file_slots(_("Save"))
 
 screen load():
+    modal True
     tag menu
     use file_slots(_("Load"))
 

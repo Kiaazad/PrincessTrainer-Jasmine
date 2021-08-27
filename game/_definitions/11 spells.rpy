@@ -5,7 +5,7 @@ default kick = spell(
     _("A kick aimed for the ass area."),        # description
     "spells/kick.png",                          # icon
     hp = -2,                                    # Health damage or heal
-    stmc = 25,                                  # Stamina cost
+    stmc = 5,                                  # Stamina cost
     pdbm = [30, 40, 10, 30],                    # chance to [parry, dodge, block, miss]
     )
 
@@ -15,7 +15,25 @@ default punch = spell(
     "spells/punch.png",
     hp = -35,
     stmc = 10,
+    hpc = 1,
     effect = [[nose_bleed, 5]],
+    pdbm = [20, 50, 10, 20],
+    )
+
+default run_away = spell(
+    _("Run away"),
+    _("Run away like a coward."),
+    "spells/run_away.png",
+    hp = 0,
+    stmc = 10,
+    pdbm = [20, 50, 10, 20],
+    )
+default stand_still = spell(
+    _("Stand still"),
+    _("Such a dummy move."),
+    "spells/run_away.png",
+    hp = 0,
+    stmc = 0,
     pdbm = [20, 50, 10, 20],
     )
 

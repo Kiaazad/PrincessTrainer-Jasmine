@@ -50,7 +50,7 @@
             self.mp = self.mmp
             self.stm = self.mstm
 
-            self.xp = 0
+            self.exp = 0
             self.buffs = []
             self.alive = True
 
@@ -87,7 +87,7 @@
                 if self.stm > self.mstm:
                     self.stm = self.mstm
 
-        def gotskill(self, x):
+        def got_skill(self, x):
             if x not in self.skills:
                 self.skills.append(x)
         def spellorder(self, x):
@@ -103,11 +103,16 @@
 
         def levelup(self, amount):
             self.lvl += amount
+            msg.msg("{} gained a level.".format(self.name))
             pts_calc(self)
 
         
-        def gotxp(self):
-            pass
+        def got_exp(self, amount):
+            self.exp += amount
+            if self.exp > 100:
+                self.exp -= 100
+                self.levelup(1)
+                
         def buff(self):
             pass
 

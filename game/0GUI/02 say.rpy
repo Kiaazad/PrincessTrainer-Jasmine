@@ -101,18 +101,24 @@ screen quick_menu():
         #     text str(hero.food)
         #     text str(hero.water)
         if quick_menu:
-            hbox:
-                style_prefix "q"
-                align 0.0,0.0
-                # button:
-                #     background None
-                #     add "0gui/q.png"
-                #     action ShowMenu('navigation')
-                button:
-                    background None
-                    add "0gui/q.png"
-                    action ToggleScreen('show_bag')
-                textbutton _("Auto") action Preference("auto-forward", "toggle")
+            button:
+                background None align 0.0,0.0 xoffset 40 padding 0,0
+                add "0gui/say/quest.png"
+                action ToggleScreen('quests')
+            button:
+                background None align 0.0,0.0  padding 0,0
+                add "0gui/say/inventory.png"
+                action ToggleScreen('show_bag')
+            button:
+                background None align 1.0,0.0 xoffset -40  padding 0,0
+                add "0gui/say/map.png"
+                action ToggleScreen('map')
+            button:
+                background None align 1.0,0.0  padding 0,0
+                add "0gui/say/save.png"
+                action ShowMenu("save")
+
+
 
     if not quick_menu:
         key "game_menu" action Function(msg.msg, renpy.random.choice(["Nope", "not yet", "Not available this early", "you don't have to save this early", "you'll get access to the settings before the sex sounds start", "if it's the full screen bothering you just press alt+enter or F11", "keep your pants on"]))

@@ -13,7 +13,7 @@ screen btl_team(t = me_team):
     default add_2_team = 0
     default caster = None
     default spell = None
-    
+    add "#000c"
     hbox:
         for ii, i in enumerate(t.team):
             button:
@@ -26,7 +26,10 @@ screen btl_team(t = me_team):
                     frame:
                         xsize 300
                         text i.name size 30 color "#ff0"
-                    text "level {} {}".format(i.lvl, i.type)
+                    fixed:
+                        fit_first True
+                        bar value i.exp range 100 xysize 300, 30 left_bar "#0f08" right_bar "#0f04"
+                        text "level {} {}".format(i.lvl, i.type)
                     fixed:
                         fit_first True
                         bar value i.hp range i.mhp xysize 300, 30 left_bar "#900" right_bar "#9008"
@@ -90,8 +93,9 @@ screen btl_team(t = me_team):
                         action SetScreenVariable("spell", ii), SelectedIf(ii == spell)
     if caster is not None:
         if spell is not None:
+            add "#000c"
             frame:
-                background Frame("items/_frm.png", 10,10)
+                background Frame("items/_frm.png", 10,10) yalign .8
                 hbox:
                     button:
                         padding 0,0 background None
@@ -107,6 +111,6 @@ screen btl_team(t = me_team):
                             action Function(caster.spellput, i, spell), SetScreenVariable("spell", None)
 
     button:
-        align 0.0,0.0 margin 100,100
+        align 1.0,1.0 offset -40,-40
         text "Return"
         action ToggleScreen("btl_team")

@@ -54,8 +54,14 @@
                                     hide hal
                                     window hide
                                     call screen btl_scr(team([abdul]), team([halia]))
-                                    pause
-
+                                    show hul angry at midright
+                                    show hur shocked at right
+                                    hul "{size=50}That's enough!"
+                                    show abd scared at left
+                                    hul "{size=50}Get out of here!!"
+                                    abd "Di..."
+                                    hul "{size=50}Now!!!"
+                                    abd "Alright, alright..."
                                     jump lamp_visit_back_to_jafar
                 "Go to the angry one.":
                     show hal normal at midright

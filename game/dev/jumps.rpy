@@ -29,8 +29,8 @@ label dev_jumps:
             $ snake_pass_map.add(snake_pass_roc_pass)
             $ qlog.got(visit_malik)
             $ qlog.got(visit_hosein)
-            $ abdul.gotskill(kick)
-            $ abdul.gotskill(punch)
+            $ abdul.got_skill(kick)
+            $ abdul.got_skill(punch)
             $ qlog.got(master_swordsman)
             $ agrabah_lamp.hidden = False
             $ agrabah_lamp.act = Jump('inside_lamp')
