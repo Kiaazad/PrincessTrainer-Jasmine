@@ -10,6 +10,40 @@ default rich_vantage_point = pnco(
     (139, 956),
     Jump('vantage_point'),
     )
+
+
+
+
+# Haji's son
+default hajis_son = pnco(
+    "Haji's son",
+    "bg/rich/hajis_son.png",
+    (670, 764),
+    Jump('hajis_son'),
+    hidden = False, hoffset = (35,203),
+    )
+define hajis = Character("Hajis", color="#4ff", what_text_color="#dff")
+image hajis normal = "char/pedestrians/hajis_son.png"
+define hajis_slave = Character("Haji's slave", color="#4ff", what_text_color="#dff")
+image hajis_slave normal = "char/pedestrians/hajis_slave.png"
+
+label hajis_son:
+    scene
+    show hajis normal at right with dissolve
+    show abd normal at left with dissolve
+    "..."
+    hajis "Slave! more food!"
+    hajis_slave "Yes master."
+    show hajis normal at midright with move
+    show hajis_slave normal at right with moveinright
+    hajis_slave "Here you go."
+    "..."
+    hajis "What?"
+    abd "Nothing..."
+
+    jump rich
+
+# Kaneez
 default rich_laila = pnco(
     "Laila",
     "bg/rich/laila.png",
@@ -17,26 +51,6 @@ default rich_laila = pnco(
     Jump('rich_laila'),
     hidden = False, hoffset = (35,203),
     )
-
-
-default rich_map = pncs(
-    "Rich section",
-    [
-        rich_agrabah,
-        rich_laila,
-        rich_vantage_point
-    ], night = "bg/rich/night.webp"
-    )
-
-image bg rich = "bg/rich/bg.webp"
-label rich:
-    scene
-    show bg rich onlayer bg
-    show screen pnc(abdul, rich_map)
-    pause
-    jump rich
-
-# Kaneez
 define lai = Character("Laila", color="#4ff", what_text_color="#dff")
 define kam = Character("Kamal", color="#4ff", what_text_color="#dff")
 image laila normal = "char/pedestrians/laila.png"
@@ -108,3 +122,23 @@ label rich_laila:
         kam "Rasoul will pay for this."
         jump rich
 
+
+
+default rich_map = pncs(
+    "Rich section",
+    [
+        rich_agrabah,
+        rich_laila,
+        rich_vantage_point,
+        hajis_son,
+
+    ], night = "bg/rich/night.webp"
+    )
+
+image bg rich = "bg/rich/bg.webp"
+label rich:
+    scene
+    show bg rich onlayer bg
+    show screen pnc(abdul, rich_map)
+    pause
+    jump rich

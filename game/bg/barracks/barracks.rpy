@@ -59,15 +59,19 @@ label barracks_guard:
                 show ras normal at right with dissolve
                 ras "What do you want?"
                 abd "I'm ready for more tasks."
-                ras "Not now, I'm busy."
-                abd "When should I come back?"
-                "..."
-                abd "It would be an hono...{w=.8}{nw}"
-                ras "Yeah... yeah..."
-                ras "Walk with me."
-                show abd normal at midleft with move
-                show ras normal at midright with move
-                jump visiting_widow
+                if qlog.has(dirt_on_haji) == "Active":
+                    ras "Do the one I gave you first."
+                    jump barracks
+                else:
+                    ras "Not now, I'm busy."
+                    abd "When should I come back?"
+                    "..."
+                    abd "It would be an hono...{w=.8}{nw}"
+                    ras "Yeah... yeah..."
+                    ras "Walk with me."
+                    show abd normal at midleft with move
+                    show ras normal at midright with move
+                    jump visiting_widow
                 
             "I need to talk to Qasim.":
                 abd "I need to talk to Qasim."

@@ -213,6 +213,7 @@ label ch2:
             jump ch2_1
 
 label ch2_1:
+    show abd alert at left
     show jaf thinking at right
     jaf "Okay, my last experience with wishes ended up in disaster."
     jaf "...and the first time, too."

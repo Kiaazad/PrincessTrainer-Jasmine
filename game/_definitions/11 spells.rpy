@@ -28,6 +28,23 @@ default run_away = spell(
     stmc = 10,
     pdbm = [20, 50, 10, 20],
     )
+default surrender = spell(
+    _("Surrender"),
+    _("surrender."),
+    "spells/run_away.png",
+    hp = 0,
+    stmc = 10,
+    pdbm = [20, 50, 10, 20],
+    )
+default mercy = spell(
+    _("Mercy"),
+    _("Mercy."),
+    "spells/run_away.png",
+    hp = 0,
+    stmc = 10,
+    pdbm = [20, 50, 10, 20],
+    )
+
 default stand_still = spell(
     _("Stand still"),
     _("Such a dummy move."),

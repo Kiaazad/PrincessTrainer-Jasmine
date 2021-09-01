@@ -202,7 +202,7 @@ label lamp_jafar:
             $ ans = qlog.has(cash_in_hand)
             "[ans]"
         # Craft a ring chain
-        "I've got the money." if hero.cash > 2000: #  and qlog.has(cash_in_hand) == "Active"
+        "I've got the money." if hero.cash > 2000 and qlog.has(cash_in_hand) == "Active":
             abd "I've got the money."
             jaf "Excellent!"
             $ abdul.got(ring_recipe, 1)
@@ -296,6 +296,10 @@ label lamp_jafar:
             jaf "Excellent!{w=0.2} Hold it up."
             show jaf magic at right
             pause 1
+            $ hero.drop(skin_scroll, 1)
+            $ hero.got(quest_log_item, 1)
+            $ quest_log_ui_icon = True
+
             show jaf normal at right
             jaf "There."
             jaf "It keeps track of your tasks, now go do them."
@@ -306,4 +310,10 @@ label lamp_jafar:
     jump inside_lamp
 
 
-
+default quest_log_item = item(
+    _("Quest log"),
+    _("This allows viewing your quests anywhere."),
+    "items/quest_log_item.png",
+    0,
+    ["unsellable"],
+    )

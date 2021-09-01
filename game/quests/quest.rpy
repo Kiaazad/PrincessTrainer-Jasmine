@@ -1,7 +1,8 @@
-﻿
-screen quests(q = qlog):
+﻿screen quests(q = qlog):
     default filters = ["All", "Active", "Completed", "Finished", "Canceled", "Failed"]
     default colors = {
+        "All": "#fff",
+        "Active": "#ffc",
         "Completed": "#fd0",
         "Finished": "#6f0",
         "Canceled": "#005",
@@ -16,26 +17,21 @@ screen quests(q = qlog):
                     align 0.0,0.0
                     button:
                         xsize 300
-                        text "Filter: {}".format(filters[q.filt])
+                        at btn
+                        text "Filter: {}".format(filters[q.filt]) color colors[filters[q.filt]]
                         action Function(q.filter)
                     viewport:
-                        xsize 300 draggable True
+                        xsize 300 draggable True mousewheel True edgescroll 200,200
                         frame:
-                            
+                            xsize 300
                             vbox:
                                 for i in q.log:
                                     if i.stat == filters[q.filt] or filters[q.filt] == "All":
                                         button:
+                                            at btn
                                             background None selected_foreground Frame("quests/arrow.png", 10,0,32,0) xalign 0.0 padding 10,10,40,10 
                                             text i.name:
-                                                if i.stat == "Completed":
-                                                    color colors["Completed"]
-                                                elif i.stat == "Finished":
-                                                    color colors["Finished"]
-                                                elif i.stat == "Canceled":
-                                                    color colors["Canceled"]
-                                                elif i.stat == "Failed":
-                                                    color colors["Failed"]
+                                                color colors[i.stat]
                                             action Function(q.chose, i), SelectedIf(i == q.slc)
                 
                 frame:
@@ -51,14 +47,7 @@ screen quests(q = qlog):
                             yalign 1.0
                             text "Status:"
                             text q.slc.stat:
-                                if q.slc.stat == "Completed":
-                                    color colors["Completed"]
-                                elif q.slc.stat == "Finished":
-                                    color colors["Finished"]
-                                elif q.slc.stat == "Canceled":
-                                    color colors["Canceled"]
-                                elif q.slc.stat == "Failed":
-                                    color colors["Failed"]
+                                color colors[q.slc.stat]
 
     button:
         align 0.0,0.0 margin 100,100

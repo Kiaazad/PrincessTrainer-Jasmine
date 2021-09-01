@@ -49,10 +49,7 @@ screen file_slots(title, s = save_list):
     style_prefix "sav"
     use game_menu(title):
         default simg = None
-        vbox:
-            button:
-                text "test"
-                action Function(s.add)
+
 
         if simg:
             add FileScreenshot(simg) at sav_thmb
@@ -78,6 +75,14 @@ screen file_slots(title, s = save_list):
                             action FileAction(ii+1)
                             hovered SetLocalVariable("simg", ii+1)
                             unhovered SetLocalVariable("simg", None)
+
+
+        vbox:
+            align 1.0,1.0 offset -40,-40
+            button:
+                text "test"
+                action Function(s.add)
+
 
 
                 # has vbox

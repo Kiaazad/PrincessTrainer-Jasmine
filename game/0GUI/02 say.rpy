@@ -78,6 +78,7 @@ screen input(prompt):
                 input id "input"
 
 ## Quick Menu screen ###########################################################
+default quest_log_ui_icon = False
 
 screen quick_menu():
     zorder 100
@@ -101,10 +102,11 @@ screen quick_menu():
         #     text str(hero.food)
         #     text str(hero.water)
         if quick_menu:
-            button:
-                background None align 0.0,0.0 xoffset 40 padding 0,0
-                add "0gui/say/quest.png"
-                action ToggleScreen('quests')
+            if quest_log_ui_icon:
+                button:
+                    background None align 0.0,0.0 xoffset 40 padding 0,0
+                    add "0gui/say/quest.png"
+                    action ToggleScreen('quests')
             button:
                 background None align 0.0,0.0  padding 0,0
                 add "0gui/say/inventory.png"

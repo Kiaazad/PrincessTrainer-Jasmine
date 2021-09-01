@@ -72,7 +72,7 @@ label lamp_visit_back_to_jafar:
     jaf "Let us get out here and start executing our plan."
     abd "You mean..."
 
-define cash_in_hand = quest(
+default cash_in_hand = quest(
     _("Cash in hand"),
     [_("We need 2000 dinars for some jewelry Jafar wants to order.")]
 )

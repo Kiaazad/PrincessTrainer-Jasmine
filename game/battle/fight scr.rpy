@@ -19,6 +19,8 @@ init python:
             msg.msg("You're dead.")
 
     def fight_cast(caster, spell, enemy, is_enemy = False):
+        global combat_roll
+        combat_roll += "\n {} - {}".format(caster.name, spell.name)
         caster.ani = "attack"
         caster.busy = 30
         caster.stm -= spell.stmc

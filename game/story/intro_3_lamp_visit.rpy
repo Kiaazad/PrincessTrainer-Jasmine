@@ -345,35 +345,35 @@ screen lamp_visit_menu:
     style_prefix "nav"
     modal True
     button:
-        at lampoff(-350, 150)
+        padding 0,0 anchor .0,.0 pos (916, 476)
         add "bg/lamp/fight.png"
         action Hide("lamp_visit_menu"), Jump("ch3_fight")
     button:
-        at lampoff(350, 150)
+        padding 0,0 anchor .0,.0 pos (724, 47)
         add "bg/lamp/harem.png"
         action Hide("lamp_visit_menu"), Jump("harem")
     button:
-        at lampoff(0, 260)
+        padding 0,0 anchor .0,.0 pos (412, 225)
         add "bg/lamp/library.png"
         action Hide("lamp_visit_menu"), Jump("lamp_visit_back_to_jafar")
     button:
-        at lampoff(350, -150)
+        padding 0,0 anchor .0,.0 pos (1272, 828)
         add "bg/lamp/quest.png"
         action Hide("lamp_visit_menu"), Jump("ch3_mirror")
     button:
-        at lampoff(-350, -150)
+        padding 0,0 anchor .0,.0 pos (103, 604)
         add "bg/lamp/replay.png"
         action Hide("lamp_visit_menu"), Jump("ch3_replay")
     button:
-        at lampoff(0, -260)
+        padding 0,0 anchor .0,.0 pos (1024, 234)
         add "bg/lamp/save.png"
         action Hide("lamp_visit_menu"), Jump("ch3_sav")
     button:
-        at lampoff(-600, 0)
+        padding 0,0 anchor .0,.0 pos (600, 758)
         add "bg/lamp/settings.png"
         action Hide("lamp_visit_menu"), Jump("ch3_set")
     button:
-        at lampoff(600, 0)
+        padding 0,0 anchor .0,.0 pos (1423, 533)
         add "bg/lamp/mm.png"
         action Hide("lamp_visit_menu"), Jump("ch3_mm")
 

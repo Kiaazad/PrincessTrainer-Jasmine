@@ -1,10 +1,10 @@
 
 
-
-
-
+# 0.23
+the `cash_in_hand` quest should be fixed now
+minor improvement to the quest list
 frequently used screens have their buttons on the top of interface
-fixed the errors at the end of `to_do_list` quest
+fixed the errors at the end of `to_do_list` quest, also the item change added
 you will level up every 100 exp you gain
 the combat text now differentiates between damage dealt and damage taken
 the training dummy doesn't kill you anymore

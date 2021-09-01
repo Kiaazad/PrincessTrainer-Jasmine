@@ -479,7 +479,7 @@ default widows_house = pnco(
     )
 
 image wid normal = "char/widow/normal.png"
-define wid = Character("???", color="#f44", what_text_color="#fdd", namebox_align=(1.0, 0.0))
+define wid = Character("Woman", color="#044", what_text_color="#fdd", namebox_align=(1.0, 0.0))
 
 image bg widows house = "bg/widows_house/bg.webp"
 label visiting_widow:

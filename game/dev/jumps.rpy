@@ -35,6 +35,7 @@ label dev_jumps:
             $ agrabah_lamp.hidden = False
             $ agrabah_lamp.act = Jump('inside_lamp')
             $ qlog.got(cash_in_hand)
+            $ qlog.got(my_to_do_list)
 
             $ renpy.take_screenshot()
             $ renpy.save("1-1", extra_info='')
