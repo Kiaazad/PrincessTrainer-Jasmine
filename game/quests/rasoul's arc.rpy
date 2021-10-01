@@ -105,7 +105,7 @@ label rasoul_arc_1:
             ras "No you won't!{w=.2}{nw}" with vpunch
             scene
             hide pnc
-            call screen btl_scr(team([abdul]), team([rasoul]))
+            call screen btl_scr(team([abdul]), team([rasoul]), .2)
             jump desert
             pause 2
             jump beduins_camp
@@ -188,7 +188,7 @@ default the_free_lie = book(
     _("The free lie"),
     _("By Jafar Barmaki"),
     [
-        _("In a grad scale, free doesn't exist. Everything has it's own cost and somebody is paying that cost, that somebody is often you."),
+        _("In a grand scale, free doesn't exist. Everything has it's own cost and somebody is paying that cost, that somebody is often you."),
         _("The iron in the ground is free, but you need to pay for an iron axe simply because somebody had to dig the iron out of the ground, somebody had to gather wood for the bloomery, somebody had to hammer the bloom into iron and somebody had to shape it into an axe.\nIt's useless to you when it's free and even if you do all of those yourself, it wouldn't be free, you had to pay for it with your labor and time."),
         _("When you find a sack of coins on the ground, it looks like free money for you, but comes as a heavy cost to somebody else."),
         _("When a merchant feels generous with votive offerings, it might look like a free meal that comes out of his pockets to the commoners, but the cost often comes out of the pockets of his customers.\nHe kept his house, his shop, his wealth and his social status. Nothing changes for him, if anything, this show of duplicity was a ploy to push him upwards in the social ranks."),
@@ -199,7 +199,7 @@ default the_free_lie = book(
 default the_free_lie_book = item(
     _("The free lie"),
     _("One of Jafar's books."),
-    "items/the_free_lie_book.png",
+    "the_free_lie_book",
     2300,
     ["Book", "By Jafar", "Forbidden"],
     the_free_lie,

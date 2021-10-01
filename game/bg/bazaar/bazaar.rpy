@@ -138,24 +138,80 @@ default jeweler_u = unit(
     )
 label jewelry_shop:
     scene
+    show jeweler normal at right
     if not "first" in jeweler_u.flags:
-        show jeweler normal at right
         jew "You don't look like you belong here! Did you find something valuable to sell?"
-        show abd normal at left
-        if hero.has(black_lamp) and not "shown lamp" in jeweler_u.flags:
+        $ jeweler_u.add_flag("first")
+    else:
+        jew "What do you want?"
+
+    show abd normal at left
+    menu:
+        "I've found a gem." if qlog.has(a_diamond_to_sell) == "Active" and hero.has(quartz_bit):
+            abd "I've found a gem, looks like a diamond."
+            jew "Let me see..."
+            "..."
+            jew "Fifty!"
+            abd "Fifty thousands?"
+            abd "I'm going to need a coin sack for my fifty gold coi...{w=.4}{nw}"
+            jew "fifty dinars!"
+            abd "Huh?"
+            jew "It's not a diamond. I'll pay 50 dinars for it, no more."
+            $ quartz_bit.name = "Not a diamond"
+            $ quartz_bit.val = 100
+            "..."
+            abd "I think I'll hold unto it."
+            jew "Suit yourself."
+        "I need a ring to be made." if qlog.has(make_a_copper_ring) == "Active" and hero.has(ring_recipe) and hero.cash >= 2000 and not "making copper ring" in jeweler_u.flags:
+            abd "I need a ring to be made."
+            jew "What kind of ring? Gold? Silver?"
+            abd "Copper."
+            "..."
+            jew "I don't make junk."
+            jew "Don't bother me if you don't have the money for real jewelry."
+            abd "I'll pay you for your work like it's a gold ring."
+            "..."
+            jew "Alright, what's her finger size?"
+            abd "It's for me. Well, I think it is."
+            $ hero.drop(ring_recipe, 1)
+            abd "Here's the instructions."
+            "..."
+            jew "What..."
+            jew "No. I don't want to know..."
+            jew "Payment first."
+            jew "It costs 2200 dinars."
+            abd "I have 2000."
+            jew "Fine..."
+            $ hero.paidcash(2000)
+            abd "Here..."
+            jew "It will be ready in a day or two."
+            abd "Alright."
+            $ jeweler_u.add_flag("making copper ring")
+            $ timed_flags.append([jeweler_u, "copper ring made", 24])
+        "Is my ring ready?" if "making copper ring" in jeweler_u.flags and not "copper ring delivered" in jeweler_u.flags:
+            abd "Is my ring ready?"
+            if "copper ring made" in jeweler_u.flags:
+                jew "Of course."
+                $ hero.got(copper_ring)
+                jew "here."
+                abd "Thank you."
+                $ jeweler_u.add_flag("copper ring delivered")
+            else:
+                jew "Not yet, come back later"
+                abd "alright."
+
+        "I've found this lamp." if hero.has(black_lamp) and not "shown lamp" in jeweler_u.flags:
             $ jeweler_u.add_flag("shown lamp")
             abd "I've found this lamp in the desert."
             abd "Do you look like a junk trader?"
             jew "Take it elsewhere..."
-        else:
+        "Just browsing." if not "browsing" in jeweler_u.flags:
+            $ jeweler_u.add_flag("browsing")
             abd "No, I'm just browsing."
             jew "No browsing! Buys something or get out!"
-        $ jeweler_u.add_flag("first")
-    else:
-        show jeweler normal at right
-        jew "What do you want?"
-        show abd normal at left
-        call screen shop(s = jeweler_u)
+        "What do you have?":
+            abd "Let me see..."
+            call screen shop(s = jeweler_u)
     jump bazaar
 
 
@@ -283,6 +339,7 @@ label hakim:
             hak "Do you have the bottle of wine?"
             if hero.has(wine):
                 abd "Yes."
+                $ hero.drop(wine, 1)
                 abd "Here."
                 abd "Put it among your remedies."
                 $ planted_evidence.complete()
@@ -301,6 +358,7 @@ label hakim:
             jump bazaar
         "I got the wine." if qlog.has(planted_evidence) == "Active" and planted_evidence.inf[-1] in ["Buy a bottle of wine for Hakim."] and hero.has(wine):
             abd "I got the wine Hakim."
+            $ hero.drop(wine, 1)
             abd "Here..."
             hak "Thank you."
             abd "Put it among your remedies."
@@ -333,6 +391,7 @@ label hakim:
             hak "Do you have the bottle of wine?"
             if hero.has(wine):
                 abd "Yes."
+                $ hero.drop(wine, 1)
                 abd "Here."
                 abd "Put it among your remedies."
                 $ planted_evidence.complete()

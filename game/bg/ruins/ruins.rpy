@@ -3,24 +3,28 @@
     "bg/roc_pass/01.png",
     (188, 598),
     items = [[thorns, 1]],
+    regen = 10,
     )
 default ruins_1 = pnco(
     "thorns",
     "bg/roc_pass/02.png",
     (1713, 559),
     items = [[thorns, 1]],
+    regen = 10,
     )
 default ruins_2 = pnco(
     "thorns",
     "bg/roc_pass/03.png",
     (173, 842),
     items = [[thorns, 1]],
+    regen = 10,
     )
 default ruins_3 = pnco(
     "thorns",
     "bg/roc_pass/04.png",
     (411, 729),
     items = [[thorns, 1]],
+    regen = 10,
     )
 default ruins_back = pnco(
     "Back",

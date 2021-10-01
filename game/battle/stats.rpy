@@ -6,7 +6,10 @@
             for i in f.team:
                 hbox:
                     spacing -10
-                    add "{}/001.png".format(i.dir) at flp
+                    fixed:
+                        fit_first True
+                        add "{}/001.png".format(i.dir) at flp
+                        text str(i.lvl)
                     vbox:
                         fixed:
                             fit_first True
@@ -29,7 +32,10 @@
             for i in e.team:
                 hbox:
                     spacing -10 box_reverse True
-                    add "{}/001.png".format(i.dir)
+                    fixed:
+                        fit_first True
+                        add "{}/001.png".format(i.dir)
+                        text str(i.lvl)
                     vbox:
                         fixed:
                             fit_first True

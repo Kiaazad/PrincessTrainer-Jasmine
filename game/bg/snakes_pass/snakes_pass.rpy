@@ -12,24 +12,28 @@ default des_1_2 = pnco(
     "bg/snakes_pass/02.png",
     (578, 725),
     items = [[thorns, 1]],
+    regen = 10,
     )
 default des_1_3 = pnco(
     "thorns",
     "bg/snakes_pass/03.png",
     (1700, 900),
-    items = [[thorns, 1]]
+    items = [[thorns, 1]],
+    regen = 10,
     )
 default des_1_4 = pnco(
     "thorns",
     "bg/snakes_pass/04.png",
     (961, 633),
     items = [[thorns, 1]],
+    regen = 10,
     )
 default des_1_5 = pnco(
     "thorns",
     "bg/snakes_pass/05.png",
     (342, 867),
     items = [[thorns, 1]],
+    regen = 10,
     )
 
 # Exists

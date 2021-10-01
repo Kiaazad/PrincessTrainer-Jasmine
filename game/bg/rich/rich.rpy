@@ -22,7 +22,7 @@ default hajis_son = pnco(
     Jump('hajis_son'),
     hidden = False, hoffset = (35,203),
     )
-define hajis = Character("Hajis", color="#4ff", what_text_color="#dff")
+define hajis = Character("Hajis son", color="#4ff", what_text_color="#dff")
 image hajis normal = "char/pedestrians/hajis_son.png"
 define hajis_slave = Character("Haji's slave", color="#4ff", what_text_color="#dff")
 image hajis_slave normal = "char/pedestrians/hajis_slave.png"

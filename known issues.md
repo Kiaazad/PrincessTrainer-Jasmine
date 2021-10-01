@@ -5,8 +5,6 @@ Lamp Tour Menu:
 - The Menu Room is closed.
 - The Setting Room is closed.
 
-- The “Cash in Hand” quest turn in is bugged. When you reload a save, other than the first auto one, you can no longer turn in the quest to Jafar.
->> the qlog.has returns False after a load.
 
 "Thanks. It was so dark that I couldn't see where to click to go back to the tower! Admittedly my eyesight isn't very good."
 >> we need ease of access options
@@ -20,6 +18,11 @@ Lamp Tour Menu:
 - Scorpion opponent doesn’t do any damage.  Mana/the blue bar goes down, even into the negatives, during the fight.  Left in from combat testing?
 >>> sometimes the beast archetype will cast growl spell too many times, it will be fixed once we balance the spells and fights
 
+- You can buy items even if your inventory is full.  The items vanish along with the gold.
+- When do shopkeepers get restocked?  I waited a few days and didn’t see their items or gold get replenished.
+
+- The combat log/actions are spammed across the left of the screen, which wouldn’t be bad to see during fights...except the text stays forever.
+>>> combat log will be implemented in a better way
 
 # Explained:
 - You can miss getting the quest “Books for Jafar” if you decided to view the lamp on your own. Is there another way to start the quest?

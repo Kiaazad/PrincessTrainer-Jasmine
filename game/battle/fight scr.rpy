@@ -63,13 +63,16 @@ init python:
                 else:
                     msg3(breath, d = False)
 
-        if enemy.hp < 0 and enemy.alive:
-            enemy.alive = False
+        if enemy.hp < 1:
             enemy.hp = 0
             enemy.ani = "dead"
-            for i in enemy.bags[0].items:
-                if i:
-                    btl_loot.append(i)
+            if enemy.alive:
+                enemy.alive = False
+                global btl_e_levels
+                btl_e_levels += enemy.lvl
+                for i in enemy.bags[0].items:
+                    if i:
+                        btl_loot.append(i)
 
     def fight_ai(f, e):
         caster = None
@@ -98,20 +101,10 @@ init python:
         if caster and spell and target:
             fight_cast(caster, spell, target, True)
 
-    def calculate_exp(f, e):
-        f_levels = 0
-        e_levels = 0
-        for i in f.team:
-            f_levels += i.lvl
-        for i in e.team:
-            e_levels += i.lvl
-        exp = 5 - (f_levels - e_levels)
-        if exp < 1:
-            exp = 1
-        return exp
 
 default btl_loot = []
-screen btl_scr(f, e):
+default btl_e_levels = 0
+screen btl_scr(f, e, escape_chance = .8):
     modal True
 
     default caster = f.team[0]
@@ -155,7 +148,7 @@ screen btl_scr(f, e):
 
         hbox:
             yalign 1.0 spacing 2
-            for i in caster.spells:
+            for n, i in enumerate(caster.spells):
                 if i:
                     button:
                         padding 0,0 background None
@@ -169,7 +162,7 @@ screen btl_scr(f, e):
                         at btl_t_b
                         add "spells/empty.png"
                         tooltip i
-                        action SetScreenVariable("spell", i), SelectedIf(spell== i)
+                        action Show("fight_spell_select", caster = caster, spell = n), SelectedIf(spell== i)
 
     use stats(f, e)
     hbox:
@@ -182,10 +175,32 @@ screen btl_scr(f, e):
         #     text "Skip"
         #     action Hide("btl_scr"), Return()
 
-    text str(hero.exp) yoffset -400
+    default escape = 0
+    default escape_window = 0
     if spell == run_away: # Run away
-        timer .1 action Return("Ran Away")
+        timer .1 action SetScreenVariable("escape", renpy.random.randint(1, 10))
+        button:
+            background None
+            action NullAction()
+        frame:
+            vbox:
+                text "Looking for a chance!"
+                if escape > 0:
+                    timer 1 repeat True action SetScreenVariable("escape", escape - 1)
+                    if escape < 2:
+                        if escape_window < escape_chance:
+                            timer .1 repeat True action SetScreenVariable("escape_window", escape_window + .1)
+                            button:
+                                text "NOW!"
+                                action Return("Ran Away")
+                        else:
+                            timer.01 action SetScreenVariable("spell", None), SetScreenVariable("escape_window", 0), SetScreenVariable("escape", 0)
+
+
     if f.defeated(): # Defeated
+        button:
+            background None
+            action NullAction()
         frame:
             vbox:
                 text "You're dead!"
@@ -198,32 +213,62 @@ screen btl_scr(f, e):
     else:
         timer .016 repeat True action Function(f.tick), Function(e.tick)
     if e.defeated(): # Won
-        frame:
-            vbox:
-                text "You won this fight!"
-                text "Gained {} Exp.".format(calculate_exp(f, e))
-                text "And"
-                hbox:
-                    for i in btl_loot:
-                        button:
-                            xysize 128,128 padding 0,0
-                            background i.item.icon
-                            if i.qtt > 1:
-                                text "[i.qtt]" color "#fff" align(.9,.9)
-                            tooltip i
-                            action NullAction()
-                button:
-                    text "Collect"
-                    action Function(collect_loot, calculate_exp(f, e)), Return("won")
+        button:
+            background None
+            action NullAction()
+        if len(btl_loot) or btl_e_levels:
+            frame:
+                vbox:
+                    text "You won this fight!"
+                    text "Gained {} Exp.".format(calculate_exp(f))
+                    if len(btl_loot):
+                        text "And"
+                        hbox:
+                            for i in btl_loot:
+                                button:
+                                    xysize 128,128 padding 0,0
+                                    background i.item.icon
+                                    if i.qtt > 1:
+                                        text "[i.qtt]" color "#fff" align(.9,.9)
+                                    tooltip i
+                                    action NullAction()
+                    button:
+                        text "Collect"
+                        action Function(collect_loot, calculate_exp(f)), Return("won")
+        else:
+            button:
+                background None
+                action NullAction()
+            frame:
+                vbox:
+                    text "It's already dead!"
+                    button:
+                        text "Close"
+                        action Return("won")
     else:
         timer renpy.random.random()*4 repeat True action Function(fight_ai, f, e)
 
+
+
+
 init python:
     def collect_loot(exp):
-        global btl_loot
+        global btl_loot, btl_e_levels
         for i in btl_loot:
             hero.got(i.item, i.qtt)
         btl_loot = []
+        btl_e_levels = 0
         hero.got_exp(exp)
 
-
+    def calculate_exp(f):
+        global btl_e_levels
+        if btl_e_levels:
+            f_levels = 0
+            for i in f.team:
+                f_levels += i.lvl
+            exp = 5 - (f_levels - btl_e_levels)
+            if exp < 1:
+                exp = 1
+            return exp
+        else:
+            return 0

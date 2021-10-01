@@ -34,21 +34,21 @@ label school:
 default skin_scroll = item(
     _("Skin scroll"),
     _("A scroll made of goat skin."),
-    "items/skin_scroll.png",
+    "skin_scroll",
     1400,
     ["stationery"],
     )
 default paper = item(
     _("Paper"),
     _("A blank sheet of paper."),
-    "items/paper.png",
+    "paper",
     100,
     ["stationery"],
     )
 default black_ink = item(
     _("ink"),
     _("Black ink made of some black stuff."),
-    "items/black_ink.png",
+    "black_ink",
     800,
     ["stationery"],
     )

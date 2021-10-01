@@ -7,8 +7,8 @@ transform btl_t_b:
         ease .2 yoffset 0
     on selected:
         ease .2 yoffset -40
-
-screen btl_team(t = me_team):
+default heros_team = team([hero])
+screen btl_team(t = heros_team):
     modal True
     default add_2_team = 0
     default caster = None
@@ -17,7 +17,7 @@ screen btl_team(t = me_team):
     hbox:
         for ii, i in enumerate(t.team):
             button:
-                background Frame("items/_frm.png", 10,10)
+                background Frame("_frm", 10,10)
                 at btl_t_b
 
                 action SetScreenVariable("caster", i), SelectedIf(i == caster)
@@ -44,7 +44,7 @@ screen btl_team(t = me_team):
                         text "Stamina: {} / {}".format(i.stm, i.mstm) xalign 0.0 xoffset 10
                     text "Power: {}".format(i.pwr) xalign 0.0 xoffset 10
                     text "Agility: {}".format(i.agl) xalign 0.0 xoffset 10
-        if len(t.team) < t.size:
+        if len(t.team) < t.size and len(t.team) < len(t.army):
             button:
                 text "Add"
                 action ToggleScreenVariable("add_2_team", 1, 0)
@@ -54,7 +54,7 @@ screen btl_team(t = me_team):
             for i in t.army:
                 if i not in t.team:
                     button:
-                        background Frame("items/_frm.png", 10,10)
+                        background Frame("_frm", 10,10)
                         action Function(t.add, i), ToggleScreenVariable("add_2_team", 1, 0)
                         hbox:
                             
@@ -95,11 +95,11 @@ screen btl_team(t = me_team):
         if spell is not None:
             add "#000c"
             frame:
-                background Frame("items/_frm.png", 10,10) yalign .8
+                background Frame("_frm", 10,10) yalign .8
                 hbox:
                     button:
                         padding 0,0 background None
-                        add "items/_frm.png"
+                        add "_frm"
                         # tooltip no_spell
                         action Function(caster.spellput, None, spell), SetScreenVariable("spell", None)
                         
@@ -114,3 +114,24 @@ screen btl_team(t = me_team):
         align 1.0,1.0 offset -40,-40
         text "Return"
         action ToggleScreen("btl_team")
+
+screen fight_spell_select(caster, spell):
+    modal True
+    
+    add "#000c"
+    frame:
+        background Frame("_frm", 10,10) yalign .8
+        hbox:
+            button:
+                padding 0,0 background None
+                add "_frm"
+                # tooltip no_spell
+                action Function(caster.spellput, None, spell), Hide("fight_spell_select")
+                
+            for i in caster.skills:
+                button:
+                    padding 0,0 background None
+                    add i.icon
+                    tooltip i
+                    action Function(caster.spellput, i, spell), Hide("fight_spell_select")
+

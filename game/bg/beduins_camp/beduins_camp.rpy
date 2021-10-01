@@ -20,7 +20,7 @@ default sand_warrior = unit(
     "char/foes/sand_warrior",
     lvl = 5,
     type = "Warrior",
-    items = [(stick, 2)]
+    items = [(quartz_bit, 1)]
     )
 default beduins_camp_sand_warrior = pnco(
     "Sand warrior",
@@ -28,8 +28,16 @@ default beduins_camp_sand_warrior = pnco(
     (1240, 660),
     Jump('beduins_camp_sand_warrior'),
     )
+default a_diamond_to_sell = quest(
+    _("A diamond to sell"),
+    [_("This might be a diamond, I must show it to the jeweler, or better Jafar.")],
+    )
 label beduins_camp_sand_warrior:
     call screen btl_scr(team([abdul]), team([sand_warrior]))
+    if hero.has(quartz_bit):
+        show abd normal at left
+        abd "A gem stone?"
+        $ qlog.got(a_diamond_to_sell)
     jump beduins_camp
 
 default beduins_camp_loc = pncs(
@@ -48,6 +56,7 @@ label beduins_camp:
     scene
     show bg beduins_camp onlayer bg
     show screen pnc(abdul, beduins_camp_loc)
+
     pause
     jump beduins_camp
 

@@ -77,7 +77,7 @@
             else:
                 self.ani = "idle"
 
-        def regen(self):
+        def regen(self, rest = False):
             if self.mp < self.mmp:
                 self.mp += int(self.mmp/50)+1
                 if self.mp > self.mmp:
@@ -86,7 +86,10 @@
                 self.stm += int(self.mstm/50)+1
                 if self.stm > self.mstm:
                     self.stm = self.mstm
-
+            if self.hp < self.mhp and rest:
+                self.hp += int(self.mhp/300)+1
+                if self.hp > self.mhp:
+                    self.hp = self.mhp
         def got_skill(self, x):
             if x not in self.skills:
                 self.skills.append(x)

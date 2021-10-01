@@ -1,4 +1,6 @@
-﻿init python:
+﻿default timed_flags = []
+
+init python:
     class calendar_class:
         def __init__(self):
             self.minute = 0
@@ -7,9 +9,21 @@
             self.eve = 0.0
             self.evening = 0.0
             self.speed = 2
-        def tick(self, n = 1):
+        def tick(self, n = 1, rest = False):
             for i in range(n):
                 self.minute += 1
+
+                for i in timed_flags:
+                    i[2] -= 1
+                    if i[2] < 1:
+                        i[0].add_flag(i[1])
+                        timed_flags.remove(i)
+
+
+
+
+                for h in heros_team.team:
+                    h.regen(rest)
 
                 if hero.food > -8010 and hero.water > -4010:
                     if hero.stat in ["Resting", "Chatting"]:
@@ -103,6 +117,6 @@ screen time_pass(minutes):
     default m = minutes*15
     text str(m/15)
     if m > 0:
-        timer .1 repeat True action Function(calendar.tick, 5), SetScreenVariable("m", m-5)
+        timer .1 repeat True action Function(calendar.tick, 5, rest = True), SetScreenVariable("m", m-5)
     else:
         timer .1 action Hide("time_pass")

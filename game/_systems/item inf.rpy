@@ -7,7 +7,7 @@ screen item_inf:
             hbox:
                 align 0.0,1.0 offset 50,-44 spacing 0
                 frame:
-                    xsize 350 background Frame("items/_frm.png", 10,10)
+                    xsize 350 background Frame("_frm", 10,10)
                     vbox:
                         text GetTooltip().item.name color "#ff0"
                         text GetTooltip().item.inf
@@ -19,7 +19,7 @@ screen item_inf:
             hbox:
                 align 0.0,1.0 offset 50,-44 spacing 0
                 frame:
-                    xsize 350 background Frame("items/_frm.png", 10,10)
+                    xsize 350 background Frame("_frm", 10,10)
                     vbox:
                         text GetTooltip().name color "#ff0"
                         text GetTooltip().inf
@@ -31,7 +31,7 @@ screen item_inf:
             hbox:
                 align 0.0,1.0 offset 50,-44 spacing 0
                 frame:
-                    xsize 350 background Frame("items/_frm.png", 10,10)
+                    xsize 350 background Frame("_frm", 10,10)
                     vbox:
                         text GetTooltip().name color "#ff0"
                         text GetTooltip().inf

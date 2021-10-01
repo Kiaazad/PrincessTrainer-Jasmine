@@ -1,7 +1,7 @@
 ﻿init python:
     class spell:
         def __init__(self,
-                        name, inf, icon = "spells/empty.png",
+                        name, inf, icon = "empty",
                         hp = 0, mp = 0, stm = 0,
                         hpc = 0, mpc = 0, stmc = 0,
                         effect = None, pdbm = [0,0,0,0],

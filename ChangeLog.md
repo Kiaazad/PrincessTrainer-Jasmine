@@ -1,5 +1,23 @@
 
 
+
+
+
+
+# 0.24
+added the start of `learn_pick_pocket` quest chain, it's a bit obscure though
+`make_a_copper_ring` can be finished now
+added: `a_diamond_to_sell` quest line
+Moved items and spells icons into the image folder to future proof the game in case we want to swap them with webp format (it is likely that this will happen to other images as well)
+Abdul no longer holds unto `wine` in the `planted_evidence` quest
+made fleeing a fight chancy, hard and dangerous, some fights are even harder to flee from
+No more walking fleeing corps (can't cast spells after death)
+you can add spells to the empty slots on your spell bar while in the middle of fight now
+No more free experience after fights
+can't be too generous with the beggar anymore
+your health now regenerates when resting
+your stamina and mana now regenerates out of combat
+
 # 0.23
 the `cash_in_hand` quest should be fixed now
 minor improvement to the quest list

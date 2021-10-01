@@ -1,7 +1,7 @@
 ﻿init python:
     class item:
         def __init__(self,
-                name, inf = "", icon = "items/_frm.png", val = 0,
+                name, inf = "", icon = "_frm", val = 0,
                 tags = [], use_event = None, waste = [],
                 food = 0, water = 0,
             ):

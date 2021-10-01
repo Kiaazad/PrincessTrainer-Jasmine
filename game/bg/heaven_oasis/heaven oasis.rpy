@@ -57,7 +57,7 @@ label heaven_oasis:
 default old_spyglass = item(
     _("Old spyglass"),
     _("An old spyglass, the front glass has a crack."),
-    "items/old_spyglass.png",
+    "old_spyglass",
     3750,
     [],
     )

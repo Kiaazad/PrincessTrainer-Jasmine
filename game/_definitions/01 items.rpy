@@ -2,7 +2,7 @@
 default thorns = item(
     name = _("Tumbleweed"),         # Name
     inf = _("A round-shaped plant that are wrapped by dead plants."), #Descriptions optional
-    icon = "items/thorns.png",      # Icon [optional]
+    icon = "thorns",      # Icon [optional]
     val = 10,                       # Value [optional] [Default = 0]
     tags = ["fuel"],                      # tags [optional] [default = empty list]
     use_event = None,               # Event happening when used [optional] [default = None]
@@ -11,7 +11,7 @@ default thorns = item(
 default wood = item(
     _("Wood"),
     _("A piece of wood that can be used to make fire."),
-    "items/wood.png",
+    "wood",
     40,
     ["fuel"],
     )
@@ -19,7 +19,7 @@ default wood = item(
 default coal = item(
     _("Coal"),
     _("A lump of coal."),
-    "items/coal.png", ##
+    "coal", ##
     100,
     ["fuel"],
     )
@@ -27,14 +27,14 @@ default coal = item(
 default feather = item(
     _("Feather"),
     _("You can tickle someobody's feet with it."),
-    "items/feather.png",
+    "feather",
     1,
     )
 
 default stick = item(
     _("Stick"),
     _("Behold the mighty stick! You can whack someone or you can STICK it in a hole somewhere!"),
-    "items/stick.png",
+    "stick",
     1,
     ["fuel"],
     )
@@ -42,45 +42,56 @@ default stick = item(
 default string = item(
     _("String"),
     _("Not as strong as the rope, but it's useful for something else."),
-    "items/string.png",
+    "string",
     1,
     )
 
 default arrowhead = item(
     _("Arrowhead"),
     _("A sharp tip of an arrow. Not sure what else is used for."),
-    "items/arrowhead.png",
+    "arrowhead",
     5,
     )
 
 default bottle = item(
     _("Empty bottle"),
     _("There's so many uses for an empty bottle. It can help with my private business and etc."),
-    "items/bottle.png",
+    "bottle",
     400,
     )
 
 default rope = item(
     _("Rope"),
     _("A good sturdy rope. Can be use for varies of things such as tying people up."),
-    "items/rope.png",
+    "rope",
     90,
     )
 
 default cork = item(
     _("Cork"),
     _("A normal cork... Why don't you put a cork in it!"),
-    "items/cork.png",
+    "cork",
     10,
     )
 
 default fish_spirit = item(
     _("Spirit fish"),
     _("Amazing astral creature. A rare trophy for the luckiest fishermen."),
-    "items/fish_spirit.png",
+    "fish_spirit",
     5000,
     )
-
+default quartz_bit = item(
+    _("White gem stone"),
+    _("Is it a diamond?."),
+    "quartz_bit",
+    0,
+    )
+default big_quartz = item(
+    _("White gem stone"),
+    _("Is it a diamond?."),
+    "big_quartz",
+    800,
+    )
 default list_of_ingredients = [
     thorns, wood, feather, stick, string, arrowhead, bottle, rope, cork, fish_spirit,
 ]
@@ -90,7 +101,7 @@ default list_of_ingredients = [
 # default book1 = item(
 #     _("Red book"),
 #     _("It's a red book. I'm sure it's one of Jafar's works."),
-#     "items/book1.png",
+#     "book1",
 #     3100,
 #     ["Book"],
 #     )
@@ -98,7 +109,7 @@ default list_of_ingredients = [
 default book2 = item(
     _("Book of Err"),
     _("The facetting tale of Err. It's about an errrr man that went errrr."),
-    "items/book2.png",
+    "book2",
     5300,
     ["Book"],
     )
@@ -106,7 +117,7 @@ default book2 = item(
 default book3 = item(
     _("Gold covered book"),
     _("It seems to be written in code."),
-    "items/book3.png",
+    "book3",
     9500,
     ["Book"],
     )
@@ -114,7 +125,7 @@ default book3 = item(
 default book4 = item(
     _("An old book"),
     _("This book looks old. The cover the worn out and the papers are completely brown"),
-    "items/book4.png",
+    "book4",
     2200,
     ["Book"],
     )
@@ -128,14 +139,14 @@ default list_of_books = [
 default coconut_oil = item(
     _("Coconut  oil"),
     _("There's no domain that can't be conquered with a bit of spit. But in the dry desert, Hakim's coconut  oil saves you from an embarrassing situation when you're too thirsty to spit."),
-    "items/coconut_oil.png",
+    "coconut_oil",
     942,
     )
 
 default nuru_gel = item(
     _("Nuru gel"),
     _("From the far east, slippery, sticky, stringy lubrication. It's used in full body massage."),
-    "items/nuru_gel.png",
+    "nuru_gel",
     1956,
     )
 
@@ -147,7 +158,7 @@ default list_of_sex_items = [
 default black_lamp = item(
     _("Black lamp"),
     _("An oil lamp used for illumination."),
-    "items/black_lamp.png",
+    "black_lamp",
     2100,
     ["magic", "lamp"],
     )
@@ -155,7 +166,7 @@ default black_lamp = item(
 default sand_bottle = item(
     _("A bottle on a rope"),
     _("Now let's go hang it in the lamp."),
-    "items/sand_bottle.png",
+    "sand_bottle",
     500,
     ["magic", "junk"],
     )
@@ -163,7 +174,7 @@ default sand_bottle = item(
 default magic_ring = item(
     _("Magic ring"),
     _("A ring with a Genie engraved on it."),
-    "items/magic_ring.png",
+    "magic_ring",
     500,
     ["magic"],
     )

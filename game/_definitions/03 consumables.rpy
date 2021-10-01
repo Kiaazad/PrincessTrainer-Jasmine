@@ -4,7 +4,7 @@
 default beer = item(
     _("Bread beer"),
     _("A home made bear, it is made from very stale and unedible bread."),
-    "items/beer.png",
+    "beer",
     70,
     ["drug", "drink"],
 
@@ -14,7 +14,7 @@ default beer = item(
 default beer_keg = item(
     _("Beer keg"),
     _("A keg of beer containing around 40 pints of beer."),
-    "items/beer_keg.png",
+    "beer_keg",
     2400,
     ["drug"],
 
@@ -23,7 +23,7 @@ default beer_keg = item(
 default liquor = item(
     _("Doggy liquor"),
     _("A very bitter moonshine made by distilling raisin's wine."),
-    "items/liquor.png",
+    "liquor",
     1590,
     ["drug", "drink"],
     water = 10,
@@ -32,7 +32,7 @@ default liquor = item(
 default wine = item(
     _("Red wine"),
     _("You can be arrested for having this."),
-    "items/wine.png",
+    "wine",
     550,
     ["drug", "drink"],
     food = 4,
@@ -42,7 +42,7 @@ default wine = item(
 default opium = item(
     _("Opium"),
     _("Using this drug causes constipation."),
-    "items/opium.png",
+    "opium",
     200,
     ["drug", "hard drug"],
     )
@@ -50,7 +50,7 @@ default opium = item(
 default hashish = item(
     _("Hashish"),
     _("Good for smoking pipes. Careful not to get attached to this."),
-    "items/hashish.png",
+    "hashish",
     200,
     ["drug"],
     )
@@ -64,7 +64,7 @@ default list_of_drugs = [
 default rice = item(
     _("White rice"),
     _("Can you cook rice the right way?."),
-    "items/rice.png",
+    "rice",
     75,
     ["food", "raw"],
     food = 50,
@@ -74,7 +74,7 @@ default rice = item(
 default bread = item(
     _("Naan bread"),
     _("Almost fresh flat bread."),
-    "items/bread.png",
+    "bread",
     50,
     ["food"],
     food = 140,
@@ -83,7 +83,7 @@ default bread = item(
 default water = item(
     _("Water"),
     _("Clean drinkable water from the qanat."),
-    "items/water.png",
+    "water",
     10,
     ["food"],
     water = 180,
@@ -92,7 +92,7 @@ default water = item(
 default crackers = item(
     _("Naan crackers"),
     _("A dried small bread."),
-    "items/crackers.png",
+    "crackers",
     10,
     ["food"],
     food = 65,
@@ -102,7 +102,7 @@ default crackers = item(
 default damp_crackers = item(
     _("Damp naan crackers"),
     _("Crackers you kept in your pants."),
-    "items/damp_crackers.png",
+    "damp_crackers",
     10,
     ["food"],
     food = 65,
@@ -112,7 +112,7 @@ default damp_crackers = item(
 default salt = item(
     _("Salt"),
     _("A spoon of salt."),
-    "items/salt.png",
+    "salt",
     10,
     ["food"],
     water = -100,
@@ -121,7 +121,7 @@ default salt = item(
 default saffron = item(
     _("Saffron"),
     _("A very expensive spice that cause a happy feeling."),
-    "items/saffron.png",
+    "saffron",
     1000,
     ["food"],
     food = 2,
@@ -131,7 +131,7 @@ default saffron = item(
 default fish = item(
     _("Fish"),
     _("An ordinary fish."),
-    "items/fish_med.png",
+    "fish_med",
     250,
     ["food", "raw"],
     food = 120,
@@ -141,7 +141,7 @@ default fish = item(
 default small_fish = item(
     _("Small fish"),
     _("A small one."),
-    "items/fish_small.png",
+    "fish_small",
     50,
     ["food", "raw"],
     food = 50,
@@ -151,7 +151,7 @@ default small_fish = item(
 default big_fish = item(
     _("Big fish"),
     _("The big one."),
-    "items/fish_big.png",
+    "fish_big",
     350,
     ["food", "raw"],
     food = 160,
@@ -163,7 +163,7 @@ default big_fish = item(
 default dates = item(
     _("Dates"),
     _("Dried dates."),
-    "items/dates.png",
+    "dates",
     10,
     ["food"],
     food = 115,
@@ -173,7 +173,7 @@ default dates = item(
 default cantaloupe = item(
     _("Cantaloupe"),
     _("Not enough for a breakfast, specially half of it."),
-    "items/cantaloupe.png",
+    "cantaloupe",
     80,
     ["food"],
     food = 40,
@@ -183,7 +183,7 @@ default cantaloupe = item(
 default watermelon = item(
     _("Watermelon"),
     _("A sweet sensational taste."),
-    "items/watermelon.png",
+    "watermelon",
     90,
     ["food"],
     food = 30,
@@ -193,7 +193,7 @@ default watermelon = item(
 default pomegranate = item(
     _("Pomegranate"),
     _("n/a."),
-    "items/pomegranate.png",
+    "pomegranate",
     30,
     ["food"],
     food = 22,
@@ -203,7 +203,7 @@ default pomegranate = item(
 default apple = item(
     _("Apple"),
     _("n/a."),
-    "items/apple.png",
+    "apple",
     40,
     ["food"],
     food = 41,
@@ -218,7 +218,7 @@ default list_of_foods = [
 default snake_bite_remedy = item(
     _("Snake bite remedy"),
     _("Cures snake bite."),
-    "items/snake_bite_remedy.png",
+    "snake_bite_remedy",
     200,
     ["remedy", "bottled"],
     )
@@ -226,7 +226,7 @@ default snake_bite_remedy = item(
 default scorpion_bite_remedy = item(
     _("Scorpion bite remedy"),
     _("Cures scorpion bite."),
-    "items/scorpion_bite_remedy.png",
+    "scorpion_bite_remedy",
     200,
     ["remedy", "bottled"],
     )
@@ -239,7 +239,7 @@ default list_of_remedies = [
 default scorpion_tail = item(
     _("Scorpion's tail"),
     _("The pointy end of scorpion."),
-    "items/scorpion_tail.png",
+    "scorpion_tail",
     100,
     ["remedy"],
     )
@@ -247,7 +247,7 @@ default scorpion_tail = item(
 default dead_snake = item(
     _("Dead snake"),
     _("It's dead."),
-    "items/dead_snake.png",
+    "dead_snake",
     100,
     ["remedy"],
     )

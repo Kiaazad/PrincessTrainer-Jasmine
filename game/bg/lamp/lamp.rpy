@@ -176,14 +176,24 @@ label lamp_harem:
 default ring_recipe = item(
     _("Ring recipe"),
     _("A recipe for an odd looking copper ring. Jafar drawn and wrote it."),
-    "items/ring_recipe.png",
+    "ring_recipe",
     0,
     ["Finger", "jewelry", "unsellable"],
     )
-
+default copper_ring = item(
+    _("Copper ring"),
+    _("Made according to jafar's instructions."),
+    "copper_ring",
+    1000,
+    ["Finger", "jewelry", "unsellable"],
+    )
 default make_a_copper_ring = quest(
     _("Make a copper ring"),
     [_("Jafar wants a copper ring made.")],
+    )
+default find_a_big_quartz = quest(
+    _("Find a big quartz"),
+    [_("Jafar needs a fist size quartz.")],
     )
 
 
@@ -197,10 +207,45 @@ label lamp_jafar:
     menu:
         "Chit chat....":
             jaf "No time for chit chat."
-            "[hero.cash]"
-            "[cash_in_hand.name]"
-            $ ans = qlog.has(cash_in_hand)
-            "[ans]"
+        "I've found a diamond." if qlog.has(a_diamond_to_sell) == "Active" and hero.has(quartz_bit):
+            abd "I've found a diamond Jafar. I'm rich!"
+            jaf "Oh? Let me see..."
+            "..."
+            jaf "It's not a diamond. It's a quartz."
+            $ quartz_bit.name = "Quartz bit"
+            abd "It's not? At lest it's a precious gem right."
+            $ quartz_bit.val = 100
+            jaf "It worths pocket change."
+            abd "Damn it."
+            $ a_diamond_to_sell.complete()
+            jaf "Where did you find it?"
+            abd "Fought a sand warrior, it turned into sand and this was in it."
+            jaf "I see..."
+            abd "Should I throw it away?"
+            jaf "Of course."
+            jaf "It's another rock, under the sun and over time, it will break into sand."
+            "..."
+            jaf "Wait a minute!"
+            abd "What?"
+            jaf "Sand!"
+            abd "Huh?"
+            jaf "It's the same stuff as sands of time."
+            "..."
+            jaf "If we manage to grind it into the right size, we can create more sands of time."
+            abd "So it's valuable?"
+            jaf "Not to others! But to us, it is."
+            "..."
+            jaf "Collect these, I'll see what we can do with them."
+            abd "Alright."
+            jaf "And find a big one. There's something special I want to make with it."
+            abd "How big."
+            jaf "At least the size of your fist."
+            $ qlog.got(find_a_big_quartz)
+            abd "Any idea where I can find one?"
+            jaf "Mines or something. Figure it out, I have things to do."
+            abd "Alright."
+
+
         # Craft a ring chain
         "I've got the money." if hero.cash > 2000 and qlog.has(cash_in_hand) == "Active":
             abd "I've got the money."
@@ -210,7 +255,7 @@ label lamp_jafar:
             abd "Why not bronze?"
             jaf "Bronze is too shiny, nobody will steal a copper ring from you."
             abd "Ah, alright."
-            $ cash_in_hand.complete()
+            $ cash_in_hand.finish()
             $ qlog.got(make_a_copper_ring)
             jaf "Is there anything else?"
             show abd alert at left
@@ -219,11 +264,17 @@ label lamp_jafar:
             show abd normal at left
             abd "Right!"
             jump agrabah
-        "The ring is ready..." if qlog.has(make_a_copper_ring) == "Active" and False:
-            pass
+        "The ring is ready..." if qlog.has(make_a_copper_ring) == "Active" and hero.has(copper_ring):
+            abd "The ring is ready."
+            jaf "Excellent!"
+            jaf "I have plans for it, don't lose it."
+            abd "Alright."
+            $ make_a_copper_ring.finish()
 
+        # Book quest
         "I have some books" if qlog.has(books_for_jafar) and False:
             jaf "Bating, go away."
+
         # Planted evidence chain
         "About Hakim." if qlog.has(planted_evidence) == "Active" and planted_evidence.inf[-1] in ["Talk to jafar and find a solution to Hakim's predicament.", "Rasoul wants you to plant one of Jafar's books in Hakim's shop."]:
             abd "There's a situation with hakim, Jafar."
@@ -248,7 +299,7 @@ label lamp_jafar:
             "..."
             jaf "I know it, buy a bottle of wine and plant in in Hakim's shop."
             abd "With the book?"
-            jaf "No the book stays here with me."
+            jaf "No the book stays here with me for the time being."
             abd "But Rasoul will throw me in jail when he doesn't find the book."
             jaf "Tell him that you've planted the book and a bottle of wine just in case Hakim finds the book and destroys it."
             abd "But he will still arrest Hakim for the wine."
@@ -268,8 +319,9 @@ label lamp_jafar:
                 $ planted_evidence.extend(_("Ask hakim for some money for the wine."))
             abd "Sure."
             jump inside_lamp
+
         # Pick pocket chain
-        "I think I've got rubbed." if "something is missing" in abdul.flags:
+        "I think I've got rubbed." if hero.pick_pocket_alert > 0 and not qlog.has(learn_pick_pocket):
             abd "I think I've got rubbed Jafar."
             jaf "Let me guess, Ahmad?"
             abd "I think so, how do you know?"
@@ -290,7 +342,8 @@ label lamp_jafar:
             "..."
             jaf "Don't stand around, go!"
             abd "Alright."
-            jump agrabah
+
+        # To do list quest
         "I got the scroll." if qlog.has(my_to_do_list) == "Active" and hero.has(skin_scroll):
             abd "I got the scroll Jafar."
             jaf "Excellent!{w=0.2} Hold it up."
@@ -313,7 +366,7 @@ label lamp_jafar:
 default quest_log_item = item(
     _("Quest log"),
     _("This allows viewing your quests anywhere."),
-    "items/quest_log_item.png",
+    "quest_log_item",
     0,
     ["unsellable"],
     )

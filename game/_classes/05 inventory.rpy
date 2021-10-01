@@ -15,8 +15,9 @@
             self.uniqueID = []
             self.holding = None
             self.selected = self.bags[0]
+            
             self.pick_pocket_skill = 0
-
+            self.pick_pocket_alert = 0
 
             self.bag_x = 0
         def dragged(self, drags, drop):
@@ -31,13 +32,24 @@
             chance = renpy.random.randint(0,100)
             fail = renpy.random.randint(0,100)
             if fail > self.pick_pocket_skill:
-                msg.msg(target.name + _(" felt something fishy is going on."))
+                if target == hero:
+                    msg.msg(_("You felt something fishy is going on."))
+                else:
+                    msg.msg(target.name + _(" felt something fishy is going on."))
+                    if self.pick_pocket_skill < target.pick_pocket_alert:
+                        msg.msg(target.name + _(" Caught you."))
+                        # Trigger a fight
+
+                target.pick_pocket_alert += 1
+
             if chance < self.pick_pocket_skill:
                 target.cash -= amount
                 self.cash += amount
-                return True
+                if self == hero:
+                    msg.msg("You've picked {} from {}'s pocket.".format(amount, target.name))
             else:
-                return False
+                if self == hero:
+                    msg.msg("You've failed to pick {}'s pocket.".format(target.name))
 
         def discard(self):
             self.holding = None

@@ -102,6 +102,57 @@ label poor_thief:
                 ahm "..."
                 $ ahmad_u.pick_pocket(abdul)
                 ahm "Alright, you'll be back."
+            "So you can pick my pocket?" if qlog.has(learn_pick_pocket) == "Active":
+                abd "So you can pick my pocket while I'm distracted?"
+                ahm "I don't know what you're talking about."
+                abd "Cut the crab Ahmad, I'm here to invoke your deal with jafar."
+                ahm "What?"
+                ahm "How do you know about it?"
+                abd "He told me."
+                ahm "But he's dead!"
+                abd "Do you want to test your luck and disobey his order?"
+                ahm "Alright, do you want your money back?"
+                abd "No."
+                ahm "What then?"
+                abd "I want you to teach me how to pick pockets."
+                ahm "No way!"
+                abd "There's a reward in it for you."
+                ahm "Why do you want to learn it?"
+                abd "Jafar's order."
+                ahm "But he's dead!"
+                abd "Orders are orders."
+                "..."
+                ahm "Alright, meet me behind the town's wall tonight."
+                ahm "And bring a meal."
+                abd "Do you want to teach me how to eat with my left hand?"
+                "..."
+                ahm "Well..."
+                abd "We all know that proverb. You can skip it and get to the point."
+                abd "I'm not going to lose my hand."
+                ahm "Alright, it's your hand."
+                ahm "First you need a distraction..."
+                ahm "Then with a little dexterity..."
+                ahm "Strong fingers..."
+                ahm "Anf finesse..."
+                $ ahmad_u.pick_pocket(abdul)
+                ahm "Viola..."
+                "..."
+                abd "Is that it?"
+                ahm "In a nutshell."
+                $ learn_pick_pocket.finish()
+                ahm "Of course it needs years of practice and experience."
+                abd "I don't have years."
+                ahm "Then you won't have your hands for long."
+                "..."
+                ahm "Make a dummy and cover it with clothing to practice on."
+                abd "Good idea."
+                ahm "Just keep in mind: You don't know me and I don't know you."
+                ahm "And never try to pick my pocket if you don't like having a blade inside your guts."
+                abd "Not even for practice?"
+                ahm "Never."
+                ahm "Now go, I don't want to be seen talking to you for long."
+                abd "Alright."
+
     jump poor
 
 
@@ -170,7 +221,7 @@ label petros_shop:
 default new_spyglass = item(
     _("Brand new spyglass"),
     _("It looks pristine."),
-    "items/new_spyglass.png",
+    "new_spyglass",
     9000,
     [],
     )

@@ -112,14 +112,14 @@ image rahman normal = "char/rahman/normal.png"
 default damascus_steel = item(
     _("Damascus steel"),
     _("Very high quality steel from India."),
-    "items/damascus_steel.png",
+    "damascus_steel",
     1400,
     ["Material", "Metal"],
     )
 default damascus_sword = item(
     _("Damascus sword"),
     _("A sword so sharp it can cut silk in mid air."),
-    "items/damascus_sword.png",
+    "damascus_sword",
     1400,
     ["Weapon"],
     )
@@ -224,7 +224,7 @@ label beggar:
     abd "Can't you ask nicely for once old man?"
     "Beggar" "Give me money."
     menu:
-        "Here's 10 dinars...":
+        "Here's 10 dinars..." if hero.cash > 9:
             abd "Here, take this 10 dinars."
             $ abdul.paidcash(10)
             "Beggar" "Thank you, the God's blessing be upon you."
