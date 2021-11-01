@@ -14,7 +14,7 @@ init python:
             act = [], enabled = True, 
             hits = 1, items = [], tools = [],
             tut = False, hidden = False, hoffset = None, highlight = False, regen = 0,
-            shifts = None,
+            shifts = None, aggressive = False,
             ):
             self.name = name
             self.img = img
@@ -33,6 +33,7 @@ init python:
             self.regen = regen
             self.shifts = shifts
             self.on_shift = 1
+            self.aggressive = aggressive
         def hovered(self, h):
             if self.hoffset:
                 self.hov = h
@@ -138,7 +139,10 @@ screen pnc(p , g):
                             focus_mask True
                             at map_transform
                             action Function(g.clicked, i, p), Function(g.on_show), i.act
-                            hovered Function(i.hovered, 1)
+                            if i.aggressive:
+                                hovered Function(i.hovered, 1), i.act
+                            else:
+                                hovered Function(i.hovered, 1)
                             unhovered Function(i.hovered, 0)
                         else:
                             if g.command and g.command[0][0] == i:

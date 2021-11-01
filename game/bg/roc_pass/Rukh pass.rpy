@@ -1,6 +1,30 @@
 ﻿# A Roc or Rukh is a very big bird that could lift elephants to the sky, probably an eagle that got embellished in the stories.
 # https://en.wikipedia.org/wiki/Roc_(mythology)
 
+# Exists
+default roc_pass_snakes_pass = pnco(
+    "Snake's pass",
+    None,
+    (400, 500),
+    Jump('snakes_pass'),
+    hidden = True,
+    )
+default roc_pass_agrabahs_gate = pnco(
+    "Agrabah's gate",
+    None,
+    (1343, 1002),
+    Jump('agrabahs_gate'),
+    hidden = True,
+    )
+default roc_pass_marble_quarry = pnco(
+    "Marble quarry",
+    None,
+    (41, 805),
+    Jump('marble_quarry'),
+    hidden = True,
+    )
+
+# objects
 default des_0_1 = pnco(
     "thorns",
     "bg/roc_pass/01.png",
@@ -82,32 +106,21 @@ default des_0_sword = pnco(
     items = [[rusty_sword, 1]],
     )
 
-# Exists
-default roc_pass_snakes_pass = pnco(
-    "Snake's pass",
-    None,
-    (400, 500),
-    Jump('snakes_pass'),
-    )
-default roc_pass_desert = pnco(
-    "Desert",
-    None,
-    (400, 900),
-    Jump('desert'),
-    )
 # Fights
 default little_thief = unit(
     "Little thief",
     "char/foes/little_thief",
     lvl = 5,
     type = "Demon",
-    items = [(small_sword, 2), (water, 1)]
+    items = [(small_sword, 2), (water, 1)],
     )
 default roc_pass_little_thief = pnco(
     "Little thief",
     "bg/roc_pass/little_thief.png",
     (152 , 586),
     Jump('roc_pass_little_thief'),
+    hidden = True,
+    aggressive = True,
     )
 label roc_pass_little_thief:
     call screen btl_scr(team([abdul]), team([little_thief]))
@@ -123,6 +136,10 @@ image des_0_shine:
 
 default roc_pass_map = pncs("Roc pass",
     [
+        roc_pass_marble_quarry,
+        roc_pass_snakes_pass,
+        roc_pass_agrabahs_gate,
+
         des_0_1,
         des_0_2,
         des_0_3,

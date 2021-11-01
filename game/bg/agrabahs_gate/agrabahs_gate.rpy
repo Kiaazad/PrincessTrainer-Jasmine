@@ -1,40 +1,45 @@
 ﻿# Exits
-default desert_roc_pass = pnco(
+default agrabahs_gate_roc_pass = pnco(
     "Roc pass",
-    "bg/desert/roc pass.png",
+    "bg/agrabahs_gate/roc pass.png",
     (1600, 576),
     Jump('roc_pass'),
     )
-default desert_agrabah = pnco(
+default agrabahs_gate_agrabah = pnco(
     "Agrabah",
-    "bg/desert/agrabah.png",
+    "bg/agrabahs_gate/agrabah.png",
     (720, 880),
     Jump('street'),
     )
-default desert_heaven_oasis = pnco(
-    "Heaven oasis",
-    None,
-    (932, 501),
-    Jump('heaven_oasis'),
-    )
-default desert_beduins_camp = pnco(
+default agrabahs_gate_beduins_camp = pnco(
     "Beduins camp",
     None,
-    (111, 796),
+    (932, 501),
     Jump('beduins_camp'),
     )
+default agrabahs_gate_farms = pnco(
+    "Farms",
+    None,
+    (111, 796),
+    Jump('farms'),
+    )
+
+label farms:
+    "not ready yet"
+    jump agrabahs_gate
+
 
 # Random
-default desert_nasim = pnco(
+default agrabahs_gate_nasim = pnco(
     "Trap",
-    "bg/desert/nasim.png",
+    "bg/agrabahs_gate/nasim.png",
     (1057, 628),
-    Jump('desert_nasim'),
+    Jump('agrabahs_gate_nasim'),
     )
 define nasim = Character("Nasim", color="#4ff", what_text_color="#dff")
 image nasim normal dark = "char/nasim/normal dark.png"
 
-label desert_nasim:
+label agrabahs_gate_nasim:
     scene
     show nasim normal dark at right
     nasim "Hey there strong man!"
@@ -67,10 +72,10 @@ label desert_nasim:
     nasim "No rush big boy."
     nasim "See you tomorrow!"
     hide nasim with dissolve
-    $ desert_nasim.hidden = True
+    $ agrabahs_gate_nasim.hidden = True
     "..."
     hide abd with dissolve
-    jump desert
+    jump agrabahs_gate
 
 # Fights
 default black_scorpion = unit(
@@ -80,42 +85,42 @@ default black_scorpion = unit(
     type = "Beast",
     items = [(scorpion_tail, 1)]
     )
-default desert_black_scorpion = pnco(
+default agrabahs_gate_black_scorpion = pnco(
     "Black scorpion",
-    "bg/desert/black_scorpion.png",
+    "bg/agrabahs_gate/black_scorpion.png",
     (182, 660),
-    Jump('desert_black_scorpion'),
+    Jump('agrabahs_gate_black_scorpion'),
     )
-label desert_black_scorpion:
+label agrabahs_gate_black_scorpion:
     call screen btl_scr(team([abdul]), team([black_scorpion]))
-    jump desert
+    jump agrabahs_gate
 
 
 
-default desert_map = pncs(
-    "Main street",
+default agrabahs_gate_map = pncs(
+    "Agrabah's gate",
     [
-        desert_roc_pass,
-        desert_agrabah,
-        desert_heaven_oasis,
-        desert_beduins_camp,
-        desert_black_scorpion,
-        desert_nasim,
-    ], night = "bg/desert/night.webp"
+        agrabahs_gate_agrabah,
+        agrabahs_gate_roc_pass,
+        agrabahs_gate_farms,
+        agrabahs_gate_beduins_camp,
+        agrabahs_gate_black_scorpion,
+        agrabahs_gate_nasim,
+    ], night = "bg/agrabahs_gate/night.webp"
     )
 """
 Background design notes:
 This background is the desert immediately outside of the city's gate, it can be few pathways towards different places. 3 should suffice.
 """
-image bg desert = "bg/desert/bg.webp"
-label desert:
-    if not desert_map in all_places:
-        $ all_places.append(desert_map)
+image bg desert = "bg/agrabahs_gate/bg.webp"
+label agrabahs_gate:
+    if not agrabahs_gate_map in all_places:
+        $ all_places.append(agrabahs_gate_map)
     scene
     show bg desert onlayer bg
-    show screen pnc(abdul, desert_map)
+    show screen pnc(abdul, agrabahs_gate_map)
     pause
-    jump desert
+    jump agrabahs_gate
 
 
 

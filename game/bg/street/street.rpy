@@ -1,4 +1,5 @@
-﻿default street_money_lender_loc = pnco(
+﻿# Shops
+default street_money_lender_loc = pnco(
     "Money lender",
     "bg/street/Money lender.png",
     (483, 576),
@@ -41,11 +42,11 @@ default street_blacksmith_loc = pnco(
     hidden = False, hoffset = (20,20),
     )
 
-default street_desert_loc = pnco(
-    "Desert",
+default street_agrabahs_gate = pnco(
+    "Agrabah's gate",
     "bg/street/desert.png",
     (655, 959),
-    Jump('desert'),
+    Jump('agrabahs_gate'),
     hidden = False, hoffset = (20,20),
     )
 default street_bazaar_loc = pnco(
@@ -56,6 +57,7 @@ default street_bazaar_loc = pnco(
     hidden = False, hoffset = (20,20),
     )
 
+# People
 default street_beggar = pnco(
     "Beggar",
     "bg/street/beggar.png",
@@ -85,7 +87,7 @@ default street_map = pncs(
         street_money_lender_loc,
         street_empty_shop_loc,
         street_karim_loc,
-        street_desert_loc,
+        street_agrabahs_gate,
         street_palace_loc,
         street_bazaar_loc,
         street_home_loc,

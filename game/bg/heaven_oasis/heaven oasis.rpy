@@ -5,12 +5,6 @@
     Jump('the_viking'),
     hidden = False, hoffset = (120,97),
     )
-default heaven_oasis_1 = pnco(
-    "thorns",
-    "bg/rock_pass/02.png",
-    (1713, 559),
-    items = [[thorns, 1]],
-    )
 default heaven_oasis_fishing = pnco(
     "Start fishing",
     None,
@@ -23,11 +17,11 @@ default heaven_oasis_drink = pnco(
     (924, 850),
     Jump('heaven_oasis_drink'),
     )
-default heaven_oasis_back = pnco(
-    "Back",
+default heaven_oasis_heaven_or_hell_fork = pnco(
+    "Heaven or hell fork",
     None,
     (311, 629),
-    Jump('desert'),
+    Jump('heaven_or_hell_fork'),
     hidden = False, hoffset = (83,-40),
     )
 
@@ -35,7 +29,7 @@ default heaven_oasis_loc = pncs(
     "Main street",
     [
         heaven_oasis_viking,
-        heaven_oasis_back,
+        heaven_oasis_heaven_or_hell_fork,
         heaven_oasis_fishing,
         heaven_oasis_drink,
 
@@ -127,11 +121,11 @@ label the_viking:
         abd "Sure, do you need any food?"
         vik "No I'm all set on that front."
         jump heaven_oasis
-    elif qlog.has(beer_for_the_viking) == "Completed" and abdul.has(beer_keg): # If the quest is active
+    elif "Deliver the keg to the Viking." in beer_for_the_viking.info and abdul.has(beer_keg): # If the quest is active
         vik "Got the beer?"
         abd "Yes, here!"
         $ hero.drop(beer_keg, 1)
-        $ beer_for_the_viking.finish()
+        $ beer_for_the_viking.complete()
         vik "Thank you my friend, you're a savior."
         # keg noises
         vik "Here, have one on me."

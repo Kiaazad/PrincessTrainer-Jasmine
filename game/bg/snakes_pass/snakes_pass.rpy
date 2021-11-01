@@ -1,4 +1,13 @@
-﻿# Items
+﻿# Exists
+
+default snake_pass_roc_pass = pnco(
+    "Roc pass",
+    None,
+    (882, 960),
+    Jump('roc_pass'),
+    hidden = True
+    )
+# Items
 default des_1_1 = pnco(
     "Dried Tree",
     "bg/snakes_pass/01.png",
@@ -36,14 +45,6 @@ default des_1_5 = pnco(
     regen = 10,
     )
 
-# Exists
-
-default snake_pass_roc_pass = pnco(
-    "Roc pass",
-    None,
-    (882, 960),
-    Jump('roc_pass'),
-    )
 
 # Fights
 default snake = unit(
@@ -58,6 +59,7 @@ default snakes_pass_snake = pnco(
     "bg/snakes_pass/snake.png",
     (434, 653),
     Jump('snakes_pass_snake'),
+    aggressive = True,
     )
 label snakes_pass_snake:
     call screen btl_scr(team([abdul]), team([snake]))
@@ -65,6 +67,7 @@ label snakes_pass_snake:
 
 default snake_pass_map = pncs("Snake's pass",
     [
+        snake_pass_roc_pass,
         des_1_1,
         des_1_2,
         des_1_3,
@@ -90,13 +93,18 @@ label desert_1:
     show screen pnc(abdul, snake_pass_map)
     with dissolve
 
-    show screen mirage_1
+    show abd tired at left with dissolve
+    abd "It's unusually hot today."
+    "..."
+    hide abd with dissolve
+    window hide
+    show screen mirage_1 with dissolve
 label desert_1_loop:
     pause
     jump desert_1_loop
 
-transform mirage_t(a):
-    ease 1 alpha a
+transform mirage_t(a, t =1):
+    ease t alpha a
 transform delayed(p):
     alpha 0
     pause p
@@ -107,7 +115,9 @@ transform fade_to_screen:
 screen mirage_1:
     default alph = 0
     default intervals = 1
+    default initial = 0
     if intervals < 20:
+        timer .01 action SetScreenVariable("initial", 1)
         timer 2 repeat True action SetScreenVariable("alph", .1), SetScreenVariable("intervals", intervals+1)
         timer intervals*.1 repeat True action SetScreenVariable("alph", 0)
     else:
@@ -120,11 +130,11 @@ screen mirage_1:
         text "Come to me" at fade_to_screen
     frame:
         background "#000"
-        at mirage_t(float(intervals)/20)
+        at mirage_t(float(intervals)/20, initial)
     frame:
         background None yalign 1.0 padding 0,0
         at delayed(1)
-        add "char/jasmine/seducing.png" at mirage_t(alph)
+        add "char/jasmine/seducing.png" at mirage_t(alph, initial)
 
 
 label desert_1_conv:
@@ -251,5 +261,9 @@ label desert_1_dream:
     abd "Woah..."
     abd "That was weird."
     abd "I need to got to the city before I die from heat."
-    $ snake_pass_map.add(snake_pass_roc_pass)
+
+    $ roc_pass_snakes_pass.hidden = False
+    $ snake_pass_roc_pass.hidden = False
+    $ roc_pass_marble_quarry.hidden = False
+
     jump street

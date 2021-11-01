@@ -361,6 +361,10 @@ label ch2_1:
     jaf "It should be safer than hanging from your waist."
     jaf "Now go, before the shops in the bazaar close."
     abd "Oh, right!"
+    
+    $ roc_pass_little_thief.hidden = False
+    
+    
     jump agrabah
 
 

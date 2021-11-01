@@ -12,11 +12,6 @@ Lamp Tour Menu:
 - The Barracks’ guard is hard to see/can’t be seen at night.  When he is no longer a shadow, he might be easier to see.
 >>> the darkness at night is intentional but the severity of this issue will be reduced with the finalized art and L2D models
 
-- The duel wielding sword woman can be seen and even clicked on at the start of the game, before you even find the lamp.  Should she be hidden until a return visit?
->> all enemies will be scheduled soon, though rubbing the lamp should not effect how dangerous the desert is.
-
-- Scorpion opponent doesn’t do any damage.  Mana/the blue bar goes down, even into the negatives, during the fight.  Left in from combat testing?
->>> sometimes the beast archetype will cast growl spell too many times, it will be fixed once we balance the spells and fights
 
 - You can buy items even if your inventory is full.  The items vanish along with the gold.
 - When do shopkeepers get restocked?  I waited a few days and didn’t see their items or gold get replenished.

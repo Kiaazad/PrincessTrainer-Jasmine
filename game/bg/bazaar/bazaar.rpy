@@ -196,6 +196,7 @@ label jewelry_shop:
                 jew "here."
                 abd "Thank you."
                 $ jeweler_u.add_flag("copper ring delivered")
+                $ make_a_copper_ring.extend(_("Take the ring back to Jafar."))
             else:
                 jew "Not yet, come back later"
                 abd "alright."
@@ -289,7 +290,7 @@ label hakim:
     show abd normal at left
     menu:
         # planted_evidence
-        "I just came to say hi." if qlog.has(planted_evidence) == "Active" and hero.has(the_free_lie_book):
+        "I just came to say hi." if qlog.has(planted_evidence) == "Active" and hero.has(the_free_lie_book) and len(planted_evidence.info) < 2:
             abd "No, I just came to say hi Hakim."
             hak "Ah, so nice of you. Let me put my grind away and come back to you."
             hide hakim with moveoutright
@@ -297,10 +298,10 @@ label hakim:
             menu:
                 "Leave the book.":
                     $ hero.drop(the_free_lie_book, 1)
-                    $ planted_evidence.complete()
+                    $ planted_evidence.extend(_("Return to Rasoul."))
             abd "Goodby hakim."
             jump bazaar
-        "I have some bad news." if qlog.has(planted_evidence) == "Active" and len(planted_evidence.inf) == 1:
+        "I have some bad news." if qlog.has(planted_evidence) == "Active" and len(planted_evidence.info) == 1:
             abd "I have some bad news hakim."
             hak "What's the matter? Something happened to you? Are you in pain?"
             abd "It's Rasoul."
@@ -324,7 +325,7 @@ label hakim:
             abd "I'll be right back."
             $ planted_evidence.extend(_("Talk to jafar and find a solution to Hakim's predicament."))
             jump bazaar
-        "I have a solution." if qlog.has(planted_evidence) == "Active" and planted_evidence.inf[-1] in ["Plant a bottle of wine in Hakim's shop.", "Ask hakim for some money for the wine."] and "Talk to jafar and find a solution to Hakim's predicament." in planted_evidence.inf:
+        "I have a solution." if qlog.has(planted_evidence) == "Active" and planted_evidence.info[-1] in ["Plant a bottle of wine in Hakim's shop.", "Ask hakim for some money for the wine."] and "Talk to jafar and find a solution to Hakim's predicament." in planted_evidence.info:
             abd "I have the solution Hakim."
             hak "Really? do tell."
             abd "I'll hide a bottle of wine in your shop, tell Rasoul that I've planted the book and the wine."
@@ -342,7 +343,7 @@ label hakim:
                 $ hero.drop(wine, 1)
                 abd "Here."
                 abd "Put it among your remedies."
-                $ planted_evidence.complete()
+                $ planted_evidence.extend(_("Tell Rasoul: the book and wine are planted."))
             else:
                 menu:
                     "I'll buy one...":
@@ -356,20 +357,20 @@ label hakim:
                 $ planted_evidence.extend(_("Buy a bottle of wine for Hakim."))
             hak "Thank you, you're a savior Abdul."
             jump bazaar
-        "I got the wine." if qlog.has(planted_evidence) == "Active" and planted_evidence.inf[-1] in ["Buy a bottle of wine for Hakim."] and hero.has(wine):
+        "I got the wine." if qlog.has(planted_evidence) == "Active" and planted_evidence.info[-1] in ["Buy a bottle of wine for Hakim."] and hero.has(wine):
             abd "I got the wine Hakim."
             $ hero.drop(wine, 1)
             abd "Here..."
             hak "Thank you."
             abd "Put it among your remedies."
             hak "I will."
-            $ planted_evidence.complete()
+            $ planted_evidence.extend(_("Tell Rasoul: the book and wine are planted."))
             "..."
             abd "I should go."
             hak "For sure, let's hope for the best."
             jump bazaar
 
-        "I have bad news and good news..." if qlog.has(planted_evidence) == "Active" and planted_evidence.inf[-1] in ["Plant a bottle of wine in Hakim's shop.", "Ask hakim for some money for the wine."] and not "Talk to jafar and find a solution to Hakim's predicament." in planted_evidence.inf:
+        "I have bad news and good news..." if qlog.has(planted_evidence) == "Active" and planted_evidence.info[-1] in ["Plant a bottle of wine in Hakim's shop.", "Ask hakim for some money for the wine."] and not "Talk to jafar and find a solution to Hakim's predicament." in planted_evidence.info:
             abd "I have bad news and good news hakim."
             hak "oh? What about?"
             abd "THe bad news is... Rasoul is targeting you and tried to force me to plant one of Jafar's books in your shop or go to jail."
@@ -394,7 +395,7 @@ label hakim:
                 $ hero.drop(wine, 1)
                 abd "Here."
                 abd "Put it among your remedies."
-                $ planted_evidence.complete()
+                $ planted_evidence.extend(_("Tell Rasoul: the book and wine are planted."))
             else:
                 menu:
                     "I'll buy one...":

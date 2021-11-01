@@ -5,11 +5,11 @@
     Jump('street'),
     hidden = False, hoffset = (114,80),
     )
-default caravanserai_desert = pnco(
-    "Desert",
+default caravanserai_agrabahs_gate = pnco(
+    "Agrabah's gate",
     "bg/caravanserai/desert.png",
     (1534, 300),
-    Jump('desert'),
+    Jump('agrabahs_gate'),
     hidden = False, hoffset = (114,80),
     )
 default traveler_1 = pnco(
@@ -24,7 +24,7 @@ default caravanserai_map = pncs(
     "Caravanserai",
     [
         caravanserai_street,
-        caravanserai_desert,
+        caravanserai_agrabahs_gate,
         traveler_1,
 
     ], night = "bg/caravanserai/night.webp"
@@ -136,9 +136,13 @@ label traveler_1:
         abd "Can't promise anything though. Thieves of Agrabah hide their loot and it's almost impossible to get it back."
         vir "Do this and I'll reward you handsomely."
         abd "I'll try harder then."
-    elif qlog.has(stolen_spyglass) in ["Active", "Completed"]:
+    elif qlog.has(stolen_spyglass) == "Active":
         vir "What do you have for me?"
         menu:
+            "Nothing yet.":
+                abd "Nothing yet."
+                vir "Get to it then, I'm waiting."
+                abd "Alright."
             "I've got an old one." if hero.has(old_spyglass):
                 abd "I've got this old one."
                 vir "Hmmmm...."
@@ -148,7 +152,7 @@ label traveler_1:
                 vir "It's garbage!"
                 vir "But it will do for now."
                 $ hero.drop(old_spyglass, 1)
-                $ stolen_spyglass.finish()
+                $ stolen_spyglass.complete()
                 "..."
                 vir "Ah yes, your reward."
                 $ hero.gotcash(5000)
@@ -215,7 +219,7 @@ label traveler_1:
                         abd "Sure."
                         $ hero.gotcash(5000)
                         vir "Here you go."
-                $ stolen_spyglass.finish()
+                $ stolen_spyglass.complete()
     "..."
     pause
     jump caravanserai

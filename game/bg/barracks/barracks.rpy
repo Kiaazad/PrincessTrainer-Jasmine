@@ -43,13 +43,6 @@ label barracks_guard:
     show abd normal at left with dissolve
     show guard_2 normal at right
     if qlog.has(planted_evidence) == "Completed":
-        guard_2 "You're back?"
-        guard_2 "We're full, go away?"
-        abd "I must talk to Rasoul."
-        guard_2 "Oh it's like that? You can go in."
-        "..."
-        jump rasoul_arc_end
-    if qlog.has(planted_evidence) == "Finished":
         guard_2 "What do you want?"
         menu:
             "I need to talk to Rasoul.":
@@ -77,6 +70,13 @@ label barracks_guard:
                 abd "I need to talk to Qasim."
                 guard_2 "Alright, Go in."
                 jump jail
+    elif "Return to Rasoul." in planted_evidence.info or "Tell Rasoul: the book and wine are planted." in planted_evidence.info:
+        guard_2 "You're back?"
+        guard_2 "We're full, go away?"
+        abd "I must talk to Rasoul."
+        guard_2 "Oh it's like that? You can go in."
+        "..."
+        jump rasoul_arc_end
     guard_2 "If you came to turn yourself in, the jail is full, get lost!"
     guard_2 "We're not in the business of feeding lazy poor people."
     jump barracks

@@ -14,7 +14,9 @@ init python:
     def drop_more(table, n):
         loot = []
         for i in range(n):
-            loot.append(drop_loot(table))
+            item = drop_loot(table)
+            if not item == None:
+                loot.append(item)
         return loot
 
 # default test_loot_table = [

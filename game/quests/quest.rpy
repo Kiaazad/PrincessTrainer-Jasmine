@@ -1,10 +1,9 @@
 ﻿screen quests(q = qlog):
-    default filters = ["All", "Active", "Completed", "Finished", "Canceled", "Failed"]
+    default filters = ["All", "Active", "Completed", "Canceled", "Failed"]
     default colors = {
         "All": "#fff",
         "Active": "#ffc",
-        "Completed": "#fd0",
-        "Finished": "#6f0",
+        "Completed": "#6f0",
         "Canceled": "#005",
         "Failed": "#444",
     }
@@ -41,7 +40,7 @@
                             draggable True
                             vbox:
                                 yalign 0.0
-                                for i in q.slc.inf:
+                                for i in q.slc.info:
                                     text i 
                         hbox:
                             yalign 1.0
@@ -54,24 +53,3 @@
         text "Return"
         action Hide("quests"), Return()
 
-
-    # drag:
-    #     align(0.848, 0.522)
-    #     frame:
-    #         vbox:
-    #             text "Tests"
-    #             button:
-    #                 text "Add"
-    #                 action Function(q.got, sell_lamp), Function(q.got, jafars_revenge), Function(q.got, visit_malik), Function(q.got, visit_hosein), Function(q.got, master_swordsman)
-    #             button:
-    #                 text "Complete"
-    #                 action Function(q.complete, sell_lamp), Function(q.complete, jafars_revenge), Function(q.complete, visit_malik), Function(q.complete, visit_hosein)
-    #             button:
-    #                 text "Finish"
-    #                 action Function(q.finish, sell_lamp), Function(q.finish, jafars_revenge), Function(q.finish, visit_malik)
-    #             button:
-    #                 text "Cancel"
-    #                 action Function(q.cancel, sell_lamp), Function(q.cancel, jafars_revenge)
-    #             button:
-    #                 text "Fail"
-    #                 action Function(q.fail, sell_lamp)

@@ -4,6 +4,15 @@
 
 
 
+
+Enemies can be aggressive and initiate a fight this might change to a better system later on
+New places are added
+The desert places are re-arranged according to the secret sacred map
+fixed some issues on "don't rub the lamp" route
+removed "finished" stat that was causing confusion from the quest system, now it works much simpler
+Scorpion opponent not doing any damage and mana going below 0 fixed.
+the little thief in roc pass is hidden during the intro
+
 # 0.24
 added the start of `learn_pick_pocket` quest chain, it's a bit obscure though
 `make_a_copper_ring` can be finished now

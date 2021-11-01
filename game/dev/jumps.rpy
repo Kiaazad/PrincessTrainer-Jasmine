@@ -22,11 +22,14 @@ label dev_jumps:
             $ persistent.theme_change = 1
             $ calendar.day = 1
             $ qlog.got(jafars_revenge)
-            $ qlog.cancel(sell_lamp)
+            $ sell_lamp.cancel()
             $ street_home_loc.enabled = True
-            $ roc_pass_map.add(roc_pass_desert)
-            $ roc_pass_map.add(roc_pass_snakes_pass)
-            $ snake_pass_map.add(snake_pass_roc_pass)
+
+            $ roc_pass_agrabahs_gate.hidden = False
+            $ roc_pass_snakes_pass.hidden = False
+            $ snake_pass_roc_pass.hidden = False
+            $ roc_pass_marble_quarry.hidden = False
+
             $ qlog.got(visit_malik)
             $ qlog.got(visit_hosein)
             $ abdul.got_skill(kick)
@@ -43,8 +46,11 @@ label dev_jumps:
         "jump to the lamp":
             $ calendar.day = 1
             $ street_home_loc.enabled = True
-            $ roc_pass_map.add(roc_pass_snakes_pass)
-            $ roc_pass_map.add(roc_pass_desert)
+
+            $ roc_pass_agrabahs_gate.hidden = False
+            $ roc_pass_snakes_pass.hidden = False
+            $ snake_pass_roc_pass.hidden = False
+            $ roc_pass_marble_quarry.hidden = False
             jump lamp_visit
 
         "desert_1_dream":

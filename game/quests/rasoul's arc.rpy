@@ -58,6 +58,38 @@ image ras angry = Composite((800, 962),
     (0,0), "ras_angry_blink",
 )
 
+# Smile
+image ras_smile_blink:
+    "char/rasoul/smile_blink.png"
+    alpha 0
+    choice:
+        2
+    choice:
+        3
+
+    alpha 1
+    .1
+    repeat
+image ras_smile_mouth_moving:
+    "char/rasoul/smile_bla.png"
+    .1
+    alpha 0
+    .2
+    alpha 1
+    repeat
+
+image ras_smile_mouth = ConditionSwitch(
+    "_last_say_who == 'ras'", "ras_smile_mouth_moving",
+    "not _last_say_who == 'ras'", "char/empty.png")
+
+image ras smile = Composite((800, 962),
+    (0,0), "char/rasoul/smile.png",
+    (0,0), "ras_smile_mouth",
+    (0,0), "ras_smile_blink",
+)
+
+
+
 define ras = Character("Rasoul", color="#f44", what_text_color="#fdd", namebox_align=(1.0, 0.0))
 image Rasoul fight idle:
     "char/rasoul/fight/idle.png"
@@ -357,9 +389,9 @@ label rasoul_arc_end:
     ras "Well?"
     abd "Yes, I've planted the book in his bookshelf."
     ras "Excellent, you can go."
-    $ planted_evidence.finish()
+    $ planted_evidence.complete()
     $ hakim_loc.enabled = False
-    if len(planted_evidence.inf) < 2:
+    if "Return to Rasoul." in planted_evidence.info:
         jump barracks
     abd "There's one more thing."
     ras "What?"

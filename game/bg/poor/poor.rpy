@@ -139,7 +139,7 @@ label poor_thief:
                 "..."
                 abd "Is that it?"
                 ahm "In a nutshell."
-                $ learn_pick_pocket.finish()
+                $ learn_pick_pocket.complete()
                 ahm "Of course it needs years of practice and experience."
                 abd "I don't have years."
                 ahm "Then you won't have your hands for long."
@@ -208,7 +208,7 @@ label petros_shop:
         show petros normal at right with moveinright
         pet "Here you go, a keg of the best beer in Agrabah."
         $ hero.got(beer_keg)
-        $ beer_for_the_viking.complete()
+        $ beer_for_the_viking.extend(_("Deliver the keg to the Viking."))
         pet "Don't get caught."
         abd "Thanks"
         pet "And you don't know me if they catch you."
@@ -318,7 +318,7 @@ label poor_ali:
                     abd "What?"
                     ali "A spyglass."
                     menu:
-                        "THey sent me to bring it back.":
+                        "They sent me to bring it back.":
                             abd "THey sent me to bring it back."
                             ali "Why should I give it to you?"
                             abd "Do you want them to come after you?"
@@ -372,7 +372,7 @@ label poor_ali:
                 $ ali_u.drop(new_spyglass, 1)
                 $ hero.got(new_spyglass, 1)
                 if qlog.has(stolen_spyglass) == "Active":
-                    $ stolen_spyglass.complete()
+                    $ stolen_spyglass.extend(_("Deliver it to the Traveler."))
                 "..."
                 abd "Now go home and stop stealing."
                 abd "You're going to end up in palace's jail with a hand cut off."
@@ -405,7 +405,7 @@ label poor_ali:
                 $ ali_u.drop(new_spyglass, 1)
                 $ hero.got(new_spyglass, 1)
                 if qlog.has(stolen_spyglass) == "Active":
-                    $ stolen_spyglass.complete()
+                    $ stolen_spyglass.extend(_("Deliver it to the Traveler."))
                 "..."
                 abd "Now go home and stop stealing."
                 abd "You're going to end up in palace's jail with a hand cut off."

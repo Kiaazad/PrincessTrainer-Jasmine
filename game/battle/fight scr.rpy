@@ -51,6 +51,9 @@ init python:
             if spell.mp:
                 burn = (spell.mp + (caster.pwr * spell.mp)/100) + crit
                 enemy.mp += burn
+                if enemy.mp < 1:
+                    enemy.mp = 0
+                    enemy.hp += burn/2
                 if not is_enemy:
                     msg3(burn)
                 else:
@@ -58,6 +61,9 @@ init python:
             if spell.stm:
                 breath = (spell.stm + (caster.pwr * spell.stm)/100) + crit
                 enemy.stm += breath
+                if enemy.stm < 1:
+                    enemy.stm = 0
+                    enemy.hp += breath/2
                 if not is_enemy:
                     msg3(breath)
                 else:

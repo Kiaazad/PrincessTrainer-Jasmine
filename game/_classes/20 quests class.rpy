@@ -1,8 +1,8 @@
 ﻿init python:
     class quest:
-        def __init__(self, name, inf, items = [], objc = [], rewards = [], img = []):
+        def __init__(self, name, info, items = [], objc = [], rewards = [], img = []):
             self.name = name
-            self.inf = inf
+            self.info = info
             self.objc = objc
             self.rewards = rewards
             self.img = img
@@ -10,16 +10,15 @@
         def complete(self):
             self.stat = "Completed"
             Show("quest_notif", s = "qst_completed")()
-        def finish(self):
-            self.stat = "Finished"
         def cancel(self):
             self.stat = "Canceled"
             Show("quest_notif", s = "qst_canceled")()
         def fail(self):
             Show("quest_notif", s = "qst_failed")()
         def extend(self, text):
-            self.inf.append(text)
-            msg.msg("Changed quest: {}".format(self.name))
+            self.info.append(text)
+            msg.msg("Changed quest: {}\n{}".format(self.name, text))
+        
     class quest_log:
         def __init__(self):
             self.log = []
@@ -29,7 +28,7 @@
         def chose(self, n):
             self.slc = n
         def filter(self):
-            if self.filt < 5:
+            if self.filt < 4:
                 self.filt += 1
             else:
                 self.filt = 0
@@ -40,21 +39,6 @@
                 self.log.append(q)
                 msg.msg("New quest: {}".format(q.name))
                 Show("quest_notif", s = "qst_accepted")()
-        def cancel(self, q):
-            q.stat = "Canceled"
-            msg.msg("Quest canceled: {}".format(q.name))
-            Show("quest_notif", s = "qst_canceled")()
-        def complete(self, q):
-            q.stat = "Completed"
-            msg.msg("Quest completed: {}".format(q.name))
-            Show("quest_notif", s = "qst_completed")()
-        def finish(self, q):
-            q.stat = "Finished"
-            msg.msg("Quest finished: {}".format(q.name))
-        def fail(self, q):
-            q.stat = "Failed"
-            msg.msg("Quest failed: {}".format(q.name))
-            Show("quest_notif", s = "qst_failed")()
         def has(self, quest):
             if quest in self.log:
                 return quest.stat

@@ -255,7 +255,7 @@ label lamp_jafar:
             abd "Why not bronze?"
             jaf "Bronze is too shiny, nobody will steal a copper ring from you."
             abd "Ah, alright."
-            $ cash_in_hand.finish()
+            $ cash_in_hand.complete()
             $ qlog.got(make_a_copper_ring)
             jaf "Is there anything else?"
             show abd alert at left
@@ -269,14 +269,14 @@ label lamp_jafar:
             jaf "Excellent!"
             jaf "I have plans for it, don't lose it."
             abd "Alright."
-            $ make_a_copper_ring.finish()
+            $ make_a_copper_ring.complete()
 
         # Book quest
         "I have some books" if qlog.has(books_for_jafar) and False:
             jaf "Bating, go away."
 
         # Planted evidence chain
-        "About Hakim." if qlog.has(planted_evidence) == "Active" and planted_evidence.inf[-1] in ["Talk to jafar and find a solution to Hakim's predicament.", "Rasoul wants you to plant one of Jafar's books in Hakim's shop."]:
+        "About Hakim." if qlog.has(planted_evidence) == "Active" and planted_evidence.info[-1] in ["Talk to jafar and find a solution to Hakim's predicament.", "Rasoul wants you to plant one of Jafar's books in Hakim's shop."]:
             abd "There's a situation with hakim, Jafar."
             jaf "What's wrong?"
             abd "Rasoul is after him."
@@ -356,7 +356,7 @@ label lamp_jafar:
             show jaf normal at right
             jaf "There."
             jaf "It keeps track of your tasks, now go do them."
-            $ my_to_do_list.finish()
+            $ my_to_do_list.complete()
             abd "But...{w=.2}{nw}"
             jaf "Go figure it out.{w=.2} I can't explain everything to you."
 

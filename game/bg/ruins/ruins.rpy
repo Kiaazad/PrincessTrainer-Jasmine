@@ -1,4 +1,19 @@
-﻿default ruins_0 = pnco(
+﻿# exists
+default ruins_marble_quarry = pnco(
+    "Marble quarry",
+    None,
+    (1667, 743),
+    Jump('marble_quarry'),
+    )
+default ruins_old_gate = pnco(
+    "Old gate",
+    None,
+    (888, 1020),
+    Jump('old_gate'),
+    )
+
+# items
+default ruins_0 = pnco(
     "thorns",
     "bg/roc_pass/01.png",
     (188, 598),
@@ -26,13 +41,6 @@ default ruins_3 = pnco(
     items = [[thorns, 1]],
     regen = 10,
     )
-default ruins_back = pnco(
-    "Back",
-    None,
-    (611, 729),
-    Jump('beduins_camp'),
-    )
-# items
 
 
 # Fights
@@ -48,6 +56,7 @@ default ruins_ogre = pnco(
     "bg/ruins/ogre.png",
     (182, 660),
     Jump('ruins_ogre'),
+    aggressive = True,
     )
 label ruins_ogre:
     call screen btl_scr(team([abdul]), team([ogre]))
@@ -57,11 +66,14 @@ label ruins_ogre:
 
 default ruins_loc = pncs("Roc pass",
     [
+        ruins_old_gate,
+        ruins_marble_quarry,
+
         ruins_0,
         ruins_1,
         ruins_2,
         ruins_3,
-        ruins_back,
+
         ruins_ogre,
 
     ], night = "bg/ruins/night.webp"

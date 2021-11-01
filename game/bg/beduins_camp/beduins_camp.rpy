@@ -1,19 +1,24 @@
 ﻿
 # Exists
-default beduins_camp_back = pnco(
-    "Back",
+default beduins_camp_agrabahs_gate = pnco(
+    "Agrabah's gate",
     None,
-    (911, 729),
-    Jump('desert'),
+    (980, 1009),
+    Jump('agrabahs_gate'),
     hidden = False, hoffset = (83,-40),
     )
-default beduins_camp_ruins = pnco(
-    "The ruins",
+default beduins_old_gate = pnco(
+    "Old gate",
     None,
-    (560, 467),
-    Jump('ruins'),
+    (1734, 704),
+    Jump('old_gate'),
     )
-
+default beduins_heaven_or_hell_fork = pnco(
+    "Heaven or hell fork",
+    None,
+    (91, 714),
+    Jump('heaven_or_hell_fork'),
+    )
 # Fights
 default sand_warrior = unit(
     "Sand warrior",
@@ -27,6 +32,7 @@ default beduins_camp_sand_warrior = pnco(
     "bg/beduins_camp/sand_warrior.png",
     (1240, 660),
     Jump('beduins_camp_sand_warrior'),
+    aggressive = True,
     )
 default a_diamond_to_sell = quest(
     _("A diamond to sell"),
@@ -41,10 +47,11 @@ label beduins_camp_sand_warrior:
     jump beduins_camp
 
 default beduins_camp_loc = pncs(
-    "Main street",
+    "Beduins camp",
     [
-        beduins_camp_back,
-        beduins_camp_ruins,
+        beduins_camp_agrabahs_gate,
+        beduins_old_gate,
+        beduins_heaven_or_hell_fork,
         beduins_camp_sand_warrior,
     ], night = "bg/beduins_camp/night.webp"
     )

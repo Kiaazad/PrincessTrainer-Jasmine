@@ -239,11 +239,13 @@ label intro_0_1:
                     show jaf normal at right
                     jaf "Now let us head back to Agrabah."
                     $ qlog.got(jafars_revenge)
-                    $ qlog.cancel(sell_lamp)
+                    $ sell_lamp.cancel()
                     jaf "Bring the thorns. {w=.5}We need all the money we can get."
                     $ msg.msg("You got CamelThorns")
-                    $ roc_pass_map.add(roc_pass_snakes_pass)
-                    $ roc_pass_map.add(roc_pass_desert)
+                    $ roc_pass_agrabahs_gate.hidden = False
+                    $ roc_pass_snakes_pass.hidden = False
+                    $ snake_pass_roc_pass.hidden = False
+                    $ roc_pass_marble_quarry.hidden = False
                     "{nw}"
                     jump ch1
                 "No! I want my wishes":
@@ -261,22 +263,20 @@ label intro_0_1:
                             abd "Okay, okay. I yield. Don't screw me up."
                             jaf "Good, let's make haste! {w=.5}Time's a-wastin'."
                             $ qlog.got(jafars_revenge)
-                            $ qlog.cancel(sell_lamp)
+                            $ sell_lamp.cancel()
                             show abd confused at left
                             abd "What?"
                             jaf "Something I heard- {w=.5}you know what, never mind."
                             "{nw}"
-                            $ roc_pass_map.add(roc_pass_snakes_pass)
-                            $ roc_pass_map.add(roc_pass_desert)
+                            $ roc_pass_agrabahs_gate.hidden = False
+                            $ roc_pass_snakes_pass.hidden = False
+                            $ snake_pass_roc_pass.hidden = False
+                            $ roc_pass_marble_quarry.hidden = False
                             jump ch1
         "Don't be naive, search for more firewood.":
             show abd alert at left
             abd "Back to work then."
             $ msg.msg("You hang the lap on your bundle.")
-            show abd tired at left
-            abd "It's unusually hot today."
-            "..."
-            $ roc_pass_map.add(roc_pass_snakes_pass)
-            $ roc_pass_map.add(roc_pass_desert)
+            hide abd with dissolve
             jump desert_1
 
