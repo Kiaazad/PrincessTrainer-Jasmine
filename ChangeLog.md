@@ -4,7 +4,7 @@
 
 
 
-
+# 0.25
 Enemies can be aggressive and initiate a fight this might change to a better system later on
 New places are added
 The desert places are re-arranged according to the secret sacred map

@@ -23,7 +23,7 @@ label southern_trade_route:
 
 # Map
 default old_gate_map = pncs(
-    "Main street",
+    "Old gate",
     [
         old_gate_beduins_camp,
         old_gate_ruins,
