@@ -2,7 +2,7 @@
 
 
 
-
+fixed the main menu error and few missing label jumps
 
 # 0.25
 Enemies can be aggressive and initiate a fight this might change to a better system later on

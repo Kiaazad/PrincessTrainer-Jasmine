@@ -117,28 +117,37 @@ label rasoul_arc_1:
     show ras normal at midright with dissolve
     menu:
         "I didn't do anything wrong...":
+            show abd concerned at midleft
             abd "I didn't do anything wrong Rasoul."
+            show ras angry at midright
             ras "Shut up!" with hpunch
 
         "Head of the palace guards, taking orders from Kamal...":
+            show abd smug at left
             abd "I never imagined to see head of palace guards taking orders from Kamal."
             "..."
             abd "Does he have some dirt on you?"
+            show ras angry at midright
             ras "I'm just doing my job and keeping the scum like you off the street."
             abd "What did I do?"
+            show ras normal at midright
             ras "Violation of people's property."
             ras "Don't tell me it wasn't you talking to female slaves in the rich section."
             abd "Well I did talk, but...{w=.2}{nw}"
+            show ras smile at midright
             ras "So you've confessed.{w=.2}{nw}"
+            show abd alert at left
             ras "MOVE IT!" with hpunch
         "Run...":
+            show abd alert at left
             "What's that?{w=.2}{nw}"
             hide abd with moveoutleft
+            show ras angry at midright
             ras "No you won't!{w=.2}{nw}" with vpunch
             scene
             hide pnc
             call screen btl_scr(team([abdul]), team([rasoul]), .2)
-            jump desert
+            jump agrabahs_gate
             pause 2
             jump beduins_camp
 
@@ -261,13 +270,19 @@ label rasoul_arc_2:
     show qasim normal at midright with move
     qasim "You're pretty lucky to get in.{w=.2} We're fully booked."
     qasim "Now give me your belongings.{w=.2} I'll keep them safe."
+    show abd confused at left
     abd "But...{w=.2}{nw}"
+    show abd alert at left
     qasim "It's the law." with hpunch
     call screen show_loot(jail_chest, mandatory = "give")
     qasim "Your money too."
     "..."
     call screen show_loot(jail_chest, mandatory = "give_cash")
+    show abd normal at midleft with move:
+        xzoom -1
     abd "Is that...{w=.2} pile of books?"
+    show abd normal at left with move:
+        xzoom 1
     qasim "They're illegal books we confiscated, not for the prisoners."
     show bg jail cell onlayer bg
     show abd normal at midleft with dissolve
@@ -276,7 +291,7 @@ label rasoul_arc_2:
     qasim "No bed but the shackles are pretty comfy.{w=.2} Just yell if you want me to put them on you."
     "..."
     qasim "Enjoy your stay in the palace."
-    show abd normal at left with dissolve
+    show abd normal at left with move
     hide qasim with dissolve
 
 default planted_evidence = quest(
@@ -292,17 +307,20 @@ label rasoul_arc_3:
             "Resting for a while."
             jump rasoul_arc_3
         "Ask for food.":
+            show abd alert at left
             abd "Guard...{w=.2} guard!"
             "..."
             abd "Guard!"
             show qasim normal at right with dissolve
             qasim "What is it?"
+            show abd confused at left
             abd "I'm hungry."
             qasim "Where do you think you are?{w=.2} A tavern?"
             if (calendar.day % 2):
                 qasim "You'll get your piece of bread every other day.{w=.2} Today isn't the other day."
             else:
                 qasim "You'll get your piece of bread every other day.{w=.2} Lucky for you, today is an other day."
+            show abd alert at left
             qasim "Now shut up!"
             hide qasim with dissolve
             menu:
@@ -311,9 +329,11 @@ label rasoul_arc_3:
                     "..."
     show qasim normal at right with dissolve
     qasim "Will you shut up?"
+    show abd confused at left
     abd "Guard...{w=.2} please...{w=.2} I can't stay here..."
     qasim "Why didn't you say so?{w=.2} Let me release you."
     "..."
+    show abd alert at left
     abd "Really?"
     qasim "Of course not.{w=.2} You idiot."
     abd "Come on,{w=.2} there must be a way,{w=.2} I didn't do anything wrong."
@@ -324,10 +344,12 @@ label rasoul_arc_3:
     abd "But you took all of my money."
     qasim "You have some money stashed somewhere don't you?"
     ras "Do you?"
+    show abd confused at left
     abd "I'm a wood collector sleeping on the streets Rasoul."
     ras "Then this is an improvement for you, isn't it?"
     abd "Please Rasoul, you know I'm innocent."
     ras "Hmmm...{w=.2} Maybe you can do something for me."
+    show abd alert at left
     abd "Anything Rasoul."
     ras "Bring me the book!"
     qasim "Yes sir."

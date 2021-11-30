@@ -81,7 +81,7 @@ screen main_menu(ii=0):
     tag menu
 
     if not persistent.theme_change:
-        add "bg/01.webp"
+        add "bg/snakes_pass/bg.webp"
         add "0gui/abdul_frm.webp"
         vbox:
             yoffset 100 spacing 10
